@@ -8,9 +8,15 @@ $catproduct = new Catproduct();
 $catproduct->catproduitViewIterative(null);
 $resultCat = $catproduct->tabView;
 
+//Recup des couleurs
+$resultCouleur = $catproduct->getCouleurs();
+
+// Recup des rubriques
+$resultRubrique = $catproduct->getRubriques();
+
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
-	$result = $catproduct->productGet($_GET['id'],null,null,null);
+	$result = $catproduct->productGet($_GET['id'],null,null,null,null);
 	//print_r($result);exit();
 	//print_r($result[0]['categories']);
 	$catproduct=null;
@@ -33,7 +39,18 @@ if (!empty($_GET)){ //Modif
 				$categories[]=$value['catid'];
 			}
 		}
-		//print_r($categories);exit();
+		$rubriques= 	null;
+		if (!empty($result[0]['rubriques'])){
+			foreach ($result[0]['rubriques'] as $value) {
+				$rubriques[]=$value['rubid'];
+			}
+		}
+		$couleurs= 	null;
+		if (!empty($result[0]['couleurs'])){
+			foreach ($result[0]['couleurs'] as $value) {
+				$couleurs[]=$value['couleurid'];
+			}
+		}
 		//print_r($categories);exit();
 		for ($i=1;$i<4;$i++) {
 			$image[$i] = 	$result[0]['image'.$i];
@@ -58,6 +75,8 @@ if (!empty($_GET)){ //Modif
 	$accroche= 		null;
 	$description= 	null;
 	$categories= 	null;
+	$rubriques= 	null;
+	$couleurs= 	null;
 	for ($i=1;$i<4;$i++) {
 		$img[$i]  = '/img/favicon.png';
 		$imgval[$i]  = '';
@@ -86,6 +105,36 @@ if (!empty($_GET)){ //Modif
 					<div class="form-group" >
 						<label class="col-sm-2" for="titre">Nom produit :</label>
 					    <input type="text" class="col-sm-8" name="label" required  value="<?php echo $label ?>">
+					</div>
+					<div class="form-group" >
+						<label class="col-sm-2" for="titre">Classifcation :</label>
+							<?php 
+							if (!empty($resultRubrique)) {
+								$i=0;
+								foreach ($resultRubrique as $value) { 
+								$i++;
+								(!empty($rubriques) && in_array($value['id'], $rubriques)) ? $check = 'checked' : $check = '';
+								?>
+								
+								<?php echo $value['label'] ?>:<input type="checkbox"  name="rubriques[]" value="<?php echo $value['id'] ?>" <?php echo $check ?> >&nbsp;
+								
+								<?php } ?>
+							<?php } ?>	
+					</div>
+					<div class="form-group" >
+						<label class="col-sm-2" for="titre">Couleurs :</label>
+							<?php 
+							if (!empty($resultCouleur)) {
+								$i=0;
+								foreach ($resultCouleur as $value) { 
+								$i++;
+								(!empty($couleurs) && in_array($value['id'], $couleurs)) ? $check = 'checked' : $check = '';
+								?>
+								
+								<?php echo $value['label'] ?>:<input type="checkbox"  name="couleurs[]" value="<?php echo $value['id'] ?>" <?php echo $check ?> >&nbsp;
+								
+								<?php } ?>
+							<?php } ?>	
 					</div>
 					<div class="form-group" >
 						<label class="col-sm-2" for="titre">Réf. :</label>

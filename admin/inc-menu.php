@@ -18,10 +18,7 @@
 					            	<li><a href="product-edit.php">Ajout Produits</a></li>
 					            	<li><a href="product-list.php">Modif / Suppr</a></li>
 					            	<li class="divider"></li>
-					            	<li><a href="product-list.php">Promos</a></li>
-					            	<li><a href="product-list.php">Coups de coeur</a></li>
-					            	<li><a href="product-list.php">Ventes flash</a></li>
-					            	<li><a href="product-list.php">Nouveautés</a></li>
+					            	
 					          	</ul>
 					        </li>
 					        <li class="dropdown">

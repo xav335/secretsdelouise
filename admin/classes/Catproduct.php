@@ -59,6 +59,71 @@ class Catproduct extends StorageManager {
 		return $new_array;
 	}
 	
+	public function getRubriqueByProduct($id){
+		$requete = "SELECT rubrique.label as rublabel,rubrique.id as rubid
+					FROM product
+					INNER JOIN product_rubrique ON product.id=product_rubrique.id_product
+					INNER JOIN rubrique ON rubrique.id = product_rubrique.id_rubrique
+					WHERE product.id=". $id ;
+		//print_r($requete);exit();
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		return $new_array;
+	}
+	
+	public function getCouleurByProduct($id){
+		$requete = "SELECT couleur.label as couleurlabel,couleur.id as couleurid
+					FROM product
+					INNER JOIN product_couleur ON product.id=product_couleur.id_product
+					INNER JOIN couleur ON couleur.id = product_couleur.id_couleur
+					WHERE product.id=". $id ;
+		//print_r($requete);exit();
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$requete);
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		return $new_array;
+	}
+	
+	public function getRubriques(){
+		$this->dbConnect();
+		$sql = "SELECT *
+					FROM rubrique
+					ORDER BY label;";
+		//print_r($sql);exit();
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$sql);
+		if (!$result) {
+			throw new Exception($sql);
+		}
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		$this->dbDisConnect();
+		return $new_array;
+	}
+	
+	public function getCouleurs(){
+		$this->dbConnect();
+		$sql = "SELECT *
+					FROM couleur
+					ORDER BY label;";
+		//print_r($sql);exit();
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$sql);
+		if (!$result) {
+			throw new Exception($sql);
+		}
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		$this->dbDisConnect();
+		return $new_array;
+	}
 	
 	public function catproduitViewIterative($result){
 		if ($this->i==0){
@@ -184,17 +249,32 @@ class Catproduct extends StorageManager {
 		$this->dbDisConnect();
 	}
 	
-	public function productNumberGet($categorie){
+	public function productNumberGet($categorie,$rubrique){
 		$this->dbConnect();
 		
-		if (empty($categorie)) {
+		if (empty($categorie) && empty($rubrique)) {
 			$sql = "SELECT count(*) as nb FROM `product`;" ;
-		} else {
+		} elseif (!empty($categorie) && empty($rubrique)) {
 			$sql = "SELECT count(*) as nb
 					FROM product
 					INNER JOIN product_categorie 
 					ON product_categorie.id_product=product.id
 					WHERE product_categorie.id_categorie=". $categorie . ";" ;
+		} elseif (empty($categorie) && !empty($rubrique)) {
+			$sql = "SELECT count(*) as nb
+					FROM product
+					INNER JOIN product_rubrique
+					ON product_rubrique.id_product=product.id
+					WHERE product_rubrique.id_rubrique=". $rubrique . ";" ;
+		} elseif (!empty($categorie) && !empty($rubrique)) {
+			$sql = "SELECT count(*) as nb
+					FROM product
+					INNER JOIN product_categorie 
+					ON product_categorie.id_product=product.id
+					INNER JOIN product_rubrique
+					ON product_rubrique.id_product=product.id		
+					WHERE product_rubrique.id_rubrique=". $rubrique . "
+					AND product_categorie.id_categorie=". $categorie .";" ;
 				
 		}	
 		//print_r($requete);
@@ -210,25 +290,46 @@ class Catproduct extends StorageManager {
 		return $new_array[0]['nb'];
 	}
 	
-	public function productGet($id, $offset, $count, $categorie){
+	public function productGet($id, $offset, $count, $categorie, $rubrique){
 		$this->dbConnect();
 		try {
 			if (!isset($id)){
-				if (empty($categorie) && isset($offset) && isset($count)) {
-					$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
-								FROM product 
-								ORDER BY  product.label
-								ASC LIMIT ". $offset .",". $count .";" ;
-					
-				} elseif (!empty($categorie) && isset($offset) && isset($count)) {
-					$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
-								FROM product
-								INNER JOIN product_categorie 
-								ON product_categorie.id_product=product.id
-								WHERE product_categorie.id_categorie=". $categorie . "
-								ORDER BY  product.label
-								ASC LIMIT ". $offset .",". $count .";" ;
-					
+				if (isset($offset) && isset($count)) {
+					if (empty($categorie) && empty($rubrique)) {
+						$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
+									FROM product 
+									ORDER BY  product.label ASC
+									LIMIT ". $offset .",". $count .";" ;
+						
+					} elseif (!empty($categorie) && empty($rubrique)) {
+						$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
+									FROM product
+									INNER JOIN product_categorie 
+									ON product_categorie.id_product=product.id
+									WHERE product_categorie.id_categorie=". $categorie . "
+									ORDER BY  product.label ASC
+									LIMIT ". $offset .",". $count .";" ;
+					} elseif (empty($categorie) && !empty($rubrique)) {
+						$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
+									FROM product
+									INNER JOIN product_rubrique
+									ON product_rubrique.id_product=product.id
+									WHERE product_rubrique.id_rubrique=". $rubrique . "
+									ORDER BY product.label ASC
+									LIMIT ". $offset .",". $count .";" ;
+						
+					} elseif (!empty($categorie) && !empty($rubrique)) {	
+						$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
+									FROM product
+									INNER JOIN product_rubrique
+									ON product_rubrique.id_product=product.id
+									INNER JOIN product_categorie 
+									ON product_categorie.id_product=product.id
+									WHERE product_rubrique.id_rubrique=". $rubrique . "
+									AND product_categorie.id_categorie=". $categorie . "
+									ORDER BY product.label ASC
+									LIMIT ". $offset .",". $count .";" ;
+					}
 				} else {
 					$sql = "SELECT * FROM `product` ORDER BY `label`;" ;
 				}
@@ -241,8 +342,12 @@ class Catproduct extends StorageManager {
 			$new_array = null;
 			$result = mysqli_query($this->mysqli,$sql);
 			while( $row = mysqli_fetch_assoc( $result)){
-				$resultdetail = $this->getCategorieByProduct($row['id']);
-				$row['categories'] = $resultdetail;
+				$resultdetailCat = $this->getCategorieByProduct($row['id']);
+				$resultdetailRubrique = $this->getRubriqueByProduct($row['id']);
+				$resultdetailCouleur = $this->getCouleurByProduct($row['id']);
+				$row['categories'] = $resultdetailCat;
+				$row['rubriques'] = $resultdetailRubrique;
+				$row['couleurs'] = $resultdetailCouleur;
 				$new_array[] = $row;
 			}
 			
@@ -273,6 +378,7 @@ class Catproduct extends StorageManager {
 				`image2`='". addslashes($value['url2']) ."',
 				`image3`='". addslashes($value['url3']) ."'
 				WHERE `id`=". $value['id'] .";";
+		//print_r($sql);exit();
 		$result = mysqli_query($this->mysqli,$sql);
 			
 		if (!$result) {
@@ -280,7 +386,23 @@ class Catproduct extends StorageManager {
 			throw new Exception('Erreur Mysql productModify sql = : '.$sql);
 		}
 		
-		$this->categoriesProductModify($_POST['categories'], $value['id']);
+		if (!empty($value['categories'])) {
+			$this->categoriesProductModify($value['categories'], $value['id']);
+		} else {
+			$this->categoriesProductDel($value['id']);
+		}
+		
+		if (!empty($value['rubriques'])) {
+			$this->rubriquesProductModify($value['rubriques'], $value['id']);
+		} else {
+			$this->rubriquesProductDel($value['id']);
+		}
+		
+		if (!empty($value['couleurs'])) {
+			$this->couleursProductModify($value['couleurs'], $value['id']);
+		} else {
+			$this->couleursProductDel($value['id']);
+		}	
 		
 		$this->commit();
 	
@@ -296,6 +418,32 @@ class Catproduct extends StorageManager {
 		if (!$result) {
 			$this->rollback();
 			throw new Exception('Erreur Mysql categoriesProductDel sql = : '.$sql);
+		}
+	
+	}
+	
+	private function rubriquesProductDel($id){
+	
+		$sql = "DELETE FROM  `product_rubrique`
+				WHERE `id_product`=". $id .";";
+		$result = mysqli_query($this->mysqli,$sql);
+	
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql rubriquesProductDel sql = : '.$sql);
+		}
+	
+	}
+	
+	private function couleursProductDel($id){
+	
+		$sql = "DELETE FROM  `product_couleur`
+				WHERE `id_product`=". $id .";";
+		$result = mysqli_query($this->mysqli,$sql);
+	
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql couleursProductDel sql = : '.$sql);
 		}
 	
 	}
@@ -321,9 +469,51 @@ class Catproduct extends StorageManager {
 		
 	}
 	
+	private function rubriquesProductModify($rubriques,$id){
+	
+		$this->rubriquesProductDel($id);
+	
+		$sql = "INSERT INTO  `product_rubrique`
+				(`id_product`, `id_rubrique`)
+				VALUES ";
+		foreach ($rubriques as $values){
+			$sql .= "(". $id .",". $values ."),";
+		}
+		$sql = substr($sql, 0, strlen($sql)-1);
+		$sql .= ";";
+		$result = mysqli_query($this->mysqli,$sql);
+	
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql rubriquesProductModify sql = : '.$sql);
+		}
+	
+	}
+	
+	private function couleursProductModify($couleurs,$id){
+	
+		$this->couleursProductDel($id);
+	
+		$sql = "INSERT INTO  `product_couleur`
+				(`id_product`, `id_couleur`)
+				VALUES ";
+		foreach ($couleurs as $values){
+			$sql .= "(". $id .",". $values ."),";
+		}
+		$sql = substr($sql, 0, strlen($sql)-1);
+		$sql .= ";";
+		$result = mysqli_query($this->mysqli,$sql);
+	
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql couleursProductModify sql = : '.$sql);
+		}
+	
+	}
+	
 	
 	public function productAdd($value){
-		//print_r($value);exit();
+		print_r($value);exit();
 	
 		$this->dbConnect();
 		$this->begin();
@@ -351,6 +541,8 @@ class Catproduct extends StorageManager {
 		$id_record = mysqli_insert_id($this->mysqli);
 		
 		$this->categoriesProductModify($value['categories'], $id_record);
+		$this->rubriquesProductModify($value['rubriques'], $id_record);
+		$this->couleursProductModify($value['couleurs'], $id_record);
 		
 		$this->commit();
 	

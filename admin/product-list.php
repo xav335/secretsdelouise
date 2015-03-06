@@ -5,15 +5,29 @@
 require 'classes/Catproduct.php';
 
 	if (!empty($_POST)){
+		$rub = $_POST['rubrique'];
+	} else {
+		if (!empty($_GET['rubrique'])){
+			$rub = $_GET['rubrique'];
+		} else {
+			$rub = null;
+		}
+	}
+
+	if (!empty($_POST)){
 		$categ = $_POST['categorie'];
 	} else {
-		$categ = null;
+		if (!empty($_GET['categorie'])){
+			$categ = $_GET['categorie'];
+		} else {
+			$categ = null;
+		}
 	}
 	//print_r($categ);
 	try {
 		$catproduct = new Catproduct();
 		
-		$total = $catproduct->productNumberGet($categ);
+		$total = $catproduct->productNumberGet($categ,$rub);
 		//$result = $contact->contactGet(null, $offset, $count);
 		
 		$epp = 15; // nombre d'entrées à afficher par page (entries per page)
@@ -40,10 +54,12 @@ require 'classes/Catproduct.php';
 		$start = ($current * $epp - $epp);
 		
 		// Récupération des données à afficher pour la page courante
-		$result = $catproduct->productGet(null, $start, $epp, $categ);
+		$result = $catproduct->productGet(null, $start, $epp, $categ, $rub);
 		
 		$catproduct->catproduitViewIterative(null);
 		$catresult = $catproduct->tabView;
+		
+		$rubresult = $catproduct->getRubriques();
 		//print_r($result);
 		$catproduct =null;
 	} catch (Exception $e) {
@@ -70,16 +86,16 @@ require 'classes/Catproduct.php';
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
-				<?php echo paginate('product-list.php', '?p=', $nbPages, $current); ?>
+				<?php echo paginate('product-list.php?rubrique='.$rub.'&categorie='.$categ , '&p=', $nbPages, $current); ?>
+				<br><br>
 			</div>
 		</div>
 		<div class="row">
-			<div class="row">
 				<form name="formulaire" class="form-horizontal" method="POST"  action="product-list.php" >
-				<div class="col-md-3">	
-					<label  >&nbsp;Filtez par catégorie :</label>
+				<div class="col-md-2">	
+					<label  >&nbsp;Filtrez par catégorie :</label>
 				</div>
-				<div class="col-md-6">		
+				<div class="col-md-2">		
 					<select name="categorie" id="categorie">
 					<option value="" selected>-- afficher tout --</option>
 					<?
@@ -97,11 +113,27 @@ require 'classes/Catproduct.php';
 					?>
 					</select>	
 				</div>	
+				<div class="col-md-2">	
+					<label  >&nbsp;par rubrique :</label>
+				</div>
+				<div class="col-md-2">		
+					<select name="rubrique" id="rubrique">
+					<option value="" selected>-- afficher tout --</option>
+					<?
+					foreach ($rubresult as $value) { 
+						?>
+						<option value="<?php echo $value['id'] ?>" <? if ( $rub ==  $value['id'] ) { ?> selected <? } ?>>
+							<?php echo $value['label'] ?>
+						</option>
+						<?
+					}
+					?>
+					</select>	
+				</div>	
 				<div class="col-md-3">		
 					<button class="btn btn-success col-sm-3" type="submit" >Filtrer</button>
 				</div>
 				<br><br>
-			</div>	
 		</div>	
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
@@ -113,14 +145,17 @@ require 'classes/Catproduct.php';
 							<th class="col-md-1" style="">
 								Ref
 							</th>
-							<th class="col-md-3" style="">
+							<th class="col-md-2" style="">
 								Nom Produit
 							</th>
 							<th class="col-md-1" style="">
 								Prix
 							</th>
-							<th class="col-md-3" style="">
+							<th class="col-md-2" style="">
 								Catégorie
+							</th>
+							<th class="col-md-1" style="">
+								Rubriques
 							</th>
 							<th class="col-md-1" colspan="2" style="">
 								Actions
@@ -142,12 +177,19 @@ require 'classes/Catproduct.php';
 										$categs .= '- '. $value2['catlabel'] .' <br> ';
 									}
 								} 
+								$rubs = '';
+								if (!empty($value['rubriques'])) {
+									foreach ($value['rubriques'] as $value2) {
+										$rubs .= '- '. $value2['rublabel'] .' <br> ';
+									}
+								}
 							?>
 							<tr class="<?php if ($i%2!=0) echo 'info'?>">
 								<td><?php echo $value['reference']?></td>
 								<td><?php echo $value['label'] ?></td>
 								<td><?php echo $value['prix']?></td>
 								<td><?php echo $categs?></td>
+								<td><?php echo $rubs?></td>
 								<td><a href="product-edit.php?id=<?php echo $value['id'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a></td>
 								<td>
 									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
@@ -164,7 +206,7 @@ require 'classes/Catproduct.php';
 
 				<h3><?php echo $message?></h3>
 			</div>
-			<?php echo paginate('product-list.php', '?p=', $nbPages, $current); ?>
+			<?php echo paginate('product-list.php?rubrique='.$rub.'&categorie='.$categ , '&p=', $nbPages, $current); ?>
 		</div>
 	</div>
 </body>
