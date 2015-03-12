@@ -513,7 +513,7 @@ class Catproduct extends StorageManager {
 	
 	
 	public function productAdd($value){
-		print_r($value);exit();
+		//print_r($value);exit();
 	
 		$this->dbConnect();
 		$this->begin();
@@ -540,9 +540,17 @@ class Catproduct extends StorageManager {
 		}
 		$id_record = mysqli_insert_id($this->mysqli);
 		
-		$this->categoriesProductModify($value['categories'], $id_record);
-		$this->rubriquesProductModify($value['rubriques'], $id_record);
-		$this->couleursProductModify($value['couleurs'], $id_record);
+		if (!empty($value['categories'])) {
+			$this->categoriesProductModify($value['categories'], $id_record);
+		} 
+		
+		if (!empty($value['rubriques'])) {
+			$this->rubriquesProductModify($value['rubriques'],$id_record);
+		} 
+		
+		if (!empty($value['couleurs'])) {
+			$this->couleursProductModify($value['couleurs'], $id_record);
+		} 
 		
 		$this->commit();
 	

@@ -77,7 +77,7 @@ if (!empty($_GET)){ //Modif
 						}
 	
 						function clearImage(idImage){
-							$('#customRoxyImage'+idImage).attr('src', '/img/favicon.png');
+							$('#customRoxyImage'+idImage).attr('src', 'img/favicon.png');
 							$('#url'+idImage).val('');
 						}
 						
