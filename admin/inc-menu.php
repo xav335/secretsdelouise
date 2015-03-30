@@ -18,6 +18,8 @@
 					            	<li><a href="product-edit.php">Ajout Produits</a></li>
 					            	<li><a href="product-list.php">Modif / Suppr</a></li>
 					            	<li class="divider"></li>
+					            	<li><a href="couleur-list.php">Couleurs</a></li>
+					            	<li><a href="taille-list.php">Tailles</a></li>
 					            	
 					          	</ul>
 					        </li>
@@ -56,6 +58,8 @@
 					          	<ul class="dropdown-menu" role="menu">
 					            	<li><a href="newsletter-edit.php">Ajout Newsletter</a></li>
 					            	<li><a href="newsletter-list.php">Modif / Suppr / Envoi</a></li>
+					            	<li class="divider"></li>
+					            	<li><a href="newsletterjournal-list.php">Journal des envoi</a></li>
 					          	</ul>
 					        </li>
 	                    </ul>

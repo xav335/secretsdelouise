@@ -125,6 +125,42 @@ class Catproduct extends StorageManager {
 		return $new_array;
 	}
 	
+	public function getColors(){
+		$this->dbConnect();
+		$sql = "SELECT *
+					FROM color
+					ORDER BY label;";
+		//print_r($sql);exit();
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$sql);
+		if (!$result) {
+			throw new Exception($sql);
+		}
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		$this->dbDisConnect();
+		return $new_array;
+	}
+	
+	public function getSizes(){
+		$this->dbConnect();
+		$sql = "SELECT *
+					FROM size
+					ORDER BY label;";
+		//print_r($sql);exit();
+		$new_array = null;
+		$result = mysqli_query($this->mysqli,$sql);
+		if (!$result) {
+			throw new Exception($sql);
+		}
+		while( $row = mysqli_fetch_assoc( $result)){
+			$new_array[] = $row;
+		}
+		$this->dbDisConnect();
+		return $new_array;
+	}
+	
 	public function catproduitViewIterative($result){
 		if ($this->i==0){
 			$result = $this->catproductByParentGet(0);

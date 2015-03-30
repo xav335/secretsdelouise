@@ -19,7 +19,7 @@ if (!empty($_GET)){
 		<div class="row">
 			<div class="col-md-10">
 				<h3>Aperçu de la newsletter :</h3>
-				<iframe id="laframe" src="/admin/mailnewslettercore.php?id=<?php  echo $id ?>" style="width:720px;height:500px;" frameborder="1" ></iframe>
+				<iframe id="laframe" src="/admin/newsletter-corecontent.php?id=<?php  echo $id ?>" style="width:720px;height:500px;" frameborder="1" ></iframe>
 			</div>
 			<div class="col-md-2">
 				<h4>Tester la news <br>(envoi limité à contact@bsport.fr)</h4>

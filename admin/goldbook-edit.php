@@ -48,7 +48,7 @@ if (!empty($_GET)){ //Modif
 			<h3><?php echo $labelTitle ?></h3><br>
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				
-					<form name="formulaire" class="form-horizontal" method="POST"  action="formprocess.php">
+					<form name="formulaire" class="form-horizontal" method="POST"  action="goldbook-fp.php">
 						<input type="hidden" name="reference" value="goldbook">
 						<input type="hidden" name="action" value="<?php echo $action ?>">
 						<input type="hidden" name="id" id="id" value="<?php echo $id ?>">

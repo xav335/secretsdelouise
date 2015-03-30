@@ -89,8 +89,32 @@ CREATE TABLE `catproduct` (
 
 LOCK TABLES `catproduct` WRITE;
 /*!40000 ALTER TABLE `catproduct` DISABLE KEYS */;
-INSERT INTO `catproduct` VALUES (41,'Bijoux','',0,'/2588-41.jpg',0,100),(42,'Maroquinerie','',0,'/2584-42.jpg',0,100),(43,'Lunettes',NULL,0,NULL,0,100),(44,'Montres','',0,'/2589-44.jpg',0,100),(45,'Décoration',NULL,0,NULL,0,100),(46,'prêt-à-porter',NULL,0,NULL,0,100),(47,'Bracelets',NULL,41,NULL,1,100),(49,'Bagues',NULL,41,NULL,1,100);
+INSERT INTO `catproduct` VALUES (41,'Bijoux','',0,'/2588-41.jpg',0,100),(42,'Maroquinerie','',0,'/Alexandre.mareuil-maroquinerie1-42.jpg',0,100),(43,'Lunettes',NULL,0,NULL,0,100),(44,'Montres','',0,'/2589-44.jpg',0,100),(45,'Décoration','',0,'/2586-45.jpg',0,100),(46,'prêt-à-porter',NULL,0,NULL,0,100),(47,'Bracelets',NULL,41,NULL,1,100),(49,'Bagues',NULL,41,NULL,1,100);
 /*!40000 ALTER TABLE `catproduct` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `color`
+--
+
+DROP TABLE IF EXISTS `color`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `color` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `label` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `color`
+--
+
+LOCK TABLES `color` WRITE;
+/*!40000 ALTER TABLE `color` DISABLE KEYS */;
+INSERT INTO `color` VALUES (1,'- n/a'),(2,'Noir'),(3,'Bleu'),(4,'Vert'),(5,'gris'),(6,'rouge');
+/*!40000 ALTER TABLE `color` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -120,7 +144,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (3344,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,1,0),(25438,'Jav','gonz','jav_gonz@yahoo.fr',NULL,NULL,1,0,0),(25439,'xav','gonza','xavier.gonzalez@free.fr',NULL,NULL,1,0,0),(25441,'xavi','gonz','xavier@gonzalez.pm',NULL,NULL,1,0,0),(25442,'xavier','gonzalez','fjavi.gonzalez@gmail.com',NULL,NULL,1,0,0),(25445,'Fred ','Lesca','fredericlesca@iconeo.fr',NULL,NULL,1,0,0),(25446,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,1,0),(25447,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,0,1),(25448,'jhonny','guitar','jav_gonz@yahoo.com',NULL,NULL,1,0,1),(25449,'robert','Redford','rob.red@free.fr',NULL,'POuet l\'es copain école',1,0,1),(25450,'','Gonzalez','xavier@gonzalez.pm',NULL,'ça roule ?',1,1,0),(25451,'','lesca','flesca@free.fr',NULL,'atelier medecine chinoise décevant',1,1,0);
+INSERT INTO `contact` VALUES (3344,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,1,0),(25438,'Jav','gonz','jav_gonz@yahoo.com',NULL,NULL,0,0,0),(25439,'xav','gonza','xavier.gonzalez@free.fr',NULL,NULL,1,0,0),(25441,'xavi','gonz','xavier@gonzalez.pm',NULL,NULL,1,0,0),(25442,'xavier','gonzalez','fjavi.gonzalez@gmail.com',NULL,NULL,1,0,0),(25445,'Fred ','Lesca','fredericlesca@iconeo.fr',NULL,NULL,1,0,0),(25446,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,1,0),(25447,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,0,1),(25448,'jhonny','guitar','jav_gonz@yahoo.com',NULL,NULL,1,0,1),(25449,'robert','Redford','rob.red@free.fr',NULL,'POuet l\'es copain école',1,0,1),(25450,'','Gonzalez','xavier@gonzalez.pm',NULL,'ça roule ?',1,1,0),(25451,'','lesca','flesca@free.fr',NULL,'atelier medecine chinoise décevant',1,1,0);
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,7 +209,7 @@ CREATE TABLE `goldbook` (
   `message` text,
   `online` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -194,7 +218,7 @@ CREATE TABLE `goldbook` (
 
 LOCK TABLES `goldbook` WRITE;
 /*!40000 ALTER TABLE `goldbook` DISABLE KEYS */;
-INSERT INTO `goldbook` VALUES (2,'2014-12-10 00:00:00','Xavier Gonzalez (Latresne)','xavier@gonzalez.pm','Produits de grande qualité, j\'ai retrouvé le gout des fruits et des légumes.\r\nL\'accueil et les conseils sont vraiment pertinents.\r\n\r\nEt la livraison à domicile c\'est juste parfait !',1);
+INSERT INTO `goldbook` VALUES (2,'2014-12-10 00:00:00','Xavier Gonzalez','xavier@gonzalez.pm','Produits de grande qualité, j\'ai retrouvé le gout des fruits et des légumes.\r\nL\'accueil et les conseils sont vraiment pertinents.\r\n\r\nEt la livraison à domicile c\'est juste parfait !',1),(4,'2015-03-11 00:00:00','Xavier Gonzalez (Latresne)','sdfsdf@fsdfsdf.fr','frrfr',0);
 /*!40000 ALTER TABLE `goldbook` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,7 +273,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (10,'2015-01-01 00:00:00','Nouveau ! Les lotions ','/produit-detail.php?categorie=39','100 % cultivées et distillées dans <strong>la Drôme</strong> Achillée millefeuille antibactérien et équilibrant Carotte sauvage apaise irritations et rougeurs revigore les peaux ternes Camomille romaine purifie et redonne du tonus Rose astringeant, tonifie la peau. ','/lotion_espiegle-10.jpg',1),(18,'2015-02-19 00:00:00','Livraison à domicile','','Allée du Bio vous propose la livraison de vos commandes <strong>à domicile.</strong>\r\nCommandez par téléphone ou bien sur le site à l\'aide du bon de commande et nous assurons la livraison à domicile ou <b>la préparation de paniers à emporter</b>\r\n','/livreur - Copy 1-18.png',1);
+INSERT INTO `news` VALUES (10,'2015-01-01 00:00:00','Nouveau ! Les lotions ','','100 % cultivées et distillées dans <strong>la Drôme</strong> Achillée millefeuille antibactérien et équilibrant Carotte sauvage apaise irritations et rougeurs revigore les peaux ternes Camomille romaine purifie et redonne du tonus Rose astringeant, tonifie la peau. ','/2584-10.jpg',1),(18,'2015-02-19 00:00:00','Livraison à domicile','','Allée du Bio vous propose la livraison de vos commandes <strong>à domicile.</strong>\r\nCommandez par téléphone ou bien sur le site à l\'aide du bon de commande et nous assurons la livraison à domicile ou <b>la préparation de paniers à emporter</b>\r\n','/2583-18.jpg',1);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -294,7 +318,7 @@ CREATE TABLE `newsletter_detail` (
   `link` varchar(250) DEFAULT NULL,
   `texte` text,
   PRIMARY KEY (`id`,`id_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=324 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=326 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -303,8 +327,59 @@ CREATE TABLE `newsletter_detail` (
 
 LOCK TABLES `newsletter_detail` WRITE;
 /*!40000 ALTER TABLE `newsletter_detail` DISABLE KEYS */;
-INSERT INTO `newsletter_detail` VALUES (323,12,'','/uploads/bsport3.jpg','http://dev.bsport.fr/','');
+INSERT INTO `newsletter_detail` VALUES (325,12,'','/uploads/2589.jpg','http://dev.bsport.fr/','');
 /*!40000 ALTER TABLE `newsletter_detail` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `newsletter_journal`
+--
+
+DROP TABLE IF EXISTS `newsletter_journal`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `newsletter_journal` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `date_envoi` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_newsletter` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `newsletter_journal`
+--
+
+LOCK TABLES `newsletter_journal` WRITE;
+/*!40000 ALTER TABLE `newsletter_journal` DISABLE KEYS */;
+INSERT INTO `newsletter_journal` VALUES (1,'2015-03-25 15:02:20',12),(2,'2015-03-30 00:15:38',12),(3,'2015-03-30 00:16:13',12);
+/*!40000 ALTER TABLE `newsletter_journal` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `newsletter_journal_detail`
+--
+
+DROP TABLE IF EXISTS `newsletter_journal_detail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `newsletter_journal_detail` (
+  `id_newsletter_journal` int(11) unsigned NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `read` tinyint(4) NOT NULL DEFAULT '0',
+  `coderandom` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `error` varchar(250) CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `newsletter_journal_detail`
+--
+
+LOCK TABLES `newsletter_journal_detail` WRITE;
+/*!40000 ALTER TABLE `newsletter_journal_detail` DISABLE KEYS */;
+INSERT INTO `newsletter_journal_detail` VALUES (3,'jav_gonz@yahoo.fr',0,'fgWhWspjJQSc',''),(3,'xavier.gonzalez@free.fr',0,'CRmH9Krt6wKy',''),(3,'xavier.gonzalez@laposte.net',0,'Rxzr21m659cQ',''),(3,'xavier@gonzalez.pm',0,'oqXX7FXyk84j',''),(3,'fjavi.gonzalez@gmail.com',0,'IjCDDaZkymzn',''),(3,'xav335@hotmail.com',0,'cLi7HjKVxxGt','');
+/*!40000 ALTER TABLE `newsletter_journal_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -353,7 +428,7 @@ CREATE TABLE `product` (
   `image2` varchar(250) DEFAULT NULL,
   `image3` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,6 +437,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (30,'23ZE',12.00,'€ au lieu de 45€','Bracelet rouge','Les + produit','sd sdf sdf sdf sdf sd','sdfsdf sdf sdf sdf sdf s','/2585-.jpg','','');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -385,6 +461,7 @@ CREATE TABLE `product_categorie` (
 
 LOCK TABLES `product_categorie` WRITE;
 /*!40000 ALTER TABLE `product_categorie` DISABLE KEYS */;
+INSERT INTO `product_categorie` VALUES (30,41),(30,47);
 /*!40000 ALTER TABLE `product_categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -408,8 +485,36 @@ CREATE TABLE `product_couleur` (
 
 LOCK TABLES `product_couleur` WRITE;
 /*!40000 ALTER TABLE `product_couleur` DISABLE KEYS */;
-INSERT INTO `product_couleur` VALUES (29,5);
+INSERT INTO `product_couleur` VALUES (29,5),(30,5),(30,6);
 /*!40000 ALTER TABLE `product_couleur` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product_detail`
+--
+
+DROP TABLE IF EXISTS `product_detail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product_detail` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_product` int(10) unsigned NOT NULL,
+  `id_color` smallint(5) unsigned NOT NULL,
+  `id_size` smallint(5) unsigned NOT NULL,
+  `stock` smallint(6) NOT NULL DEFAULT '0',
+  `price` decimal(10,2) NOT NULL,
+  `shipping` decimal(10,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product_detail`
+--
+
+LOCK TABLES `product_detail` WRITE;
+/*!40000 ALTER TABLE `product_detail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `product_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -432,7 +537,7 @@ CREATE TABLE `product_rubrique` (
 
 LOCK TABLES `product_rubrique` WRITE;
 /*!40000 ALTER TABLE `product_rubrique` DISABLE KEYS */;
-INSERT INTO `product_rubrique` VALUES (29,3);
+INSERT INTO `product_rubrique` VALUES (29,3),(30,1);
 /*!40000 ALTER TABLE `product_rubrique` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -459,6 +564,30 @@ LOCK TABLES `rubrique` WRITE;
 INSERT INTO `rubrique` VALUES (1,'Promo'),(2,'Vente flash'),(3,'Nouveauté'),(4,'Coup de coeur');
 /*!40000 ALTER TABLE `rubrique` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `size`
+--
+
+DROP TABLE IF EXISTS `size`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `size` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `label` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `size`
+--
+
+LOCK TABLES `size` WRITE;
+/*!40000 ALTER TABLE `size` DISABLE KEYS */;
+INSERT INTO `size` VALUES (1,'- n/a'),(2,'T1'),(3,'T3'),(4,'T4');
+/*!40000 ALTER TABLE `size` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -469,4 +598,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-18 17:31:49
+-- Dump completed on 2015-03-30 12:48:18

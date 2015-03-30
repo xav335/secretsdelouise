@@ -44,7 +44,7 @@ class News extends StorageManager {
 		$this->begin();
 		
 		try {
-			($value['$online']=='on') ? $online = 1 : $online = 0;
+			($value['online']=='on') ? $online = 1 : $online = 0;
 			$sql = "INSERT INTO  `news`
 						(`date_news`, `titre`, `accroche`, `image1`, `contenu`, `online`)
 						VALUES (

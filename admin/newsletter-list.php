@@ -81,7 +81,7 @@ require 'classes/Newsletter.php';
 					</div>
 					<script type="text/javascript">
 						function openPreview(id){
-							$('#laframe').attr('src', '/admin/mailnewslettercore.php?id='+id);
+							$('#laframe').attr('src', '/admin/newsletter-corecontent.php?id='+id);
 						 	$('#preview').dialog({modal:true, width:780,height:500});
 						}
 					</script>
