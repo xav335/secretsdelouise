@@ -44,7 +44,7 @@ require 'classes/Catproduct.php';
 							<h3 class="panel-title">Choisissez la catégorie parent puis indiquez le nom de la catégorie fille</h3>
 						</div>
 						<div class="panel-body">
-							<form name="formulaire" class="form-horizontal" method="POST"  action="formprocess.php" >
+							<form name="formulaire" class="form-horizontal" method="POST"  action="catproduct-fp.php" >
 								<input type="hidden" name="reference" value="categorie">
 								<input type="hidden" name="action" id="action" value="add">
 								
@@ -128,7 +128,7 @@ require 'classes/Catproduct.php';
 									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
 								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
 								      <strong>Voulez vous vraiment supprimer ?</strong>
-								      <button type="button" class="btn btn-danger" onclick="location.href='formprocess.php?reference=categorie&action=delete&id=<?php echo $value['id'] ?>'">Oui !</button>
+								      <button type="button" class="btn btn-danger" onclick="location.href='catproduct-fp.php?reference=categorie&action=delete&id=<?php echo $value['id'] ?>'">Oui !</button>
 								 	</div>
 									<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> 
 								</td>

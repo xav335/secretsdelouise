@@ -1,6 +1,7 @@
 <?php
 require 'classes/Catproduct.php';
 require 'classes/ImageManager.php';
+require 'classes/utils.php';
 session_start();
 
 //Security
@@ -64,6 +65,36 @@ if (!empty($_POST)){
 	}
 	
 	
+	if ($_POST['reference'] == 'product-sousref'){
+		//print_r($_POST);exit();
+		$catproduct = new Catproduct();
+		if ($_POST['action'] == 'modif') { //Modifier
+			try {
+				$result = $catproduct->productsousrefModify($_POST);
+				$catproduct = null;
+				header('Location: /admin/product-sousref-edit.php?id='.$_POST['id']);
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+				$catproduct = null;
+				exit();
+			}
+	
+		} else {  //ajouter
+			try {
+				//print_r($_POST);exit();(!empty($rubriques) && in_array($value['id'], $rubriques)) ? $check = 'checked' : $check = '';
+				if (empty($_POST['sousref']))  $_POST['sousref']=randomChar(5);
+				$result = $catproduct->productsousrefAdd($_POST);
+				$catproduct = null;
+				header('Location: /admin/product-sousref-edit.php?id='.$_POST['id']);
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+				$catproduct = null;
+				exit();
+			}
+		}
+	}
+	
+	
 	
 } elseif (!empty($_GET)) { // GET GET GET
 	
@@ -77,9 +108,21 @@ if (!empty($_POST)){
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
 				$catproduct = null;
-				if($e->getCode() == 1234){
-					header('Location: /admin/catproduct-list.php?message='.$e->getCode());
-				}
+				exit();
+			}
+		}
+	}
+	
+	if ($_GET['reference'] == 'product-sousref'){ //supprimer
+		$catproduct = new Catproduct();
+		if ($_GET['action'] == 'delete'){
+			try {
+				$result = $catproduct->productsousrefDelete($_GET['id_sousref']);
+				$catproduct = null;
+				header('Location: /admin/product-sousref-edit.php?id='.$_GET['id']);
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
+				$catproduct = null;
 				exit();
 			}
 		}

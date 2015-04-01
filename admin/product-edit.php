@@ -28,6 +28,7 @@ if (!empty($_GET)){ //Modif
 		$id= 			$_GET['id'];
 		$label=  		$result[0]['label'];
 		$prix=  		$result[0]['prix'];
+		$shipping=  	$result[0]['shipping'];
 		$libprix=  		$result[0]['libprix'];
 		$reference=  	$result[0]['reference'];
 		$titreaccroche= $result[0]['titreaccroche'];
@@ -69,6 +70,7 @@ if (!empty($_GET)){ //Modif
 	$id= 			null;
 	$label=  		null;
 	$prix=  		null;
+	$shipping=		null;
 	$libprix=  		'€';
 	$reference=  	null;
 	$titreaccroche= 'Les + produit';
@@ -107,7 +109,7 @@ if (!empty($_GET)){ //Modif
 					    <input type="text" class="col-sm-8" name="label" required  value="<?php echo $label ?>">
 					</div>
 					<div class="form-group" >
-						<label class="col-sm-2" for="titre">Classifcation :</label>
+						<label class="col-sm-2" for="titre">Rubrique :</label>
 							<?php 
 							if (!empty($resultRubrique)) {
 								$i=0;
@@ -145,7 +147,10 @@ if (!empty($_GET)){ //Modif
 					    <input type="number" step="0.01" class="col-sm-2" name="prix" required  value="<?php echo $prix ?>">
 					     <input type="text" class="col-sm-4" name="libprix" required  value="<?php echo $libprix ?>">
 					</div>
-					
+					<div class="form-group" >
+						<label class="col-sm-2" for="titre">Frais de port extra :</label>
+					    <input type="number" step="0.01" class="col-sm-2" name="shipping" required  value="<?php echo $shipping ?>">
+					</div>
 					<div class="form-group">
 						<label for="accroche">Description :</label><br>
 		           		<textarea class="col-sm-11" name="description" id="description" rows="6" ><?php echo $description ?></textarea>

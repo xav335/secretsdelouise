@@ -78,7 +78,7 @@ require 'classes/News.php';
 									<div style="display: none;" class="supp<?php echo $value['id_news']?> alert alert-warning alert-dismissible fade in" role="alert">
 								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id_news']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
 								      <strong>Voulez vous vraiment supprimer ?</strong>
-								      <button type="button" class="btn btn-danger" onclick="location.href='formprocess.php?reference=news&action=delete&id=<?php echo $value['id_news'] ?>'">Oui !</button>
+								      <button type="button" class="btn btn-danger" onclick="location.href='news-fp.php?reference=news&action=delete&id=<?php echo $value['id_news'] ?>'">Oui !</button>
 								 	</div>
 								<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id_news']?>').css('display', 'block');"> </td>
 							</tr>

@@ -80,7 +80,7 @@ CREATE TABLE `catproduct` (
   `level` int(11) NOT NULL DEFAULT '0',
   `ordre` smallint(6) NOT NULL DEFAULT '100',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `catproduct` (
 
 LOCK TABLES `catproduct` WRITE;
 /*!40000 ALTER TABLE `catproduct` DISABLE KEYS */;
-INSERT INTO `catproduct` VALUES (41,'Bijoux','',0,'/2588-41.jpg',0,100),(42,'Maroquinerie','',0,'/Alexandre.mareuil-maroquinerie1-42.jpg',0,100),(43,'Lunettes',NULL,0,NULL,0,100),(44,'Montres','',0,'/2589-44.jpg',0,100),(45,'Décoration','',0,'/2586-45.jpg',0,100),(46,'prêt-à-porter',NULL,0,NULL,0,100),(47,'Bracelets',NULL,41,NULL,1,100),(49,'Bagues',NULL,41,NULL,1,100);
+INSERT INTO `catproduct` VALUES (41,'Bijoux','',0,'/2588-41.jpg',0,100),(42,'Maroquinerie','',0,'/Alexandre.mareuil-maroquinerie1-42.jpg',0,100),(43,'Lunettes',NULL,0,NULL,0,100),(44,'Montres','',0,'/2589-44.jpg',0,100),(45,'Décoration','',0,'/2586-45.jpg',0,100),(47,'Bracelets',NULL,41,NULL,1,100),(49,'Bagues',NULL,41,NULL,1,100),(50,'prêt-à-porter','',0,'',0,100);
 /*!40000 ALTER TABLE `catproduct` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -420,6 +420,7 @@ CREATE TABLE `product` (
   `reference` varchar(250) DEFAULT NULL,
   `prix` decimal(10,2) DEFAULT NULL,
   `libprix` varchar(120) DEFAULT NULL,
+  `shipping` decimal(10,2) NOT NULL DEFAULT '0.00',
   `label` varchar(250) NOT NULL,
   `titreaccroche` varchar(250) DEFAULT NULL,
   `accroche` text,
@@ -428,7 +429,7 @@ CREATE TABLE `product` (
   `image2` varchar(250) DEFAULT NULL,
   `image3` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -437,7 +438,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (30,'23ZE',12.00,'€ au lieu de 45€','Bracelet rouge','Les + produit','sd sdf sdf sdf sdf sd','sdfsdf sdf sdf sdf sdf s','/2585-.jpg','','');
+INSERT INTO `product` VALUES (30,'23ZE',12.00,'€ au lieu de 45€',0.00,'Bracelet rouge','Les + produit','sd sdf sdf sdf sdf sd','sdfsdf sdf sdf sdf sdf s','/2585-.jpg','',''),(31,'CD34',12.00,'€ au lieu de 24€',2.00,'montre sport homme','Les + produit','genial','montre top','/2589-.jpg','','');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -461,7 +462,7 @@ CREATE TABLE `product_categorie` (
 
 LOCK TABLES `product_categorie` WRITE;
 /*!40000 ALTER TABLE `product_categorie` DISABLE KEYS */;
-INSERT INTO `product_categorie` VALUES (30,41),(30,47);
+INSERT INTO `product_categorie` VALUES (30,41),(30,47),(31,44);
 /*!40000 ALTER TABLE `product_categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -498,14 +499,13 @@ DROP TABLE IF EXISTS `product_detail`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product_detail` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `sousref` varchar(250) DEFAULT NULL,
   `id_product` int(10) unsigned NOT NULL,
   `id_color` smallint(5) unsigned NOT NULL,
   `id_size` smallint(5) unsigned NOT NULL,
   `stock` smallint(6) NOT NULL DEFAULT '0',
-  `price` decimal(10,2) NOT NULL,
-  `shipping` decimal(10,2) NOT NULL DEFAULT '0.00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -514,6 +514,7 @@ CREATE TABLE `product_detail` (
 
 LOCK TABLES `product_detail` WRITE;
 /*!40000 ALTER TABLE `product_detail` DISABLE KEYS */;
+INSERT INTO `product_detail` VALUES (2,'ACE34',30,3,2,3),(7,'Z234',30,5,3,2),(10,'IjI71',30,3,4,2),(13,'puBoU',31,3,1,2),(14,'2dW6X',31,6,1,3),(15,'6XgMj',31,6,1,1);
 /*!40000 ALTER TABLE `product_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -537,7 +538,7 @@ CREATE TABLE `product_rubrique` (
 
 LOCK TABLES `product_rubrique` WRITE;
 /*!40000 ALTER TABLE `product_rubrique` DISABLE KEYS */;
-INSERT INTO `product_rubrique` VALUES (29,3),(30,1);
+INSERT INTO `product_rubrique` VALUES (29,3),(30,1),(31,3);
 /*!40000 ALTER TABLE `product_rubrique` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -598,4 +599,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-30 12:48:18
+-- Dump completed on 2015-04-01 15:56:32

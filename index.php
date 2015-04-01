@@ -26,7 +26,7 @@
 							<img src="img/mannequin.png" alt="" />
 							<h4>Ma robe...</h4>
 							<p>mon bijou</p>
-							<span class="color" style="background-color:#000;" onclick="javascript:location.href='http://free.fr';"></span>
+							<span class="color" style="background-color:#000;"></span>
 							<span class="color" style="background-color:#818181;"></span>
 							<span class="color" style="background-color:#fff;"></span>
 							<span class="color" style="background-color:#cdcabf;"></span>

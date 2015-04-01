@@ -9,7 +9,6 @@ class Catproduct extends StorageManager {
 	
 	public function __construct(){
 		
-		
 	}
 	
 	public function catproductByParentGet($id){
@@ -332,13 +331,13 @@ class Catproduct extends StorageManager {
 			if (!isset($id)){
 				if (isset($offset) && isset($count)) {
 					if (empty($categorie) && empty($rubrique)) {
-						$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
+						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
 									FROM product 
 									ORDER BY  product.label ASC
 									LIMIT ". $offset .",". $count .";" ;
 						
 					} elseif (!empty($categorie) && empty($rubrique)) {
-						$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
+						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
 									FROM product
 									INNER JOIN product_categorie 
 									ON product_categorie.id_product=product.id
@@ -346,7 +345,7 @@ class Catproduct extends StorageManager {
 									ORDER BY  product.label ASC
 									LIMIT ". $offset .",". $count .";" ;
 					} elseif (empty($categorie) && !empty($rubrique)) {
-						$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
+						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
 									FROM product
 									INNER JOIN product_rubrique
 									ON product_rubrique.id_product=product.id
@@ -355,7 +354,7 @@ class Catproduct extends StorageManager {
 									LIMIT ". $offset .",". $count .";" ;
 						
 					} elseif (!empty($categorie) && !empty($rubrique)) {	
-						$sql = "SELECT product.id,product.reference,product.prix,product.libprix,product.label
+						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
 									FROM product
 									INNER JOIN product_rubrique
 									ON product_rubrique.id_product=product.id
@@ -408,6 +407,7 @@ class Catproduct extends StorageManager {
 				`titreaccroche`='". addslashes($value['titreaccroche']) ."',
 				`accroche`='". addslashes($value['accroche']) ."',
 				`prix`='". addslashes($value['prix']) ."',
+				`shipping`='". addslashes($value['shipping']) ."',
 				`libprix`='". addslashes($value['libprix']) ."',		
 				`description`='". addslashes($value['description']) ."',
 				`image1`='". addslashes($value['url1']) ."',
@@ -555,7 +555,7 @@ class Catproduct extends StorageManager {
 		$this->begin();
 	
 		$sql = "INSERT INTO  .`product`
-					(`label`, `reference`, `titreaccroche`, `accroche`, `description`, `image1`, `image2`, `image3`,`libprix`,`prix`)
+					(`label`, `reference`, `titreaccroche`, `accroche`, `description`, `image1`, `image2`, `image3`,`libprix`,`prix`,shipping)
 					VALUES (
 					'". addslashes($value['label']) ."',
 					'". addslashes($value['ref']) ."',
@@ -566,7 +566,8 @@ class Catproduct extends StorageManager {
 					'". addslashes($value['url2']) ."',
 					'". addslashes($value['url3']) ."',
 					'". addslashes($value['libprix']) ."',
-					". $value['prix'] ."
+					". $value['prix'] .",
+					". $value['shipping'] ."		
 				);";
 		$result = mysqli_query($this->mysqli,$sql);
 	
@@ -611,7 +612,113 @@ class Catproduct extends StorageManager {
 		}
 	
 		$this->commit();
-	
 		$this->dbDisConnect();
 	}
+	
+	public function productsousrefGet($id, $id_souref){
+		$this->dbConnect();
+		$sql = null;
+		try {
+			if (isset($id_souref)){
+				$sql = "SELECT product_detail.id,product_detail.sousref,product_detail.id_color, product_detail.id_size,product_detail.stock, color.label as color, size.label as size
+						FROM product_detail
+						INNER JOIN color ON color.id =  product_detail.id_color
+						INNER JOIN size ON size.id =  product_detail.id_size
+						WHERE product_detail.id=". $id_souref .";" ;
+			} else {	
+				$sql = "SELECT product_detail.id,product_detail.sousref,product_detail.id_color, product_detail.id_size,product_detail.stock, color.label as color, size.label as size
+						FROM product_detail
+						INNER JOIN color ON color.id =  product_detail.id_color
+						INNER JOIN size ON size.id =  product_detail.id_size
+						WHERE product_detail.id_product=". $id ."
+						ORDER BY  product_detail.id_color;" ;
+					
+			} 
+			//print_r($sql);
+			$new_array = null;
+			$result = mysqli_query($this->mysqli,$sql);
+			while( $row = mysqli_fetch_assoc( $result)){
+				$new_array[] = $row;
+			}
+				
+			$this->dbDisConnect();
+			return $new_array;
+		} catch (Exception $e) {
+			die('Erreur : ' . $e->getMessage());
+			//throw new Exception("Erreur Mysql productGet ". $e->getMessage());
+			return "errrrrrrooooOOor";
+		}
+	}
+	
+	public function productsousrefAdd($value){
+		//print_r($value);exit();
+	
+		$this->dbConnect();
+		$this->begin();
+	
+		$sql = "INSERT INTO  `product_detail`
+					(`sousref`,`id_product`, `stock`,`id_color`,id_size)
+					VALUES (
+					'". addslashes($value['sousref']) ."',
+					". $value['id'] .",
+					". $value['stock'] .",
+					". $value['color'] .",
+					". $value['size'] ."
+				);";
+		$result = mysqli_query($this->mysqli,$sql);
+	
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql productsousrefAdd sql = : '.$sql);
+		}
+		$id_record = mysqli_insert_id($this->mysqli);
+	
+		$this->commit();
+	
+		$this->dbDisConnect();
+		return $id_record;
+	}
+	
+	public function productsousrefModify($value){
+		//print_r($value);exit();
+		$this->dbConnect();
+		$this->begin();
+	
+		$sql = "UPDATE  `product_detail` SET
+				`sousref`='". addslashes($value['sousref']) ."',
+				`stock`='". addslashes($value['stock']) ."',
+				`id_color`=". $value['color'] .",
+				`id_size`=". $value['size'] ."
+				WHERE `id`=". $value['id_souref'] .";";
+		//print_r($sql);exit();
+		$result = mysqli_query($this->mysqli,$sql);
+			
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql productsousrefModify sql = : '.$sql);
+		}
+	
+		$this->commit();
+		$this->dbDisConnect();
+	}
+	
+	public function productsousrefDelete($value){
+		//print_r($value);exit();
+		$this->dbConnect();
+		$this->begin();
+	
+		$sql = "DELETE FROM  `product_detail`
+				WHERE `id`=". $value .";";
+		$result = mysqli_query($this->mysqli,$sql);
+			
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql productsousrefDelete sql = : '.$sql);
+		}
+	
+		$this->commit();
+		$this->dbDisConnect();
+	}
+	
+	
 }
