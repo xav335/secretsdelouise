@@ -32,7 +32,7 @@
 								<li><a href="#">Maroquinerie</a></li>
 							</ul>
 						</div>
-						<div class="large-4 medium-4 columns">
+						<div class="large-4 medium-4 content2 columns">
 							<ul>
 								<li><a href="actualites.php">Actualités</a></li>
 								<li><a href="livre-d-or.php">Livre d’or</a></li>
@@ -66,8 +66,4 @@
 				</div>
 				<!-- End Top -->
 				
-				<!-- Breadcrumb -->
-				<div class="row breadcrumb">
-					<a href="./">Accueil</a> > <a href="#">Catégorie</a> > <a href="#">Sous-catégorie</a> > Nom du produit
-				</div>
-				<!-- End Breadcrumb -->
+				

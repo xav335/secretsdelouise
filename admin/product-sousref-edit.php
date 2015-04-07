@@ -85,6 +85,7 @@ require 'classes/Catproduct.php';
 					}
 					?>
 					</select>	
+					<a href="product-color-edit.php?id_product=<?php echo $_GET['id'] ?>"><img src="img/plus.png" width="15" alt="add" ></a>
 				</div>	
 				
 				<div class="col-md-2">		
@@ -100,6 +101,7 @@ require 'classes/Catproduct.php';
 					}
 					?>
 					</select>	
+					<a href="product-size-edit.php?id_product=<?php echo $_GET['id'] ?>"><img src="img/plus.png" width="15" alt="add" ></a>
 				</div>	
 				<div class="col-md-2">	
 					<label class="col-sm-6">Stock:</label><input type="number" step="1" class="col-sm-6" name="stock" required id="stock" value="<?php echo $stock?>">

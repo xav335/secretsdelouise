@@ -94,6 +94,37 @@ if (!empty($_POST)){
 		}
 	}
 	
+	if ($_POST['reference'] == 'product-color'){
+		//print_r($_POST);exit();
+		$catproduct = new Catproduct();
+		if ($_POST['action'] == 'add') { //add
+			try {
+				$result = $catproduct->colorAdd($_POST);
+				$catproduct = null;
+				header('Location: /admin/product-color-edit.php?id_product='.$_POST['id_product']);
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+				$catproduct = null;
+				exit();
+			}
+		}
+	}
+	
+	if ($_POST['reference'] == 'product-size'){
+		//print_r($_POST);exit();
+		$catproduct = new Catproduct();
+		if ($_POST['action'] == 'add') { //add
+			try {
+				$result = $catproduct->sizeAdd($_POST);
+				$catproduct = null;
+				header('Location: /admin/product-size-edit.php?id_product='.$_POST['id_product']);
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+				$catproduct = null;
+				exit();
+			}
+		}
+	}
 	
 	
 } elseif (!empty($_GET)) { // GET GET GET
@@ -120,6 +151,36 @@ if (!empty($_POST)){
 				$result = $catproduct->productsousrefDelete($_GET['id_sousref']);
 				$catproduct = null;
 				header('Location: /admin/product-sousref-edit.php?id='.$_GET['id']);
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
+				$catproduct = null;
+				exit();
+			}
+		}
+	}
+	
+	if ($_GET['reference'] == 'product-color'){ //supprimer
+		$catproduct = new Catproduct();
+		if ($_GET['action'] == 'delete'){
+			try {
+				$result = $catproduct->colorDelete($_GET['id']);
+				$catproduct = null;
+				header('Location: /admin/product-color-edit.php?id_product='.$_GET['id_product']);
+			} catch (Exception $e) {
+				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
+				$catproduct = null;
+				exit();
+			}
+		}
+	}
+	
+	if ($_GET['reference'] == 'product-size'){ //supprimer
+		$catproduct = new Catproduct();
+		if ($_GET['action'] == 'delete'){
+			try {
+				$result = $catproduct->sizeDelete($_GET['id']);
+				$catproduct = null;
+				header('Location: /admin/product-size-edit.php?id_product='.$_GET['id_product']);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
 				$catproduct = null;

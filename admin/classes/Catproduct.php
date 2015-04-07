@@ -142,6 +142,92 @@ class Catproduct extends StorageManager {
 		return $new_array;
 	}
 	
+	public function colorAdd($value){
+		//print_r($value);exit();
+	
+		$this->dbConnect();
+		$this->begin();
+	
+		$sql = "INSERT INTO  `color`
+					(`label`)
+					VALUES (
+					'". addslashes($value['label']) ."'
+				);";
+		$result = mysqli_query($this->mysqli,$sql);
+	
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql colorAdd sql = : '.$sql);
+		}
+		$id_record = mysqli_insert_id($this->mysqli);
+	
+		$this->commit();
+	
+		$this->dbDisConnect();
+		return $id_record;
+	}
+	
+	public function colorDelete($value){
+		//print_r($value);exit();
+		$this->dbConnect();
+		$this->begin();
+	
+		$sql = "DELETE FROM  `color`
+				WHERE `id`=". $value .";";
+		$result = mysqli_query($this->mysqli,$sql);
+			
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql colorDelete sql = : '.$sql);
+		}
+	
+		$this->commit();
+		$this->dbDisConnect();
+	}
+	
+	public function sizeAdd($value){
+		//print_r($value);exit();
+	
+		$this->dbConnect();
+		$this->begin();
+	
+		$sql = "INSERT INTO  `size`
+					(`label`)
+					VALUES (
+					'". addslashes($value['label']) ."'
+				);";
+		$result = mysqli_query($this->mysqli,$sql);
+	
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql sizeAdd sql = : '.$sql);
+		}
+		$id_record = mysqli_insert_id($this->mysqli);
+	
+		$this->commit();
+	
+		$this->dbDisConnect();
+		return $id_record;
+	}
+	
+	public function sizeDelete($value){
+		//print_r($value);exit();
+		$this->dbConnect();
+		$this->begin();
+	
+		$sql = "DELETE FROM  `size`
+				WHERE `id`=". $value .";";
+		$result = mysqli_query($this->mysqli,$sql);
+			
+		if (!$result) {
+			$this->rollback();
+			throw new Exception('Erreur Mysql sizeDelete sql = : '.$sql);
+		}
+	
+		$this->commit();
+		$this->dbDisConnect();
+	}
+	
 	public function getSizes(){
 		$this->dbConnect();
 		$sql = "SELECT *
@@ -620,18 +706,18 @@ class Catproduct extends StorageManager {
 		$sql = null;
 		try {
 			if (isset($id_souref)){
-				$sql = "SELECT product_detail.id,product_detail.sousref,product_detail.id_color, product_detail.id_size,product_detail.stock, color.label as color, size.label as size
-						FROM product_detail
-						INNER JOIN color ON color.id =  product_detail.id_color
-						INNER JOIN size ON size.id =  product_detail.id_size
-						WHERE product_detail.id=". $id_souref .";" ;
+				$sql = "SELECT product_sousref.id,product_sousref.sousref,product_sousref.id_color, product_sousref.id_size,product_sousref.stock, color.label as color, size.label as size
+						FROM product_sousref
+						INNER JOIN color ON color.id =  product_sousref.id_color
+						INNER JOIN size ON size.id =  product_sousref.id_size
+						WHERE product_sousref.id=". $id_souref .";" ;
 			} else {	
-				$sql = "SELECT product_detail.id,product_detail.sousref,product_detail.id_color, product_detail.id_size,product_detail.stock, color.label as color, size.label as size
-						FROM product_detail
-						INNER JOIN color ON color.id =  product_detail.id_color
-						INNER JOIN size ON size.id =  product_detail.id_size
-						WHERE product_detail.id_product=". $id ."
-						ORDER BY  product_detail.id_color;" ;
+				$sql = "SELECT product_sousref.id,product_sousref.sousref,product_sousref.id_color, product_sousref.id_size,product_sousref.stock, color.label as color, size.label as size
+						FROM product_sousref
+						INNER JOIN color ON color.id =  product_sousref.id_color
+						INNER JOIN size ON size.id =  product_sousref.id_size
+						WHERE product_sousref.id_product=". $id ."
+						ORDER BY  product_sousref.id_color;" ;
 					
 			} 
 			//print_r($sql);
@@ -656,7 +742,7 @@ class Catproduct extends StorageManager {
 		$this->dbConnect();
 		$this->begin();
 	
-		$sql = "INSERT INTO  `product_detail`
+		$sql = "INSERT INTO  `product_sousref`
 					(`sousref`,`id_product`, `stock`,`id_color`,id_size)
 					VALUES (
 					'". addslashes($value['sousref']) ."',
@@ -684,7 +770,7 @@ class Catproduct extends StorageManager {
 		$this->dbConnect();
 		$this->begin();
 	
-		$sql = "UPDATE  `product_detail` SET
+		$sql = "UPDATE  `product_sousref` SET
 				`sousref`='". addslashes($value['sousref']) ."',
 				`stock`='". addslashes($value['stock']) ."',
 				`id_color`=". $value['color'] .",
@@ -707,7 +793,7 @@ class Catproduct extends StorageManager {
 		$this->dbConnect();
 		$this->begin();
 	
-		$sql = "DELETE FROM  `product_detail`
+		$sql = "DELETE FROM  `product_sousref`
 				WHERE `id`=". $value .";";
 		$result = mysqli_query($this->mysqli,$sql);
 			

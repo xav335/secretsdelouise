@@ -30,7 +30,7 @@
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet. Sed finibus nibh porta tortor finibus tincidunt. Donec iaculis accumsan odio eu aliquet. Integer vel libero eu urna tristique fringilla. Donec dictum mauris vel ante rhoncus, vitae malesuada metus aliquet.
 						</p>
-						<form class="row">
+						<form class="row" action="panier.php">
 							<span class="prix">30,15 € TTC</span>
 							<span class="quantite"><input type="text" name="quantite" value="1" /></span>
 							<button>Ajouter au panier</button>

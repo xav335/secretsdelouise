@@ -29,10 +29,10 @@ if ($_POST["action"] == "sendMail") {
 
 	//$_to = "contact@alleedubio.fr";
 	$_to = "fjavi.gonzalez@gmail.com";
-	$sujet = "Allée du bio - Nv message Livre d'or ";
+	$sujet = "Les secrets de Louise - Nv message Livre d'or ";
 	//echo "Envoi du message à " . $_to . "<br>";
 		
-	$entete = "From:AlleeDuBio <contact@alleedubio.fr>\n";
+	$entete = "From:LesSecretsDeLouise <contact@lessecretsdelouise.com>\n";
 	$entete .= "MIME-version: 1.0\n";
 	$entete .= "Content-type: text/html; charset= iso-8859-1\n";
 	$entete .= "Bcc: xav335@hotmail.com\n";

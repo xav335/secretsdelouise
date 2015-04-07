@@ -10,17 +10,18 @@
 				
 				<!-- Products list -->
 				<div class="row products-list">
-					<div class="large-4 medium-4 small-12 columns" onclick="location.href='produit.php'">
+					<div class="large-4 medium-4 small-12 columns" onclick="location.href='categories.php'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
 								<img src="img/img-bijoux.jpg" alt="" class="img" />
 							</span>
-							<h4>Promo !</h4>
+							<h4>Votre boutique</h4>
 							<p>Bague, bracelets, colliers...</p>
-							<a href="produit.php" class="bt-voir">Voir</a>
+							<a href="categories.php" class="bt-voir">Voir</a>
 						</div>
 					</div>
+					
 					<div class="large-4 medium-4 small-12 columns">
 						<div class="content bijou">
 							<img src="img/mannequin.png" alt="" />
@@ -35,6 +36,17 @@
 							<span class="color" style="background-color:#f5226d;"></span>
 							<span class="color" style="background-color:#eab916;"></span>
 							<button>Trouver mon bijou</button>
+						</div>
+					</div>
+					<div class="large-4 medium-4 small-12 columns" onclick="location.href='produit.php'">
+						<div class="content">
+							<span>
+								<img src="img/couronne.png" alt="" class="couronne" />
+								<img src="img/img-bijoux.jpg" alt="" class="img" />
+							</span>
+							<h4>Promo !</h4>
+							<p>Bague, bracelets, colliers...</p>
+							<a href="produit.php" class="bt-voir">Voir</a>
 						</div>
 					</div>
 					<div class="large-4 medium-4 small-12 columns" onclick="location.href='#'">
@@ -70,17 +82,7 @@
 							<a href="#" class="bt-coeur"></a>
 						</div>
 					</div>
-					<div class="large-4 medium-4 small-12 columns" onclick="location.href='#'">
-						<div class="content">
-							<span>
-								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux.jpg" alt="" class="img" />
-							</span>
-							<h4>Votre boutique</h4>
-							<p>Bague, bracelets, colliers...</p>
-							<a href="#" class="bt-voir">Voir</a>
-						</div>
-					</div>
+					
 				</div>		
 				<!-- End Products list -->
 				

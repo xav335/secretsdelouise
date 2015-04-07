@@ -18,8 +18,8 @@
 					            	<li><a href="product-edit.php">Ajout Produits</a></li>
 					            	<li><a href="product-list.php">Modif / Suppr</a></li>
 					            	<li class="divider"></li>
-					            	<li><a href="couleur-list.php">Couleurs</a></li>
-					            	<li><a href="taille-list.php">Tailles</a></li>
+					            	<li><a href="product-color-edit.php">Couleurs</a></li>
+					            	<li><a href="product-size-edit.php">Tailles</a></li>
 					            	
 					          	</ul>
 					        </li>
