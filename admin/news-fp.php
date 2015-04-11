@@ -32,10 +32,10 @@ if (!empty($_POST)){
 				//Image
 				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/news'.$filenameDest;
 				//print_r($destination);exit();
-				$imageManager->imageResize($source, $destination, null, 650);
+				$imageManager->imageResize($source, $destination, null, 650, false);
 				//Vignette
 				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/news/thumbs'.$filenameDest;
-				$imageManager->imageResize($source, $destination, null, 250);
+				$imageManager->imageResize($source, $destination, null, 250, false);
 				$_POST['url'.$i]=$filenameDest;
 			}
 		}

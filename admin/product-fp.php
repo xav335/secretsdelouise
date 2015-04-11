@@ -34,7 +34,7 @@ if (!empty($_POST)){
 				$imageManager->imageResize($source, $destination, null, 650);
 				//Vignette
 				$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/products/thumbs'.$filenameDest;
-				$imageManager->imageResize($source, $destination, null, 250);
+				$imageManager->imageResize($source, $destination, 250, 250, ZEBRA_IMAGE_CROP_CENTER);
 				$_POST['url'.$i]=$filenameDest;
 			}
 		}

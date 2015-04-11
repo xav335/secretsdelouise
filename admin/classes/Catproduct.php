@@ -374,7 +374,7 @@ class Catproduct extends StorageManager {
 		$this->dbConnect();
 		
 		if (empty($categorie) && empty($rubrique)) {
-			$sql = "SELECT count(*) as nb FROM `product`;" ;
+				$sql = "SELECT count(*) as nb FROM `product`;" ;
 		} elseif (!empty($categorie) && empty($rubrique)) {
 			$sql = "SELECT count(*) as nb
 					FROM product
@@ -418,12 +418,14 @@ class Catproduct extends StorageManager {
 				if (isset($offset) && isset($count)) {
 					if (empty($categorie) && empty($rubrique)) {
 						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
+									,product.image1,product.accroche
 									FROM product 
 									ORDER BY  product.label ASC
 									LIMIT ". $offset .",". $count .";" ;
 						
 					} elseif (!empty($categorie) && empty($rubrique)) {
 						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
+									,product.image1,product.accroche
 									FROM product
 									INNER JOIN product_categorie 
 									ON product_categorie.id_product=product.id
@@ -431,7 +433,8 @@ class Catproduct extends StorageManager {
 									ORDER BY  product.label ASC
 									LIMIT ". $offset .",". $count .";" ;
 					} elseif (empty($categorie) && !empty($rubrique)) {
-						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
+						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label,
+									,product.image1,product.accroche
 									FROM product
 									INNER JOIN product_rubrique
 									ON product_rubrique.id_product=product.id
@@ -441,6 +444,7 @@ class Catproduct extends StorageManager {
 						
 					} elseif (!empty($categorie) && !empty($rubrique)) {	
 						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
+									,product.image1,product.accroche
 									FROM product
 									INNER JOIN product_rubrique
 									ON product_rubrique.id_product=product.id

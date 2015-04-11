@@ -23,7 +23,14 @@
 			$(document).foundation();
 			
 			$(document).ready(function() {
-				$('.fancybox').fancybox();
+				$('.fancybox').fancybox({
+					  padding: 0,
+					  helpers: {
+					    overlay: {
+					      locked: false
+					    }
+					  }
+				});
 				
 				$('.thumb a img').mouseover(function() {
 					var lien = $(this).attr('src');
