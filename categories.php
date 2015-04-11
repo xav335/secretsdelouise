@@ -2,10 +2,16 @@
 require 'admin/classes/Catproduct.php';
 require 'admin/classes/utils.php';
 session_start();
-$catproduct = new Catproduct();
 
+if (!empty($_GET)){
+	$idcat = $_GET['idcat'];
+}else {
+	$idcat = null;
+}
+
+$catproduct = new Catproduct();
 try {
-		$total = $catproduct->productNumberGet($categ,$rub);
+		$total = $catproduct->productNumberGet($idcat,null);
 		//$result = $contact->contactGet(null, $offset, $count);
 		
 		$epp = 15; // nombre d'entrées à afficher par page (entries per page)
@@ -32,7 +38,14 @@ try {
 		$start = ($current * $epp - $epp);
 		
 		// Récupération des données à afficher pour la page courante
-		$result = $catproduct->productGet(null, $start, $epp, $categ, $rub);
+		$result = $catproduct->productGet(null, $start, $epp, $idcat, null);
+		//print_r($result);
+		
+		
+		//Recup des categories
+		$catproduct->catproduitViewIterative(null);
+		$resultCat = $catproduct->tabView;
+		//print_r($resultCat);
 	
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
@@ -51,187 +64,72 @@ try {
 	
 <?php include('inc/header.php'); ?>
 <div class="row breadcrumb">
-	<a href="./">Accueil</a> > <a href="./">Collier</a> >  Produits 
+	<a href="./">Accueil</a> > <a href="categories.php">Produits</a> >  
 </div>			
 				<!-- Products list -->
 				<div class="row">
 					<div class="large-3 medium-3 small-12 columns menu-categories">
 						<ul>
-							<li class="active">
-								<a href="#">Collier</a>
-								<ul>
-									<li><a href="#">Or</a></li>
-									<li><a href="#">Argent</a></li>
-									<li class="active"><a href="#">Fantaisie</a></li>
-									<li><a href="#">Tous les produits</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Bague</a>
-								<ul>
-									<li><a href="#">Or</a></li>
-									<li><a href="#">Argent</a></li>
-									<li><a href="#">Fantaisie</a></li>
-									<li><a href="#">Tous les produits</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Bracelet</a>
-								<ul>
-									<li><a href="#">Or</a></li>
-									<li><a href="#">Argent</a></li>
-									<li><a href="#">Fantaisie</a></li>
-									<li><a href="#">Tous les produits</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Chaussures</a>
-								<ul>
-									<li><a href="#">Plates</a></li>
-									<li><a href="#">À tallon</a></li>
-									<li><a href="#">Aiguilles</a></li>
-									<li><a href="#">Tous les produits</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Maroquinerie</a>
-								<ul>
-									<li><a href="#">Sacs</a></li>
-									<li><a href="#">Besaces</a></li>
-									<li><a href="#">Porte-feuille</a></li>
-									<li><a href="#">Tous les produits</a></li>
-								</ul>
-							</li>
+							<a href="categories.php">Afficher tous les produits</a>
+						</ul>		
+						<ul>
+							<?php 
+							if (!empty($resultCat)) {
+								$j=0;
+								foreach ($resultCat as $value) { 
+									$decalage = "";
+									if ($value['level'] > 1){
+										for ($i=0; $i<($value['level'] * 2); $i++) {
+											$decalage .= "&nbsp;";
+										}
+									}	
+								$j++;
+								($idcat == $value['id']) ? $activ = 'class="active"' : $activ = '';
+								?>
+									<?php if ($value['level']==0) { ?>
+										
+										<?php if ($j>1) { ?>
+										</ul>
+									</li>
+										<?php } ?>
+									<li <?php echo $activ ?>>
+									<a href="categories.php?idcat=<?php echo $value['id'] ?>"><?php echo $decalage.$value['label']?></a>
+										<ul>
+									<?php } ?>
+											<?php if ($value['level']!=0) { ?>
+											<li <?php echo $activ ?>><a href="categories.php?idcat=<?php echo $value['id'] ?>"><?php echo $decalage.$value['label']?></a></li>
+											<?php } ?>
+										
+								<?php } ?>
+										</ul>
+									</li>
+							<?php } ?>
 						</ul>
 					</div>
 					<div class="large-9 medium-9 small-12 columns">
 						<div class="row products-list">
+							<?php 
+							if (!empty($result)) {
+								foreach ($result as $value) { 
+								?>
 							<div class="large-4 medium-4 small-12 columns">
 								<div class="content">
-									<a href="produit.php">
+									<a href="produit.php?id=<?php echo $value['id'] ?>">
 										<span>
 											<img src="img/couronne.png" alt="" class="couronne" />
-											<img src="img/img-bijoux.jpg" alt="" class="img" />
+											<img src="/photos/products/thumbs<?php echo $value['image1'] ?>" alt="" class="img" />
 										</span>
-										<h4>Nom du produit</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet...</p>
-										<span class="prix">30,15 € TTC</span>
+										<h4><?php echo $value['label'] ?></h4>
+										<p><?php echo substr($value['accroche'], 0,100).'...' ?></p>
+										<span class="prix"><?php echo $value['prix'] ?> <?php echo $value['libprix']?><br></span>
 									</a>
 									<button onclick="location.href='panier.php'">Ajouter au panier</button>
 								</div>
 							</div>
-							<div class="large-4 medium-4 small-12 columns">
-								<div class="content">
-									<a href="produit.php">
-										<span>
-											<img src="img/couronne.png" alt="" class="couronne" />
-											<img src="img/img-bijoux.jpg" alt="" class="img" />
-										</span>
-										<h4>Nom du produit</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet...</p>
-										<span class="prix">30,15 € TTC</span>
-									</a>
-									<button>Ajouter au panier</button>
-								</div>
-							</div>
-							<div class="large-4 medium-4 small-12 columns">
-								<div class="content">
-									<a href="produit.php">
-										<span>
-											<img src="img/couronne.png" alt="" class="couronne" />
-											<img src="img/img-bijoux.jpg" alt="" class="img" />
-										</span>
-										<h4>Nom du produit</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet...</p>
-										<span class="prix">30,15 € TTC</span>
-									</a>
-									<button>Ajouter au panier</button>
-								</div>
-							</div>
-							<div class="large-4 medium-4 small-12 columns">
-								<div class="content">
-									<a href="produit.php">
-										<span>
-											<img src="img/couronne.png" alt="" class="couronne" />
-											<img src="img/img-bijoux.jpg" alt="" class="img" />
-										</span>
-										<h4>Nom du produit</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet...</p>
-										<span class="prix">30,15 € TTC</span>
-									</a>
-									<button>Ajouter au panier</button>
-								</div>
-							</div>
-							<div class="large-4 medium-4 small-12 columns">
-								<div class="content">
-									<a href="produit.php">
-										<span>
-											<img src="img/couronne.png" alt="" class="couronne" />
-											<img src="img/img-bijoux.jpg" alt="" class="img" />
-										</span>
-										<h4>Nom du produit</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet...</p>
-										<span class="prix">30,15 € TTC</span>
-									</a>
-									<button>Ajouter au panier</button>
-								</div>
-							</div>
-							<div class="large-4 medium-4 small-12 columns">
-								<div class="content">
-									<a href="produit.php">
-										<span>
-											<img src="img/couronne.png" alt="" class="couronne" />
-											<img src="img/img-bijoux.jpg" alt="" class="img" />
-										</span>
-										<h4>Nom du produit</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet...</p>
-										<span class="prix">30,15 € TTC</span>
-									</a>
-									<button>Ajouter au panier</button>
-								</div>
-							</div>
-							<div class="large-4 medium-4 small-12 columns">
-								<div class="content">
-									<a href="produit.php">
-										<span>
-											<img src="img/couronne.png" alt="" class="couronne" />
-											<img src="img/img-bijoux.jpg" alt="" class="img" />
-										</span>
-										<h4>Nom du produit</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet...</p>
-										<span class="prix">30,15 € TTC</span>
-									</a>
-									<button>Ajouter au panier</button>
-								</div>
-							</div>
-							<div class="large-4 medium-4 small-12 columns">
-								<div class="content">
-									<a href="produit.php">
-										<span>
-											<img src="img/couronne.png" alt="" class="couronne" />
-											<img src="img/img-bijoux.jpg" alt="" class="img" />
-										</span>
-										<h4>Nom du produit</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet...</p>
-										<span class="prix">30,15 € TTC</span>
-									</a>
-									<button>Ajouter au panier</button>
-								</div>
-							</div>
-							<div class="large-4 medium-4 small-12 columns">
-								<div class="content">
-									<a href="produit.php">
-										<span>
-											<img src="img/couronne.png" alt="" class="couronne" />
-											<img src="img/img-bijoux.jpg" alt="" class="img" />
-										</span>
-										<h4>Nom du produit</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat ligula consectetur porttitor imperdiet...</p>
-										<span class="prix">30,15 € TTC</span>
-									</a>
-									<button>Ajouter au panier</button>
-								</div>
-							</div>
+							<?php } ?>
+						<?php } else { ?>
+							<h4>Pas de produits dans cette categorie</h4>
+						<?php } ?>			
 						</div>
 						<div class="row pagination">
 							<div class="large-12 columns">

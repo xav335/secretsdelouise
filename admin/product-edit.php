@@ -115,10 +115,10 @@ if (!empty($_GET)){ //Modif
 								$i=0;
 								foreach ($resultRubrique as $value) { 
 								$i++;
-								(!empty($rubriques) && in_array($value['id'], $rubriques)) ? $check = 'checked' : $check = '';
+								(!empty($rubriques) && in_array($value['id'], $rubriques)) ? $activ = 'checked' : $activ = '';
 								?>
 								
-								<?php echo $value['label'] ?>:<input type="checkbox"  name="rubriques[]" value="<?php echo $value['id'] ?>" <?php echo $check ?> >&nbsp;
+								<?php echo $value['label'] ?>:<input type="checkbox"  name="rubriques[]" value="<?php echo $value['id'] ?>" <?php echo $activ ?> >&nbsp;
 								
 								<?php } ?>
 							<?php } ?>	
@@ -130,10 +130,10 @@ if (!empty($_GET)){ //Modif
 								$i=0;
 								foreach ($resultCouleur as $value) { 
 								$i++;
-								(!empty($couleurs) && in_array($value['id'], $couleurs)) ? $check = 'checked' : $check = '';
+								(!empty($couleurs) && in_array($value['id'], $couleurs)) ? $activ = 'checked' : $activ = '';
 								?>
 								
-								<?php echo $value['label'] ?>:<input type="checkbox"  name="couleurs[]" value="<?php echo $value['id'] ?>" <?php echo $check ?> >&nbsp;
+								<?php echo $value['label'] ?>:<input type="checkbox"  name="couleurs[]" value="<?php echo $value['id'] ?>" <?php echo $activ ?> >&nbsp;
 								
 								<?php } ?>
 							<?php } ?>	
@@ -217,10 +217,10 @@ if (!empty($_GET)){ //Modif
 										$decalage .= "&nbsp;";
 									}
 								$i++;
-								(!empty($categories) && in_array($value['id'], $categories)) ? $check = 'checked' : $check = '';
+								(!empty($categories) && in_array($value['id'], $categories)) ? $activ = 'checked' : $activ = '';
 								?>
 								<tr class="<?php if ($value['level']==0) echo 'info';  if ($value['level']==1) echo 'success';?>">
-									<td><input type="checkbox"  name="categories[]" value="<?php echo $value['id'] ?>" <?php echo $check ?>></td>
+									<td><input type="checkbox"  name="categories[]" value="<?php echo $value['id'] ?>" <?php echo $activ ?>></td>
 									<td><?php echo $decalage.$value['label']?></td>
 								</tr>
 								<?php } ?>

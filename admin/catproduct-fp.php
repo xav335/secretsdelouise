@@ -32,10 +32,10 @@ if (!empty($_POST)){
 					$filenameDest = $imageManager->fileDestManagement($source,$_POST['id']);
 					//Image
 					$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/categories'.$filenameDest;
-					$imageManager->imageResize($source, $destination, null, 650);
+					$imageManager->imageResize($source, $destination, null, 650, false);
 					//Vignette
 					$destination=$_SERVER['DOCUMENT_ROOT'].'/photos/categories/thumbs'.$filenameDest;
-					$imageManager->imageResize($source, $destination, null, 350);
+					$imageManager->imageResize($source, $destination, null, 350, false);
 					$_POST['url1']=$filenameDest;
 				}
 				$imageManager =null;
