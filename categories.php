@@ -1,6 +1,7 @@
 <?php 
 require 'admin/classes/Catproduct.php';
 require 'admin/classes/utils.php';
+require 'admin/classes/pagination.php';
 session_start();
 
 if (!empty($_GET)){
@@ -14,7 +15,7 @@ try {
 		$total = $catproduct->productNumberGet($idcat,null);
 		//$result = $contact->contactGet(null, $offset, $count);
 		
-		$epp = 15; // nombre d'entrées à afficher par page (entries per page)
+		$epp = 3; // nombre d'entrées à afficher par page (entries per page)
 		$nbPages = ceil($total/$epp); // calcul du nombre de pages $nbPages (on arrondit à l'entier supérieur avec la fonction ceil())
 		 
 		// Récupération du numéro de la page courante depuis l'URL avec la méthode GET
@@ -49,7 +50,7 @@ try {
 	
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
-	$goldbook = null;
+	$catproduct = null;
 	exit();
 }
 ?>
@@ -133,7 +134,7 @@ try {
 						</div>
 						<div class="row pagination">
 							<div class="large-12 columns">
-								<a href="#"><</a> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">></a>
+								<?php echo paginate('categories.php?idcat='.$idcat, '&p=', $nbPages, $current); ?>
 							</div>
 						</div>
 					</div>

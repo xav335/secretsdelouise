@@ -90,7 +90,7 @@
 						</table>
 						<div class="row">
 							<div class="large-6 medium-6 small-6 columns">
-								<button class="continuer">Continuer mes achats</button>
+								<button class="continuer" onclick="location.href='categories.php'">Continuer mes achats</button>
 							</div>
 							<div class="large-6 medium-6 small-6 columns" style="text-align:right;">
 								<button>Passer commande</button>
