@@ -4,18 +4,16 @@ require 'admin/classes/utils.php';
 require 'admin/classes/pagination.php';
 session_start();
 
-if (!empty($_GET)){
-	$idcat = $_GET['idcat'];
-}else {
-	$idcat = null;
-}
+(!empty($_GET['idcat'])) ? $idcat = $_GET['idcat'] : $idcat = null;
+(!empty($_GET['idrub'])) ? $idrub = $_GET['idrub'] : $idrub = null;	
 
-$catproduct = new Catproduct();
+
 try {
-		$total = $catproduct->productNumberGet($idcat,null);
+		$catproduct = new Catproduct();
+		$total = $catproduct->productNumberGet($idcat,$idrub);
 		//$result = $contact->contactGet(null, $offset, $count);
 		
-		$epp = 3; // nombre d'entrées à afficher par page (entries per page)
+		$epp = 6; // nombre d'entrées à afficher par page (entries per page)
 		$nbPages = ceil($total/$epp); // calcul du nombre de pages $nbPages (on arrondit à l'entier supérieur avec la fonction ceil())
 		 
 		// Récupération du numéro de la page courante depuis l'URL avec la méthode GET
@@ -39,7 +37,7 @@ try {
 		$start = ($current * $epp - $epp);
 		
 		// Récupération des données à afficher pour la page courante
-		$result = $catproduct->productGet(null, $start, $epp, $idcat, null);
+		$result = $catproduct->productGet(null, $start, $epp, $idcat, $idrub);
 		//print_r($result);
 		
 		
@@ -47,7 +45,24 @@ try {
 		$catproduct->catproduitViewIterative(null);
 		$resultCat = $catproduct->tabView;
 		//print_r($resultCat);
-	
+		
+		if (!empty($idcat)) {
+			$result2 = $catproduct->catproductGet($idcat);
+			$libCategorie = $result2[0]['label'];
+		} else {
+			$libCategorie ='Tous les produits';
+		}
+		
+		$resultRub = $catproduct->getRubriques();
+		$libRubrique ='';
+		if (!empty($resultRub)) {
+			foreach ($resultRub as $value) {
+				if ($idrub == $value['id']) {
+					$libRubrique = $value['label'];
+				}
+			}
+		}		
+		$catproduct = null;
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 	$catproduct = null;
@@ -65,7 +80,7 @@ try {
 	
 <?php include('inc/header.php'); ?>
 <div class="row breadcrumb">
-	<a href="./">Accueil</a> > <a href="categories.php">Produits</a> >  
+	<a href="./">Accueil</a> > <a href="categories.php">Produits</a> > <?php echo  $libCategorie ?> > <?php echo  $libRubrique ?>
 </div>			
 				<!-- Products list -->
 				<div class="row">
@@ -106,6 +121,29 @@ try {
 									</li>
 							<?php } ?>
 						</ul>
+						<br>
+						<ul>
+							<?php 
+							if (!empty($resultRub)) {
+								$j=0;
+								foreach ($resultRub as $value) { 
+								$j++;
+								($idrub == $value['id']) ? $activ = 'class="active"' : $activ = '';
+								?>
+										
+										<?php if ($j>1) { ?>
+										</ul>
+									</li>
+										<?php } ?>
+									<li <?php echo $activ ?>>
+									<a href="categories.php?idcat=<?php echo $idcat?>&idrub=<?php echo $value['id'] ?>"><?php echo $value['label']?></a>
+										<ul>
+										
+								<?php } ?>
+										</ul>
+									</li>
+							<?php } ?>
+						</ul>
 					</div>
 					<div class="large-9 medium-9 small-12 columns">
 						<div class="row products-list">
@@ -115,7 +153,7 @@ try {
 								?>
 							<div class="large-4 medium-4 small-12 columns">
 								<div class="content">
-									<a href="produit.php?id=<?php echo $value['id'] ?>">
+									<a href="produit.php?id=<?php echo $value['id'] ?>&idcat=<?php echo $idcat ?>">
 										<span>
 											<img src="img/couronne.png" alt="" class="couronne" />
 											<img src="/photos/products/thumbs<?php echo $value['image1'] ?>" alt="" class="img" />

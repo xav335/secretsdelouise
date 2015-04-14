@@ -433,7 +433,7 @@ class Catproduct extends StorageManager {
 									ORDER BY  product.label ASC
 									LIMIT ". $offset .",". $count .";" ;
 					} elseif (empty($categorie) && !empty($rubrique)) {
-						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label,
+						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
 									,product.image1,product.accroche
 									FROM product
 									INNER JOIN product_rubrique
@@ -470,9 +470,11 @@ class Catproduct extends StorageManager {
 				$resultdetailCat = $this->getCategorieByProduct($row['id']);
 				$resultdetailRubrique = $this->getRubriqueByProduct($row['id']);
 				$resultdetailCouleur = $this->getCouleurByProduct($row['id']);
+				$resultSousRef = $this->productsousrefGet($row['id'], null);
 				$row['categories'] = $resultdetailCat;
 				$row['rubriques'] = $resultdetailRubrique;
 				$row['couleurs'] = $resultdetailCouleur;
+				$row['sousref'] = $resultSousRef;
 				$new_array[] = $row;
 			}
 			
@@ -731,7 +733,7 @@ class Catproduct extends StorageManager {
 				$new_array[] = $row;
 			}
 				
-			$this->dbDisConnect();
+		//	$this->dbDisConnect();
 			return $new_array;
 		} catch (Exception $e) {
 			die('Erreur : ' . $e->getMessage());

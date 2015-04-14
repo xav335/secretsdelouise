@@ -89,7 +89,7 @@ CREATE TABLE `catproduct` (
 
 LOCK TABLES `catproduct` WRITE;
 /*!40000 ALTER TABLE `catproduct` DISABLE KEYS */;
-INSERT INTO `catproduct` VALUES (41,'Bijoux','',0,'/2588-41.jpg',0,100),(42,'Maroquinerie','',0,'/Alexandre.mareuil-maroquinerie1-42.jpg',0,100),(43,'Lunettes',NULL,0,NULL,0,100),(44,'Montres','',0,'/2589-44.jpg',0,100),(45,'Décoration','',0,'/2586-45.jpg',0,100),(47,'Bracelets',NULL,41,NULL,1,100),(49,'Bagues',NULL,41,NULL,1,100),(50,'prêt-à-porter','',0,'',0,100),(51,'Colliers',NULL,41,NULL,1,100),(52,'lunettes fantaisie',NULL,43,NULL,1,100),(53,'lunettes homme',NULL,43,NULL,1,100),(54,'Bracelets homme','',47,'',2,100),(55,'bracelets femme','',47,'',2,100),(57,'hommes',NULL,49,NULL,2,100),(58,'Femmes',NULL,49,NULL,2,100);
+INSERT INTO `catproduct` VALUES (41,'Bijoux','',0,'/2588-41.jpg',0,100),(42,'Maroquinerie','',0,'/Alexandre.mareuil-maroquinerie1-42.jpg',0,100),(43,'Lunettes',NULL,0,NULL,0,100),(44,'Montres','',0,'/2589-44.jpg',0,100),(45,'Décoration','',0,'/2586-45.jpg',0,100),(47,'Bracelets',NULL,41,NULL,1,100),(49,'Bagues',NULL,41,NULL,1,100),(50,'prêt-à-porter','',0,'',0,100),(51,'Colliers',NULL,41,NULL,1,100),(52,'lunettes femme','',43,'',1,100),(53,'lunettes homme',NULL,43,NULL,1,100),(54,'Bracelets homme','',47,'',2,100),(55,'bracelets femme','',47,'',2,100),(57,'Bagues hommes','',49,'',2,100),(58,'Bagues Femmes','',49,'',2,100);
 /*!40000 ALTER TABLE `catproduct` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -273,7 +273,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (10,'2015-01-01 00:00:00','Nouveau ! Les montres lumineuses ','http://secretsdelouise.localxav.lan/categories.php','100 % cultivées et distillées dans <strong>la Drôme</strong> Achillée millefeuille antibactérien et équilibrant Carotte sauvage apaise irritations et rougeurs revigore les peaux ternes Camomille romaine purifie et redonne du tonus Rose astringeant, tonifie la peau. ','/2589-10.jpg',1),(18,'2015-02-19 00:00:00','Votre boutique  en ligne','','Trouvez tous les produits de la boutique en ligne et lancer\r\n','/2583-18.jpg',1),(19,'2015-04-14 00:00:00','Tout savoir sur le rachat d’or','http://www.iconeo.fr/logo-print/','Une véritable opportunité commerciale La plus grande réserve d’or ne se trouve ni en Afrique ni en Amérique du Sud, mais dans les banques centrales et dans les boîtes à bijoux des familles occidentales. Au total, plus de 80 000 tonnes d’or sommeilleraient dans les foyers, soit l’équivalent de quarante ans d’exploitation minière, sans même […]','/index-19.jpg',0);
+INSERT INTO `news` VALUES (10,'2015-01-01 00:00:00','Nouveau ! Les montres lumineuses ','http://secretsdelouise.localxav.lan/produit.php?id=31&idcat=','100 % cultivées et distillées dans <strong>la Drôme</strong> Achillée millefeuille antibactérien et équilibrant Carotte sauvage apaise irritations et rougeurs revigore les peaux ternes Camomille romaine purifie et redonne du tonus Rose astringeant, tonifie la peau. ','/2589-10.jpg',1),(18,'2015-02-19 00:00:00','Votre boutique  en ligne','','Trouvez tous les produits de la boutique en ligne et lancer\r\n','/2583-18.jpg',1),(19,'2015-04-14 00:00:00','Tout savoir sur nos lunettes','','Une véritable opportunité commerciale La plus grande réserve d’or ne se trouve ni en Afrique ni en Amérique du Sud, mais dans les banques centrales et dans les boîtes à bijoux des familles occidentales. Au total, plus de 80 000 tonnes d’or sommeilleraient dans les foyers, soit l’équivalent de quarante ans d’exploitation minière, sans même […]','/o_PRIX_LUNETTES_facebook-19.jpg',0);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -438,7 +438,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (30,'23ZE',12.00,'€ au lieu de 45€',0.00,'Bracelet rouge','Les + produit','sd sdf sdf sdf sdf sd','sdfsdf sdf sdf sdf sdf s','/2585-30.jpg','',''),(31,'CD34',12.00,'€ au lieu de 24€',2.00,'montre sport homme','Les + produit','genial','montre top','/2589-31.jpg','',''),(32,'556ER',10.00,'€ ',2.00,'Coliers fantaisie','Les + produit','tres sympa','Collier rigolo','/bijoux_fantaisie-32.jpg','',''),(33,'87765',34.00,'€ au lieu de 56€',2.00,'Sacs femme cuir véritable','Les + produit','Tendance et moderne','Super produit très sympa','/2584-.jpg','',''),(34,'23ZE22',23.00,'€',2.00,'Statuette deco orientale','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Circa hos dies Lollianus primae lanuginis adulescens, Lampadi filius ex praefecto, exploratius causam Maximino spectante, convictus codicem noxiarum artium nondum per aetatem firmato consilio descripsisse, exulque mittendus, ut sperabatur, patris inpulsu provocavit ad principem, et iussus ad eius comitatum duci, de fumo, ut aiunt, in flammam traditus Phalangio Baeticae consulari cecidit funesti carnificis manu.','/2586-.jpg','',''),(35,'23ZE22dd',12.00,'€',1.00,'Chaise deco ','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2587-.jpg','','');
+INSERT INTO `product` VALUES (30,'23ZE',12.00,'€ au lieu de 45€',0.00,'Bracelet rouge','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2585-30.jpg','',''),(31,'CD34',12.00,'€ au lieu de 24€',2.00,'montre sport homme','Arrivage d\'été','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Quibus occurrere bene pertinax miles explicatis ordinibus parans hastisque feriens scuta qui habitus iram pugnantium concitat et dolorem proximos iam gestu terrebat sed eum in certamen alacriter consurgentem revocavere ductores rati intempestivum anceps subire certamen cum haut longe muri distarent, quorum tutela securitas poterat in solido locari cunctorum.\r\nSaraceni tamen nec amici nobis umquam nec hostes optandi, ultro citroque discursantes quicquid inveniri poterat momento temporis parvi vastabant milvorum rapacium similes, qui si praedam dispexerint celsius, volatu rapiunt celeri, aut nisi impetraverint, non inmorantur.\r\nSaraceni tamen nec amici nobis umquam nec hostes optandi, ultro citroque discursantes quicquid inveniri poterat momento temporis parvi vastabant milvorum rapacium similes, qui si praedam dispexerint celsius, volatu rapiunt celeri, aut nisi impetraverint, non inmorantur.\r\n','/2589-31.jpg','',''),(32,'556ER',10.00,'€ ',2.00,'Coliers fantaisie','Les + produit','tres sympa','Collier rigolo','/bijoux_fantaisie-32.jpg','',''),(33,'87765',34.00,'€ au lieu de 56€',2.00,'Sacs femme cuir véritable','Les + produit','Tendance et moderne','Super produit très sympa','/2584-.jpg','',''),(34,'23ZE22',23.00,'€',2.00,'Statuette deco orientale','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Circa hos dies Lollianus primae lanuginis adulescens, Lampadi filius ex praefecto, exploratius causam Maximino spectante, convictus codicem noxiarum artium nondum per aetatem firmato consilio descripsisse, exulque mittendus, ut sperabatur, patris inpulsu provocavit ad principem, et iussus ad eius comitatum duci, de fumo, ut aiunt, in flammam traditus Phalangio Baeticae consulari cecidit funesti carnificis manu.','/2586-.jpg','',''),(35,'23ZE22dd',12.00,'€',1.00,'Chaise deco ','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2587-.jpg','','');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -462,7 +462,7 @@ CREATE TABLE `product_categorie` (
 
 LOCK TABLES `product_categorie` WRITE;
 /*!40000 ALTER TABLE `product_categorie` DISABLE KEYS */;
-INSERT INTO `product_categorie` VALUES (30,41),(30,47),(31,44),(32,41),(32,51),(33,42),(34,45),(35,45);
+INSERT INTO `product_categorie` VALUES (30,41),(30,47),(30,55),(31,44),(32,41),(32,51),(33,42),(34,45),(35,45);
 /*!40000 ALTER TABLE `product_categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -529,7 +529,7 @@ CREATE TABLE `product_sousref` (
   `id_size` smallint(5) unsigned NOT NULL,
   `stock` smallint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -538,7 +538,7 @@ CREATE TABLE `product_sousref` (
 
 LOCK TABLES `product_sousref` WRITE;
 /*!40000 ALTER TABLE `product_sousref` DISABLE KEYS */;
-INSERT INTO `product_sousref` VALUES (2,'ACE34',30,3,2,3),(7,'Z234',30,5,3,2),(10,'IjI71',30,3,4,2),(13,'puBoU',31,3,1,2),(14,'2dW6X',31,6,2,3),(15,'6XgMj',31,6,3,1),(16,'voGj7',31,9,2,2),(17,'342',30,10,6,1),(18,'45RF',30,3,5,1),(19,'34222',33,6,1,1),(20,'Z234',33,2,1,2),(21,'342',33,11,1,1);
+INSERT INTO `product_sousref` VALUES (2,'ACE34',30,3,2,3),(7,'Z234',30,5,3,2),(10,'IjI71',30,3,4,2),(13,'puBoU',31,3,1,2),(14,'2dW6X',31,6,1,3),(16,'voGj7',31,9,2,2),(17,'342',30,10,6,1),(18,'45RF',30,3,5,1),(19,'34222',33,6,1,1),(20,'Z234',33,2,1,2),(21,'342',33,11,1,1),(22,'fubK8',30,3,3,1);
 /*!40000 ALTER TABLE `product_sousref` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -562,7 +562,7 @@ CREATE TABLE `rubrique` (
 
 LOCK TABLES `rubrique` WRITE;
 /*!40000 ALTER TABLE `rubrique` DISABLE KEYS */;
-INSERT INTO `rubrique` VALUES (1,'Promo'),(2,'Vente flash'),(3,'Nouveauté'),(4,'Coup de coeur');
+INSERT INTO `rubrique` VALUES (1,'Promos'),(2,'Ventes flash'),(3,'Nouveautés'),(4,'Coups de coeur');
 /*!40000 ALTER TABLE `rubrique` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -599,4 +599,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-11 12:13:52
+-- Dump completed on 2015-04-14 18:55:15

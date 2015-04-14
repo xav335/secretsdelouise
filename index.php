@@ -38,7 +38,7 @@
 							<button>Trouver mon bijou</button>
 						</div>
 					</div>
-					<div class="large-4 medium-4 small-12 columns" onclick="location.href='produit.php'">
+					<div class="large-4 medium-4 small-12 columns" onclick="location.href='categories.php?idrub=1'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
@@ -46,10 +46,10 @@
 							</span>
 							<h4>Promo !</h4>
 							<p>Bague, bracelets, colliers...</p>
-							<a href="produit.php" class="bt-voir">Voir</a>
+							<a href="categories.php?idrub=1" class="bt-voir">Voir</a>
 						</div>
 					</div>
-					<div class="large-4 medium-4 small-12 columns" onclick="location.href='#'">
+					<div class="large-4 medium-4 small-12 columns" onclick="location.href='categories.php?idrub=2'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
@@ -57,10 +57,10 @@
 							</span>
 							<h4>Ventes flash</h4>
 							<p>Bague, bracelets, colliers...</p>
-							<a href="#" class="bt-voir">Voir</a>
+							<a href="categories.php?idrub=1" class="bt-voir">Voir</a>
 						</div>
 					</div>
-					<div class="large-4 medium-4 small-12 columns" onclick="location.href='#'">
+					<div class="large-4 medium-4 small-12 columns" onclick="location.href='categories.php?idrub=3'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
@@ -68,10 +68,10 @@
 							</span>
 							<h4>Nouveauté</h4>
 							<p>Bague, bracelets, colliers...</p>
-							<a href="#" class="bt-voir">Voir</a>
+							<a href="categories.php?idrub=3" class="bt-voir">Voir</a>
 						</div>
 					</div>
-					<div class="large-4 medium-4 small-12 columns" onclick="location.href='#'">
+					<div class="large-4 medium-4 small-12 columns" onclick="location.href='categories.php?idrub=4'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
@@ -79,7 +79,7 @@
 							</span>
 							<h4>Coup de cœur</h4>
 							<p>Bague, bracelets, colliers...</p>
-							<a href="#" class="bt-coeur"></a>
+							<a href="categories.php?idrub=4" class="bt-coeur"></a>
 						</div>
 					</div>
 					

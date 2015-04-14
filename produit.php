@@ -6,8 +6,10 @@ session_start();
 
 if (!empty($_GET)){
 	$id = $_GET['id'];
+	$idcat = $_GET['idcat'];
 }else {
 	$id = null;
+	$idcat = null;
 }
 
 $catproduct = new Catproduct();
@@ -16,12 +18,26 @@ try {
 		$value = $result[0];
 		//print_r($value);
 		
-	
+		if (empty($idcat)) {
+			$idcat = $value['categories'][0]['catid'];
+		}
+		
+		if (!empty($idcat)) {
+			$result2 = $catproduct->catproductGet($idcat);
+			$categorie = $result2[0]['label'];
+			$libCategorie = '<a href="categories.php?idcat='. $idcat .'">' . $categorie. '</a> > ';
+		} else {
+			
+			$libCategorie ='';
+		} 
+		
+		$catproduct = null;
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 	$catproduct = null;
 	exit();
 }
+
 ?>
 
 <!doctype html>
@@ -33,7 +49,9 @@ try {
 	<body class="page-produit">
 	
 <?php include('inc/header.php'); ?>
-				
+<div class="row breadcrumb">
+	<a href="./">Accueil</a> > <a href="categories.php">Produits</a> > <?php echo  $libCategorie ?><?php echo $value['label']?> 
+</div>				
 				
 				<!-- Produit -->
 				<div class="row produit">
@@ -91,8 +109,38 @@ try {
 							<?php echo nl2br($value['description'])?>
 						</p>
 						<form class="row" action="panier.php">
-							<span class="prix"><?php echo $value['prix']?>&nbsp;<?php echo $value['libprix']?></span>
-							<span class="quantite"><input type="text" name="quantite" value="1" /></span>
+							<span class="prix"><?php echo $value['prix']?>&nbsp;<?php echo $value['libprix']?></span><br>
+							<?php 
+								$resultColors = $value['sousref'];
+								if (!empty($resultColors)) {
+								?>
+								<div class="row">
+									<div class="large-8 columns">
+											<select name="color" id="color">
+											<?
+											
+											//print_r($value['sousref']);
+											foreach ($resultColors as $value2) { 
+												?>
+												<option value="<?php echo $value2['id'] ?>" >
+													<?php if ($value2['color'] != '- n/a' ) {?>
+													Couleur:&nbsp;<?php echo $value2['color'] ?>&nbsp;-&nbsp;
+													<?php } ?>
+													<?php if ($value2['size'] != '- n/a' ) {?>
+													Taille:&nbsp;<?php echo $value2['size'] ?>&nbsp;-&nbsp;
+													<?php } ?>
+													Quantité dispo:&nbsp;<?php echo $value2['stock'] ?>
+												</option>
+												<?
+											}
+											?>
+											</select>	
+									</div>
+									<div class="large-4 columns">
+										<a href="/uploads/taillesDocs/baguier.pdf" target="_blank">Descriptif des tailles </a>
+									</div>
+								</div>
+							<?php } ?>
 							<button>Ajouter au panier</button>
 						</form>
 						<div class="plus-produit hide-for-small">
@@ -118,7 +166,7 @@ try {
 				
 				<!-- Products list -->
 				<div class="row products-list">
-					<div class="large-3 medium-3 small-6 columns" onclick="location.href='#'">
+					<div class="large-3 medium-3 small-6 columns" onclick="location.href='categories.php?idrub="'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
@@ -127,7 +175,7 @@ try {
 							<h4>Nouveauté</h4>
 						</div>
 					</div>
-					<div class="large-3 medium-3 small-6 columns" onclick="location.href='#'">
+					<div class="large-3 medium-3 small-6 columns" onclick="location.href='categories.php?idrub=4'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
@@ -145,7 +193,7 @@ try {
 							<h4>Votre boutique</h4>
 						</div>
 					</div>
-					<div class="large-3 medium-3 small-6 columns" onclick="location.href='#'">
+					<div class="large-3 medium-3 small-6 columns" onclick="location.href='categories.php?idrub=1'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />

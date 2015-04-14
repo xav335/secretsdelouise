@@ -36,6 +36,7 @@ require 'classes/Catproduct.php';
 		$catproduct =null;
 	} catch (Exception $e) {
 		echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+		$catproduct =null;
 		exit();
 	}	
 	
