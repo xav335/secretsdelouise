@@ -4,7 +4,7 @@
 <?php 
 require 'classes/Catproduct.php';
 
-	if (!empty($_POST)){
+	if (!empty($_POST['rubrique'])){
 		$rub = $_POST['rubrique'];
 	} else {
 		if (!empty($_GET['rubrique'])){
@@ -14,7 +14,7 @@ require 'classes/Catproduct.php';
 		}
 	}
 
-	if (!empty($_POST)){
+	if (!empty($_POST['categorie'])){
 		$categ = $_POST['categorie'];
 	} else {
 		if (!empty($_GET['categorie'])){
@@ -151,13 +151,16 @@ require 'classes/Catproduct.php';
 							<th class="col-md-1" style="">
 								Prix
 							</th>
-							<th class="col-md-2" style="">
+							<th class="col-md-1" style="">
 								Catégorie
 							</th>
 							<th class="col-md-1" style="">
 								Rubriques
 							</th>
-							<th class="col-md-1" colspan="2" style="">
+							<th class="col-md-1" style="">
+								Sousref
+							</th>
+							<th class="col-md-1" colspan=3 style="">
 								Actions
 							</th>
 							
@@ -183,6 +186,12 @@ require 'classes/Catproduct.php';
 										$rubs .= '- '. $value2['rublabel'] .' <br> ';
 									}
 								}
+								$sousref = '';
+								if (!empty($value['sousref'])) {
+									foreach ($value['sousref'] as $value3) {
+										$sousref .= '- '. $value3['color'] .'-'. $value3['size'] .'='. $value3['stock'] .' <br> ';
+									}
+								}
 							?>
 							<tr class="<?php if ($i%2!=0) echo 'info'?>">
 								<td><?php echo $value['reference']?></td>
@@ -190,17 +199,19 @@ require 'classes/Catproduct.php';
 								<td><?php echo $value['prix']?></td>
 								<td><?php echo $categs?></td>
 								<td><?php echo $rubs?></td>
+								<td><?php echo $sousref?></td>
 								<td>
-									<a href="product-edit.php?id=<?php echo $value['id'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a>
-									<a href="product-sousref-edit.php?id=<?php echo $value['id'] ?>"><img src="img/sr.png" width="30" alt="Modifier" ></a>
-								</td>
-								<td>
+									<a href="product-edit.php?id=<?php echo $value['id'] ?>&rubrique=<?php echo $rub ?>&categorie=<?php echo $categ ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a>
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href="product-sousref-edit.php?id=<?php echo $value['id'] ?>&rubrique=<?php echo $rub ?>&categorie=<?php echo $categ ?>"><img src="img/sr.png" width="30" alt="Modifier" ></a>
+									&nbsp;&nbsp;&nbsp;&nbsp;
 									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
 								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
 								      <strong>Voulez vous vraiment supprimer ?</strong>
 								      <button type="button" class="btn btn-danger" onclick="location.href='product-fp.php?reference=product&action=delete&id=<?php echo $value['id'] ?>'">Oui !</button>
 								 	</div>
-								<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> </td>
+									<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> 
+								</td>
 							</tr>
 							<?php } ?>
 						<?php } ?>	

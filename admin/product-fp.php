@@ -43,7 +43,7 @@ if (!empty($_POST)){
 			try {
 				$result = $catproduct->productModify($_POST);
 				$catproduct = null;
-				header('Location: /admin/product-list.php');
+				header('Location: /admin/product-list.php?rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$catproduct = null;
@@ -72,7 +72,7 @@ if (!empty($_POST)){
 			try {
 				$result = $catproduct->productsousrefModify($_POST);
 				$catproduct = null;
-				header('Location: /admin/product-sousref-edit.php?id='.$_POST['id']);
+				header('Location: /admin/product-sousref-edit.php?id='.$_POST['id']. '&rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$catproduct = null;
@@ -85,7 +85,7 @@ if (!empty($_POST)){
 				if (empty($_POST['sousref']))  $_POST['sousref']=randomChar(5);
 				$result = $catproduct->productsousrefAdd($_POST);
 				$catproduct = null;
-				header('Location: /admin/product-sousref-edit.php?id='.$_POST['id']);
+				header('Location: /admin/product-sousref-edit.php?id='.$_POST['id'] .'&rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$catproduct = null;
@@ -101,7 +101,7 @@ if (!empty($_POST)){
 			try {
 				$result = $catproduct->colorAdd($_POST);
 				$catproduct = null;
-				header('Location: /admin/product-color-edit.php?id_product='.$_POST['id_product']);
+				header('Location: /admin/product-color-edit.php?id_product='.$_POST['id_product'].'&rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$catproduct = null;
@@ -117,7 +117,7 @@ if (!empty($_POST)){
 			try {
 				$result = $catproduct->sizeAdd($_POST);
 				$catproduct = null;
-				header('Location: /admin/product-size-edit.php?id_product='.$_POST['id_product']);
+				header('Location: /admin/product-size-edit.php?id_product='.$_POST['id_product'].'&rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$catproduct = null;
@@ -135,7 +135,7 @@ if (!empty($_POST)){
 			try {
 				$result = $catproduct->productDelete($_GET['id']);
 				$catproduct = null;
-				header('Location: /admin/product-list.php');
+				header('Location: /admin/product-list.php?rubrique='.$_GET['rubrique'].'&categorie='.$_GET['categorie']);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
 				$catproduct = null;
@@ -150,7 +150,7 @@ if (!empty($_POST)){
 			try {
 				$result = $catproduct->productsousrefDelete($_GET['id_sousref']);
 				$catproduct = null;
-				header('Location: /admin/product-sousref-edit.php?id='.$_GET['id']);
+				header('Location: /admin/product-sousref-edit.php?id='.$_GET['id'].'&rubrique='.$_GET['rubrique'].'&categorie='.$_GET['categorie']);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
 				$catproduct = null;

@@ -48,7 +48,7 @@ require 'classes/Catproduct.php';
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<h3>Edition des couleur de produits</h5>
 				<?php if(!empty($_GET['id_product'])){?>
-				<a class="btn btn-success pull-right" href="/admin/product-sousref-edit.php?id=<?php echo $_GET['id_product'] ?>">Retour produit</a>
+				<a class="btn btn-success pull-right" href="/admin/product-sousref-edit.php?id=<?php echo $_GET['id_product'] ?>&rubrique=<?php echo $_GET['rubrique']  ?>&categorie=<?php echo $_GET['categorie'] ?>">Retour produit</a>
 				<?php } ?>
 				<br><br>
 			</div>
@@ -59,6 +59,9 @@ require 'classes/Catproduct.php';
 				<input type="hidden" name="reference" value="product-color">
 				<input type="hidden" name="action" value="add">
 				<input type="hidden" name="id_product" value="<?php echo $_GET['id_product'] ?>">
+				<input type="hidden" name="rubrique" id="rubrique" value="<?php echo $_GET['rubrique'] ?>">
+				<input type="hidden" name="categorie" id="categorie" value="<?php echo $_GET['categorie'] ?>">
+				
 				<div class="col-md-5 ">	
 					<label class="col-sm-6">Couleur produit:</label><input type="text" class="col-sm-6" name="label"  id="label" value="">
 				</div>

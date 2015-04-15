@@ -89,7 +89,7 @@ CREATE TABLE `catproduct` (
 
 LOCK TABLES `catproduct` WRITE;
 /*!40000 ALTER TABLE `catproduct` DISABLE KEYS */;
-INSERT INTO `catproduct` VALUES (41,'Bijoux','',0,'/2588-41.jpg',0,100),(42,'Maroquinerie','',0,'/Alexandre.mareuil-maroquinerie1-42.jpg',0,100),(43,'Lunettes',NULL,0,NULL,0,100),(44,'Montres','',0,'/2589-44.jpg',0,100),(45,'Décoration','',0,'/2586-45.jpg',0,100),(47,'Bracelets',NULL,41,NULL,1,100),(49,'Bagues',NULL,41,NULL,1,100),(50,'prêt-à-porter','',0,'',0,100),(51,'Colliers',NULL,41,NULL,1,100),(52,'lunettes femme','',43,'',1,100),(53,'lunettes homme',NULL,43,NULL,1,100),(54,'Bracelets homme','',47,'',2,100),(55,'bracelets femme','',47,'',2,100),(57,'Bagues hommes','',49,'',2,100),(58,'Bagues Femmes','',49,'',2,100);
+INSERT INTO `catproduct` VALUES (41,'Bijoux','',0,'',0,100),(42,'Maroquinerie','',0,'',0,100),(43,'Lunettes',NULL,0,NULL,0,100),(44,'Montres','',0,'',0,100),(45,'Décoration','',0,'',0,100),(47,'Bracelets',NULL,41,NULL,1,100),(49,'Bagues',NULL,41,NULL,1,100),(50,'prêt-à-porter','',0,'',0,100),(51,'Colliers',NULL,41,NULL,1,100),(52,'lunettes femme','',43,'',1,100),(53,'lunettes homme',NULL,43,NULL,1,100),(54,'Bracelets homme','',47,'',2,100),(55,'bracelets femme','',47,'',2,100),(57,'Bagues hommes','',49,'',2,100),(58,'Bagues Femmes','',49,'',2,100);
 /*!40000 ALTER TABLE `catproduct` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,7 +104,7 @@ CREATE TABLE `color` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `label` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +113,7 @@ CREATE TABLE `color` (
 
 LOCK TABLES `color` WRITE;
 /*!40000 ALTER TABLE `color` DISABLE KEYS */;
-INSERT INTO `color` VALUES (1,'- n/a'),(2,'Noir'),(3,'Bleu'),(4,'Vert'),(5,'gris'),(6,'rouge'),(10,'fushia'),(11,'bordeaux');
+INSERT INTO `color` VALUES (1,'- n/a'),(2,'Noir'),(3,'Bleu'),(4,'Vert'),(5,'gris'),(6,'rouge'),(10,'fushia'),(11,'bordeaux'),(12,'Jaune'),(13,'Beige');
 /*!40000 ALTER TABLE `color` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -417,6 +417,8 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `date_creation` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_suppr` timestamp NULL DEFAULT NULL,
   `reference` varchar(250) DEFAULT NULL,
   `prix` decimal(10,2) DEFAULT NULL,
   `libprix` varchar(120) DEFAULT NULL,
@@ -428,8 +430,9 @@ CREATE TABLE `product` (
   `image1` varchar(250) DEFAULT NULL,
   `image2` varchar(250) DEFAULT NULL,
   `image3` varchar(250) DEFAULT NULL,
+  `actif` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -438,7 +441,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (30,'23ZE',12.00,'€ au lieu de 45€',0.00,'Bracelet rouge','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2585-30.jpg','',''),(31,'CD34',12.00,'€ au lieu de 24€',2.00,'montre sport homme','Arrivage d\'été','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Quibus occurrere bene pertinax miles explicatis ordinibus parans hastisque feriens scuta qui habitus iram pugnantium concitat et dolorem proximos iam gestu terrebat sed eum in certamen alacriter consurgentem revocavere ductores rati intempestivum anceps subire certamen cum haut longe muri distarent, quorum tutela securitas poterat in solido locari cunctorum.\r\nSaraceni tamen nec amici nobis umquam nec hostes optandi, ultro citroque discursantes quicquid inveniri poterat momento temporis parvi vastabant milvorum rapacium similes, qui si praedam dispexerint celsius, volatu rapiunt celeri, aut nisi impetraverint, non inmorantur.\r\nSaraceni tamen nec amici nobis umquam nec hostes optandi, ultro citroque discursantes quicquid inveniri poterat momento temporis parvi vastabant milvorum rapacium similes, qui si praedam dispexerint celsius, volatu rapiunt celeri, aut nisi impetraverint, non inmorantur.\r\n','/2589-31.jpg','',''),(32,'556ER',10.00,'€ ',2.00,'Coliers fantaisie','Les + produit','tres sympa','Collier rigolo','/bijoux_fantaisie-32.jpg','',''),(33,'87765',34.00,'€ au lieu de 56€',2.00,'Sacs femme cuir véritable','Les + produit','Tendance et moderne','Super produit très sympa','/2584-.jpg','',''),(34,'23ZE22',23.00,'€',2.00,'Statuette deco orientale','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Circa hos dies Lollianus primae lanuginis adulescens, Lampadi filius ex praefecto, exploratius causam Maximino spectante, convictus codicem noxiarum artium nondum per aetatem firmato consilio descripsisse, exulque mittendus, ut sperabatur, patris inpulsu provocavit ad principem, et iussus ad eius comitatum duci, de fumo, ut aiunt, in flammam traditus Phalangio Baeticae consulari cecidit funesti carnificis manu.','/2586-.jpg','',''),(35,'23ZE22dd',12.00,'€',1.00,'Chaise deco ','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2587-.jpg','','');
+INSERT INTO `product` VALUES (30,'2015-04-15 00:44:08','2015-04-15 00:45:04','23ZE',12.00,'€ au lieu de 45€',0.00,'Bracelet rouge','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2585-30.jpg','','',1),(31,'2015-04-15 00:44:08','2015-04-15 00:45:04','CD34',12.00,'€ au lieu de 24€',2.00,'montre sport homme','Arrivage d\'été','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Quibus occurrere bene pertinax miles explicatis ordinibus parans hastisque feriens scuta qui habitus iram pugnantium concitat et dolorem proximos iam gestu terrebat sed eum in certamen alacriter consurgentem revocavere ductores rati intempestivum anceps subire certamen cum haut longe muri distarent, quorum tutela securitas poterat in solido locari cunctorum.\r\n\r\n','/2589-31.jpg','','',1),(32,'2015-04-15 00:44:08','2015-04-15 00:45:04','556ER',10.00,'€   (50% de remise)',2.00,'Coliers fantaisie','Les + produit','tres sympa','Collier rigolo','/bijoux_fantaisie-32.jpg','','',1),(33,'2015-04-15 00:44:08','2015-04-15 00:45:04','87765',34.00,'€ au lieu de 56€',2.00,'Sacs femme cuir véritable','Les + produit','Tendance et moderne','Super produit très sympa','/2584-.jpg','','',1),(34,'2015-04-15 00:44:08','2015-04-15 00:45:04','23ZE22',23.00,'€',2.00,'Statuette deco orientale','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Circa hos dies Lollianus primae lanuginis adulescens, Lampadi filius ex praefecto, exploratius causam Maximino spectante, convictus codicem noxiarum artium nondum per aetatem firmato consilio descripsisse, exulque mittendus, ut sperabatur, patris inpulsu provocavit ad principem, et iussus ad eius comitatum duci, de fumo, ut aiunt, in flammam traditus Phalangio Baeticae consulari cecidit funesti carnificis manu.','/2586-.jpg','','',1),(35,'2015-04-15 00:44:08','2015-04-15 00:45:04','23ZE22dd',12.00,'€',1.00,'Chaise deco ','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2587-.jpg','','',1),(36,'2015-04-15 00:47:21',NULL,'34544',12.00,'€',1.00,'Sac cuir haute de gamme','Les + produit','qkjsdhk qhsdkhq kdjhq kdjhqksdh q',' lqjskd ql qlsdj qklsdj qlskdj q','/Alexandre.mareuil-maroquinerie1-.jpg','','',1);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -462,7 +465,7 @@ CREATE TABLE `product_categorie` (
 
 LOCK TABLES `product_categorie` WRITE;
 /*!40000 ALTER TABLE `product_categorie` DISABLE KEYS */;
-INSERT INTO `product_categorie` VALUES (30,41),(30,47),(30,55),(31,44),(32,41),(32,51),(33,42),(34,45),(35,45);
+INSERT INTO `product_categorie` VALUES (30,41),(30,47),(30,55),(31,44),(32,41),(32,51),(33,42),(34,45),(35,45),(36,42);
 /*!40000 ALTER TABLE `product_categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -486,7 +489,7 @@ CREATE TABLE `product_couleur` (
 
 LOCK TABLES `product_couleur` WRITE;
 /*!40000 ALTER TABLE `product_couleur` DISABLE KEYS */;
-INSERT INTO `product_couleur` VALUES (29,5),(30,5),(30,6),(32,1),(32,2),(32,3),(32,4),(32,5),(32,6);
+INSERT INTO `product_couleur` VALUES (29,5),(30,5),(30,6),(32,1),(32,2),(32,3),(32,4),(32,5),(32,6),(36,1),(36,2),(36,3);
 /*!40000 ALTER TABLE `product_couleur` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -510,7 +513,7 @@ CREATE TABLE `product_rubrique` (
 
 LOCK TABLES `product_rubrique` WRITE;
 /*!40000 ALTER TABLE `product_rubrique` DISABLE KEYS */;
-INSERT INTO `product_rubrique` VALUES (29,3),(30,1),(31,3),(32,1),(33,1),(33,4),(34,3),(35,3);
+INSERT INTO `product_rubrique` VALUES (29,3),(30,1),(31,3),(32,1),(33,1),(33,4),(34,3),(35,3),(36,2),(36,4);
 /*!40000 ALTER TABLE `product_rubrique` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -529,7 +532,7 @@ CREATE TABLE `product_sousref` (
   `id_size` smallint(5) unsigned NOT NULL,
   `stock` smallint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -538,7 +541,7 @@ CREATE TABLE `product_sousref` (
 
 LOCK TABLES `product_sousref` WRITE;
 /*!40000 ALTER TABLE `product_sousref` DISABLE KEYS */;
-INSERT INTO `product_sousref` VALUES (2,'ACE34',30,3,2,3),(7,'Z234',30,5,3,2),(10,'IjI71',30,3,4,2),(13,'puBoU',31,3,1,2),(14,'2dW6X',31,6,1,3),(16,'voGj7',31,9,2,2),(17,'342',30,10,6,1),(18,'45RF',30,3,5,1),(19,'34222',33,6,1,1),(20,'Z234',33,2,1,2),(21,'342',33,11,1,1),(22,'fubK8',30,3,3,1);
+INSERT INTO `product_sousref` VALUES (2,'ACE34',30,3,2,4),(7,'Z234',30,5,3,2),(10,'IjI71',30,3,4,2),(13,'puBoU',31,3,1,4),(14,'2dW6X',31,6,1,3),(16,'voGj7',31,9,2,2),(18,'45RF',30,3,5,3),(19,'34222',33,6,1,1),(20,'Z234',33,2,1,2),(21,'342',33,11,1,1),(22,'fubK8',30,3,3,1),(23,'922it',35,1,1,3),(24,'OBMWj',34,1,1,3),(25,'qu2Sf',32,3,1,2),(26,'bAtLX',32,10,1,2),(27,'P6kWZ',31,2,1,2),(28,'ZzKpu',32,5,1,1),(29,'xKsVP',30,5,5,2),(30,'AZtBk',31,12,1,1),(31,'3xiAo',36,11,1,3),(32,'bhhXK',36,2,1,1),(33,'0O8cb',36,13,1,2);
 /*!40000 ALTER TABLE `product_sousref` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -577,7 +580,7 @@ CREATE TABLE `size` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `label` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -586,7 +589,7 @@ CREATE TABLE `size` (
 
 LOCK TABLES `size` WRITE;
 /*!40000 ALTER TABLE `size` DISABLE KEYS */;
-INSERT INTO `size` VALUES (1,'- n/a'),(2,'T1'),(3,'T3'),(5,'T2'),(6,'T4');
+INSERT INTO `size` VALUES (1,'- n/a'),(2,'T1'),(3,'T3'),(5,'T2'),(6,'T4'),(7,'T5'),(8,'T6');
 /*!40000 ALTER TABLE `size` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -599,4 +602,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-14 18:55:15
+-- Dump completed on 2015-04-15  2:50:33

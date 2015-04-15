@@ -103,6 +103,8 @@ if (!empty($_GET)){ //Modif
 					<input type="hidden" name="reference" value="product">
 					<input type="hidden" name="action" value="<?php echo $action ?>">
 					<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+					<input type="hidden" name="rubrique" id="rubrique" value="<?php echo $_GET['rubrique'] ?>">
+					<input type="hidden" name="categorie" id="categorie" value="<?php echo $_GET['categorie'] ?>">
 					
 					<div class="form-group" >
 						<label class="col-sm-2" for="titre">Nom produit :</label>

@@ -72,7 +72,7 @@ body {font-family:'Tinos', serif;}
 .products-list .bijou button {margin-top:2.5em;}
 .products-list .bijou h4 {color:#999;}
 .products-list .bijou p {color:#ee216a;font-size:1.5em;text-align:right;}
-
+[class*="column"] + [class*="column"]:last-child {float:left;}
 
 /* Catégories */
 .menu-categories {padding-top:3em;}

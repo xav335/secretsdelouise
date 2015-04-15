@@ -59,7 +59,7 @@ require 'classes/Catproduct.php';
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<h3>Edition des Sous références du produit N°: <?php echo $_GET['id']?></h5>
-				<a class="btn btn-success pull-right" href="/admin/product-list.php">Retour</a>
+				<a class="btn btn-success pull-right" href="/admin/product-list.php?rubrique=<?php echo $_GET['rubrique'] ?>&categorie=<?php echo $_GET['categorie'] ?>">Retour</a>
 				<br><br>
 			</div>
 		</div>
@@ -70,6 +70,9 @@ require 'classes/Catproduct.php';
 				<input type="hidden" name="action" value="<?php echo $action ?>">
 				<input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
 				<input type="hidden" name="id_souref" value="<?php echo $id_sousref?>">
+				<input type="hidden" name="rubrique" id="rubrique" value="<?php echo $_GET['rubrique'] ?>">
+				<input type="hidden" name="categorie" id="categorie" value="<?php echo $_GET['categorie'] ?>">
+				
 				<div class="col-md-3 ">	
 					<label class="col-sm-6">Sous-ref:</label><input type="text" class="col-sm-6" name="sousref"  id="sousref" value="<?php echo $sousref?>">
 				</div>
@@ -86,7 +89,7 @@ require 'classes/Catproduct.php';
 					}
 					?>
 					</select>	
-					<a href="product-color-edit.php?id_product=<?php echo $_GET['id'] ?>"><img src="img/plus.png" width="15" alt="add" ></a>
+					<a href="product-color-edit.php?id_product=<?php echo $_GET['id'] ?>&rubrique=<?php echo $_GET['rubrique']  ?>&categorie=<?php echo $_GET['categorie'] ?>"><img src="img/plus.png" width="15" alt="add" ></a>
 				</div>	
 				
 				<div class="col-md-2">		
@@ -102,7 +105,7 @@ require 'classes/Catproduct.php';
 					}
 					?>
 					</select>	
-					<a href="product-size-edit.php?id_product=<?php echo $_GET['id'] ?>"><img src="img/plus.png" width="15" alt="add" ></a>
+					<a href="product-size-edit.php?id_product=<?php echo $_GET['id'] ?>&rubrique=<?php echo $_GET['rubrique']  ?>&categorie=<?php echo $_GET['categorie'] ?>"><img src="img/plus.png" width="15" alt="add" ></a>
 				</div>	
 				<div class="col-md-2">	
 					<label class="col-sm-6">Stock:</label><input type="number" step="1" class="col-sm-6" name="stock" required id="stock" value="<?php echo $stock?>">
@@ -156,18 +159,18 @@ require 'classes/Catproduct.php';
 								<td><?php echo $value['size']?></td>
 								<td><?php echo $value['stock']?></td>
 								<td>
-									<a href="product-sousref-edit.php?id=<?php echo $_GET['id'] ?>&id_sousref=<?php echo $value['id'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a>
+									<a href="product-sousref-edit.php?id=<?php echo $_GET['id'] ?>&id_sousref=<?php echo $value['id'] ?>&rubrique=<?php echo $_GET['rubrique']  ?>&categorie=<?php echo $_GET['categorie'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a>
 									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
 								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
 								      <strong>Voulez vous vraiment supprimer ?</strong>
-								      <button type="button" class="btn btn-danger" onclick="location.href='product-fp.php?reference=product-sousref&action=delete&id=<?php echo $_GET['id'] ?>&id_sousref=<?php echo $value['id'] ?>'">Oui !</button>
+								      <button type="button" class="btn btn-danger" onclick="location.href='product-fp.php?reference=product-sousref&action=delete&id=<?php echo $_GET['id'] ?>&id_sousref=<?php echo $value['id'] ?>&rubrique=<?php echo $_GET['rubrique']  ?>&categorie=<?php echo $_GET['categorie'] ?>'">Oui !</button>
 								 	</div>
 								<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> </td>
 							</tr>
 							<?php } ?>
 						<?php } ?>	
 					</tbody>
-				</table>
+				</table>       
 
 				<h3><?php echo $message?></h3>
 			</div>

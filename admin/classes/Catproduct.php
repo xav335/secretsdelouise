@@ -475,6 +475,7 @@ class Catproduct extends StorageManager {
 				$row['rubriques'] = $resultdetailRubrique;
 				$row['couleurs'] = $resultdetailCouleur;
 				$row['sousref'] = $resultSousRef;
+				//TODO: Vérifier s'il y a au moins une sousref avec stock > 0 pour l'ajouter mais faire cela seulement pour le front. 
 				$new_array[] = $row;
 			}
 			
@@ -697,6 +698,8 @@ class Catproduct extends StorageManager {
 		$sql = "DELETE FROM  .`product`
 				WHERE `id`=". $value .";";
 		$result = mysqli_query($this->mysqli,$sql);
+		
+		//TODO: Remplacer la suppression par la desactivation
 			
 		if (!$result) {
 			$this->rollback();
