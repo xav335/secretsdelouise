@@ -80,7 +80,7 @@ CREATE TABLE `catproduct` (
   `level` int(11) NOT NULL DEFAULT '0',
   `ordre` smallint(6) NOT NULL DEFAULT '100',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -383,6 +383,33 @@ INSERT INTO `newsletter_journal_detail` VALUES (3,'jav_gonz@yahoo.fr',0,'fgWhWsp
 UNLOCK TABLES;
 
 --
+-- Table structure for table `panier`
+--
+
+DROP TABLE IF EXISTS `panier`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `panier` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `date_ajout` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `session` varchar(200) NOT NULL,
+  `id_sousref` int(10) unsigned NOT NULL,
+  `quantite` smallint(6) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `panier`
+--
+
+LOCK TABLES `panier` WRITE;
+/*!40000 ALTER TABLE `panier` DISABLE KEYS */;
+INSERT INTO `panier` VALUES (29,'2015-05-11 15:42:58','ov38j31ad80aqo6nqvu2iblgu5',25,1),(31,'2015-05-11 16:24:44','ov38j31ad80aqo6nqvu2iblgu5',2,1);
+/*!40000 ALTER TABLE `panier` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `planning`
 --
 
@@ -441,7 +468,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (30,'2015-04-15 00:44:08','2015-04-15 00:45:04','23ZE',12.00,'€ au lieu de 45€',0.00,'Bracelet rouge','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2585-30.jpg','','',1),(31,'2015-04-15 00:44:08','2015-04-15 00:45:04','CD34',12.00,'€ au lieu de 24€',2.00,'montre sport homme','Arrivage d\'été','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Quibus occurrere bene pertinax miles explicatis ordinibus parans hastisque feriens scuta qui habitus iram pugnantium concitat et dolorem proximos iam gestu terrebat sed eum in certamen alacriter consurgentem revocavere ductores rati intempestivum anceps subire certamen cum haut longe muri distarent, quorum tutela securitas poterat in solido locari cunctorum.\r\n\r\n','/2589-31.jpg','','',1),(32,'2015-04-15 00:44:08','2015-04-15 00:45:04','556ER',10.00,'€   (50% de remise)',2.00,'Coliers fantaisie','Les + produit','tres sympa','Collier rigolo','/bijoux_fantaisie-32.jpg','','',1),(33,'2015-04-15 00:44:08','2015-04-15 00:45:04','87765',34.00,'€ au lieu de 56€',2.00,'Sacs femme cuir véritable','Les + produit','Tendance et moderne','Super produit très sympa','/2584-.jpg','','',1),(34,'2015-04-15 00:44:08','2015-04-15 00:45:04','23ZE22',23.00,'€',2.00,'Statuette deco orientale','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Circa hos dies Lollianus primae lanuginis adulescens, Lampadi filius ex praefecto, exploratius causam Maximino spectante, convictus codicem noxiarum artium nondum per aetatem firmato consilio descripsisse, exulque mittendus, ut sperabatur, patris inpulsu provocavit ad principem, et iussus ad eius comitatum duci, de fumo, ut aiunt, in flammam traditus Phalangio Baeticae consulari cecidit funesti carnificis manu.','/2586-.jpg','','',1),(35,'2015-04-15 00:44:08','2015-04-15 00:45:04','23ZE22dd',12.00,'€',1.00,'Chaise deco ','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2587-.jpg','','',1),(36,'2015-04-15 00:47:21',NULL,'34544',12.00,'€',1.00,'Sac cuir haute de gamme','Les + produit','qkjsdhk qhsdkhq kdjhq kdjhqksdh q',' lqjskd ql qlsdj qklsdj qlskdj q','/Alexandre.mareuil-maroquinerie1-.jpg','','',1);
+INSERT INTO `product` VALUES (30,'2015-04-15 00:44:08','2015-04-15 00:45:04','23ZE',12.54,'€ au lieu de 45€',0.00,'Bracelet rouge','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2585-30.jpg','','',1),(31,'2015-04-15 00:44:08','2015-04-15 00:45:04','CD34',12.00,'€ au lieu de 24€',2.00,'montre sport homme','Arrivage d\'été','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Quibus occurrere bene pertinax miles explicatis ordinibus parans hastisque feriens scuta qui habitus iram pugnantium concitat et dolorem proximos iam gestu terrebat sed eum in certamen alacriter consurgentem revocavere ductores rati intempestivum anceps subire certamen cum haut longe muri distarent, quorum tutela securitas poterat in solido locari cunctorum.\r\n\r\n','/2589-31.jpg','','',1),(32,'2015-04-15 00:44:08','2015-04-15 00:45:04','556ER',10.00,'€   (50% de remise)',2.00,'Coliers fantaisie','Les + produit','tres sympa','Collier rigolo','/bijoux_fantaisie-32.jpg','','',1),(33,'2015-04-15 00:44:08','2015-04-15 00:45:04','87765',34.00,'€ au lieu de 56€',2.00,'Sacs femme cuir véritable','Les + produit','Tendance et moderne','Super produit très sympa','/2584-.jpg','','',1),(34,'2015-04-15 00:44:08','2015-04-15 00:45:04','23ZE22',23.00,'€',2.00,'Statuette deco orientale','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Circa hos dies Lollianus primae lanuginis adulescens, Lampadi filius ex praefecto, exploratius causam Maximino spectante, convictus codicem noxiarum artium nondum per aetatem firmato consilio descripsisse, exulque mittendus, ut sperabatur, patris inpulsu provocavit ad principem, et iussus ad eius comitatum duci, de fumo, ut aiunt, in flammam traditus Phalangio Baeticae consulari cecidit funesti carnificis manu.','/2586-.jpg','/Bath_Decoration_1920x1200-34.jpg','',1),(35,'2015-04-15 00:44:08','2015-04-15 00:45:04','23ZE22dd',12.00,'€',1.00,'Chaise deco ','Les + produit','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.','/2587-.jpg','','',1),(36,'2015-04-15 00:47:21',NULL,'34544',12.00,'€',1.00,'Sac cuir haute de gamme','Les + produit','qkjsdhk qhsdkhq kdjhq kdjhqksdh q',' lqjskd ql qlsdj qklsdj qlskdj q','/Alexandre.mareuil-maroquinerie1-.jpg','','',1);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -541,7 +568,7 @@ CREATE TABLE `product_sousref` (
 
 LOCK TABLES `product_sousref` WRITE;
 /*!40000 ALTER TABLE `product_sousref` DISABLE KEYS */;
-INSERT INTO `product_sousref` VALUES (2,'ACE34',30,3,2,4),(7,'Z234',30,5,3,2),(10,'IjI71',30,3,4,2),(13,'puBoU',31,3,1,4),(14,'2dW6X',31,6,1,3),(16,'voGj7',31,9,2,2),(18,'45RF',30,3,5,3),(19,'34222',33,6,1,1),(20,'Z234',33,2,1,2),(21,'342',33,11,1,1),(22,'fubK8',30,3,3,1),(23,'922it',35,1,1,3),(24,'OBMWj',34,1,1,3),(25,'qu2Sf',32,3,1,2),(26,'bAtLX',32,10,1,2),(27,'P6kWZ',31,2,1,2),(28,'ZzKpu',32,5,1,1),(29,'xKsVP',30,5,5,2),(30,'AZtBk',31,12,1,1),(31,'3xiAo',36,11,1,3),(32,'bhhXK',36,2,1,1),(33,'0O8cb',36,13,1,2);
+INSERT INTO `product_sousref` VALUES (2,'ACE34',30,3,2,4),(7,'Z234',30,5,3,2),(10,'IjI71',30,3,4,2),(13,'puBoU',31,3,1,4),(14,'2dW6X',31,6,1,3),(16,'voGj7',31,9,2,2),(18,'45RF',30,3,5,3),(19,'34222',33,6,1,1),(20,'Z234',33,2,1,2),(21,'342',33,11,1,1),(22,'fubK8',30,3,3,2),(23,'922it',35,1,1,3),(24,'OBMWj',34,1,1,3),(25,'qu2Sf',32,3,1,2),(26,'bAtLX',32,10,1,2),(27,'P6kWZ',31,2,1,2),(28,'ZzKpu',32,5,1,1),(29,'xKsVP',30,5,5,2),(30,'AZtBk',31,12,1,1),(31,'3xiAo',36,11,1,3),(32,'bhhXK',36,2,1,1),(33,'0O8cb',36,13,1,2);
 /*!40000 ALTER TABLE `product_sousref` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -602,4 +629,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-15  2:50:33
+-- Dump completed on 2015-05-11 19:18:06
