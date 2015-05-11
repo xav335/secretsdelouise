@@ -1,5 +1,4 @@
 <?php 
-require 'admin/classes/Catproduct.php';
 require 'admin/classes/Panier.php';
 require 'admin/classes/utils.php';
 $tva = 0.2;
@@ -125,7 +124,7 @@ $panier =null;
 								<button class="continuer" onclick="location.href='categories.php'">Continuer mes achats</button>
 							</div>
 							<div class="large-6 medium-6 small-6 columns" style="text-align:right;">
-								<button>Passer commande</button>
+								<button onclick="location.href='adresse.php'">Passer commande</button>
 							</div>
 						</div>
 						<?php 
