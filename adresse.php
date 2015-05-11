@@ -33,17 +33,17 @@ $panier =null;
 				<div class="row">
 					<div class="large-3 medium-3 small-12 columns menu-panier">
 						<ul>
+							<li >
+								<a href="panier.php"><span>1 -</span> Récapitulatif</a>
+							</li>
 							<li class="active">
-								<a href="#"><span>1 -</span> Récapitulatif</a>
+								<a href="adresse.php"><span>2 -</span> Adresses</a>
 							</li>
 							<li>
-								<a href="#"><span>2 -</span> Adresses</a>
+								<a href="livraison.php"><span>3 -</span> Livraison</a>
 							</li>
 							<li>
-								<a href="#"><span>3 -</span> Livraison</a>
-							</li>
-							<li>
-								<a href="#"><span>4 -</span> Paiement</a>
+								<a href="paiement.php"><span>4 -</span> Paiement</a>
 							</li>
 						</ul>
 					</div>

@@ -3,14 +3,11 @@ require 'admin/classes/Catproduct.php';
 require 'admin/classes/utils.php';
 require 'admin/classes/pagination.php';
 session_start();
+$tva = 0.2;
 
-if (!empty($_GET)){
-	$id = $_GET['id'];
-	$idcat = $_GET['idcat'];
-}else {
-	$id = null;
-	$idcat = null;
-}
+(!empty($_GET['id'])) ? $id = $_GET['id'] : $id = null;
+(!empty($_GET['idcat'])) ? $idcat = $_GET['idcat'] : $idcat = null;
+
 
 $catproduct = new Catproduct();
 try {
@@ -108,19 +105,26 @@ try {
 						<p>
 							<?php echo nl2br($value['description'])?>
 						</p>
-						<form class="row" action="panier.php">
-							<span class="prix"><?php echo $value['prix']?>&nbsp;<?php echo $value['libprix']?></span><br>
+						<form class="row" method="POST" action="admin/panier-fp.php">
+							<input type="hidden" name="reference" value="panier">
+							<input type="hidden" name="action" value="ajout">
 							<?php 
-								$resultColors = $value['sousref'];
-								if (!empty($resultColors)) {
+							$ListeOperatSeri = serialize($value);
+							echo "<input type='hidden' value='".$ListeOperatSeri."' name='product' />";
+							?>
+							
+							<span class="prix"><?php echo $value['prix']*(1+$tva)?>&nbsp;<?php echo $value['libprix']?></span><br>
+							<?php 
+								$resultSousRef = $value['sousref'];
+								if (!empty($resultSousRef)) {
 								?>
 								<div class="row">
 									<div class="large-8 columns">
-											<select name="color" id="color">
+											<select name="idsousref" id="idsousref">
 											<?
 											
 											//print_r($value['sousref']);
-											foreach ($resultColors as $value2) { 
+											foreach ($resultSousRef as $value2) { 
 												?>
 												<option value="<?php echo $value2['id'] ?>" >
 													<?php if ($value2['color'] != '- n/a' ) {?>

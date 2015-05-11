@@ -3,6 +3,7 @@ require 'admin/classes/Catproduct.php';
 require 'admin/classes/utils.php';
 require 'admin/classes/pagination.php';
 session_start();
+$tva = 0.2;
 
 (!empty($_GET['idcat'])) ? $idcat = $_GET['idcat'] : $idcat = null;
 (!empty($_GET['idrub'])) ? $idrub = $_GET['idrub'] : $idrub = null;	
@@ -153,20 +154,21 @@ try {
 								?>
 							<div class="large-4 medium-4 small-12 columns">
 								<div class="content">
-									<a href="produit.php?id=<?php echo $value['id'] ?>&idcat=<?php echo $idcat ?>">
+									<a href="/photos/products<?php echo $value['image1'] ?>" class="fancybox">
 										<span>
 											<img src="img/couronne.png" alt="" class="couronne" />
 											<img src="/photos/products/thumbs<?php echo $value['image1'] ?>" alt="" class="img" />
 										</span>
 										<h4><?php echo $value['label'] ?></h4>
 										<p><?php echo substr($value['accroche'], 0,100).'...' ?></p>
-										<span class="prix"><?php echo $value['prix'] ?> <?php echo $value['libprix']?><br></span>
+										<span class="prix"><?php echo $value['prix']*(1+$tva) ?> <?php echo $value['libprix']?><br></span>
 									</a>
-									<button onclick="location.href='panier.php'">Ajouter au panier</button>
+									<button onclick="location.href='produit.php?id=<?php echo $value['id'] ?>&idcat=<?php echo $idcat ?>'">En savoir +</button>
 								</div>
 							</div>
 							<?php } ?>
 						<?php } else { ?>
+						      <br><br><br>
 							<h4>Pas de produits dans cette categorie</h4>
 						<?php } ?>			
 						</div>

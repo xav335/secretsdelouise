@@ -1,6 +1,5 @@
 <?php
 require_once("StorageManager.php");
-require_once("Zebra_Image.php");
 
 class Catproduct extends StorageManager {
 
@@ -715,7 +714,8 @@ class Catproduct extends StorageManager {
 		$sql = null;
 		try {
 			if (isset($id_souref)){
-				$sql = "SELECT product_sousref.id,product_sousref.sousref,product_sousref.id_color, product_sousref.id_size,product_sousref.stock, color.label as color, size.label as size
+				$sql = "SELECT product_sousref.id,product_sousref.sousref,product_sousref.id_color, 
+							product_sousref.id_size,product_sousref.stock, color.label as color, size.label as size
 						FROM product_sousref
 						INNER JOIN color ON color.id =  product_sousref.id_color
 						INNER JOIN size ON size.id =  product_sousref.id_size
