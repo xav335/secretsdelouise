@@ -42,6 +42,38 @@ INSERT INTO `admin` VALUES (1,'alleedubio','alleedubio33','administrateur'),(2,'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `adresse`
+--
+
+DROP TABLE IF EXISTS `adresse`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `adresse` (
+  `id_adresse` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nom` varchar(200) NOT NULL,
+  `prenom` varchar(200) NOT NULL,
+  `adresse` varchar(254) NOT NULL,
+  `cp` varchar(10) NOT NULL,
+  `ville` varchar(100) NOT NULL,
+  `tel` varchar(10) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `livraison` tinyint(4) NOT NULL DEFAULT '0',
+  `message` varchar(250) NOT NULL,
+  PRIMARY KEY (`id_adresse`)
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `adresse`
+--
+
+LOCK TABLES `adresse` WRITE;
+/*!40000 ALTER TABLE `adresse` DISABLE KEYS */;
+INSERT INTO `adresse` VALUES (40,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(41,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(42,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(43,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(44,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(45,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(46,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(47,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(48,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(49,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,''),(50,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,''),(51,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,'Attention au chien'),(52,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,'Attention au chien'),(53,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',0,''),(54,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',1,''),(55,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(56,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(57,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(58,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(59,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(60,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(61,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(62,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(63,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(64,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(65,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(66,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(67,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(68,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(69,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(70,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar');
+/*!40000 ALTER TABLE `adresse` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `categorie`
 --
 
@@ -129,13 +161,16 @@ CREATE TABLE `contact` (
   `firstname` varchar(250) DEFAULT NULL,
   `name` varchar(250) DEFAULT NULL,
   `email` varchar(250) DEFAULT NULL,
+  `password` varchar(100) NOT NULL,
   `tel` varchar(50) DEFAULT NULL,
   `message` text,
   `newsletter` tinyint(4) NOT NULL DEFAULT '0',
   `fromgoldbook` tinyint(4) NOT NULL DEFAULT '0',
   `fromcontact` tinyint(4) NOT NULL DEFAULT '0',
+  `id_facturation` int(11) DEFAULT NULL,
+  `id_livraison` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25454 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25481 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +179,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (3344,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,1,0),(25438,'Jav','gonz','jav_gonz@yahoo.com',NULL,NULL,0,0,0),(25439,'xav','gonza','xavier.gonzalez@free.fr',NULL,NULL,1,0,0),(25441,'xavi','gonz','xavier@gonzalez.pm',NULL,NULL,1,0,0),(25442,'xavier','gonzalez','fjavi.gonzalez@gmail.com',NULL,NULL,1,0,0),(25445,'Fred ','Lesca','fredericlesca@iconeo.fr',NULL,NULL,1,0,0),(25446,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,1,0),(25447,'','Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,0,1),(25448,'jhonny','guitar','jav_gonz@yahoo.com',NULL,NULL,1,0,1),(25449,'robert','Redford','rob.red@free.fr',NULL,'POuet l\'es copain école',1,0,1),(25450,'','Gonzalez','xavier@gonzalez.pm',NULL,'ça roule ?',1,1,0),(25451,'','lesca','flesca@free.fr',NULL,'atelier medecine chinoise décevant',1,1,0),(25452,'','Pascal.T (Carignan de Bordeaux)','sdfsdf@fsdfsdf.fr',NULL,NULL,1,1,0),(25453,'','Xavier Gonzalez','xavier@gonzalez.pm',NULL,NULL,1,0,1);
+INSERT INTO `contact` VALUES (25438,'Jav','gonz','jav_gonz@yahoo.com','',NULL,NULL,0,0,0,NULL,NULL),(25439,'xav','gonza','xavier.gonzalez@free.fr','',NULL,NULL,1,0,0,NULL,NULL),(25442,'xavier','gonzalez','fjavi.gonzalez@gmail.com','',NULL,NULL,1,0,0,NULL,NULL),(25445,'Fred ','Lesca','fredericlesca@iconeo.fr','',NULL,NULL,1,0,0,NULL,NULL),(25451,'','lesca','flesca@free.fr','',NULL,'atelier medecine chinoise décevant',1,1,0,NULL,NULL),(25453,'','Xavier Gonzalez','xavier@gonzalez.pm','azeazeazeaze',NULL,NULL,1,0,1,NULL,NULL),(25479,'Jav','Gonzzza','xav335111@hotmail.com','','0909090909',NULL,1,0,0,53,54),(25480,'','ICONEO','xav335@hotmail.com','azeaze','0909090909',NULL,1,0,0,69,70);
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -396,7 +431,7 @@ CREATE TABLE `panier` (
   `id_sousref` int(10) unsigned NOT NULL,
   `quantite` smallint(6) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,7 +440,7 @@ CREATE TABLE `panier` (
 
 LOCK TABLES `panier` WRITE;
 /*!40000 ALTER TABLE `panier` DISABLE KEYS */;
-INSERT INTO `panier` VALUES (29,'2015-05-11 15:42:58','ov38j31ad80aqo6nqvu2iblgu5',25,1),(31,'2015-05-11 16:24:44','ov38j31ad80aqo6nqvu2iblgu5',2,1);
+INSERT INTO `panier` VALUES (29,'2015-05-11 15:42:58','ov38j31ad80aqo6nqvu2iblgu5',25,1),(31,'2015-05-11 16:24:44','ov38j31ad80aqo6nqvu2iblgu5',2,1),(32,'2015-05-12 13:05:19','u20us3e21j0qah9b4gtiehgl92',18,2),(33,'2015-05-18 07:05:51','3ibkte8d5imr73u3t80eso9j76',27,2),(34,'2015-05-18 13:39:13','3ibkte8d5imr73u3t80eso9j76',24,1),(35,'2015-05-18 14:59:38','3ibkte8d5imr73u3t80eso9j76',2,1),(36,'2015-05-18 15:06:31','k2b0l84as9co7pi39pve0lnjc5',23,1),(37,'2015-05-18 16:25:54','1hjr92f7h0k74ak98hp789l704',29,1),(38,'2015-05-18 17:06:48','loi3pbfqp5a3cfm79tibt0egr6',2,1),(39,'2015-05-18 17:26:36','gpb2shqpchr9ef32h7nbtab9v4',23,1),(40,'2015-05-18 17:28:41','gpb2shqpchr9ef32h7nbtab9v4',28,1);
 /*!40000 ALTER TABLE `panier` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -629,4 +664,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-11 19:18:06
+-- Dump completed on 2015-05-18 19:30:25
