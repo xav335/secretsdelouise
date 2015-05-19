@@ -39,10 +39,10 @@ $panier =null;
 								<a href="adresse.php"><span>2 -</span> Adresses</a>
 							</li>
 							<li class="active">
-								<a href="#"><span>3 -</span> Livraison</a>
+								<a href="#"><span>3 -</span> Paiement</a>
 							</li>
 							<li>
-								<a href="#"><span>4 -</span> Paiement</a>
+								<a href="#"><span>4 -</span> Validation</a>
 							</li>
 						</ul>
 					</div>
@@ -119,13 +119,31 @@ $panier =null;
 								</tr>
 							</tfoot>
 						</table>
+						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                        <input type='hidden' value="39.00" name="amount" />
+                        <input name="currency_code" type="hidden" value="EUR" />
+                        <input name="shipping" type="hidden" value="9.50" />
+                        <input name="tax" type="hidden" value="5.00" />
+                        <input name="return" type="hidden" value="http://<?php echo $_SERVER['HTTP_HOST']?>/paiementValide.php" />
+                        <input name="cancel_return" type="hidden" value="http://<?php echo $_SERVER['HTTP_HOST']?>/paiementAnnule.php" />
+                        <input name="notify_url" type="hidden" value="http://<?php echo $_SERVER['HTTP_HOST']?>/valid.php" />
+                        <input name="cmd" type="hidden" value="_xclick" />
+                        <input name="business" type="hidden" value="xav335@hotmail.com" />
+                        <input name="item_name" type="hidden" value="Commande_23433" />
+                        <input name="no_note" type="hidden" value="1" />
+                        <input name="lc" type="hidden" value="FR" />
+                        <input name="bn" type="hidden" value="PP-BuyNowBF" />
+                        <input name="custom" type="hidden" value="ID_ACHETEUR" />
+                        
 						<div class="row">
 							<div class="large-6 medium-6 small-6 columns">
 							</div>
 							<div class="large-6 medium-6 small-6 columns" style="text-align:right;">
-								<button onclick="location.href='adresse.php'">Paiement PAYPAL</button>
+								 <input alt="Effectuez vos paiements via PayPal : une solution rapide, gratuite et sécurisée" name="submit" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_buynow_LG.gif" type="image" /><img src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" border="0" alt="" width="1" height="1" />
+                      
 							</div>
 						</div>
+						 </form>
 						<?php 
 						else :
 						?>

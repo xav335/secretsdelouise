@@ -39,10 +39,10 @@ $panier =null;
 								<a href="#"><span>2 -</span> Adresses</a>
 							</li>
 							<li>
-								<a href="#"><span>3 -</span> Livraison</a>
+								<a href="#"><span>3 -</span> Paiement</a>
 							</li>
 							<li>
-								<a href="#"><span>4 -</span> Paiement</a>
+								<a href="#"><span>4 -</span> Validation</a>
 							</li>
 						</ul>
 					</div>
