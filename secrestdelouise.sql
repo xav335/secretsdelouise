@@ -159,7 +159,7 @@ DROP TABLE IF EXISTS `commande`;
 CREATE TABLE `commande` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `session` varchar(200) NOT NULL,
-  `date_ajout` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_ajout` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_contact` int(11) NOT NULL,
   `colissimo` varchar(240) NOT NULL,
   `mode_paiement` tinyint(4) NOT NULL DEFAULT '1',
@@ -694,4 +694,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-15 17:25:26
+-- Dump completed on 2015-06-15 17:30:37
