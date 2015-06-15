@@ -118,14 +118,14 @@ $entete .= "Content-type: text/html; charset= iso-8859-1\n";
 
 // TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST 
 if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
-	echo "<br><br><h3>Newsletter de Test envoyee a contact@bsport.fr !!!! </h3><br><br>
+	echo "<br><br><h3>Newsletter de Test envoyee !!!! </h3><br><br>
 		<a href='javascript:history.back()'>retour</a>";
 	
 	//$_to = "contact@bsport.fr";
 	$_to = $mailContact;
 	$entete .= "Bcc: ". $mailBcc ."\n";
 	//echo "Envoi du message à " . $_to . "<br>";
-	$corps = str_replace('XwXwXwXw', randomChar(), $corps);
+	$corpsCode = str_replace('XwXwXwXw', randomChar(), $corps);
 	//echo $corps;
 	////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!////////////
 	//mail($_to, $sujet, stripslashes($corps), $entete);

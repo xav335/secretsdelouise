@@ -12,17 +12,17 @@ if (!empty($_POST)){
 <html class="no-js" lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Bsport newsletter désinscription</title>
+<title>LesSecretsDeLouise newsletter désinscription</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>	
 
-	<img src="../img/logo.png" width="200">
+	<img src="../img/logo.jpg" width="200">
 <?php if (!empty($_POST)){ ?>
 	<br><br>Votre désincription a été prise en compte ! <br><br>
 	
-	<a href="http://bsport.fr/" >Allez sur le site </a>
+	<a href="http://<?php echo $_SERVER['HTTP_HOST']?>" >Allez sur le site </a>
 <?php } else { ?>
 	<form name="formulaire" class="form-horizontal" method="POST"  action="desinscription.php">
 		Indiquez votre e-mail<br>

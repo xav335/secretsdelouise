@@ -23,8 +23,8 @@ if (!empty($_GET)){
 				<iframe id="laframe" src="/admin/newsletter-corecontent.php?id=<?php  echo $id ?>" style="width:720px;height:500px;" frameborder="1" ></iframe>
 			</div>
 			<div class="col-md-2">
-				<h4>Tester la news <br>(envoi limité à contact@bsport.fr)</h4>
-				<form name="formulaire" class="form-horizontal" method="POST"  action="formprocess.php">
+				<h4>Tester la news <br>(envoi limité à contact@lessecretsdelouise.com)</h4>
+				<form name="formulaire" class="form-horizontal" method="POST"  action="newsletter-fp.php">
 					<input type="hidden" name="reference" value="newsletter">
 					<input type="hidden" name="action" id="action" value="envoi">
 					<input type="hidden" name="postaction" id="postaction" value="">
