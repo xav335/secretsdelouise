@@ -91,5 +91,8 @@ session_start();
 				<!-- End Products list -->
 				
 <?php include('inc/footer.php'); ?>
+<script>
+		$('.header .content ul li:nth-child(1)').addClass('active');
+	</script>
 	</body>
 </html>

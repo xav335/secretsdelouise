@@ -183,5 +183,8 @@ try {
 				<!-- End Products list -->
 				
 <?php include('inc/footer.php'); ?>
+<script>
+		$('.header .content ul li:nth-child(2)').addClass('active');
+	</script>
 	</body>
 </html>

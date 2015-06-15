@@ -67,7 +67,7 @@ if (!empty($_GET)){
 	
 <?php include('inc/footer.php'); ?>
 	<script>
-		$('.header .content2 ul li:nth-child(1)').addClass('active');
+		$('.header .content ul li:nth-child(3)').addClass('active');
 	</script>
 	
 </body>

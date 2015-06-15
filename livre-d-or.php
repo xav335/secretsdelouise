@@ -121,7 +121,7 @@ $goldbook = null;
 		
 <?php include('inc/footer.php'); ?>
 	<script>
-		$('.header .content2 ul li:nth-child(2)').addClass('active');
+		$('.header .content ul li:nth-child(4)').addClass('active');
 	</script>
 	
 </body>

@@ -134,5 +134,8 @@ if (!empty($id_contact)){
 				<!-- End Products list -->
 				
 <?php include('inc/footer.php'); ?>
+<script>
+		$('.header .content2 ul li:nth-child(1)').addClass('active');
+	</script>
 	</body>
 </html>

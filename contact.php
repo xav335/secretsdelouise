@@ -137,7 +137,7 @@ session_start();
 	
 <?php include('inc/footer.php'); ?>
 	<script>
-		$('.header .content2 ul li:nth-child(3)').addClass('active');
+		$('.header .content2 ul li:nth-child(2)').addClass('active');
 	</script>
 </body>
 </html>

@@ -30,7 +30,7 @@ session_start();
 	
 <?php include('inc/footer.php'); ?>
 	<script>
-		$('.header .content2 ul li:nth-child(1)').addClass('active');
+	$('.header .content ul li:nth-child(5)').addClass('active');
 	</script>
 	
 </body>
