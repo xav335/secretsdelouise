@@ -1,3 +1,4 @@
+<?php require_once 'inc/inc.config.php';?>
 <?php
 error_log(date("Y-m-d H:i:s") ." : ". $_POST['action'] ."\n", 3, "log/spy.log");
 

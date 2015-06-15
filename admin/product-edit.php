@@ -1,3 +1,4 @@
+<?php include_once '../inc/inc.config.php'; ?>
 <?php include_once 'inc-auth-granted.php';?>
 <?php include_once 'classes/utils.php';?>
 <?php 
@@ -145,7 +146,7 @@ if (!empty($_GET)){ //Modif
 					    <input type="text" class="col-sm-4" name="ref" required  value="<?php echo $reference ?>">
 					</div>
 					<div class="form-group" >
-						<label class="col-sm-2" for="titre">Prix :</label>
+						<label class="col-sm-2" for="titre">Prix HT:</label>
 					    <input type="number" step="0.01" class="col-sm-2" name="prix" required  value="<?php echo $prix ?>">
 					     <input type="text" class="col-sm-4" name="libprix" required  value="<?php echo $libprix ?>">
 					</div>

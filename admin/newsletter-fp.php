@@ -1,3 +1,4 @@
+<?php include_once '../inc/inc.config.php'; ?>
 <?php
 require 'classes/Newsletter.php';
 require 'classes/ImageManager.php';

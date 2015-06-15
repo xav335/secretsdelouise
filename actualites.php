@@ -1,3 +1,4 @@
+<?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/News.php';
 require 'admin/classes/utils.php';
@@ -37,7 +38,7 @@ if (!empty($_GET)){
 <!-- End Breadcrumb -->	
 	<!-- Actualités -->
 	<div class="row actualites">
-		<h1>Actualités</h1>
+		<h1>Actualités</h1><br>
 		<?php 
 			if (!empty($result)) {
 				$i=0;
@@ -49,7 +50,7 @@ if (!empty($_GET)){
 						<a href="photos/news<?php echo $value['image1']?>" class="fancybox"><img src="/photos/news/thumbs<?php echo $value['image1']?>" alt="" /></a>
 					</div>
 					<div class="large-9 medium-9 small-9 columns">
-						<h2><?php echo $value['titre']?></h2>
+						<h3><?php echo $value['titre']?></h3>
 						<h5><?php echo traitement_datetime_affiche($value['date_news'])?></h5>
 						<p>
 							<?php echo $value['contenu']?>

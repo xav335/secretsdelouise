@@ -1,3 +1,4 @@
+<?php include_once '../inc/inc.config.php'; ?>
 <?php
 require 'classes/Catproduct.php';
 require 'classes/Panier.php';

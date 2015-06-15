@@ -1,3 +1,4 @@
+<?php include_once '../inc/inc.config.php'; ?>
 <?php
 require 'classes/Contact.php';
 session_start();

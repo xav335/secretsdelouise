@@ -73,7 +73,7 @@ class Panier extends StorageManager {
 	    $this->dbConnect();
 	    
         $sql = "SELECT panier.id as id_panier,panier.quantite,product.label,product.prix,
-                    product.id,product.image1,size.label as size, color.label as color,product.shipping 
+                    product.id,product.image1,size.label as size, color.label as color 
 				FROM panier
 				INNER JOIN product_sousref ON product_sousref.id =  panier.id_sousref
                 INNER JOIN color ON color.id =  product_sousref.id_color

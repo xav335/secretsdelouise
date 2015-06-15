@@ -1,7 +1,7 @@
+<?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/Contact.php';
 require 'admin/classes/utils.php';
-$tva = 0.2;
 session_start();
 
 (!empty($_GET['action'])) ? $action =$_GET['action'] : $action = 'ident';

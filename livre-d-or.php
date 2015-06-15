@@ -1,3 +1,4 @@
+<?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/Goldbook.php';
 require 'admin/classes/utils.php';

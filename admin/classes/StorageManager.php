@@ -14,10 +14,14 @@ class StorageManager{
 	}
 	
 	protected function dbConnect() {
-		$host = "localhost";
-		$user = "secretsdelouise";
-		$pass = "secretsdelouise33";
-		$bdd = "secretsdelouise";
+// 		$host = "localhost";
+// 		$user = "secretsdelouise";
+// 		$pass = "secretsdelouise33";
+// 		$bdd = "secretsdelouise";
+	    $host = DBHOST;
+	    $user = DBUSER;
+	    $pass = DBPASSWD;
+	    $bdd  = DBNAME;
 			
 		// connexion
 		try {

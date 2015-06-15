@@ -1,6 +1,6 @@
+<?php require_once 'inc/inc.config.php';?>
 <?php 
 session_start();
-
 ?>
 <!doctype html>
 <html class="no-js" lang="en">

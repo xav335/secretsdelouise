@@ -11,6 +11,7 @@ try {
     exit();
 }
 $panier = null;
+
 ?>
 <div class="off-canvas-wrap" data-offcanvas>
 			<div class="inner-wrap">

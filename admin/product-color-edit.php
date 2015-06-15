@@ -1,3 +1,4 @@
+<?php include_once '../inc/inc.config.php'; ?>
 <?php include_once 'inc-auth-granted.php';?>
 <?php include_once 'classes/utils.php';?>
 <?php include_once 'classes/pagination.php';?>
@@ -14,7 +15,13 @@ require 'classes/Catproduct.php';
 			$stock = 	null;
 			$id_color = null;
 			$id_size = null;
+			$id_product = $_GET['id_product'];
+			
+		}else{
+		    $id_product = null;
 		}
+		(!empty($_GET['rubrique'])) ? $rubrique = $_GET['rubrique'] : $rubrique = null;
+		(!empty($_GET['categorie'])) ? $categorie = $_GET['categorie'] : $categorie = null;
 		
 		
 	
@@ -58,9 +65,9 @@ require 'classes/Catproduct.php';
 				<form name="formulaire" class="form-horizontal" method="POST"  action="product-fp.php" >
 				<input type="hidden" name="reference" value="product-color">
 				<input type="hidden" name="action" value="add">
-				<input type="hidden" name="id_product" value="<?php echo $_GET['id_product'] ?>">
-				<input type="hidden" name="rubrique" id="rubrique" value="<?php echo $_GET['rubrique'] ?>">
-				<input type="hidden" name="categorie" id="categorie" value="<?php echo $_GET['categorie'] ?>">
+				<input type="hidden" name="id_product" value="<?php echo $id_product ?>">
+				<input type="hidden" name="rubrique" id="rubrique" value="<?php echo $rubrique ?>">
+				<input type="hidden" name="categorie" id="categorie" value="<?php echo $categorie ?>">
 				
 				<div class="col-md-5 ">	
 					<label class="col-sm-6">Couleur produit:</label><input type="text" class="col-sm-6" name="label"  id="label" value="">
@@ -110,7 +117,7 @@ require 'classes/Catproduct.php';
 									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
 								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
 								      <strong>Voulez vous vraiment supprimer ?</strong>
-								      <button type="button" class="btn btn-danger" onclick="location.href='product-fp.php?reference=product-color&action=delete&id_product=<?php echo $_GET['id_product'] ?>&id=<?php echo $value['id'] ?>'">Oui !</button>
+								      <button type="button" class="btn btn-danger" onclick="location.href='product-fp.php?reference=product-color&action=delete&id_product=<?php echo $id_product ?>&id=<?php echo $value['id'] ?>'">Oui !</button>
 								 	</div>
 									<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> 
 								</td>

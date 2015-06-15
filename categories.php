@@ -1,3 +1,4 @@
+<?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/Catproduct.php';
 require 'admin/classes/utils.php';
@@ -161,7 +162,7 @@ try {
 										</span>
 										<h4><?php echo $value['label'] ?></h4>
 										<p><?php echo substr($value['accroche'], 0,100).'...' ?></p>
-										<span class="prix"><?php echo $value['prix']*(1+$tva) ?> <?php echo $value['libprix']?><br></span>
+										<span class="prix"><?php echo number_format($value['prix']*(1+$tva), 2, ',', ' '); ?> <?php echo $value['libprix']?><br></span>
 									</a>
 									<button onclick="location.href='produit.php?id=<?php echo $value['id'] ?>&idcat=<?php echo $idcat ?>'">En savoir +</button>
 								</div>

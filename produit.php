@@ -1,9 +1,9 @@
+<?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/Catproduct.php';
 require 'admin/classes/utils.php';
 require 'admin/classes/pagination.php';
 session_start();
-$tva = 0.2;
 
 (!empty($_GET['id'])) ? $id = $_GET['id'] : $id = null;
 (!empty($_GET['idcat'])) ? $idcat = $_GET['idcat'] : $idcat = null;
@@ -113,7 +113,7 @@ try {
 							echo "<input type='hidden' value='".$ListeOperatSeri."' name='product' />";
 							?>
 							
-							<span class="prix"><?php echo $value['prix']*(1+$tva)?>&nbsp;<?php echo $value['libprix']?></span><br>
+							<span class="prix"><?php echo number_format($value['prix']*(1+$tva), 2, ',', ' ');?>&nbsp;<?php echo $value['libprix']?></span><br>
 							<?php 
 								$resultSousRef = $value['sousref'];
 								if (!empty($resultSousRef)) {
@@ -174,7 +174,7 @@ try {
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux.jpg" alt="" class="img" />
+								<img src="img/img-bijoux2.jpg" alt="" class="img" />
 							</span>
 							<h4>Nouveauté</h4>
 						</div>
@@ -192,7 +192,7 @@ try {
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux.jpg" alt="" class="img" />
+								<img src="img/img-bijoux3.jpg" alt="" class="img" />
 							</span>
 							<h4>Votre boutique</h4>
 						</div>
@@ -201,7 +201,7 @@ try {
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux.jpg" alt="" class="img" />
+								<img src="img/img-bijoux5.jpg" alt="" class="img" />
 							</span>
 							<h4>Promotions</h4>
 						</div>

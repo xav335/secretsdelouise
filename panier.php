@@ -1,7 +1,7 @@
+<?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/Panier.php';
 require 'admin/classes/utils.php';
-$tva = 0.2;
 session_start();
 
 $panier = new Panier();
@@ -78,14 +78,14 @@ $panier =null;
 											(<?php if ($value['color'] != '- n/a' ) echo $value['color']  ?> - <?php if ($value['size'] != '- n/a' ) echo $value['size'] ?>)
 										</p>
 									</td>
-									<td><?php echo $value['prix']*(1+$tva) ?> €</td>
+									<td><?php echo number_format($value['prix']*(1+$tva), 2, ',', ' ') ?> €</td>
 									<td>
 										<input type="text" value="<?php echo $value['quantite'] ?>" name="quantite" />
 										<div class="qte">
 											<a href="admin/panier-fp.php?reference=panier&action=quantite&id_panier=<?php echo $value['id_panier']?>&quantite=<?php echo $value['quantite']+1 ?>">+</a> <a href="admin/panier-fp.php?reference=panier&action=quantite&id_panier=<?php echo $value['id_panier']?>&quantite=<?php echo $value['quantite']-1 ?>">-</a>
 										</div>
 									</td>
-									<td><?php echo ($value['prix']*$value['quantite'])*(1+$tva) ?> €</td>
+									<td><?php echo number_format(($value['prix']*$value['quantite'])*(1+$tva), 2, ',', ' ') ?> €</td>
 									<td class="supprimer">
 										<a href="admin/panier-fp.php?reference=panier&action=delete&id_panier=<?php echo $value['id_panier']?>"><img src="img/corbeille.png" alt="Supprimer le produit" /></a>
 									</td>
@@ -104,17 +104,17 @@ $panier =null;
 									<td colspan="3">
 										Total HT :
 									</td>
-									<td colspan="2"><?php echo $totalHT?> €</td>
+									<td colspan="2"><?php echo number_format($totalHT, 2, ',', ' ')?> €</td>
 								</tr>
 								<tr>
 									<td colspan="3">TVA</td>
-									<td colspan="2"><?php echo $totalTVA?> €</td>
+									<td colspan="2"><?php echo number_format($totalTVA, 2, ',', ' ')?> €</td>
 								</tr>
 								<tr>
 									<td colspan="3">
 										<span>Total TTC</span>
 									</td>
-									<td colspan="2"><?php echo $totalTTC?> €</span>
+									<td colspan="2"><?php echo number_format($totalTTC, 2, ',', ' ')?> €</span>
 									</td>
 								</tr>
 							</tfoot>

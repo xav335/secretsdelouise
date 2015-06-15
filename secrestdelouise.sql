@@ -60,7 +60,7 @@ CREATE TABLE `adresse` (
   `livraison` tinyint(4) NOT NULL DEFAULT '0',
   `message` varchar(250) NOT NULL,
   PRIMARY KEY (`id_adresse`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `adresse` (
 
 LOCK TABLES `adresse` WRITE;
 /*!40000 ALTER TABLE `adresse` DISABLE KEYS */;
-INSERT INTO `adresse` VALUES (40,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(41,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(42,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(43,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(44,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(45,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(46,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(47,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(48,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(49,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,''),(50,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,''),(51,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,'Attention au chien'),(52,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,'Attention au chien'),(53,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',0,''),(54,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',1,''),(55,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(56,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(57,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(58,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(59,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(60,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(61,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(62,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(63,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(64,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(65,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(66,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(67,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(68,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(69,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(70,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(71,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(72,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(73,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(74,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(75,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(76,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(77,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(78,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(79,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(80,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(81,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(82,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(83,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(84,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(85,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(86,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar');
+INSERT INTO `adresse` VALUES (40,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(41,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(42,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(43,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(44,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(45,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(46,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(47,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(48,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(49,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,''),(50,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,''),(51,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,'Attention au chien'),(52,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,'Attention au chien'),(53,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',0,''),(54,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',1,''),(55,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(56,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(57,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(58,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(59,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(60,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(61,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(62,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(63,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(64,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(65,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(66,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(67,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(68,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(69,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(70,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(71,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(72,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(73,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(74,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(75,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(76,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(77,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(78,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(79,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(80,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(81,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(82,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(83,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(84,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(85,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(86,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(87,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(88,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(89,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(90,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar');
 /*!40000 ALTER TABLE `adresse` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +136,7 @@ CREATE TABLE `color` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `label` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,8 +145,37 @@ CREATE TABLE `color` (
 
 LOCK TABLES `color` WRITE;
 /*!40000 ALTER TABLE `color` DISABLE KEYS */;
-INSERT INTO `color` VALUES (1,'- n/a'),(2,'Noir'),(3,'Bleu'),(4,'Vert'),(5,'gris'),(6,'rouge'),(10,'fushia'),(11,'bordeaux'),(12,'Jaune'),(13,'Beige');
+INSERT INTO `color` VALUES (1,'- n/a'),(2,'Noir'),(3,'Bleu'),(4,'Vert'),(5,'gris'),(6,'rouge'),(10,'fushia'),(11,'bordeaux'),(12,'Jaune'),(13,'Beige'),(14,'gris clair');
 /*!40000 ALTER TABLE `color` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `commande`
+--
+
+DROP TABLE IF EXISTS `commande`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `commande` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `session` varchar(200) NOT NULL,
+  `date_ajout` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_contact` int(11) NOT NULL,
+  `colissimo` varchar(240) NOT NULL,
+  `mode_paiement` tinyint(4) NOT NULL DEFAULT '1',
+  `statut_paiement` tinyint(4) NOT NULL DEFAULT '0',
+  `statut_commande` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `commande`
+--
+
+LOCK TABLES `commande` WRITE;
+/*!40000 ALTER TABLE `commande` DISABLE KEYS */;
+/*!40000 ALTER TABLE `commande` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -179,7 +208,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (25438,'Jav','gonz','jav_gonz@yahoo.com','',NULL,NULL,0,0,0,NULL,NULL),(25439,'xav','gonza','xavier.gonzalez@free.fr','',NULL,NULL,1,0,0,NULL,NULL),(25442,'xavier','gonzalez','fjavi.gonzalez@gmail.com','',NULL,NULL,1,0,0,NULL,NULL),(25445,'Fred ','Lesca','fredericlesca@iconeo.fr','',NULL,NULL,1,0,0,NULL,NULL),(25451,'','lesca','flesca@free.fr','',NULL,'atelier medecine chinoise décevant',1,1,0,NULL,NULL),(25453,'','Xavier Gonzalez','xavier@gonzalez.pm','reivax',NULL,NULL,1,0,1,NULL,NULL),(25479,'Jav','Gonzzza','xav335111@hotmail.com','','0909090909',NULL,1,0,0,53,54),(25480,'','ICONEO','xav335@hotmail.com','azeaze','0909090909',NULL,1,0,0,85,86);
+INSERT INTO `contact` VALUES (25438,'Jav','gonz','jav_gonz@yahoo.com','',NULL,NULL,0,0,0,NULL,NULL),(25439,'xav','gonza','xavier.gonzalez@free.fr','',NULL,NULL,1,0,0,NULL,NULL),(25442,'xavier','gonzalez','fjavi.gonzalez@gmail.com','',NULL,NULL,1,0,0,NULL,NULL),(25445,'Fred ','Lesca','fredericlesca@iconeo.fr','',NULL,NULL,1,0,0,NULL,NULL),(25451,'','lesca','flesca@free.fr','',NULL,'atelier medecine chinoise décevant',1,1,0,NULL,NULL),(25453,'','Xavier Gonzalez','xavier@gonzalez.pm','reivax',NULL,NULL,1,0,1,NULL,NULL),(25479,'Jav','Gonzzza','xav335111@hotmail.com','','0909090909',NULL,1,0,0,53,54),(25480,'','ICONEO','xav335@hotmail.com','azeaze','0909090909',NULL,1,0,0,89,90);
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -431,7 +460,7 @@ CREATE TABLE `panier` (
   `id_sousref` int(10) unsigned NOT NULL,
   `quantite` smallint(6) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -440,7 +469,7 @@ CREATE TABLE `panier` (
 
 LOCK TABLES `panier` WRITE;
 /*!40000 ALTER TABLE `panier` DISABLE KEYS */;
-INSERT INTO `panier` VALUES (29,'2015-05-11 15:42:58','ov38j31ad80aqo6nqvu2iblgu5',25,1),(31,'2015-05-11 16:24:44','ov38j31ad80aqo6nqvu2iblgu5',2,1),(32,'2015-05-12 13:05:19','u20us3e21j0qah9b4gtiehgl92',18,2),(33,'2015-05-18 07:05:51','3ibkte8d5imr73u3t80eso9j76',27,2),(34,'2015-05-18 13:39:13','3ibkte8d5imr73u3t80eso9j76',24,1),(35,'2015-05-18 14:59:38','3ibkte8d5imr73u3t80eso9j76',2,1),(36,'2015-05-18 15:06:31','k2b0l84as9co7pi39pve0lnjc5',23,1),(37,'2015-05-18 16:25:54','1hjr92f7h0k74ak98hp789l704',29,1),(38,'2015-05-18 17:06:48','loi3pbfqp5a3cfm79tibt0egr6',2,1),(39,'2015-05-18 17:26:36','gpb2shqpchr9ef32h7nbtab9v4',23,1),(40,'2015-05-18 17:28:41','gpb2shqpchr9ef32h7nbtab9v4',28,1),(41,'2015-05-18 18:25:31','191ffs3s3sdg9ol2dpa9lkla07',25,1),(43,'2015-06-15 09:52:56','k8s8ujfqjmdaj61th2p6052th3',28,1),(44,'2015-06-15 10:10:04','k8s8ujfqjmdaj61th2p6052th3',13,1),(45,'2015-06-15 10:10:35','k8s8ujfqjmdaj61th2p6052th3',18,1),(46,'2015-06-15 10:16:38','9hr1iejj5n4d2ins1r8o7dalc6',2,1),(48,'2015-06-15 10:45:21','9hr1iejj5n4d2ins1r8o7dalc6',32,1);
+INSERT INTO `panier` VALUES (29,'2015-05-11 15:42:58','ov38j31ad80aqo6nqvu2iblgu5',25,1),(31,'2015-05-11 16:24:44','ov38j31ad80aqo6nqvu2iblgu5',2,1),(32,'2015-05-12 13:05:19','u20us3e21j0qah9b4gtiehgl92',18,2),(33,'2015-05-18 07:05:51','3ibkte8d5imr73u3t80eso9j76',27,2),(34,'2015-05-18 13:39:13','3ibkte8d5imr73u3t80eso9j76',24,1),(35,'2015-05-18 14:59:38','3ibkte8d5imr73u3t80eso9j76',2,1),(36,'2015-05-18 15:06:31','k2b0l84as9co7pi39pve0lnjc5',23,1),(37,'2015-05-18 16:25:54','1hjr92f7h0k74ak98hp789l704',29,1),(38,'2015-05-18 17:06:48','loi3pbfqp5a3cfm79tibt0egr6',2,1),(39,'2015-05-18 17:26:36','gpb2shqpchr9ef32h7nbtab9v4',23,1),(40,'2015-05-18 17:28:41','gpb2shqpchr9ef32h7nbtab9v4',28,1),(41,'2015-05-18 18:25:31','191ffs3s3sdg9ol2dpa9lkla07',25,1),(43,'2015-06-15 09:52:56','k8s8ujfqjmdaj61th2p6052th3',28,1),(44,'2015-06-15 10:10:04','k8s8ujfqjmdaj61th2p6052th3',13,1),(45,'2015-06-15 10:10:35','k8s8ujfqjmdaj61th2p6052th3',18,1),(48,'2015-06-15 10:45:21','9hr1iejj5n4d2ins1r8o7dalc6',32,1),(50,'2015-06-15 13:44:58','9hr1iejj5n4d2ins1r8o7dalc6',20,1),(51,'2015-06-15 13:45:22','9hr1iejj5n4d2ins1r8o7dalc6',22,1);
 /*!40000 ALTER TABLE `panier` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -593,8 +622,9 @@ CREATE TABLE `product_sousref` (
   `id_color` smallint(5) unsigned NOT NULL,
   `id_size` smallint(5) unsigned NOT NULL,
   `stock` smallint(6) NOT NULL DEFAULT '0',
+  `actif` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -603,7 +633,7 @@ CREATE TABLE `product_sousref` (
 
 LOCK TABLES `product_sousref` WRITE;
 /*!40000 ALTER TABLE `product_sousref` DISABLE KEYS */;
-INSERT INTO `product_sousref` VALUES (2,'ACE34',30,3,2,4),(7,'Z234',30,5,3,2),(10,'IjI71',30,3,4,2),(13,'puBoU',31,3,1,4),(14,'2dW6X',31,6,1,3),(16,'voGj7',31,9,2,2),(18,'45RF',30,3,5,3),(19,'34222',33,6,1,1),(20,'Z234',33,2,1,2),(21,'342',33,11,1,1),(22,'fubK8',30,3,3,2),(23,'922it',35,1,1,3),(24,'OBMWj',34,1,1,3),(25,'qu2Sf',32,3,1,2),(26,'bAtLX',32,10,1,2),(27,'P6kWZ',31,2,1,2),(28,'ZzKpu',32,5,1,1),(29,'xKsVP',30,5,5,2),(30,'AZtBk',31,12,1,1),(31,'3xiAo',36,11,1,3),(32,'bhhXK',36,2,1,1),(33,'0O8cb',36,13,1,2);
+INSERT INTO `product_sousref` VALUES (2,'ACE34',30,3,2,4,1),(7,'Z234',30,5,3,2,1),(10,'IjI71',30,3,4,2,1),(13,'puBoU',31,3,1,4,1),(14,'2dW6X',31,6,1,3,1),(16,'voGj7',31,9,2,2,1),(18,'45RF',30,3,5,3,1),(19,'34222',33,6,1,1,1),(20,'Z234',33,2,1,2,1),(21,'342',33,11,1,1,1),(22,'fubK8',30,3,3,2,1),(23,'922it',35,1,1,3,1),(24,'OBMWj',34,1,1,3,1),(25,'qu2Sf',32,3,1,2,1),(26,'bAtLX',32,10,1,3,1),(27,'P6kWZ',31,2,1,2,1),(28,'ZzKpu',32,5,1,1,1),(29,'xKsVP',30,5,5,2,1),(30,'AZtBk',31,12,1,1,1),(31,'3xiAo',36,11,1,3,1),(32,'bhhXK',36,2,1,1,1),(33,'0O8cb',36,13,1,2,1),(34,'u3dFD',32,11,1,2,1);
 /*!40000 ALTER TABLE `product_sousref` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -664,4 +694,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-15 12:51:19
+-- Dump completed on 2015-06-15 17:25:26

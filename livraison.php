@@ -1,14 +1,14 @@
+<?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/Panier.php';
 require 'admin/classes/utils.php';
-$tva = 0.2;
 session_start();
 
 $panier = new Panier();
 
 try {
 		$result = $panier->panierGet(session_id());
-		//print_r($result);
+		print_r($result);
 		
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
@@ -17,6 +17,8 @@ try {
 }
 
 $panier =null;
+$totalLiv = 12.3;
+$extraLiv =0;
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -67,6 +69,7 @@ $panier =null;
 							    $totalHT = 0;
                                 foreach ($result as $value):
                                 $totalHT += $value['prix']*$value['quantite'];
+                                $extraLiv += $value['shipping'];
                                 ?>
 								<tr>
 									<td>
@@ -78,18 +81,19 @@ $panier =null;
 											(<?php if ($value['color'] != '- n/a' ) echo $value['color']  ?> - <?php if ($value['size'] != '- n/a' ) echo $value['size'] ?>)
 										</p>
 									</td>
-									<td><?php echo $value['prix']*(1+$tva) ?> €</td>
+									<td><?php echo number_format($value['prix']*(1+$tva), 2, ',', ' ') ?> €</td>
 									<td>
 										<?php echo $value['quantite'] ?>
 									</td>
-									<td><?php echo ($value['prix']*$value['quantite'])*(1+$tva) ?> €</td>
+									<td><?php echo number_format(($value['prix']*$value['quantite'])*(1+$tva), 2, ',', ' ') ?> €</td>
 									
 								</tr>
 								<?php 
                                 endforeach;
                                 $totalTVA = $totalHT*$tva;
                                 $totalTTC = $totalHT + $totalTVA;
-                                $totalLiv = 15.3;
+                                $totalLiv += $extraLiv;
+                                $totalTTCLIV = $totalTTC + $totalLiv;
                                 ?>
 							</tbody>
 							<tfoot>
@@ -100,40 +104,40 @@ $panier =null;
 									<td colspan="2">
 										Total HT :
 									</td>
-									<td colspan="2"><?php echo $totalHT?> €</td>
+									<td colspan="2"><?php echo number_format($totalHT, 2, ',', ' ')?> €</td>
 								</tr>
 								<tr>
 									<td colspan="2">TVA</td>
-									<td colspan="2"><?php echo $totalTVA?> €</td>
+									<td colspan="2"><?php echo number_format($totalTVA, 2, ',', ' ')?> €</td>
 								</tr>
 								<tr>
 									<td colspan="2">Frais de livraison</td>
-									<td colspan="2"><?php echo $totalLiv?> €</td>
+									<td colspan="2"><?php echo number_format($totalLiv, 2, ',', ' ')?> €</td>
 								</tr>
 								<tr>
 									<td colspan="2">
-										<span>Total TTC</span>
+										<span>Total TTC + frais de livraison</span>
 									</td>
-									<td colspan="2"><?php echo $totalTTC?> €</span>
+									<td colspan="2"><?php echo number_format($totalTTCLIV, 2, ',', ' ')?> €</span>
 									</td>
 								</tr>
 							</tfoot>
 						</table>
 						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-                        <input type='hidden' value="39.00" name="amount" />
+                        <input type='hidden' value="<?php echo number_format($totalHT, 2, '.', ' ')?>" name="amount" />
                         <input name="currency_code" type="hidden" value="EUR" />
-                        <input name="shipping" type="hidden" value="9.50" />
-                        <input name="tax" type="hidden" value="5.00" />
+                        <input name="shipping" type="hidden" value="<?php echo number_format($totalLiv, 2, '.', ' ')?>" />
+                        <input name="tax" type="hidden" value="<?php echo number_format($totalTVA, 2, '.', ' ')?>" />
                         <input name="return" type="hidden" value="http://<?php echo $_SERVER['HTTP_HOST']?>/paiementValide.php" />
                         <input name="cancel_return" type="hidden" value="http://<?php echo $_SERVER['HTTP_HOST']?>/paiementAnnule.php" />
                         <input name="notify_url" type="hidden" value="http://<?php echo $_SERVER['HTTP_HOST']?>/valid.php" />
                         <input name="cmd" type="hidden" value="_xclick" />
                         <input name="business" type="hidden" value="xav335@hotmail.com" />
-                        <input name="item_name" type="hidden" value="Commande_23433" />
+                        <input name="item_name" type="hidden" value="Commande_55555" />
                         <input name="no_note" type="hidden" value="1" />
                         <input name="lc" type="hidden" value="FR" />
                         <input name="bn" type="hidden" value="PP-BuyNowBF" />
-                        <input name="custom" type="hidden" value="ID_ACHETEUR" />
+                        <input name="custom" type="hidden" value="<?php echo $_SESSION['id_contact']?>" />
                         
 						<div class="row">
 							<div class="large-6 medium-6 small-6 columns">
