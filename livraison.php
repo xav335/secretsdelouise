@@ -17,7 +17,6 @@ try {
 }
 
 $panier =null;
-$totalLiv = 12.3;
 $extraLiv =0;
 ?>
 <!doctype html>

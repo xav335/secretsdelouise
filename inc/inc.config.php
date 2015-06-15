@@ -6,8 +6,9 @@ define("DBPASSWD", "secretsdelouise33");
 
 // CONSTANTES CONSTANTES CONSTANTES CONSTANTES CONSTANTES CONSTANTES CONSTANTES CONSTANTES
 $tva = 0.2;
+$totalLiv = 12.3;
 
 $mailContact = "fjavi.gonzalez@gmail.com";
-$mailContact = "fjavi.gonzalez@gmail.com";
+$mailBcc = "xav335@hotmail.com,xavier.gonzalez@laposte.net,jav_gonz@yahoo.com";
 
 

@@ -1,3 +1,4 @@
+<?php require_once '../inc/inc.config.php';?>
 <?php
 require '../admin/classes/Contact.php';
 require '../admin/classes/utils.php';
@@ -28,14 +29,14 @@ if ($_POST["action"] == "sendMail") {
 	}
 
 	//$_to = "contact@alleedubio.fr";
-	$_to = "fjavi.gonzalez@gmail.com";
+	$_to = $mailContact;
 	$sujet = "Les Secrets de Louise - Contact Site";
 	//echo "Envoi du message à " . $_to . "<br>";
 		
 	$entete = "From:LesSecretsDeLouise <contact@lessecretsdelouise.com>\n";
 	$entete .= "MIME-version: 1.0\n";
 	$entete .= "Content-type: text/html; charset= iso-8859-1\n";
-	$entete .= "Bcc: xav335@hotmail.com\n";
+	$entete .= "Bcc: ". $mailBcc ."\n";
 		
 	$corps = "";
 	$corps .= "Bonjour,<br>";
