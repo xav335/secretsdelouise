@@ -22,15 +22,14 @@ $panier = null;
 				<aside class="left-off-canvas-menu">
 					<!-- whatever you want goes here -->
 					<ul>
-						<li><a href="#">Collier</a></li>
-						<li><a href="#">Bague</a></li>
-						<li><a href="#">Bracelet</a></li>
-						<li><a href="#">Chaussures</a></li>
-						<li><a href="#">Maroquinerie</a></li>
-					</ul>
-					<ul>
+					    <li><a href="/">Accueil</a></li>
+						<li><a href="categories.php">Boutique</a></li>
 						<li><a href="actualites.php">Actualités</a></li>
 						<li><a href="livre-d-or.php">Livre d’or</a></li>
+						<li><a href="conditions.php">conditions de vente</a></li>
+					</ul>
+					<ul>
+						<li><a href="moncompte.php">Mon Compte</a></li>
 						<li><a href="contact.php">Contact</a></li>
 					</ul>
 				</aside>	
@@ -40,18 +39,17 @@ $panier = null;
 					<div class="row content">
 						<div class="large-8 medium-8 columns">
 							<ul>
-								<li><a href="#">Collier</a></li>
-								<li><a href="#">Bague</a></li>
-								<li><a href="#">Bracelet</a></li>
-								<li><a href="#">Chaussures</a></li>
-								<li><a href="#">Maroquinerie</a></li>
+							    <li><a href="/">Accueil</a></li>
+								<li><a href="categories.php">Boutique</a></li>
+        						<li><a href="actualites.php">Actualités</a></li>
+        						<li><a href="livre-d-or.php">Livre d’or</a></li>
+        						<li><a href="conditions.php">conditions de vente</a></li>
 							</ul>
 						</div>
 						<div class="large-4 medium-4 content2 columns">
 							<ul>
-								<li><a href="actualites.php">Actualités</a></li>
-								<li><a href="livre-d-or.php">Livre d’or</a></li>
-								<li><a href="contact.php">Contact</a></li>
+						        <li><a href="moncompte.php">Mon Compte</a></li>
+						        <li><a href="contact.php">Contact</a></li>
 							</ul>
 						</div>
 					</div>
