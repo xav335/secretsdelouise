@@ -154,3 +154,20 @@ Je recommande fortement !!
 2015-05-18 17:35:57 : Password envoyé ! 
 2015-05-18 18:24:18 : Password envoyé ! 
 2015-05-18 18:25:21 : Password envoyé ! 
+2015-06-17 11:27:37 : réponse de Paypal sans Post ... 
+2015-06-17 11:36:43 : Erreur Mysql valideCommande sql = : UPDATE  `commande` SET
+				`status_commande`= 1, 
+	            `status_paiement`= 1 
+				WHERE `id_commande`=3; 
+2015-06-17 11:37:14 : Erreur Mysql valideCommande sql = : UPDATE  `commande` SET
+				`status_commande`= 1, 
+	            `status_paiement`= 1 
+				WHERE `id_commande`=3; 
+2015-06-17 11:38:25 : Erreur Mysql valideCommande sql = : UPDATE  `commande` SET
+				`status_commande`= 1, 
+	            `status_paiement`= 1 
+				WHERE `id`=3; 
+2015-06-17 11:38:29 : Erreur Mysql valideCommande sql = : UPDATE  `commande` SET
+				`status_commande`= 1, 
+	            `status_paiement`= 1 
+				WHERE `id`=3; 

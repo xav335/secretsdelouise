@@ -10,6 +10,8 @@ class Panier extends StorageManager {
 	
 	public function ajoutPanier($value){
 	    //print_r($value);exit();
+	    //$product = unserialize(stripslashes($value['product']));
+	    //print_r($product);exit;
 	
 	    $this->dbConnect();
 	    $this->begin();
@@ -19,11 +21,12 @@ class Panier extends StorageManager {
 	    if (empty($nbRef)){
 	
     	    $sql = "INSERT INTO  `panier`
-    					(`session`,`id_sousref`, `quantite`)
+    					(`session`,`id_sousref`, `quantite`, `serialproduct`)
     					VALUES (
     					'". $value['session'] ."',
     					". $value['idsousref'] .",
-    					". $value['quantite'] ."
+    					". $value['quantite'] .",
+    					'". $value['product'] ."'
     				);";
     	    $result = mysqli_query($this->mysqli,$sql);
     	
@@ -71,6 +74,7 @@ class Panier extends StorageManager {
 	
 	public function panierGet($session){
 	    $this->dbConnect();
+	    //TODO: refacto : prendre les info produit dans le serializeproduct de la table Panier
 	    
         $sql = "SELECT panier.id as id_panier,panier.quantite,product.label,product.prix,
                     product.id,product.image1,size.label as size, color.label as color,product.shipping 
@@ -136,6 +140,8 @@ class Panier extends StorageManager {
 	    $this->dbDisConnect();
 	}
 	
+	
+	
 	public function quantiteArticlesPanier($session){
 	    //print_r($value);exit();
 	    $this->dbConnect();
@@ -154,6 +160,58 @@ class Panier extends StorageManager {
 	    }
 	    $this->dbDisConnect();
 	    return $new_array[0];
+	}
+	
+	
+	
+	public function ajoutCommande($session, $id_contact){
+	    //print_r($session);print_r($id_contact);exit();
+	
+	    $this->dbConnect();
+	    $this->begin();
+	     
+	    if (empty($nbRef)){
+	
+	        $sql = "INSERT INTO  `commande`
+    					(`session`,`id_contact`)
+    					VALUES (
+    					'". $session ."',
+    					". $id_contact ."
+    				);";
+	        $result = mysqli_query($this->mysqli,$sql);
+	         
+	        if (!$result) {
+	            $this->rollback();
+	            throw new Exception('Erreur Mysql ajoutPanier sql = : '.$sql);
+	        }
+	        $id_record = mysqli_insert_id($this->mysqli);
+	    } 
+	    $this->commit();
+	
+	    $this->dbDisConnect();
+	    return $id_record;
+	}
+	
+	public function valideCommande($id_commande,$logpayment){
+	    //print_r($value);exit();
+	    $this->dbConnect();
+	    $this->begin();
+	     
+	    $sql = "UPDATE  `commande` SET
+				`statut_commande`= 1, 
+	            `statut_paiement`= 1,
+	            `logpayment`= '". $logpayment ."'
+				WHERE `id`=". $id_commande .";";
+	    //print_r($sql);exit();
+	    $result = mysqli_query($this->mysqli,$sql);
+	
+	    if (!$result) {
+	        $this->rollback();
+	        throw new Exception('Erreur Mysql valideCommande sql = : '.$sql);
+	    }
+	
+	    $this->commit();
+	    $this->dbDisConnect();
 	}
 	
 }
