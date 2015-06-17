@@ -2,14 +2,15 @@
 <?php 
 require 'admin/classes/Panier.php';
 require 'admin/classes/utils.php';
-$tva = 0.2;
+
 session_start();
+session_regenerate_id(true);
 
 $panier = new Panier();
 
 try {
 		$result = $panier->panierGet(session_id());
-		//print_r($result);
+		print_r($result);
 		
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";

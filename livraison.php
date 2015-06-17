@@ -4,11 +4,15 @@ require 'admin/classes/Panier.php';
 require 'admin/classes/utils.php';
 session_start();
 
+(!empty($_SESSION['id_contact'])) ? $id_contact =$_SESSION['id_contact'] : $id_contact = null;
+
 $panier = new Panier();
 
 try {
 		$result = $panier->panierGet(session_id());
-		print_r($result);
+		//print_r($result);
+		
+		$id_commande =$panier->ajoutCommande(session_id(), $id_contact);
 		
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
@@ -52,9 +56,14 @@ $extraLiv =0;
 					if (!empty($result)):
 					?>
 						<table name="panier">
+						  <thead>
+								<tr>
+									<th>Commande N° <?php echo $id_commande?></th>
+								</tr>
+							</thead>
 							<thead>
 								<tr>
-									<th>Produit <?php echo $_SESSION['id_contact']?></th>
+									<th>Produit</th>
 									<th>Description</th>
 									<th>Prix unitaire</th>
 									<th>Quantité</th>
@@ -132,7 +141,7 @@ $extraLiv =0;
                         <input name="notify_url" type="hidden" value="http://<?php echo $_SERVER['HTTP_HOST']?>/valid.php" />
                         <input name="cmd" type="hidden" value="_xclick" />
                         <input name="business" type="hidden" value="xav335@hotmail.com" />
-                        <input name="item_name" type="hidden" value="Commande_55555" />
+                        <input name="item_name" type="hidden" value="Commande_<?php echo $id_commande?>" />
                         <input name="no_note" type="hidden" value="1" />
                         <input name="lc" type="hidden" value="FR" />
                         <input name="bn" type="hidden" value="PP-BuyNowBF" />

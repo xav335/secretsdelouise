@@ -50,17 +50,17 @@ DROP TABLE IF EXISTS `adresse`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `adresse` (
   `id_adresse` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nom` varchar(200) NOT NULL,
-  `prenom` varchar(200) NOT NULL,
-  `adresse` varchar(254) NOT NULL,
-  `cp` varchar(10) NOT NULL,
-  `ville` varchar(100) NOT NULL,
-  `tel` varchar(10) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
+  `nom` varchar(200) CHARACTER SET utf8 NOT NULL,
+  `prenom` varchar(200) CHARACTER SET utf8 NOT NULL,
+  `adresse` varchar(254) CHARACTER SET utf8 NOT NULL,
+  `cp` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `ville` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `tel` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `email` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `livraison` tinyint(4) NOT NULL DEFAULT '0',
-  `message` varchar(250) NOT NULL,
+  `message` varchar(250) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id_adresse`)
-) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `adresse` (
 
 LOCK TABLES `adresse` WRITE;
 /*!40000 ALTER TABLE `adresse` DISABLE KEYS */;
-INSERT INTO `adresse` VALUES (40,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(41,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(42,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(43,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(44,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(45,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(46,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(47,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(48,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(49,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,''),(50,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,''),(51,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,'Attention au chien'),(52,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,'Attention au chien'),(53,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',0,''),(54,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',1,''),(55,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(56,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(57,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(58,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(59,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(60,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(61,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(62,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(63,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(64,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(65,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(66,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(67,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(68,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(69,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(70,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(71,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(72,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(73,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(74,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(75,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(76,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(77,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(78,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(79,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(80,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(81,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(82,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(83,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(84,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(85,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(86,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(87,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(88,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(89,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(90,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar');
+INSERT INTO `adresse` VALUES (40,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(41,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(42,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(43,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(44,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(45,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(46,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(47,'Gonzalez','xavier','36 route de bordeaux','33360','Latresne','06 81 73 1','xav335@hotmail.com',0,'pllez au portail et attention au chien !'),(48,'Alvarez','Isable','55 rue anatole france','33150','Cenon','0567875645','isa.gonzalez@gmail.com',1,'pllez au portail et attention au chien !'),(49,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,''),(50,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,''),(51,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',0,'Attention au chien'),(52,'Gonzalez','Xavier','36 route de Bordeaux ','33360 ','Latresne','06877676','xav335@hotmail.com',1,'Attention au chien'),(53,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',0,''),(54,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335111@hotmail.com',1,''),(55,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(56,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(57,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(58,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(59,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(60,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(61,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(62,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(63,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(64,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(65,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(66,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(67,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(68,'Gonzzza','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(69,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(70,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(71,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(72,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(73,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(74,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(75,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(76,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(77,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(78,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(79,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(80,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(81,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(82,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(83,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(84,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(85,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(86,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(87,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(88,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(89,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(90,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(91,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(92,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(93,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(94,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(95,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(96,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(97,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(98,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(99,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,''),(100,'Gonzzza','Jav','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,''),(101,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(102,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(103,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(104,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(105,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(106,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar'),(107,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',0,'Attnetion au klebar'),(108,'ICONEO','','36 route de Bordeaux','33360','Latresne','0909090909','xav335@hotmail.com',1,'Attnetion au klebar');
 /*!40000 ALTER TABLE `adresse` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -158,15 +158,16 @@ DROP TABLE IF EXISTS `commande`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `commande` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `session` varchar(200) NOT NULL,
+  `session` varchar(200) CHARACTER SET utf8 NOT NULL,
   `date_ajout` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_contact` int(11) NOT NULL,
-  `colissimo` varchar(240) NOT NULL,
+  `colissimo` varchar(240) CHARACTER SET utf8 NOT NULL,
   `mode_paiement` tinyint(4) NOT NULL DEFAULT '1',
   `statut_paiement` tinyint(4) NOT NULL DEFAULT '0',
   `statut_commande` int(11) NOT NULL DEFAULT '0',
+  `logpayment` text CHARACTER SET utf8,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,6 +176,7 @@ CREATE TABLE `commande` (
 
 LOCK TABLES `commande` WRITE;
 /*!40000 ALTER TABLE `commande` DISABLE KEYS */;
+INSERT INTO `commande` VALUES (1,'gq1fpuh087d4c2fn348dmtkc77','2015-06-17 09:01:27',25480,'',1,0,0,'0'),(2,'gq1fpuh087d4c2fn348dmtkc77','2015-06-17 09:02:57',25480,'',1,0,0,'0'),(3,'gq1fpuh087d4c2fn348dmtkc77','2015-06-17 09:03:15',25480,'',1,1,1,'a:0:{}'),(4,'gq1fpuh087d4c2fn348dmtkc77','2015-06-17 09:03:57',25480,'',1,0,0,'0');
 /*!40000 ALTER TABLE `commande` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,7 +201,7 @@ CREATE TABLE `contact` (
   `id_facturation` int(11) DEFAULT NULL,
   `id_livraison` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25481 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25482 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,7 +210,7 @@ CREATE TABLE `contact` (
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
-INSERT INTO `contact` VALUES (25438,'Jav','gonz','jav_gonz@yahoo.com','',NULL,NULL,0,0,0,NULL,NULL),(25439,'xav','gonza','xavier.gonzalez@free.fr','',NULL,NULL,1,0,0,NULL,NULL),(25442,'xavier','gonzalez','fjavi.gonzalez@gmail.com','',NULL,NULL,1,0,0,NULL,NULL),(25445,'Fred ','Lesca','fredericlesca@iconeo.fr','',NULL,NULL,1,0,0,NULL,NULL),(25451,'','lesca','flesca@free.fr','',NULL,'atelier medecine chinoise décevant',1,1,0,NULL,NULL),(25453,'','Xavier Gonzalez','xavier@gonzalez.pm','reivax',NULL,NULL,1,0,1,NULL,NULL),(25479,'Jav','Gonzzza','xav335111@hotmail.com','','0909090909',NULL,1,0,0,53,54),(25480,'','ICONEO','xav335@hotmail.com','azeaze','0909090909',NULL,1,0,0,89,90);
+INSERT INTO `contact` VALUES (25438,'Jav','gonz','jav_gonz@yahoo.com','',NULL,NULL,0,0,0,NULL,NULL),(25439,'xav','gonza','xavier.gonzalez@free.fr','',NULL,NULL,1,0,0,NULL,NULL),(25442,'xavier','gonzalez','fjavi.gonzalez@gmail.com','',NULL,NULL,1,0,0,NULL,NULL),(25445,'Fred ','Lesca','fredericlesca@iconeo.fr','',NULL,NULL,1,0,0,NULL,NULL),(25451,'','lesca','flesca@free.fr','',NULL,'atelier medecine chinoise décevant',1,1,0,NULL,NULL),(25453,'','Xavier Gonzalez','xavier@gonzalez.pm','reivax',NULL,NULL,1,0,1,NULL,NULL),(25479,'Jav','Gonzzza','xav335111@hotmail.com','','0909090909',NULL,1,0,0,53,54),(25480,'','ICONEO','xav335@hotmail.com','azeaze','0909090909',NULL,1,0,0,107,108),(25481,'Jav','Gonzzza','xav335@hotmail.com','reivax','0909090909',NULL,1,0,0,99,100);
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,9 +245,9 @@ DROP TABLE IF EXISTS `couleur`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `couleur` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `label` varchar(50) NOT NULL,
+  `label` varchar(50) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -254,7 +256,7 @@ CREATE TABLE `couleur` (
 
 LOCK TABLES `couleur` WRITE;
 /*!40000 ALTER TABLE `couleur` DISABLE KEYS */;
-INSERT INTO `couleur` VALUES (1,'Blanc'),(2,'Noir'),(3,'Bleu'),(4,'Vert'),(5,'gris'),(6,'rouge');
+INSERT INTO `couleur` VALUES (1,'Blanc'),(2,'Noir'),(3,'Bleu'),(4,'Vert'),(5,'gris clair'),(6,'rouge'),(7,'jaune'),(8,'gris foncé');
 /*!40000 ALTER TABLE `couleur` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -382,7 +384,7 @@ CREATE TABLE `newsletter_detail` (
   `link` varchar(250) DEFAULT NULL,
   `texte` text,
   PRIMARY KEY (`id`,`id_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=333 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=335 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -391,7 +393,7 @@ CREATE TABLE `newsletter_detail` (
 
 LOCK TABLES `newsletter_detail` WRITE;
 /*!40000 ALTER TABLE `newsletter_detail` DISABLE KEYS */;
-INSERT INTO `newsletter_detail` VALUES (331,12,'','/uploads/2589.jpg','http://dev.bsport.fr/',''),(332,12,'','/uploads/2588.jpg','http://www.lessecretsdelouise.com/','');
+INSERT INTO `newsletter_detail` VALUES (333,12,'','/uploads/2589.jpg','http://dev.bsport.fr/',''),(334,12,'','/uploads/2588.jpg','http://www.lessecretsdelouise.com/','');
 /*!40000 ALTER TABLE `newsletter_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -456,11 +458,12 @@ DROP TABLE IF EXISTS `panier`;
 CREATE TABLE `panier` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `date_ajout` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `session` varchar(200) NOT NULL,
+  `session` varchar(200) CHARACTER SET utf8 NOT NULL,
   `id_sousref` int(10) unsigned NOT NULL,
   `quantite` smallint(6) NOT NULL DEFAULT '1',
+  `serialproduct` text CHARACTER SET utf8,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -469,7 +472,7 @@ CREATE TABLE `panier` (
 
 LOCK TABLES `panier` WRITE;
 /*!40000 ALTER TABLE `panier` DISABLE KEYS */;
-INSERT INTO `panier` VALUES (29,'2015-05-11 15:42:58','ov38j31ad80aqo6nqvu2iblgu5',25,1),(31,'2015-05-11 16:24:44','ov38j31ad80aqo6nqvu2iblgu5',2,1),(32,'2015-05-12 13:05:19','u20us3e21j0qah9b4gtiehgl92',18,2),(33,'2015-05-18 07:05:51','3ibkte8d5imr73u3t80eso9j76',27,2),(34,'2015-05-18 13:39:13','3ibkte8d5imr73u3t80eso9j76',24,1),(35,'2015-05-18 14:59:38','3ibkte8d5imr73u3t80eso9j76',2,1),(36,'2015-05-18 15:06:31','k2b0l84as9co7pi39pve0lnjc5',23,1),(37,'2015-05-18 16:25:54','1hjr92f7h0k74ak98hp789l704',29,1),(38,'2015-05-18 17:06:48','loi3pbfqp5a3cfm79tibt0egr6',2,1),(39,'2015-05-18 17:26:36','gpb2shqpchr9ef32h7nbtab9v4',23,1),(40,'2015-05-18 17:28:41','gpb2shqpchr9ef32h7nbtab9v4',28,1),(41,'2015-05-18 18:25:31','191ffs3s3sdg9ol2dpa9lkla07',25,1),(43,'2015-06-15 09:52:56','k8s8ujfqjmdaj61th2p6052th3',28,1),(44,'2015-06-15 10:10:04','k8s8ujfqjmdaj61th2p6052th3',13,1),(45,'2015-06-15 10:10:35','k8s8ujfqjmdaj61th2p6052th3',18,1),(48,'2015-06-15 10:45:21','9hr1iejj5n4d2ins1r8o7dalc6',32,1),(50,'2015-06-15 13:44:58','9hr1iejj5n4d2ins1r8o7dalc6',20,1),(51,'2015-06-15 13:45:22','9hr1iejj5n4d2ins1r8o7dalc6',22,1);
+INSERT INTO `panier` VALUES (29,'2015-05-11 15:42:58','ov38j31ad80aqo6nqvu2iblgu5',25,1,NULL),(31,'2015-05-11 16:24:44','ov38j31ad80aqo6nqvu2iblgu5',2,1,NULL),(32,'2015-05-12 13:05:19','u20us3e21j0qah9b4gtiehgl92',18,2,NULL),(33,'2015-05-18 07:05:51','3ibkte8d5imr73u3t80eso9j76',27,2,NULL),(34,'2015-05-18 13:39:13','3ibkte8d5imr73u3t80eso9j76',24,1,NULL),(35,'2015-05-18 14:59:38','3ibkte8d5imr73u3t80eso9j76',2,1,NULL),(36,'2015-05-18 15:06:31','k2b0l84as9co7pi39pve0lnjc5',23,1,NULL),(37,'2015-05-18 16:25:54','1hjr92f7h0k74ak98hp789l704',29,1,NULL),(38,'2015-05-18 17:06:48','loi3pbfqp5a3cfm79tibt0egr6',2,1,NULL),(39,'2015-05-18 17:26:36','gpb2shqpchr9ef32h7nbtab9v4',23,1,NULL),(40,'2015-05-18 17:28:41','gpb2shqpchr9ef32h7nbtab9v4',28,1,NULL),(41,'2015-05-18 18:25:31','191ffs3s3sdg9ol2dpa9lkla07',25,1,NULL),(43,'2015-06-15 09:52:56','k8s8ujfqjmdaj61th2p6052th3',28,1,NULL),(44,'2015-06-15 10:10:04','k8s8ujfqjmdaj61th2p6052th3',13,1,NULL),(45,'2015-06-15 10:10:35','k8s8ujfqjmdaj61th2p6052th3',18,1,NULL),(48,'2015-06-15 10:45:21','9hr1iejj5n4d2ins1r8o7dalc6',32,1,NULL),(50,'2015-06-15 13:44:58','9hr1iejj5n4d2ins1r8o7dalc6',20,1,NULL),(51,'2015-06-15 13:45:22','9hr1iejj5n4d2ins1r8o7dalc6',22,1,NULL),(54,'2015-06-15 16:47:20','d15st5im2jrqc2atb1ae6mhat1',23,1,NULL),(55,'2015-06-16 06:19:16','d15st5im2jrqc2atb1ae6mhat1',13,1,NULL),(56,'2015-06-17 08:24:51','roqm40hmlqetrmp394piianfm7',23,1,NULL),(58,'2015-06-17 08:37:22','gq1fpuh087d4c2fn348dmtkc77',26,1,'a:19:{s:2:\"id\";s:2:\"32\";s:13:\"date_creation\";s:19:\"2015-04-15 02:44:08\";s:10:\"date_suppr\";s:19:\"2015-04-15 02:45:04\";s:9:\"reference\";s:5:\"556ER\";s:4:\"prix\";s:5:\"10.00\";s:7:\"libprix\";s:21:\"€   (50% de remise)\";s:8:\"shipping\";s:4:\"2.00\";s:5:\"label\";s:17:\"Coliers fantaisie\";s:13:\"titreaccroche\";s:13:\"Les + produit\";s:8:\"accroche\";s:10:\"tres sympa\";s:11:\"description\";s:14:\"Collier rigolo\";s:6:\"image1\";s:24:\"/bijoux_fantaisie-32.jpg\";s:6:\"image2\";s:0:\"\";s:6:\"image3\";s:0:\"\";s:5:\"actif\";s:1:\"1\";s:10:\"categories\";a:2:{i:0;a:2:{s:8:\"catlabel\";s:6:\"Bijoux\";s:5:\"catid\";s:2:\"41\";}i:1;a:2:{s:8:\"catlabel\";s:8:\"Colliers\";s:5:\"catid\";s:2:\"51\";}}s:9:\"rubriques\";a:1:{i:0;a:2:{s:8:\"rublabel\";s:6:\"Promos\";s:5:\"rubid\";s:1:\"1\";}}s:8:\"couleurs\";a:6:{i:0;a:2:{s:12:\"couleurlabel\";s:5:\"Blanc\";s:9:\"couleurid\";s:1:\"1\";}i:1;a:2:{s:12:\"couleurlabel\";s:4:\"Noir\";s:9:\"couleurid\";s:1:\"2\";}i:2;a:2:{s:12:\"couleurlabel\";s:4:\"Bleu\";s:9:\"couleurid\";s:1:\"3\";}i:3;a:2:{s:12:\"couleurlabel\";s:4:\"Vert\";s:9:\"couleurid\";s:1:\"4\";}i:4;a:2:{s:12:\"couleurlabel\";s:10:\"gris clair\";s:9:\"couleurid\";s:1:\"5\";}i:5;a:2:{s:12:\"couleurlabel\";s:5:\"rouge\";s:9:\"couleurid\";s:1:\"6\";}}s:7:\"sousref\";a:4:{i:0;a:7:{s:2:\"id\";s:2:\"25\";s:7:\"sousref\";s:5:\"qu2Sf\";s:8:\"id_color\";s:1:\"3\";s:7:\"id_size\";s:1:\"1\";s:5:\"stock\";s:1:\"2\";s:5:\"color\";s:4:\"Bleu\";s:4:\"size\";s:5:\"- n/a\";}i:1;a:7:{s:2:\"id\";s:2:\"28\";s:7:\"sousref\";s:5:\"ZzKpu\";s:8:\"id_color\";s:1:\"5\";s:7:\"id_size\";s:1:\"1\";s:5:\"stock\";s:1:\"1\";s:5:\"color\";s:4:\"gris\";s:4:\"size\";s:5:\"- n/a\";}i:2;a:7:{s:2:\"id\";s:2:\"26\";s:7:\"sousref\";s:5:\"bAtLX\";s:8:\"id_color\";s:2:\"10\";s:7:\"id_size\";s:1:\"1\";s:5:\"stock\";s:1:\"3\";s:5:\"color\";s:6:\"fushia\";s:4:\"size\";s:5:\"- n/a\";}i:3;a:7:{s:2:\"id\";s:2:\"34\";s:7:\"sousref\";s:5:\"u3dFD\";s:8:\"id_color\";s:2:\"11\";s:7:\"id_size\";s:1:\"1\";s:5:\"stock\";s:1:\"2\";s:5:\"color\";s:8:\"bordeaux\";s:4:\"size\";s:5:\"- n/a\";}}}'),(59,'2015-06-17 08:42:53','gq1fpuh087d4c2fn348dmtkc77',7,1,'a:19:{s:2:\"id\";s:2:\"30\";s:13:\"date_creation\";s:19:\"2015-04-15 02:44:08\";s:10:\"date_suppr\";s:19:\"2015-04-15 02:45:04\";s:9:\"reference\";s:4:\"23ZE\";s:4:\"prix\";s:5:\"12.54\";s:7:\"libprix\";s:20:\"€ au lieu de 45€\";s:8:\"shipping\";s:4:\"0.00\";s:5:\"label\";s:14:\"Bracelet rouge\";s:13:\"titreaccroche\";s:13:\"Les + produit\";s:8:\"accroche\";s:282:\"Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.\";s:11:\"description\";s:282:\"Sono omnium aleis tabernis ortu introrsum fatiscunt umbraculorum ab pluviis maximum nulli ortu tabernis ab quae quae lasciviam equorumque in tabernis concrepantes tabernis pernoctant quae vero praecipua turpi sono nulli lucis vinariis aleis nulli aut in paupertinae est sole latent.\";s:6:\"image1\";s:12:\"/2585-30.jpg\";s:6:\"image2\";s:0:\"\";s:6:\"image3\";s:0:\"\";s:5:\"actif\";s:1:\"1\";s:10:\"categories\";a:3:{i:0;a:2:{s:8:\"catlabel\";s:6:\"Bijoux\";s:5:\"catid\";s:2:\"41\";}i:1;a:2:{s:8:\"catlabel\";s:9:\"Bracelets\";s:5:\"catid\";s:2:\"47\";}i:2;a:2:{s:8:\"catlabel\";s:15:\"bracelets femme\";s:5:\"catid\";s:2:\"55\";}}s:9:\"rubriques\";a:1:{i:0;a:2:{s:8:\"rublabel\";s:6:\"Promos\";s:5:\"rubid\";s:1:\"1\";}}s:8:\"couleurs\";a:2:{i:0;a:2:{s:12:\"couleurlabel\";s:10:\"gris clair\";s:9:\"couleurid\";s:1:\"5\";}i:1;a:2:{s:12:\"couleurlabel\";s:5:\"rouge\";s:9:\"couleurid\";s:1:\"6\";}}s:7:\"sousref\";a:5:{i:0;a:7:{s:2:\"id\";s:1:\"2\";s:7:\"sousref\";s:5:\"ACE34\";s:8:\"id_color\";s:1:\"3\";s:7:\"id_size\";s:1:\"2\";s:5:\"stock\";s:1:\"4\";s:5:\"color\";s:4:\"Bleu\";s:4:\"size\";s:2:\"T1\";}i:1;a:7:{s:2:\"id\";s:2:\"18\";s:7:\"sousref\";s:4:\"45RF\";s:8:\"id_color\";s:1:\"3\";s:7:\"id_size\";s:1:\"5\";s:5:\"stock\";s:1:\"3\";s:5:\"color\";s:4:\"Bleu\";s:4:\"size\";s:2:\"T2\";}i:2;a:7:{s:2:\"id\";s:2:\"22\";s:7:\"sousref\";s:5:\"fubK8\";s:8:\"id_color\";s:1:\"3\";s:7:\"id_size\";s:1:\"3\";s:5:\"stock\";s:1:\"2\";s:5:\"color\";s:4:\"Bleu\";s:4:\"size\";s:2:\"T3\";}i:3;a:7:{s:2:\"id\";s:1:\"7\";s:7:\"sousref\";s:4:\"Z234\";s:8:\"id_color\";s:1:\"5\";s:7:\"id_size\";s:1:\"3\";s:5:\"stock\";s:1:\"2\";s:5:\"color\";s:4:\"gris\";s:4:\"size\";s:2:\"T3\";}i:4;a:7:{s:2:\"id\";s:2:\"29\";s:7:\"sousref\";s:5:\"xKsVP\";s:8:\"id_color\";s:1:\"5\";s:7:\"id_size\";s:1:\"5\";s:5:\"stock\";s:1:\"2\";s:5:\"color\";s:4:\"gris\";s:4:\"size\";s:2:\"T2\";}}}');
 /*!40000 ALTER TABLE `panier` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -646,7 +649,7 @@ DROP TABLE IF EXISTS `rubrique`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `rubrique` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `label` varchar(50) NOT NULL,
+  `label` varchar(50) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -670,7 +673,7 @@ DROP TABLE IF EXISTS `size`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `size` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `label` varchar(50) NOT NULL,
+  `label` varchar(50) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -694,4 +697,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-15 17:30:37
+-- Dump completed on 2015-06-17 12:25:15
