@@ -137,13 +137,16 @@ $extraLiv =0;
                         <input name="lc" type="hidden" value="FR" />
                         <input name="bn" type="hidden" value="PP-BuyNowBF" />
                         <input name="custom" type="hidden" value="<?php echo $_SESSION['id_contact']?>" />
-                        
+                        <div class="row">
+            				<div class="large-12 columns">
+            					<input type="checkbox" id="conditions" name="conditions"  /> J'accepte les <a href="conditions.php">conditions de vente du site</a>.
+            				</div>
+            			</div>
 						<div class="row">
 							<div class="large-6 medium-6 small-6 columns">
 							</div>
 							<div class="large-6 medium-6 small-6 columns" style="text-align:right;">
-								 <input alt="Effectuez vos paiements via PayPal : une solution rapide, gratuite et sécurisée" name="submit" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_buynow_LG.gif" type="image" /><img src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" border="0" alt="" width="1" height="1" />
-                      
+								 <input onclick="javascript:return ($('#conditions').is(':checked'));" alt="Effectuez vos paiements via PayPal : une solution rapide, gratuite et sécurisée" name="submit" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_buynow_LG.gif" type="image" /><img src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" border="0" alt="" width="1" height="1" />
 							</div>
 						</div>
 						 </form>

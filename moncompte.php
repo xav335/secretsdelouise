@@ -77,11 +77,14 @@ if (!empty($id_contact)){
 				<div class="row">
 					<div class="large-3 medium-3 small-12 columns menu-panier">
 						<ul>
-							<li >
+							<li class="active">
 								<a href="mescommandes.php"><span>1 -</span> Mes commandes</a>
 							</li>
-							<li class="active">
-								<a href="adresse.php"><span>2 -</span> adresses</a>
+							<li >
+								<a href="adresse.php"><span>2 -</span> Mes adresses</a>
+							</li>
+							<li >
+								<a href="adresse.php"><span>2 -</span> Mes informations</a>
 							</li>
 						</ul>
 					</div>
