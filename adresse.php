@@ -44,7 +44,7 @@ if (!empty($id_contact)){
 } else {
     $nom ='Gonzzza';
     $prenom ='Jav';
-    $email ='xav335@hotmail.com';
+    $email ='jav_gonz@yahoo.com';
     $tel ='0909090909';
     $adresse = '36 route de Bordeaux';
     $cp ='33360';

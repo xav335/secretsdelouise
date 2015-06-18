@@ -65,15 +65,15 @@ if (! empty($_POST)) {
                 $password = $contact->contactGetPassByEmail($_POST['email']);
                 $contact = null;
                 if (!empty($password[0]['password'])) {
-                    //$_to = "contact@alleedubio.fr";
-                    $_to = "fjavi.gonzalez@gmail.com";
+                    $_to = $_POST['email'];
                     $sujet = "Les Secrets de Louise - Recupération du compte";
+                    $sujet = utf8_decode($sujet);
                     //echo "Envoi du message à " . $_to . "<br>";
         
                     $entete = "From:LesSecretsDeLouise <contact@lessecretsdelouise.com>\n";
                     $entete .= "MIME-version: 1.0\n";
                     $entete .= "Content-type: text/html; charset= iso-8859-1\n";
-                    $entete .= "Bcc: xav335@hotmail.com\n";
+                    $entete .= "Bcc: ". $mailBcc ."\n";
         
                     $corps = "";
                     $corps .= "Bonjour,<br>";

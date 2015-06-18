@@ -1,10 +1,44 @@
 <?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/Panier.php';
+require 'admin/classes/Contact.php';
 require 'admin/classes/utils.php';
 session_start();
 
 (!empty($_SESSION['id_contact'])) ? $id_contact =$_SESSION['id_contact'] : $id_contact = null;
+if (!empty($id_contact)){
+    $contact = new Contact();
+    try {
+        $result = $contact->contactGet($id_contact, null, null);
+        //print_r($result);exit;
+        //Facturation
+        $nom =      $result[0]['name'];
+        $prenom =   $result[0]['firstname'];
+        $email =    $result[0]['email'];
+        $tel =      $result[0]['tel'];
+        $adresse =  $result[0]['facturation'][0]['adresse'];
+        $cp =       $result[0]['facturation'][0]['cp'];
+        $ville =    $result[0]['facturation'][0]['ville'];
+        //Livraison
+        $nomliv =   $result[0]['livraison'][0]['nom'];
+        $prenomliv= $result[0]['livraison'][0]['prenom'];;
+        $emailliv = $result[0]['livraison'][0]['email'];
+        $telliv =   $result[0]['livraison'][0]['tel'];
+        $adresseliv=$result[0]['livraison'][0]['adresse'];
+        $cpliv =    $result[0]['livraison'][0]['cp'];
+        $villeliv = $result[0]['livraison'][0]['ville'];
+        $message=   $result[0]['livraison'][0]['message'];
+
+        $action = 'modif';
+
+    } catch (Exception $e) {
+        echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+        $contact = null;
+        exit();
+    } $contact = null;
+} else {
+    header('Location: /adresse.php');
+}
 
 $panier = new Panier();
 
@@ -131,7 +165,32 @@ $extraLiv =0;
 								</tr>
 							</tfoot>
 						</table>
+						
 						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+						<!-- Prepopulate the PayPal checkout page with customer details, -->
+                        <input type="hidden" name="first_name" value="<?php echo $prenom?>">
+                        <input type="hidden" name="last_name" value="<?php echo $nom?>">
+                        <input type="hidden" name="email" value="<?php echo $email?>">
+                        <input type="hidden" name="address1" value="<?php echo $adresse?>">
+                        <input type="hidden" name="address2" value="">
+                        <input type="hidden" name="city" value="<?php echo $ville?>">
+                        <input type="hidden" name="zip" value="<?php echo $cp?>">
+                        <input type="hidden" name="day_phone_a" value="">
+                        <input type="hidden" name="day_phone_b" value="<?php echo $tel?>">
+                        
+                        <input type="hidden" name="same_as_billing" value="false">
+                        
+                        <input type="hidden" name="shipping_first_name" value="<?php echo $prenomliv?>">
+                        <input type="hidden" name="shipping_last_name" value="<?php echo $nomliv?>">
+                        <input type="hidden" name="shipping_email" value="<?php echo $emailliv?>">
+                        <input type="hidden" name="shipping_address1" value="<?php echo $adresseliv?>">
+                        <input type="hidden" name="shipping_address2" value="">
+                        <input type="hidden" name="shipping_city" value="<?php echo $villeliv?>">
+                        <input type="hidden" name="shipping_zip" value="<?php echo $cpliv?>">
+                       
+                        <input type="hidden" name="shipping_day_phone_b" value="<?php echo $telliv?>">
+						
+						
                         <input type='hidden' value="<?php echo number_format($totalHT, 2, '.', ' ')?>" name="amount" />
                         <input name="currency_code" type="hidden" value="EUR" />
                         <input name="shipping" type="hidden" value="<?php echo number_format($totalLiv, 2, '.', ' ')?>" />

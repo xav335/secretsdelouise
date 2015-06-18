@@ -11,8 +11,8 @@ try {
         
         $panier->valideCommande($id_commande,serialize($_POST));
         
-        //error_log(date("Y-m-d H:i:s") ." : ". $_POST['item_name'] ."\n", 3, "log/spy.log");
-        //error_log(date("Y-m-d H:i:s") ." : ". $_POST['payer_status'] ."\n", 3, "log/spy.log");
+        error_log(date("Y-m-d H:i:s") ." : ". $_POST['item_name'] ."\n", 3, "log/spy.log");
+        error_log(date("Y-m-d H:i:s") ." : ". $_POST['payer_status'] ."\n", 3, "log/spy.log");
         
         foreach ($_POST as $key => $value) {
             //$value = urlencode(stripslashes($value));
