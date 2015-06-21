@@ -278,7 +278,7 @@ class Newsletter extends StorageManager {
 	
 		} catch (Exception $e) {
 			$this->rollback();
-			throw new Exception("Erreur Mysql newsletterModify ". $e->getMessage());
+			throw new Exception("Erreur Mysql journalNewsletterTrack ". $e->getMessage());
 			return "errrrrrrooooOOor";
 		}
 	

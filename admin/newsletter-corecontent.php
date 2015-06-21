@@ -37,9 +37,8 @@ $corps = <<<EOD
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Newsletter Bsport</title>
+<title>Newsletter $mailNameCustomer</title>
 <style type="text/css">
-	@import url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700');
 	
 	body {background: #fff;font-family:'PT Sans Narrow', sans-serif;}
 	p {font-size:18px; text-align: justify;}
@@ -57,8 +56,8 @@ $corps = <<<EOD
 		    <td align="center">
 				<div style="text-align:center;  margin-left:auto;margin-right:auto; width: 640px; border: 4px ridge white; padding:20px 20px 20px 20px; ">
 					
-					<a href="http://$urlSite"><img  src="http://$urlSite/newsletter/logo.jpg" alt=""></a>
-				
+					<a href="http://$urlSite"><img  src="http://$urlSite/newsletter/logo.png" alt=""></a>
+					<br><br>
 					<h1>$titre</h1>
 					<br><br>
 EOD;
@@ -74,7 +73,7 @@ if(isset($detail)) {
 		$link = $value['link'];
 		$url = $value['url'];
 		if ($url!='' & $url != '/img/ajoutImage.jpg') {
-			$url = "<a href=\"". $link ."\"><img width=\"640\" src=\"http://$urlSite". $url ."\" alt=\"\"></a><br>";
+			$url = "<a href=\"". $link ."\"><img width=\"640\" src=\"http://$urlSite/photos/newsletter". $url ."\" alt=\"\"></a><br>";
 		} else {
 			$url= '';
 		}
@@ -92,7 +91,7 @@ EOD;
 }
 $corps .= <<<EOD
 
-					<a href="http://$urlSite"><img  src="http://$urlSite/newsletter/pano.png" alt=""></a><br>
+					<a href="$facebookLink"><img  src="http://$urlSite/newsletter/fb.png" alt=""></a><br>
 					<p>$bas_page</p>
 					<p class="bas">Si vous souhaitez vous désinscrire de cette newslettrer suivez le lien suivant : <a href="http://$urlSite/newsletter/desinscription.php?id=" >désinscription</a></p>
 					<img src="http://$urlSite/newsletter/track.php?id=XwXwXwXw" alt="">
@@ -111,8 +110,8 @@ if (empty($_GET['action']) && empty($_GET['postaction']) ) {
 
 //$corps = utf8_decode( $corps );
 
-$sujet = "Les Secrets De Louise - Newsletter ";
-$entete = "From:LesSecretsDeLouise <contact@lessecretsdelouise.com>\n";
+$sujet = "$mailNameCustomer - Newsletter ";
+$entete = "From:$mailNameCustomer <$mailCustomer>\n";
 $entete .= "MIME-version: 1.0\n";
 $entete .= "Content-type: text/html; charset= iso-8859-1\n";
 
@@ -121,7 +120,7 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 	echo "<br><br><h3>Newsletter de Test envoyee !!!! </h3><br><br>
 		<a href='javascript:history.back()'>retour</a>";
 	
-	//$_to = "contact@bsport.fr";
+	//$_to = "fjavi.gonzalez@gmail.com";
 	$_to = $mailContact;
 	$entete .= "Bcc: ". $mailBcc ."\n";
 	//echo "Envoi du message à " . $_to . "<br>";
@@ -131,10 +130,10 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 	//mail($_to, $sujet, stripslashes($corps), $entete);
 	///////////////////////////////////////////////////////////
 	////////////////ELASTIC MAIL ICONEO!!!!!!!!!!////////////
-	sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), "contact@lessecretsdelouise.com", "LesSecretsDeLouise");
-	sendElasticEmail("fjavi.gonzalez@gmail.com", $sujet, "", stripslashes($corpsCode), "contact@lessecretsdelouise.com", "LesSecretsDeLouise");
-	sendElasticEmail("xav335@hotmail.com", $sujet, "", stripslashes($corpsCode), "contact@lessecretsdelouise.com", "LesSecretsDeLouise");
-	sendElasticEmail("jav_gonz@yahoo.com", $sujet, "", stripslashes($corpsCode), "contact@lessecretsdelouise.com", "LesSecretsDeLouise");
+	sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
+	sendElasticEmail("fjavi.gonzalez@gmail.com", $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
+	sendElasticEmail("xav335@hotmail.com", $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
+	sendElasticEmail("jav_gonz@yahoo.com", $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
 	///////////////////////////////////////////////////////////
 	
 } elseif (!empty($_GET['postaction']) && $_GET['postaction']=='envoi') { 
@@ -156,7 +155,7 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 				//mail($_to, $sujet, stripslashes($corpsCode), $entete);
 				///////////////////////////////////////////////////////////
 				////////////////ELASTIC MAIL ICONEO!!!!!!!!!!////////////
-				sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), "contact@lessecretsdelouise.com", "LesSecretsDeLouise");
+				sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
 				///////////////////////////////////////////////////////////
 				error_log(date("Y-m-d H:i:s") ." envoi : OK : ". $value['email'] ."\n", 3, "newsletterspy.log");
 				//echo "envoi OK : ". $value['email'] ."<br>";
@@ -168,7 +167,7 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 			
 			
 		}
-		echo "<br><br><h3>Newsletter REELLE envoyee à tous les adhérents !!!! </h3><br><br>
+		echo "<br><br><h3>Newsletter REELLE envoyee à tous les abonnes !!!! </h3><br><br>
 		<a href='javascript:history.back()'>retour</a>";
 	}	
 }	

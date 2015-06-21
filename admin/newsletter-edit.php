@@ -66,7 +66,7 @@ if (!empty($_GET)){ //Modif
 						foreach ($result[0]['newsletter_detail'] as $value) { 
 							$url = $value['url'];
 							if ($value['url']=='') 
-								$url='/img/ajoutImage.jpg';  ?>
+								$url='/ajoutImage.jpg';  ?>
 								
 							<div class="form-group" style=" border:6px ridge white; padding: 30px 10px 30px 10px; ">
 							
@@ -74,7 +74,7 @@ if (!empty($_GET)){ //Modif
 							  	
 								<input type="text" class="col-sm-10" name="sstitre<?php echo $i ?>"  id="sstitre<?php echo $i ?>" value="<?php echo $value['titre'] ?>"><br>
 		             			<input type="hidden"  name="url<?php echo $i ?>"  id="url<?php echo $i ?>" value="<?php echo $url ?>"><br>
-		            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img src="<?php echo $url ?>" id="customRoxyImage<?php echo $i ?>" style="max-width:600px;"></a>
+		            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img src="/photos/newsletter/thumbs<?php echo $url ?>" id="customRoxyImage<?php echo $i ?>" style="max-width:600px;"></a>
 								<img src="img/del.png" width="20" alt="Supprimer" onclick="clearImage(<?php echo $i ?>)"/>
 								<br>
 		 						<label for="link<?php echo $i ?>">Url image <?php echo $i ?>:</label><br>
@@ -98,11 +98,11 @@ if (!empty($_GET)){ //Modif
 							  	
 								<input type="text" class="col-sm-10" name="sstitre<?php echo $i ?>"  id="sstitre<?php echo $i ?>" value=""><br>
 		             			<input type="hidden"  name="url<?php echo $i ?>"  id="url<?php echo $i ?>" value=""><br>
-		            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img src="/img/ajoutImage.jpg"" id="customRoxyImage<?php echo $i ?>" style="max-width:600px;"></a>
+		            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img src="img/ajoutImage.jpg"" id="customRoxyImage<?php echo $i ?>" style="max-width:600px;"></a>
 								<img src="img/del.png" width="20" alt="Supprimer" onclick="clearImage(<?php echo $i ?>)"/>
 								<br>
 		 						<label for="link<?php echo $i ?>">Url image <?php echo $i ?>:</label><br>
-		 						<input type="text" class="col-sm-11" name="link<?php echo $i ?>"  id="link<?php echo $i ?>" value="http://www.lessecretsdelouise.com/" ><br>
+		 						<input type="text" class="col-sm-11" name="link<?php echo $i ?>"  id="link<?php echo $i ?>" value="<?php echo $urlSiteDefault?>" ><br>
 		 						<br>
 		 						<label for="text<?php echo $i ?>">Texte <?php echo $i ?>:</label><br>
 				           		<textarea class="col-sm-11"  name="texte<?php echo $i ?>"  id="texte<?php echo $i ?>" rows="2" ></textarea>
@@ -120,11 +120,11 @@ if (!empty($_GET)){ //Modif
 							  	
 								<input type="text" class="col-sm-10" name="sstitre<?php echo $i ?>"  id="sstitre<?php echo $i ?>" value=""><br>
 		             			<input type="hidden"  name="url<?php echo $i ?>"  id="url<?php echo $i ?>" value=""><br>
-		            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img src="/img/ajoutImage.jpg"" id="customRoxyImage<?php echo $i ?>" style="max-width:600px;"></a>
+		            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img src="img/ajoutImage.jpg"" id="customRoxyImage<?php echo $i ?>" style="max-width:600px;"></a>
 								<img src="img/del.png" width="20" alt="Supprimer" onclick="clearImage(<?php echo $i ?>)"/>
 								<br>
 		 						<label for="link<?php echo $i ?>">Url image <?php echo $i ?>:</label><br>
-		 						<input type="text" class="col-sm-11" name="link<?php echo $i ?>"  id="link<?php echo $i ?>" value="http://www.lessecretsdelouise.com/" ><br>
+		 						<input type="text" class="col-sm-11" name="link<?php echo $i ?>"  id="link<?php echo $i ?>" value="<?php echo $urlSiteDefault?>" ><br>
 		 						<br>
 		 						<label for="text<?php echo $i ?>">Texte <?php echo $i ?>:</label><br>
 				           		<textarea class="col-sm-11"  name="texte<?php echo $i ?>"  id="texte<?php echo $i ?>" rows="2" ></textarea>
@@ -162,7 +162,7 @@ if (!empty($_GET)){ //Modif
 						}
 	
 						function clearImage(idImage){
-							$('#customRoxyImage'+idImage).attr('src', '/img/ajoutImage.jpg');
+							$('#customRoxyImage'+idImage).attr('src', 'img/ajoutImage.jpg');
 							$('#url'+idImage).val('');
 						}
 						

@@ -6,6 +6,23 @@ if (!empty($_POST)){
 	$contact = new Contact();
 	$contact->contactUnsubscribeNewsletter($_POST['email'], $_POST['message']);
 	$contact = null;
+	
+	$_to = $mailContact;
+	$sujet = "$mailNameCustomer - Desinscription Newsletter";
+	
+	$entete = "From:$mailNameCustomer <$mailCustomer>\n";
+	$entete .= "MIME-version: 1.0\n";
+	$entete .= "Content-type: text/html; charset= iso-8859-1\n";
+	$entete .= "Bcc: fjavi.gonzalez@gmail.com,xav335@hotmail.com\n";
+	
+	$corps = "";
+	$corps .= "Email à désinscrire :" . $_POST['email']  ."<br>";
+	$corps .= "Message : ". $_POST["message"] ."<br>";
+	$corps = utf8_decode( $corps );
+	//echo $corps . "<br>";
+	
+	// Envoi des identifiants par mail
+	mail($_to, $sujet, stripslashes($corps), $entete);
 }
 ?>
 <!doctype html>
@@ -18,7 +35,7 @@ if (!empty($_POST)){
 </head>
 <body>	
 
-	<img src="../img/logo.jpg" width="200">
+	<img src="../newsletter/logo.png" width="200">
 <?php if (!empty($_POST)){ ?>
 	<br><br>Votre désincription a été prise en compte ! <br><br>
 	

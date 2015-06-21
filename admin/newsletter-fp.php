@@ -22,6 +22,25 @@ if (!empty($_POST)){
 	if ($_POST['reference'] == 'newsletter'){
 		//print_r($_POST); exit();
 		$newsletter = new Newsletter();
+		$imageManager = New ImageManager();
+		for ($i=1;$i<$_POST['idImage']+1;$i++){
+		    $source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
+		    if(strstr($source,'uploads')){
+		        $source = $_SERVER['DOCUMENT_ROOT'].$_POST['url'.$i];
+		        $filenameDest = $imageManager->fileDestManagement($source,$_POST['id']);
+		        //Image
+		        $destination=$_SERVER['DOCUMENT_ROOT'].'/photos/newsletter'.$filenameDest;
+		        //print_r($destination);exit();
+		        $imageManager->imageResize($source, $destination, null, 650, false);
+		        //Vignette
+		        $destination=$_SERVER['DOCUMENT_ROOT'].'/photos/newsletter/thumbs'.$filenameDest;
+		        $imageManager->imageResize($source, $destination, null, 250, false);
+		        $_POST['url'.$i]=$filenameDest;
+		    }
+		}
+		$imageManager =null;
+		
+		
 		if ($_POST['action'] == 'modif' ) { //Modifier
 			try {
 				if ($_POST['postaction'] !='delBloc') {
@@ -34,6 +53,7 @@ if (!empty($_POST)){
 					$newsletter = null;
 					header('Location: /admin/newsletter-corecontent.php?postaction=envoi&id='. $_POST['id']);
 				} elseif ($_POST['postaction']=='addBloc') {
+				    
 					$newsletter = null;
 					header('Location: /admin/newsletter-edit.php?addBloc=1&id='. $_POST['id']);
 				} elseif ($_POST['postaction']=='delBloc') {
