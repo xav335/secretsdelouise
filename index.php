@@ -31,15 +31,15 @@ session_start();
 							<img src="img/mannequin.png" alt="" />
 							<h4>Ma robe...</h4>
 							<p>mon bijou</p>
-							<span class="color" style="background-color:#000;"></span>
-							<span class="color" style="background-color:#818181;"></span>
-							<span class="color" style="background-color:#fff;"></span>
-							<span class="color" style="background-color:#cdcabf;"></span>
-							<span class="color" style="background-color:#079dbd;"></span>
-							<span class="color" style="background-color:#7dc60b;"></span>
-							<span class="color" style="background-color:#f5226d;"></span>
-							<span class="color" style="background-color:#eab916;"></span>
-							<button>Trouver mon bijou</button>
+							<span class="color" style="background-color:#000;" onclick="location.href='categories.php?id_color=2'"></span>
+							<span class="color" style="background-color:#818181;" onclick="location.href='categories.php?id_color=8'"></span>
+							<span class="color" style="background-color:#fff;" onclick="location.href='categories.php?id_color=1'"></span>
+							<span class="color" style="background-color:#cdcabf;" onclick="location.href='categories.php?id_color=5'"></span>
+							<span class="color" style="background-color:#079dbd;" onclick="location.href='categories.php?id_color=3'"></span>
+							<span class="color" style="background-color:#7dc60b;" onclick="location.href='categories.php?id_color=4'"></span>
+							<span class="color" style="background-color:#f5226d;" onclick="location.href='categories.php?id_color=6'"></span>
+							<span class="color" style="background-color:#eab916;" onclick="location.href='categories.php?id_color=7'"></span>
+							<button >Trouver mon bijou</button>
 						</div>
 					</div>
 					<div class="large-4 medium-4 small-12 columns" onclick="location.href='categories.php?idrub=1'">
@@ -61,7 +61,7 @@ session_start();
 							</span>
 							<h4>Ventes flash</h4>
 							<p>Bague, bracelets, colliers...</p>
-							<a href="categories.php?idrub=1" class="bt-voir">Voir</a>
+							<a href="categories.php?idrub=2" class="bt-voir">Voir</a>
 						</div>
 					</div>
 					<div class="large-4 medium-4 small-12 columns" onclick="location.href='categories.php?idrub=3'">

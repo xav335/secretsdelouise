@@ -28,12 +28,12 @@ if ($_POST["action"] == "sendMail") {
 		exit();
 	}
 
-	//$_to = "contact@alleedubio.fr";
+	//$_to = "fjavi.gonzalez@gmail.com";
 	$_to = $mailContact;
-	$sujet = "Les Secrets de Louise - Contact Site";
+	$sujet = "$mailNameCustomer - Contact Site";
 	//echo "Envoi du message à " . $_to . "<br>";
 		
-	$entete = "From:LesSecretsDeLouise <contact@lessecretsdelouise.com>\n";
+	$entete = "From:$mailNameCustomer <$mailCustomer>\n";
 	$entete .= "MIME-version: 1.0\n";
 	$entete .= "Content-type: text/html; charset= iso-8859-1\n";
 	$entete .= "Bcc: ". $mailBcc ."\n";

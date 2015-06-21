@@ -53,12 +53,18 @@ try {
 								statut commande
 							</th>
 							
-							<th class="col-md-1" style="">
+							<th class="col-md-2" style="">
 								collissimo
 							</th>
 							
-							<th class="col-md-2" colspan="2">
-								Détail Commande
+							<th class="col-md-1">
+								Edition
+							</th>
+							<th class="col-md-1">
+								Produit
+							</th>
+							<th class="col-md-1">
+								Paypal
 							</th>
 						</tr>
 					</thead>
@@ -75,6 +81,9 @@ try {
 							}
 							
 							switch ($value['statut_commande']) {
+							     case 0:
+							        $statut_commande = 'non aboutie';
+							        break;
 							     case 1:
 							         $statut_commande = 'à traiter';
 						             break;
@@ -97,8 +106,10 @@ try {
 								<td><img src="img/<?php echo $online ?>.png" width="20" ></td>
 								<td><?php echo $statut_commande?></td>
 								<td><?php echo $value['colissimo']?></td>
-								<td><a href="commande-edit.php?id=<?php echo $value['id'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a></td>
+								<td><a href="commande-edit.php?id=<?php echo $value['id'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a>
+								 - <img src="img/imp.png" width="20" alt="preview" onclick="openImp('<?php echo $value['id']?>')"></td>
 								<td><img src="img/eye.png" width="20" alt="preview" onclick="openPreview('<?php echo $value['id']?>')"> </td>
+								<td><img src="img/eye.png" width="20" alt="preview" onclick="openPreview2('<?php echo $value['id']?>')"> </td>
 							</tr>
 							<?php } ?>
 						<?php } ?>	
@@ -110,6 +121,10 @@ try {
     					<script type="text/javascript">
     						function openPreview(id){
     							$('#laframe').attr('src', '/admin/commandes-detail.php?id='+id);
+    						 	$('#preview').dialog({modal:true, width:780,height:500});
+    						}
+    						function openPreview2(id){
+    							$('#laframe').attr('src', '/admin/commandes-detail-paypal.php?id='+id);
     						 	$('#preview').dialog({modal:true, width:780,height:500});
     						}
     					</script>

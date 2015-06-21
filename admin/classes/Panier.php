@@ -139,7 +139,7 @@ class Panier extends StorageManager {
     				INNER JOIN panier ON panier.session =  commande.session
 	                WHERE commande.id=". $id_commande .";" ;
 	    }     
-    	print_r($sql);
+    	//print_r($sql);
     	    
 	    $new_array = null;
 	    $result = mysqli_query($this->mysqli,$sql);
