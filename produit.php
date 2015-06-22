@@ -109,10 +109,10 @@ try {
 							<input type="hidden" name="reference" value="panier">
 							<input type="hidden" name="action" value="ajout">
 							<?php 
-							$ListeOperatSeri = serialize($value);
-							echo "<input type='hidden' value='".$ListeOperatSeri."' name='product' />";
+							$ListeOperatSeri = htmlspecialchars(serialize($value));
+							//echo "<input type='hidden' value='".$ListeOperatSeri."' name='product' />";
 							?>
-							
+							<input type="hidden" name="product" value="<?php echo $ListeOperatSeri?>">
 							<span class="prix"><?php echo number_format($value['prix']*(1+$tva), 2, ',', ' ');?>&nbsp;<?php echo $value['libprix']?></span><br>
 							<?php 
 								$resultSousRef = $value['sousref'];

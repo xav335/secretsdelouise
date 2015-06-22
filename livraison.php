@@ -12,6 +12,10 @@ if (!empty($id_contact)){
         $result = $contact->contactGet($id_contact, null, null);
         //print_r($result);exit;
         //Facturation
+        
+        $id_facturation  = $result[0]['facturation'][0]['id_adresse'];
+        $id_livraison    = $result[0]['livraison'][0]['id_adresse'];
+        
         $nom =      $result[0]['name'];
         $prenom =   $result[0]['firstname'];
         $email =    $result[0]['email'];
@@ -46,7 +50,7 @@ try {
 		$result = $panier->panierGet(session_id());
 		//print_r($result);
 		
-		$id_commande =$panier->ajoutCommande(session_id(), $id_contact);
+		$id_commande =$panier->ajoutCommande(session_id(), $id_contact, $id_facturation, $id_livraison);
 		
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";

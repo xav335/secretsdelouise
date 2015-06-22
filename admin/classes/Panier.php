@@ -26,7 +26,7 @@ class Panier extends StorageManager {
     					'". $value['session'] ."',
     					". $value['idsousref'] .",
     					". $value['quantite'] .",
-    					'". $value['product'] ."'
+    					'". addslashes($value['product']) ."'
     				);";
     	    $result = mysqli_query($this->mysqli,$sql);
     	
@@ -99,6 +99,26 @@ class Panier extends StorageManager {
 	  
 	}
 	
+	public function panierCommandeGet($session){
+	    $this->dbConnect();
+	     
+	    $sql = "SELECT *
+				FROM panier
+				WHERE panier.session='". $session ."';" ;
+	    //print_r($sql);
+	    $new_array = null;
+	    $result = mysqli_query($this->mysqli,$sql);
+	    if (!$result) {
+	        throw new Exception('Erreur Mysql panierGet sql = : '.$sql);
+	    }
+	    while(($row = mysqli_fetch_assoc($result)) != false){
+	        $new_array[] = $row;
+	    }
+	
+	    $this->dbDisConnect();
+	    return $new_array;
+	     
+	}
 	
 	public function getAllCommandes($statut_commande){
 	    $this->dbConnect();
@@ -219,7 +239,7 @@ class Panier extends StorageManager {
 	
 	
 	
-	public function ajoutCommande($session, $id_contact){
+	public function ajoutCommande($session, $id_contact,$id_facturation, $id_livraison){
 	    //print_r($session);print_r($id_contact);exit();
 	
 	    $this->dbConnect();
@@ -228,10 +248,12 @@ class Panier extends StorageManager {
 	    if (empty($nbRef)){
 	
 	        $sql = "INSERT INTO  `commande`
-    					(`session`,`id_contact`)
+    					(`session`,`id_contact`,`id_facturation`,`id_livraison`)
     					VALUES (
     					'". $session ."',
-    					". $id_contact ."
+    					". $id_contact .",
+    					". $id_facturation .",
+    					". $id_livraison ."
     				);";
 	        $result = mysqli_query($this->mysqli,$sql);
 	         

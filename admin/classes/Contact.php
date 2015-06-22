@@ -103,6 +103,17 @@ class Contact extends StorageManager
         $this->dbDisConnect();
         return $new_array;
     }
+    
+    
+    public function contactAddresseGet($id_adresse)
+    {
+        $this->dbConnect();
+        $new_array = $this->adresseGet($id_adresse);
+        //print_r($new_array);exit;
+    
+        $this->dbDisConnect();
+        return $new_array;
+    }
 
     protected function adresseGet($id)
     {
@@ -170,11 +181,12 @@ class Contact extends StorageManager
             (! empty($value['fromcontact']) && $value['fromcontact'] == 'on') ? $fromcontact = 1 : $fromcontact = 0;
             
             $sql = "INSERT INTO  .`contact`
-						(`name`, `email`, `firstname`,`newsletter`,`fromgoldbook`,`fromcontact`)
+						(`name`, `email`, `firstname`,`password`,`newsletter`,`fromgoldbook`,`fromcontact`)
 						VALUES (
 						'" . addslashes($value['name']) . "',
 						'" . addslashes($value['email']) . "',
 						'" . addslashes($value['firstname']) . "',
+						'" . randomChar(5) . "',
 						" . $newsletter . ",
 						" . $fromgoldbook . ",
 						" . $fromcontact . "
@@ -421,11 +433,10 @@ class Contact extends StorageManager
 
     public function contactAdressesModif($value)
     {
-        //print_r($value);exit();
+        ///print_r($value);exit();
         $this->dbConnect();
         $this->begin();
         try {
-            // Vérification email existe déjà
             
             $nom = $value['nom'];
             $prenom = $value['prenom'];
@@ -483,6 +494,7 @@ class Contact extends StorageManager
 					'" . addslashes($value['message']) . "',
 					" . $value['livraison'] . "
 				);";
+        //print_r($sql);exit;
         $result = mysqli_query($this->mysqli, $sql);
         
         if (! $result) {
@@ -532,6 +544,7 @@ class Contact extends StorageManager
 					`name`='" . addslashes($value['nom']) . "',
 					`email`='" . addslashes($value['email']) . "',
 					`firstname`='" . addslashes($value['prenom']) . "',
+					`tel`='" . addslashes($value['tel']) . "',    
 					`newsletter`=" . $newsletter . ",
 					`id_facturation`=" . $value['id_facturation'] . ",
 					`id_livraison`=" . $value['id_livraison'] . " 

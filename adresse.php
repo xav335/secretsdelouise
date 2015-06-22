@@ -20,18 +20,38 @@ if (!empty($id_contact)){
         $prenom =   $result[0]['firstname'];
         $email =    $result[0]['email'];
         $tel =      $result[0]['tel'];
-        $adresse =  $result[0]['facturation'][0]['adresse'];
-        $cp =       $result[0]['facturation'][0]['cp'];
-        $ville =    $result[0]['facturation'][0]['ville'];
+        if (!empty($result[0]['facturation'])) {
+            $adresse =  $result[0]['facturation'][0]['adresse'];
+            $cp =       $result[0]['facturation'][0]['cp'];
+            $ville =    $result[0]['facturation'][0]['ville'];
+        } else {
+             $adresse = '';
+             $cp ='';
+             $ville ='';
+        }
+       
         //Livraison
-        $nomliv =   $result[0]['livraison'][0]['nom'];
-        $prenomliv= $result[0]['livraison'][0]['prenom'];;
-        $emailliv = $result[0]['livraison'][0]['email'];
-        $telliv =   $result[0]['livraison'][0]['tel'];
-        $adresseliv=$result[0]['livraison'][0]['adresse'];
-        $cpliv =    $result[0]['livraison'][0]['cp'];
-        $villeliv = $result[0]['livraison'][0]['ville'];
-        $message=   $result[0]['livraison'][0]['message'];
+        
+        if (!empty($result[0]['livraison'])) {
+            $nomliv =   $result[0]['livraison'][0]['nom'];
+            $prenomliv= $result[0]['livraison'][0]['prenom'];;
+            $emailliv = $result[0]['livraison'][0]['email'];
+            $telliv =   $result[0]['livraison'][0]['tel'];
+            $adresseliv=$result[0]['livraison'][0]['adresse'];
+            $cpliv =    $result[0]['livraison'][0]['cp'];
+            $villeliv = $result[0]['livraison'][0]['ville'];
+            $message=   $result[0]['livraison'][0]['message'];
+        } else {
+            $nomliv ='';
+            $prenomliv ='';
+            $emailliv ='';
+            $telliv ='';
+            $adresseliv = '';
+            $cpliv ='';
+            $villeliv ='';
+            $message='';
+        }
+       
         
         $action = 'modif';
     
@@ -329,7 +349,7 @@ if (!empty($id_contact)){
                         		             <?php elseif ($error=='nomail') :?>
                         		                  <H4 class="label">Vous ne parvenons pas à trouver votre email dans la base client ! </h4><br><br>
                         		             <?php elseif ($error=='mailsent') :?>
-                        		                   <H4 class="label">Votre mot de passe vient de vosu être envoyé par email ! </h4><br><br>
+                        		                   <H4 class="label">Votre mot de passe vient de vous être envoyé par email ! </h4><br><br>
                         		             <?php endif;?>
                         					<label>e-mail
                         						<input name="email" id="email" type="email" placeholder="e-mail" required />

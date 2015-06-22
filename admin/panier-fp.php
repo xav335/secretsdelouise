@@ -18,7 +18,7 @@ if (!empty($_POST)){
 		if ($_POST['action'] == 'ajout') { //ajouter
 			try {
 				$product = unserialize(stripslashes($_POST['product']));
-				//print_r($product);exit;
+				//print_r(stripslashes($_POST['product']));exit;
 				
 				$idsousref = $_POST['idsousref'];
 				

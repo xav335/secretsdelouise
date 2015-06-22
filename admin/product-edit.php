@@ -4,6 +4,10 @@
 <?php 
 require 'classes/Catproduct.php';
 
+(!empty($_GET['rubrique'])) ? $rubrique =$_GET['rubrique'] : $rubrique = null;
+(!empty($_GET['categorie'])) ? $categorie =$_GET['categorie'] : $categorie = null;
+
+
 $catproduct = new Catproduct();
 //Recup des categories
 $catproduct->catproduitViewIterative(null);
@@ -104,8 +108,8 @@ if (!empty($_GET)){ //Modif
 					<input type="hidden" name="reference" value="product">
 					<input type="hidden" name="action" value="<?php echo $action ?>">
 					<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
-					<input type="hidden" name="rubrique" id="rubrique" value="<?php echo $_GET['rubrique'] ?>">
-					<input type="hidden" name="categorie" id="categorie" value="<?php echo $_GET['categorie'] ?>">
+					<input type="hidden" name="rubrique" id="rubrique" value="<?php echo $rubrique ?>">
+					<input type="hidden" name="categorie" id="categorie" value="<?php echo $categorie ?>">
 					
 					<div class="form-group" >
 						<label class="col-sm-2" for="titre">Nom produit :</label>
