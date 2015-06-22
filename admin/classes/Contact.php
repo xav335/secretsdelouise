@@ -40,6 +40,25 @@ class Contact extends StorageManager
         $this->dbDisConnect();
         return $new_array;
     }
+    
+    public function contactGetByEmail($email)
+    {
+        $this->dbConnect();
+        $sql = "SELECT * FROM `contact` WHERE email='" . $email ."';";
+        // print_r($sql);
+        $new_array = null;
+        $result = mysqli_query($this->mysqli, $sql);
+        if (! $result) {
+            throw new Exception('Erreur Mysql contactGetByEmail sql = : ' . $sql);
+        }
+        while (($row = mysqli_fetch_assoc($result)) != false) {
+            $new_array[] = $row;
+        }
+         //print_r($new_array);exit;
+    
+        $this->dbDisConnect();
+        return $new_array;
+    }
 
     public function contactGetByIdent($value)
     {
@@ -71,7 +90,7 @@ class Contact extends StorageManager
     {
         $this->dbConnect();
         $sql = "SELECT password FROM `contact` WHERE email = '" . $email . "';";
-        // print_r($sql);
+        //print_r($sql);exit;
         $new_array = null;
         $result = mysqli_query($this->mysqli, $sql);
         if (! $result) {

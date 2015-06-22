@@ -18,9 +18,15 @@ error_log(date("Y-m-d H:i:s") ." : ". $_POST['newsletter'] ."\n", 3, "../log/spy
 if ($_POST["action"] == "sendMail") {
 	
 	try {
-		$_POST['fromcontact']='on';
-		$contact->contactAdd($_POST);
-		$contact = null;
+	   $result1 = $contact->contactGetByEmail($_POST['email']);
+	   //si l'email existe en base on y touche pas ...
+	   //TODO: mettre à jour l'inscription a newsletter
+    	if(empty($result1)){
+    	      $_POST['fromcontact']='on';
+    	      $contact->contactAdd($_POST);
+    	      $contact = null;
+    	}
+		
 		
 	} catch (Exception $e) {
 		error_log(date("Y-m-d H:i:s") ." Erreur: ". $e->getMessage() ."\n", 3, "../log/spy.log");

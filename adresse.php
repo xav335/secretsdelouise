@@ -288,6 +288,11 @@ if (!empty($id_contact)){
                         			<br>
                         		  <div class="row">
                         				<div class="large-12 columns">
+                        				    <?php if ($error=='emailexist') :?>
+                        		                  <H4 class="label">Votre email est déjà présent dans notre base de donnée,<br> 
+                        		                  utilisez le formulaire ci-dessous pour récupérer votre mot de passe
+                        		                  <br> afin de vous identifier ! </h4><br><br>
+                        		             <?php endif;?>
                         					<label>e-mail
                         						<input name="email" id="email" type="email" placeholder="e-mail" required />
                         					</label>
@@ -323,6 +328,8 @@ if (!empty($id_contact)){
                         		                  <H4 class="label">Vous ne parvenons pas à vous indentifier ! </h4><br><br>
                         		             <?php elseif ($error=='nomail') :?>
                         		                  <H4 class="label">Vous ne parvenons pas à trouver votre email dans la base client ! </h4><br><br>
+                        		             <?php elseif ($error=='mailsent') :?>
+                        		                   <H4 class="label">Votre mot de passe vient de vosu être envoyé par email ! </h4><br><br>
                         		             <?php endif;?>
                         					<label>e-mail
                         						<input name="email" id="email" type="email" placeholder="e-mail" required />
