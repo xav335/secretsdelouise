@@ -127,6 +127,10 @@ try {
     							$('#laframe').attr('src', '/admin/commandes-detail-paypal.php?id='+id);
     						 	$('#preview').dialog({modal:true, width:780,height:500});
     						}
+    						function openImp(id){
+    							$('#laframe').attr('src', '/admin/commandes-print.php?id='+id);
+    						 	$('#preview').dialog({modal:true, width:900,height:500});
+    						}
     					</script>
 				<h3><?php echo $message?></h3>
 			</div>
