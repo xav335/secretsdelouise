@@ -101,7 +101,7 @@ require 'classes/Catproduct.php';
 								desciption
 							</th>
 							<th class="col-md-1" style="">
-								Image
+								Fichier Tailles PDF
 							</th>
 							<th class="col-md-1" colspan="2" style="">
 								Actions
@@ -122,7 +122,11 @@ require 'classes/Catproduct.php';
 							<tr class="<?php if ($value['level']==0) echo 'info';  if ($value['level']==1) echo 'success';?>">
 								<td><?php echo $decalage.$value['label']?></td>
 								<td><?php if(!empty($value['description'])) echo 'texte OK' ?></td>
-								<td><?php if(!empty($value['image'])) echo 'image OK' ?></td>
+								<td>
+								<?php if(!empty($value['image'])): ?>
+								    <a href="/photos/categories<?php echo $value['image']?>" target="_blank">Fichier</a>
+								<?php endif;?>
+								</td>
 								<td><a href="catproduct-edit.php?id=<?php echo $value['id'] ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a></td>
 								
 								<td>

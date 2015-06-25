@@ -59,11 +59,16 @@ if (!empty($_GET)){ //Modif
 					<div class="col-md-4">
 						<?php for ($i=1;$i<2;$i++) {?>
 						<input type="hidden"  name="url<?php echo $i ?>"  id="url<?php echo $i ?>" value="<?php echo $imgval?>"><br>
-            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img  src="<?php echo $img?>" id="customRoxyImage<?php echo $i ?>" style="max-width:200px;"></a>
+            			<a href="javascript:openCustomRoxy('<?php echo $i ?>')"><img  src="/admin/img/imgPDF.png" id="customRoxyImage<?php echo $i ?>" style="max-width:200px;"></a>
+						<?php if (!empty($imgval)): ?>
+						<h5><a href="/photos/categories<?php echo $imgval ?>" target="_blank">fichier</a></h5>
+						<?php endif;?>
+						
 						<img src="img/del.png" width="20" alt="Supprimer" onclick="clearImage(<?php echo $i ?>)"/>
 						<br><br>
 						<?php }?>
 					</div>	
+					
 		            <div id="roxyCustomPanel" style="display: none;">
   							<iframe src="/admin/fileman2/index.html?integration=custom" style="width:100%;height:100%" frameborder="0"></iframe>
 					</div>
@@ -78,7 +83,7 @@ if (!empty($_GET)){ //Modif
 						}
 	
 						function clearImage(idImage){
-							$('#customRoxyImage'+idImage).attr('src', 'img/favicon.png');
+							$('#customRoxyImage'+idImage).attr('src', '/admin/img/imgPDF.png');
 							$('#url'+idImage).val('');
 						}
 						
