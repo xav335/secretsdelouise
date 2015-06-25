@@ -150,12 +150,12 @@ if (!empty($_GET)){ //Modif
 					    <input type="text" class="col-sm-4" name="ref" required  value="<?php echo $reference ?>">
 					</div>
 					<div class="form-group" >
-						<label class="col-sm-2" for="titre">Prix HT:</label>
+						<label class="col-sm-2" for="titre">Prix ttc:</label>
 					    <input type="number" step="0.01" class="col-sm-2" name="prix" required  value="<?php echo $prix ?>">
 					     <input type="text" class="col-sm-4" name="libprix" required  value="<?php echo $libprix ?>">
 					</div>
 					<div class="form-group" >
-						<label class="col-sm-2" for="titre">Frais de port extra :</label>
+						<label class="col-sm-2" for="titre">Frais de port extra ttc :</label>
 					    <input type="number" step="0.01" class="col-sm-2" name="shipping" required  value="<?php echo $shipping ?>">
 					</div>
 					<div class="form-group">

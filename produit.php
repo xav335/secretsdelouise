@@ -113,7 +113,7 @@ try {
 							//echo "<input type='hidden' value='".$ListeOperatSeri."' name='product' />";
 							?>
 							<input type="hidden" name="product" value="<?php echo $ListeOperatSeri?>">
-							<span class="prix"><?php echo number_format($value['prix']*(1+$tva), 2, ',', ' ');?>&nbsp;<?php echo $value['libprix']?></span><br>
+							<span class="prix"><?php echo number_format($value['prix'], 2, ',', ' ');?>&nbsp;<?php echo $value['libprix']?></span><br>
 							<?php 
 								$resultSousRef = $value['sousref'];
 								if (!empty($resultSousRef)) {

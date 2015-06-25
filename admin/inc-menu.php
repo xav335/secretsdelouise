@@ -6,9 +6,9 @@
 	                        <span class="icon-bar"></span>
 	                        <span class="icon-bar"></span>
 	                    </button>
-                    <a class="navbar-brand" href="/admin/"><img src="/admin/img/logo.png" width="150"/></a>
+                    <a  href="/admin/"><img src="/admin/img/logo.png" height="51"/></a>
                 	</div>
-                	<div class="col-md-6 collapse navbar-collapse">
+                	<div class="col-md-12 collapse navbar-collapse">
 	           			<ul class="nav navbar-nav">
 	           				<li class="dropdown">
 					          	<a href="produit-list.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Produits<span class="caret"></span></a>
@@ -66,8 +66,8 @@
 					        </li>
 	                    </ul>
                     </div> 
-                    <div class="col-md-2 collapse navbar-collapse">
-                      	<a class="btn btn-success pull-right" href="/admin/?action=getout">Déconnexion</a>
+                    <div class="col-md-1 collapse navbar-collapse">
+                      	<a class="btn btn-success pull-right" href="/admin/?action=getout">Exit</a>
                      </div> 
                 </div><!--/.nav-collapse -->
                

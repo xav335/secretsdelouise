@@ -7,7 +7,7 @@ define("DBPASSWD", "secretsdelouise33");
 // CONSTANTES CONSTANTES CONSTANTES CONSTANTES CONSTANTES CONSTANTES CONSTANTES CONSTANTES
 $tva = 0.2;
 // Frais de livraison par defaut
-$totalLiv = 10;
+$totalLiv = 10; //frais de livraison TTC
 
 $mailCustomer = "contact@lessecretsdelouise.com";
 $mailNameCustomer = "LesSecretsDeLouise";

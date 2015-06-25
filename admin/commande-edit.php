@@ -8,10 +8,13 @@ require 'classes/Contact.php';
 try {
     $panier = new Panier();
     $result = $panier->getCommandes($_GET['id']);
-    //print_r($result);exit;
+ //print_r($result);exit;
     $id_contact = $result[0]['id_contact'];
     $id_facturation  = $result[0]['id_facturation'];
     $id_livraison    = $result[0]['id_livraison'];
+    $statut_paiement = $result[0]['statut_paiement'];
+    $statut_commande = $result[0]['statut_commande'];
+    $colissimo = $result[0]['colissimo'];
     $session = $result[0]['session'];
     
     if (! empty($id_contact)) {
@@ -108,11 +111,11 @@ try {
         				<div class="panel-body">
         					<p>
         						    <?php echo $nom ?><br>
-                                    <?php echo $prenom ?><br>
+                                    <?php echo $prenom ?>
                                     <?php echo $email ?><br>
-                                    <?php echo $tel ?><br>
+                                     Tél. <?php echo $tel ?><br>
                                     <?php echo $adresse ?><br>
-                                    <?php echo $cp ?><br>
+                                    <?php echo $cp ?>
                                     <?php echo $ville ?><br>
         					</p>
         					<p>
@@ -128,12 +131,12 @@ try {
         				</div>
         				<div class="panel-body">
         					<p>
-        						    <?php echo $nomliv ?><br>
+        						    <?php echo $nomliv ?>
                                     <?php echo $prenomliv ?><br>
                                     <?php echo $emailliv ?><br>
-                                    <?php echo $telliv ?><br>
+                                     Tél. <?php echo $telliv ?><br>
                                     <?php echo $adresseliv ?><br>
-                                    <?php echo $cpliv ?><br>
+                                    <?php echo $cpliv ?>
                                     <?php echo $villeliv ?><br>
                                     Message: <?php echo $message ?>
         					</p>
@@ -149,16 +152,46 @@ try {
         					<h3 class="panel-title">Statut Commande </h3>
         				</div>
         				<div class="panel-body">
-        					<p>
-        						    <br>
-                                   
-        					</p>
-        					<p>
-        						<a class="btn btn-info pull-right" href="/admin/">Editer</a>
-        					</p>
+        				    <form name="formulaire" class="form-horizontal" method="POST" action="commande-fp.php">
+					           <input type="hidden" name="reference" value="commande"> 
+					           <input type="hidden" name="action" value="modif"> 
+					           <input type="hidden" name="id_commande" id="id_commande" value="<?php echo $_GET['id'] ?>">
+                                 
+                                    <div class="col-md-12 bg-info ">
+    									<label class="text-warning">Paiement :</label><br>
+    									Non Payé:<input type="radio" name="statut_paiement" value="0" <?php if ($statut_paiement==0) echo 'checked' ;?>>&nbsp;
+    								    Payé:<input type="radio" name="statut_paiement" value="1" <?php if ($statut_paiement==1) echo 'checked' ;?>>&nbsp;
+					                 </div>
+					                 <div class="col-md-12"><br>
+    								     <label class="col-sm-5" for="titre">N° Colissimo:</label>
+					                       <input type="text" class="col-sm-7" name="colissimo"  value="<?php echo $colissimo ?>">
+					                       &nbsp;<br>
+					                 </div>
+									<div class="col-md-12 bg-success ">
+    									<label class="text-info">Commande :</label><br>
+    									<label class="text-danger">Non aboutie: &nbsp;</label><input type="radio" name="statut_commande" value="0" <?php if ($statut_commande==0) echo 'checked' ;?>>&nbsp;&nbsp;&nbsp;
+    				                    <label class="text-info">à traiter: &nbsp;</label><input type="radio" name="statut_commande" value="1" <?php if ($statut_commande==1) echo 'checked' ;?>>&nbsp;&nbsp;&nbsp;
+    				                    <label class="text-info">à livrer : &nbsp;</label><input type="radio" name="statut_commande" value="2" <?php if ($statut_commande==2) echo 'checked' ;?>>&nbsp;&nbsp;&nbsp;
+    				                     <label class="text-success">Traitée : &nbsp;</label><input type="radio" name="statut_commande" value="3" <?php if ($statut_commande==3) echo 'checked' ;?>>&nbsp;&nbsp;&nbsp;
+            					   </div>
+            					    <div class="col-md-12">
+    								   <img src="img/imp.png" width="40" alt="preview" onclick="openImp('<?php echo $_GET['id'] ?>')">
+    								   <input type="submit" class="btn btn-info pull-right"  value="Mofifier"/>
+					                 </div>
+            					   
+        					 </form>
         				</div>
         			</div>
         		</div>
+        		<div id="preview" style="display: none;">
+      						<iframe id="laframe" src="" style="width:100%;height:100%" frameborder="0"></iframe>
+    					</div>
+    					<script type="text/javascript">
+    						function openImp(id){
+    							$('#laframe').attr('src', '/admin/commandes-print.php?id='+id);
+    						 	$('#preview').dialog({modal:true, width:900,height:500});
+    						}
+    					</script>
         		<div class="col-md-12">
         			<div class="panel panel-default">
         				<div class="panel-heading">
@@ -173,18 +206,18 @@ try {
                                 	<th class="col-md-1">Produit</th>
                                 	<th class="col-md-1">Produit détail</th>
                                 	<th class="col-md-1">quantité</th>
-                                	<th class="col-md-1">Extra livraison HT</th>
-                                	<th class="col-md-1">Prix HT unitaire</th>
+                                	<th class="col-md-1">Extra livraison TTC</th>
+                                	<th class="col-md-1">Prix TTC unitaire</th>
                                 	
                                 </tr>
         					</thead>
         					<tbody>
         						<?php 
         						if (!empty($result)) :
-        						    $totalHT = 0;
+        						    $totalTTC = 0;
         						    $extraLiv = 0;
         							foreach ($produitsPanier as $value) : 
-        							     $totalHT += $value['prix']*$value['quantite'];
+        							     $totalTTC += $value['prix']*$value['quantite'];
         							     $extraLiv += $value['shipping'];
         							?>
         							<tr>
@@ -198,10 +231,10 @@ try {
         							</tr>
         							<?php endforeach; ?>
         						<?php endif; 
-            						$totalTVA = $totalHT*$tva;
-            						$totalTTC = $totalHT + $totalTVA;
-            						$totalLiv += $extraLiv;
-            						$totalTTCLIV = $totalTTC + $totalLiv;
+            						 $totalTVA = ($totalTTC*$tva)/(1+$tva);
+                                     $totalHT = $totalTVA/$tva;
+                                     $totalLiv += $extraLiv;
+                                     $totalTTCLIV = $totalTTC + $totalLiv;
         						?>	
         						
         							<tr>
@@ -226,7 +259,7 @@ try {
         							</tr>
         							<tr>
         							    <td colspan="4">&nbsp;</td>
-        								<td><b>Total T.T.C. +FP</b></td>
+        								<td><b>Total T.T.C. + FP</b></td>
         								<td class="text-right"><?php echo number_format($totalTTCLIV, 2, ',', ' ') .' €' ?></td>
         							</tr>
         					</tbody>
@@ -236,13 +269,7 @@ try {
         				</div>
         			</div>
         		</div>
-				<form name="formulaire" class="form-horizontal" method="POST" action="panier-fp.php">
-					<input type="hidden" name="reference" value="commande"> 
-					<input type="hidden" name="action" value="modif"> 
-					<input type="hidden" name="id_commande" id="id_commande" value="<?php echo $_GET['id'] ?>">
-
-					
-				</form>
+				
 				
 			</div>
 		</div>

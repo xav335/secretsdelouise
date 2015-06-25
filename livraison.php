@@ -103,18 +103,18 @@ $extraLiv =0;
 								<tr>
 									<th>Produit</th>
 									<th>Description</th>
-									<th>Prix unitaire</th>
+									<th class="text-right">Prix unitaire</th>
 									<th>Quantité</th>
-									<th>Total</th>
+									<th class="text-right">Total</th>
 									<th>&nbsp;</th>
 								</tr>
 							</thead>
 							
 							<tbody>
 							    <?php 
-							    $totalHT = 0;
+							    $totalTTC = 0;
                                 foreach ($result as $value):
-                                $totalHT += $value['prix']*$value['quantite'];
+                                $totalTTC += $value['prix']*$value['quantite'];
                                 $extraLiv += $value['shipping'];
                                 ?>
 								<tr>
@@ -127,24 +127,24 @@ $extraLiv =0;
 											(<?php if ($value['color'] != '- n/a' ) echo $value['color']  ?> - <?php if ($value['size'] != '- n/a' ) echo $value['size'] ?>)
 										</p>
 									</td>
-									<td><?php echo number_format($value['prix']*(1+$tva), 2, ',', ' ') ?> €</td>
+									<td><?php echo number_format($value['prix'], 2, ',', ' ') ?> €</td>
 									<td>
 										<?php echo $value['quantite'] ?>
 									</td>
-									<td><?php echo number_format(($value['prix']*$value['quantite'])*(1+$tva), 2, ',', ' ') ?> €</td>
+									<td><?php echo number_format(($value['prix']*$value['quantite']), 2, ',', ' ') ?> €</td>
 									
 								</tr>
 								<?php 
                                 endforeach;
-                                $totalTVA = $totalHT*$tva;
-                                $totalTTC = $totalHT + $totalTVA;
+                                $totalTVA = ($totalTTC*$tva)/(1+$tva);
+                                $totalHT = $totalTVA/$tva;
                                 $totalLiv += $extraLiv;
                                 $totalTTCLIV = $totalTTC + $totalLiv;
                                 ?>
 							</tbody>
 							<tfoot>
 								<tr>
-									<td rowspan="4" colspan="2">
+									<td rowspan="5" colspan="2">
 										
 									</td>
 									<td colspan="2">
@@ -153,19 +153,20 @@ $extraLiv =0;
 									<td colspan="2"><?php echo number_format($totalHT, 2, ',', ' ')?> €</td>
 								</tr>
 								<tr>
-									<td colspan="2">TVA</td>
-									<td colspan="2"><?php echo number_format($totalTVA, 2, ',', ' ')?> €</td>
-								</tr>
-								<tr>
 									<td colspan="2">Frais de livraison</td>
 									<td colspan="2"><?php echo number_format($totalLiv, 2, ',', ' ')?> €</td>
 								</tr>
 								<tr>
-									<td colspan="2">
-										<span>Total TTC + frais de livraison</span>
-									</td>
-									<td colspan="2"><?php echo number_format($totalTTCLIV, 2, ',', ' ')?> €</span>
-									</td>
+									<td colspan="2">TVA</td>
+									<td colspan="2"><?php echo number_format($totalTVA, 2, ',', ' ')?> €</td>
+								</tr>
+								<tr>
+									<td colspan="2">Total TTC</td>
+									<td colspan="2"><?php echo number_format($totalTTC, 2, ',', ' ')?> €</td>
+								</tr>
+								<tr>
+									<td colspan="2">Total TTC + livraison</td>
+									<td colspan="2"><?php echo number_format($totalTTCLIV, 2, ',', ' ')?> €</td>
 								</tr>
 							</tfoot>
 						</table>

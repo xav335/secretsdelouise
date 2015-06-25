@@ -12,6 +12,7 @@ try {
     $panier = new Panier();
     $result = $panier->getCommandes($_GET['id']);
     //print_r($result);exit;
+    $date_commande = $result[0]['date_ajout'];
     $id_contact = $result[0]['id_contact'];
     $id_facturation  = $result[0]['id_facturation'];
     $id_livraison    = $result[0]['id_livraison'];
@@ -113,7 +114,6 @@ try {
 		   					<p>Mode de paiement : 
 		   					Paypal CB
 		   					<br>
-		   					Date d'&eacute;ch&eacute;ance : <?=TODO?>
 		   					</p>
 						</td>
 						<td class="td_normal" width=10>&nbsp;</td>
@@ -132,10 +132,10 @@ try {
 		                           			</tr>
 		                                		<tr>
 		                                			<td class="td_normal" align=center>
-		                                			FC<?=TODO?>
+		                                			FC<?=$_GET['id']?>
 		                                			</td>
-		                                			<td class="td_normal" align=center><?=TODO?></td>
-		                                			<td class="td_normal" align=center>CL<?=TODO?>?></td>
+		                                			<td class="td_normal" align=center><?= traitement_datetime_affiche($date_commande) ?></td>
+		                                			<td class="td_normal" align=center>CL<?=$id_contact?></td>
 		                           			</tr>
 		                                	</table>
 							<br>
@@ -147,26 +147,21 @@ try {
 		                                		<tr>
 		                                			<td class="td_normal">
 		                                				<br>
-		                                				<?=TODO?><br>
-		  		 						
-		  		 							
-		  		 						<?=TODO?><br>
-		  		 						
-		  		 						<br>
-		  		 						<?=TODO?>
-		                                				
+		                                				<?php echo $nom ?>
+                                                        <?php echo $prenom ?><br>
+                                                        <?php echo $adresse ?><br>
+                                                        Tél. <?php echo $tel ?><br>
+                                                        <?php echo $cp ?>
+                                                        <?php echo $ville ?><br>
 		                                			</td>
 		                                			<td class="td_normal">
 		                                				<br>
-		                                				<?=TODO?><br>
-		  		 						
-		  		 						
-		  		 						<br>
-		  		 						<?=TODO?><br>
-		  		 						
-		  		 						<br>
-		  		 						<?=TODO?>
-		                                				
+		                                				<?php echo $nomliv ?>
+                                                        <?php echo $prenomliv ?><br>
+                                                        <?php echo $adresseliv ?><br>
+                                                         Tél. <?php echo $telliv ?><br>
+                                                        <?php echo $cpliv ?>
+                                                        <?php echo $villeliv ?><br>
 		                                			</td>
 		                           			</tr>
 		                                	</table>
@@ -195,28 +190,28 @@ try {
 							</tr>
 							<?php 
         						if (!empty($result)) :
-        						    $totalHT = 0;
+        						    $totalTTC = 0;
         						    $extraLiv = 0;
         							foreach ($produitsPanier as $value) : 
-        							     $totalHT += $value['prix']*$value['quantite'];
+        							     $totalTTC += $value['prix']*$value['quantite'];
         							     $extraLiv += $value['shipping'];
         							?>
 								
 							<tr align="left" valign="top"><? //echo $row["lot"] ."  ". $row["quantite"] ?> 
 							  <td bgcolor="#FFFFFF"><b><?php echo $value['label'] ?></b></td>
-							  <td bgcolor="#FFFFFF"><b><?php echo $value['reference'] ?></b></td>
-							  <td bgcolor="#FFFFFF"><b><?php echo $value['reference'] ?></b></td>
-							  <td bgcolor="#FFFFFF"><b><?php echo $value['reference'] ?></b></td>
+							  <td bgcolor="#FFFFFF"><b><?php echo $value['size'] ?></b></td>
+							  <td bgcolor="#FFFFFF"><b><?php echo $value['color'] ?></b></td>
+							  <td bgcolor="#FFFFFF"><b><?php echo $value['quantite'] ?></b></td>
 							  
 							  <td bgcolor="#FFFFFF" align="right"><b><? echo number_format($value['prix'], 2, ',', ' ') ?></b></td>
 							  <td bgcolor="#FFFFFF" align="right"><b><? echo number_format($value["prix"] * $value["quantite"], 2, ',', ' '); ?></b></td>
 							</tr>
 							<?php endforeach; ?>
         						<?php endif; 
-            						$totalTVA = $totalHT*$tva;
-            						$totalTTC = $totalHT + $totalTVA;
-            						$totalLiv += $extraLiv;
-            						$totalTTCLIV = $totalTTC + $totalLiv;
+            						 $totalTVA = ($totalTTC*$tva)/(1+$tva);
+                                     $totalHT = $totalTVA/$tva;
+                                     $totalLiv += $extraLiv;
+                                     $totalTTCLIV = $totalTTC + $totalLiv;
         						?>	
 							
 							
@@ -225,7 +220,7 @@ try {
 							  <td bgcolor="#FFFFFF">&nbsp;</td>
 							  <td bgcolor="#FFFFFF">&nbsp;</td>
 							  <td colspan="2" bgcolor="#FFFFFF"><b>Montant total</b></td>
-							  <td id="fond_rouge" align="right"><span id="texte2_blanc"><? echo number_format($totalHT, 2, ',', ' ') ?></span></td>
+							  <td id="fond_rouge" align="right"><span id="texte2_blanc"><? echo number_format($totalTTC, 2, ',', ' ') ?></span></td>
 							</tr>
 							<tr align="left" valign="top"> 
 							  <td bgcolor="#FFFFFF">&nbsp;</td>
@@ -242,9 +237,8 @@ try {
 							  <?
 							  // on ajoute les frais de port
 							  $totalTTC+=$totalLiv;
-							  $tva = $totalTTC; 
 							  ?>
-							  <td id="fond_rouge" align="right"><span id="texte2_blanc"><? echo number_format($tva, 2, ',', ' ') ?></span></td>
+							  <td id="fond_rouge" align="right"><span id="texte2_blanc"><? echo number_format($totalTVA, 2, ',', ' ') ?></span></td>
 							</tr>
 							<tr align="left" valign="top"> 
 							  <td bgcolor="#FFFFFF">&nbsp;</td>

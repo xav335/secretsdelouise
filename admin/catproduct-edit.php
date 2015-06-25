@@ -54,7 +54,7 @@ if (!empty($_GET)){ //Modif
 		           		<textarea class="col-sm-11" name="description" id="contenu" rows="6"  ><?php echo $description ?></textarea>
 		            </div>
 		            <div class="form-group"><br>
-						<label  for="titre">Choisissez une image pour la catégorie: </label>
+						<label  for="titre">ajouter un descriptif des tailles: </label>
 					</div>	
 					<div class="col-md-4">
 						<?php for ($i=1;$i<2;$i++) {?>

@@ -291,4 +291,26 @@ class Panier extends StorageManager {
 	    $this->dbDisConnect();
 	}
 	
+	public function updateStatutCommande($id_commande,$statut_paiement,$statut_commande,$colissimo){
+	    //print_r($value);exit();
+	    $this->dbConnect();
+	    $this->begin();
+	
+	    $sql = "UPDATE  `commande` SET
+				`statut_commande`= $statut_commande,
+	            `statut_paiement`= $statut_paiement,
+	            `colissimo`='". addslashes($colissimo) ."'
+				WHERE `id`=". $id_commande .";";
+	    //print_r($sql);exit;
+	    $result = mysqli_query($this->mysqli,$sql);
+	
+	    if (!$result) {
+	        $this->rollback();
+	        throw new Exception('Erreur Mysql updateStatutCommande sql = : '.$sql);
+	    }
+	
+	    $this->commit();
+	    $this->dbDisConnect();
+	}
+	
 }
