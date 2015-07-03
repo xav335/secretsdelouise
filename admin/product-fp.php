@@ -145,6 +145,21 @@ if (!empty($_POST)){
 		}
 	}
 	
+	if ($_GET['reference'] == 'product'){ //supprimer
+	    $catproduct = new Catproduct();
+	    if ($_GET['action'] == 'reactive'){
+	        try {
+	            $result = $catproduct->productActive($_GET['id']);
+	            $catproduct = null;
+	            header('Location: /admin/product-list.php?actif=OFFrubrique='.$_GET['rubrique'].'&categorie='.$_GET['categorie']);
+	        } catch (Exception $e) {
+	            echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage() , '\n';
+	            $catproduct = null;
+	            exit();
+	        }
+	    }
+	}
+	
 	if ($_GET['reference'] == 'product-sousref'){ //supprimer
 		$catproduct = new Catproduct();
 		if ($_GET['action'] == 'delete'){

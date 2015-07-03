@@ -46,7 +46,7 @@ session_start();
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux5.jpg" alt="" class="img" />
+								<img src="img/img-bijoux.jpg" alt="" class="img" />
 							</span>
 							<h4>Promo !</h4>
 							<p>Toutes nos promos du moment...</p>
@@ -57,7 +57,7 @@ session_start();
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux2.jpg" alt="" class="img" />
+								<img src="img/img-bijoux.jpg" alt="" class="img" />
 							</span>
 							<h4>Ventes flash</h4>
 							<p>Bague, bracelets, colliers...</p>
@@ -68,7 +68,7 @@ session_start();
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux3.jpg" alt="" class="img" />
+								<img src="img/img-bijoux.jpg" alt="" class="img" />
 							</span>
 							<h4>Nouveauté</h4>
 							<p>Ne loupez pas nos derniers articles arrivés...</p>
@@ -79,7 +79,7 @@ session_start();
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux4.jpg" alt="" class="img" />
+								<img src="img/img-bijoux.jpg" alt="" class="img" />
 							</span>
 							<h4>Coup de cœur</h4>
 							<p></p>

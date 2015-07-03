@@ -43,7 +43,7 @@ class Catproduct extends StorageManager {
 	}
 	
 	public function getCategorieByProduct($id){
-		$requete = "SELECT catproduct.label as catlabel,catproduct.id as catid
+		$requete = "SELECT catproduct.label as catlabel,catproduct.id as catid,catproduct.image  as descat
 					FROM product 
 					INNER JOIN product_categorie ON product.id=product_categorie.id_product 
 					INNER JOIN catproduct ON catproduct.id = product_categorie.id_categorie 
@@ -345,6 +345,13 @@ class Catproduct extends StorageManager {
 	
 	public function catproductDelete($value){
 		
+	    //Check si la categorie ne contient pas de catégorie
+	    $categlst = $this->catproductByParentGet($value);
+	    if (!empty($categlst)){
+	        throw new Exception("La categorie n'est pas vide ! ",1234);
+	    }
+	   //print_r($categlst);exit;
+
 		//Check if the categorie is empty !
 		$prod = $this->getProductsByCategorie($value);
 		//print_r($prod);
@@ -369,7 +376,7 @@ class Catproduct extends StorageManager {
 		$this->dbDisConnect();
 	}
 	
-	public function productNumberGet($categorie,$rubrique){
+	public function productNumberGet($categorie,$rubrique,$actif){
 		$this->dbConnect();
 		
 		if (empty($categorie) && empty($rubrique)) {
@@ -379,13 +386,13 @@ class Catproduct extends StorageManager {
 					FROM product
 					INNER JOIN product_categorie 
 					ON product_categorie.id_product=product.id
-					WHERE product_categorie.id_categorie=". $categorie . ";" ;
+					WHERE product_categorie.id_categorie=". $categorie . " AND actif=$actif;" ;
 		} elseif (empty($categorie) && !empty($rubrique)) {
 			$sql = "SELECT count(*) as nb
 					FROM product
 					INNER JOIN product_rubrique
 					ON product_rubrique.id_product=product.id
-					WHERE product_rubrique.id_rubrique=". $rubrique . ";" ;
+					WHERE product_rubrique.id_rubrique=". $rubrique . " AND actif=$actif;" ;
 		} elseif (!empty($categorie) && !empty($rubrique)) {
 			$sql = "SELECT count(*) as nb
 					FROM product
@@ -394,7 +401,7 @@ class Catproduct extends StorageManager {
 					INNER JOIN product_rubrique
 					ON product_rubrique.id_product=product.id		
 					WHERE product_rubrique.id_rubrique=". $rubrique . "
-					AND product_categorie.id_categorie=". $categorie .";" ;
+					AND product_categorie.id_categorie=". $categorie ." AND actif=$actif;" ;
 				
 		}	
 		//print_r($requete);
@@ -410,7 +417,7 @@ class Catproduct extends StorageManager {
 		return $new_array[0]['nb'];
 	}
 	
-	public function productGet($id, $offset, $count, $categorie, $rubrique){
+	public function productGet($id, $offset, $count, $categorie, $rubrique, $actif){
 		$this->dbConnect();
 		try {
 			if (!isset($id)){
@@ -418,7 +425,7 @@ class Catproduct extends StorageManager {
 					if (empty($categorie) && empty($rubrique)) {
 						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
 									,product.image1,product.accroche
-									FROM product 
+									FROM product WHERE actif = $actif 
 									ORDER BY  product.label ASC
 									LIMIT ". $offset .",". $count .";" ;
 						
@@ -428,7 +435,7 @@ class Catproduct extends StorageManager {
 									FROM product
 									INNER JOIN product_categorie 
 									ON product_categorie.id_product=product.id
-									WHERE product_categorie.id_categorie=". $categorie . "
+									WHERE product_categorie.id_categorie=". $categorie . " AND actif = $actif 
 									ORDER BY  product.label ASC
 									LIMIT ". $offset .",". $count .";" ;
 					} elseif (empty($categorie) && !empty($rubrique)) {
@@ -437,7 +444,7 @@ class Catproduct extends StorageManager {
 									FROM product
 									INNER JOIN product_rubrique
 									ON product_rubrique.id_product=product.id
-									WHERE product_rubrique.id_rubrique=". $rubrique . "
+									WHERE product_rubrique.id_rubrique=". $rubrique . " AND actif = $actif 
 									ORDER BY product.label ASC
 									LIMIT ". $offset .",". $count .";" ;
 						
@@ -450,17 +457,17 @@ class Catproduct extends StorageManager {
 									INNER JOIN product_categorie 
 									ON product_categorie.id_product=product.id
 									WHERE product_rubrique.id_rubrique=". $rubrique . "
-									AND product_categorie.id_categorie=". $categorie . "
+									AND product_categorie.id_categorie=". $categorie . " AND actif = $actif 
 									ORDER BY product.label ASC
 									LIMIT ". $offset .",". $count .";" ;
 					}
 				} else {
-					$sql = "SELECT * FROM `product` ORDER BY `label`;" ;
+					$sql = "SELECT * FROM `product` WHERE actif = $actif  ORDER BY `label`;" ;
 				}
 			} else {
 				$sql = "SELECT product.*
 							FROM product 
-							WHERE product.id=". $id;
+							WHERE product.id=". $id . " AND actif = $actif" ;
 			}
 			//print_r($sql);
 			$new_array = null;
@@ -688,28 +695,48 @@ class Catproduct extends StorageManager {
 	}
 	
 	public function productDelete($value){
-	
-		$this->dbConnect();
-		$this->begin();
-		
-		$this->categoriesProductDel($value);
-	
-		$sql = "DELETE FROM  .`product`
+	    
+	    $this->dbConnect();
+	    $this->begin();
+	    
+	    $sql = "UPDATE  `product` SET
+				`actif`= 0
 				WHERE `id`=". $value .";";
-		$result = mysqli_query($this->mysqli,$sql);
+	    //print_r($sql);exit();
+	    $result = mysqli_query($this->mysqli,$sql);
+	    	
+	    if (!$result) {
+	        $this->rollback();
+	        throw new Exception('Erreur Mysql productDelete sql = : '.$sql);
+	    }
+	    
+	    $this->commit();
+	    $this->dbDisConnect();
 		
-		//TODO: Remplacer la suppression par la desactivation
-			
-		if (!$result) {
-			$this->rollback();
-			throw new Exception('Erreur Mysql productDelete sql = : '.$sql);
-		}
-	
-		$this->commit();
-		$this->dbDisConnect();
 	}
 	
-	public function productsousrefGet($id, $id_souref){
+	public function productActive($value){
+	     
+	    $this->dbConnect();
+	    $this->begin();
+	     
+	    $sql = "UPDATE  `product` SET
+				`actif`= 1
+				WHERE `id`=". $value .";";
+	    //print_r($sql);exit();
+	    $result = mysqli_query($this->mysqli,$sql);
+	
+	    if (!$result) {
+	        $this->rollback();
+	        throw new Exception('Erreur Mysql productDelete sql = : '.$sql);
+	    }
+	     
+	    $this->commit();
+	    $this->dbDisConnect();
+	
+	}
+	
+	public function productsousrefGet($id_product, $id_souref){
 		$this->dbConnect();
 		$sql = null;
 		try {
@@ -725,7 +752,7 @@ class Catproduct extends StorageManager {
 						FROM product_sousref
 						INNER JOIN color ON color.id =  product_sousref.id_color
 						INNER JOIN size ON size.id =  product_sousref.id_size
-						WHERE product_sousref.id_product=". $id ."
+						WHERE product_sousref.id_product=". $id_product ."
 						ORDER BY  product_sousref.id_color;" ;
 					
 			} 
@@ -743,6 +770,35 @@ class Catproduct extends StorageManager {
 			//throw new Exception("Erreur Mysql productGet ". $e->getMessage());
 			return "errrrrrrooooOOor";
 		}
+	}
+	
+	
+	public function productsousrefGetByStock($stock){
+	    $this->dbConnect();
+	    $sql = null;
+	    try {
+            $sql = "SELECT product.label, product.id as id_product,product_sousref.id,product_sousref.sousref,product_sousref.id_color, product_sousref.id_size,product_sousref.stock, color.label as color, size.label as size
+    				FROM product_sousref
+                    iNNER JOIN product ON product.id = product_sousref.id_product
+    				INNER JOIN color ON color.id =  product_sousref.id_color
+    				INNER JOIN size ON size.id =  product_sousref.id_size
+    				WHERE product_sousref.stock =". $stock ."
+    				ORDER BY  product_sousref.id_product;" ;
+	            	
+	        //print_r($sql);
+	        $new_array = null;
+	        $result = mysqli_query($this->mysqli,$sql);
+	        while( $row = mysqli_fetch_assoc( $result)){
+	            $new_array[] = $row;
+	        }
+	
+	       $this->dbDisConnect();
+	       return $new_array;
+	    } catch (Exception $e) {
+	        die('Erreur productsousrefGetByStock: ' . $e->getMessage());
+	        //throw new Exception("Erreur Mysql productGet ". $e->getMessage());
+	        return "errrrrrrooooOOor";
+	    }
 	}
 	
 	public function productsousrefAdd($value){

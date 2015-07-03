@@ -109,7 +109,7 @@ require 'classes/Catproduct.php';
 							<tr class="<?php if ($i%2!=0) echo 'info'?>">
 								<td><?php echo $value['id']?></td>
 								<td><?php echo $value['label'] ?></td>
-								<?php  if($value['id'] != 1) {?>
+								<?php  if(false) {?>
 								<td>
 									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
 								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>

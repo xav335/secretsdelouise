@@ -11,8 +11,9 @@ session_start();
 
 $catproduct = new Catproduct();
 try {
-		$result = $catproduct->productGet($id, null, null, null, null);
+		$result = $catproduct->productGet($id, null, null, null, null,1);
 		$value = $result[0];
+		$descriptionTailles = "/photos/categories".$value['categories'][0]['descat'];
 		//print_r($value);
 		
 		if (empty($idcat)) {
@@ -116,36 +117,49 @@ try {
 							<span class="prix"><?php echo number_format($value['prix'], 2, ',', ' ');?>&nbsp;<?php echo $value['libprix']?></span><br>
 							<?php 
 								$resultSousRef = $value['sousref'];
+								$yaDesSousRefsAvecStockPositif = false;
 								if (!empty($resultSousRef)) {
+								    foreach ($resultSousRef as $value2) {
+								        if ($value2['stock']>0) $yaDesSousRefsAvecStockPositif =true;
+								    }
+								}
+								if ($yaDesSousRefsAvecStockPositif): 
 								?>
 								<div class="row">
 									<div class="large-8 columns">
+									
 											<select name="idsousref" id="idsousref">
 											<?
-											
 											//print_r($value['sousref']);
-											foreach ($resultSousRef as $value2) { 
-												?>
-												<option value="<?php echo $value2['id'] ?>" >
-													<?php if ($value2['color'] != '- n/a' ) {?>
-													Couleur:&nbsp;<?php echo $value2['color'] ?>&nbsp;-&nbsp;
-													<?php } ?>
-													<?php if ($value2['size'] != '- n/a' ) {?>
-													Taille:&nbsp;<?php echo $value2['size'] ?>&nbsp;-&nbsp;
-													<?php } ?>
-													Quantité dispo:&nbsp;<?php echo $value2['stock'] ?>
-												</option>
-												<?
-											}
+    											foreach ($resultSousRef as $value2) : 
+    											    if ($value2['stock']>0):
+    												?>
+    												<option value="<?php echo $value2['id'] ?>" >
+    													<?php if ($value2['color'] != '- n/a' ) {?>
+    													Couleur:&nbsp;<?php echo $value2['color'] ?>&nbsp;-&nbsp;
+    													<?php } ?>
+    													<?php if ($value2['size'] != '- n/a' ) {?>
+    													Taille:&nbsp;<?php echo $value2['size'] ?>&nbsp;-&nbsp;
+    													<?php } ?>
+    													Quantité dispo:&nbsp;<?php echo $value2['stock'] ?>
+    												</option>
+    												<?
+    												endif;
+    											endforeach;
 											?>
 											</select>	
 									</div>
 									<div class="large-4 columns">
-										<a href="/uploads/taillesDocs/baguier.pdf" target="_blank">Descriptif des tailles </a>
+									   <?php if ($descriptionTailles <> "/photos/categories"):?>
+										<a href="<?php echo $descriptionTailles?>" target="_blank">Descriptif des tailles </a>
+										<?php endif;?>
 									</div>
 								</div>
-							<?php } ?>
+							
 							<button>Ajouter au panier</button>
+							<?php else: ?>
+							<h2>Cet article est en rupture de stock</h2>
+							<?php endif; ?>
 						</form>
 						<div class="plus-produit hide-for-small">
 							<h3><?php echo $value['titreaccroche']?></h3>

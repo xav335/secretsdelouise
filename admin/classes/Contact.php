@@ -135,7 +135,7 @@ class Contact extends StorageManager
     {
         $this->dbConnect();
         try {
-            $sql = "SELECT DISTINCT email FROM contact WHERE newsletter=1;";
+            $sql = "SELECT DISTINCT email FROM contact WHERE newsletter=1 AND email NOT IN (SELECT email FROM contact WHERE newsletter=0);";
             // print_r($sql);exit();
             $new_array = null;
             $result = mysqli_query($this->mysqli, $sql);

@@ -53,7 +53,7 @@ if (!empty($_GET)){
 						<h3><?php echo $value['titre']?></h3>
 						<h5><?php echo traitement_datetime_affiche($value['date_news'])?></h5>
 						<p>
-							<?php echo $value['contenu']?>
+							<?php echo nl2br($value['contenu'])?>
 						</p>
 						<?php if (!empty($value['accroche'])) {?>
 						<a href="<?php echo $value['accroche']?>" class="bt-plus">en savoir +</a>

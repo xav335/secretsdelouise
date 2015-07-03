@@ -12,7 +12,7 @@ $tva = 0.2;
 
 try {
 		$catproduct = new Catproduct();
-		$total = $catproduct->productNumberGet($idcat,$idrub);
+		$total = $catproduct->productNumberGet($idcat,$idrub,1);
 		//$result = $contact->contactGet(null, $offset, $count);
 		
 		$epp = 6; // nombre d'entrées à afficher par page (entries per page)
@@ -39,7 +39,7 @@ try {
 		$start = ($current * $epp - $epp);
 		
 		// Récupération des données à afficher pour la page courante
-		$result = $catproduct->productGet(null, $start, $epp, $idcat, $idrub);
+		$result = $catproduct->productGet(null, $start, $epp, $idcat, $idrub,1);
 		//print_r($result);
 		
 		

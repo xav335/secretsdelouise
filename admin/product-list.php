@@ -5,6 +5,13 @@
 <?php 
 require 'classes/Catproduct.php';
 
+if (empty($_GET['actif'])) {
+    $actif=1; 
+} else {
+    $actif=0;
+}
+
+
 	if (!empty($_POST['rubrique'])){
 		$rub = $_POST['rubrique'];
 	} else {
@@ -28,7 +35,7 @@ require 'classes/Catproduct.php';
 	try {
 		$catproduct = new Catproduct();
 		
-		$total = $catproduct->productNumberGet($categ,$rub);
+		$total = $catproduct->productNumberGet($categ,$rub,$actif);
 		//$result = $contact->contactGet(null, $offset, $count);
 		
 		$epp = 15; // nombre d'entrées à afficher par page (entries per page)
@@ -55,7 +62,7 @@ require 'classes/Catproduct.php';
 		$start = ($current * $epp - $epp);
 		
 		// Récupération des données à afficher pour la page courante
-		$result = $catproduct->productGet(null, $start, $epp, $categ, $rub);
+		$result = $catproduct->productGet(null, $start, $epp, $categ, $rub,$actif);
 		
 		$catproduct->catproduitViewIterative(null);
 		$catresult = $catproduct->tabView;
@@ -92,7 +99,7 @@ require 'classes/Catproduct.php';
 			</div>
 		</div>
 		<div class="row">
-				<form name="formulaire" class="form-horizontal" method="POST"  action="product-list.php" >
+				<form name="formulaire" class="form-horizontal" method="GET"  action="product-list.php" >
 				<div class="col-md-2">	
 					<label  >&nbsp;Filtrez par catégorie :</label>
 				</div>
@@ -206,12 +213,22 @@ require 'classes/Catproduct.php';
 									&nbsp;&nbsp;&nbsp;&nbsp;
 									<a href="product-sousref-edit.php?id=<?php echo $value['id'] ?>&rubrique=<?php echo $rub ?>&categorie=<?php echo $categ ?>"><img src="img/sr.png" width="30" alt="Modifier" ></a>
 									&nbsp;&nbsp;&nbsp;&nbsp;
+									<?php if ($actif==0):?>
+									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
+								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
+								      <strong>Voulez vous réactiver ce produit ?</strong>
+								      <button type="button" class="btn btn-success" onclick="location.href='product-fp.php?reference=product&action=reactive&id=<?php echo $value['id'] ?>'">Oui !</button>
+								 	</div>
+									<img src="img/check.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> 
+									
+									<?php else:?>
 									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
 								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
 								      <strong>Voulez vous vraiment supprimer ?</strong>
 								      <button type="button" class="btn btn-danger" onclick="location.href='product-fp.php?reference=product&action=delete&id=<?php echo $value['id'] ?>'">Oui !</button>
 								 	</div>
 									<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> 
+									<?php endif;?>
 								</td>
 							</tr>
 							<?php } ?>

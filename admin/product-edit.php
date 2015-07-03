@@ -21,7 +21,7 @@ $resultRubrique = $catproduct->getRubriques();
 
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
-	$result = $catproduct->productGet($_GET['id'],null,null,null,null);
+	$result = $catproduct->productGet($_GET['id'],null,null,null,null,1);
 	//print_r($result);exit();
 	//print_r($result[0]['categories']);
 	$catproduct=null;

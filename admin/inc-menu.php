@@ -20,7 +20,9 @@
 					            	<li class="divider"></li>
 					            	<li><a href="product-color-edit.php">Couleurs</a></li>
 					            	<li><a href="product-size-edit.php">Tailles</a></li>
-					            	
+					            	<li class="divider"></li>
+					            	<li><a href="product-list-stock.php">Sous références en rupture de Stock</a></li>
+					            	<li><a href="product-list.php?actif=OFF">Produits supprimés</a></li>
 					          	</ul>
 					        </li>
 					        <li class="dropdown">

@@ -120,7 +120,7 @@ require 'classes/Catproduct.php';
 							$i++;
 							?>
 							<tr class="<?php if ($value['level']==0) echo 'info';  if ($value['level']==1) echo 'success';?>">
-								<td><?php echo $decalage.$value['label']?></td>
+								<td><a href="/admin/product-list.php?categorie=<?php echo $value['id'] ?>"><?php echo $decalage.$value['label']?></a></td>
 								<td><?php if(!empty($value['description'])) echo 'texte OK' ?></td>
 								<td>
 								<?php if(!empty($value['image'])): ?>
