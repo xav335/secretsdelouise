@@ -13,7 +13,7 @@ if (!empty($_GET)){ //Modif
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle = 'Actu N°: '. $_GET['id'];
-		$id= 			$_GET['id'];
+		$id_produit= 			$_GET['id'];
 		$titre=  		$result[0]['titre'];
 		$date_news= 	traitement_datetime_affiche($result[0]['date_news']);
 		$accroche= 		$result[0]['accroche'];
@@ -37,7 +37,7 @@ if (!empty($_GET)){ //Modif
 } else { //ajout News
 	$action = 'add';
 	$labelTitle = 'Edition Nouvelle actu ';
-	$id= 			null;
+	$id_produit= 			null;
 	$titre=  		null;
 	$date_news= 	null;
 	$accroche= 		null;
@@ -65,7 +65,7 @@ if (!empty($_GET)){ //Modif
 				<form name="formulaire" class="form-horizontal" method="POST"  action="news-fp.php">
 					<input type="hidden" name="reference" value="news">
 					<input type="hidden" name="action" value="<?php echo $action ?>">
-					<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+					<input type="hidden" name="id" id="id" value="<?php echo $id_produit ?>">
 					
 					<div class="form-group" >
 						<label class="col-sm-1">Date :</label>

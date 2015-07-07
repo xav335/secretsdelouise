@@ -23,7 +23,7 @@ require 'classes/Catproduct.php';
 		//print_r($result[0]['newsletter_detail']);
 		//exit();
 	} else { //ajout News
-		$id= 			null;
+		$id_produit= 			null;
 		$titre=  		null;
 	}
 ?>

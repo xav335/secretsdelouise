@@ -223,6 +223,7 @@ class Contact extends StorageManager
 					`name`='" . addslashes($value['name']) . "',
 					`email`='" . addslashes($value['email']) . "',
 					`firstname`='" . addslashes($value['firstname']) . "',
+					`password`='" . addslashes($value['password']) . "',
 					`newsletter`=" . $newsletter . ",
 					`fromgoldbook`=" . $fromgoldbook . ",
 					`fromcontact`=" . $fromcontact . "
@@ -504,6 +505,38 @@ class Contact extends StorageManager
         $id_record = mysqli_insert_id($this->mysqli);
         
         return $id_record;
+    }
+    
+    public function adresseModify($value)
+    {
+        // print_r($value);
+        // exit();
+        $this->dbConnect();
+        $this->begin();
+        try {
+    
+            $sql = "UPDATE  `adresse` SET
+					`nom`='" . addslashes($value['nom']) . "',
+					`email`='" . addslashes($value['email']) . "',
+					`prenom`='" . addslashes($value['prenom']) . "',
+					`cp`='" . addslashes($value['cp']) . "',
+					`ville`='" . addslashes($value['ville']) . "',
+					`adresse`='" . addslashes($value['adresse']) . "'
+					WHERE `id_adresse`=" . $value['id'] . ";";
+            $result = mysqli_query($this->mysqli, $sql);
+    
+            if (! $result) {
+                throw new Exception($sql);
+            }
+    
+            $this->commit();
+        } catch (Exception $e) {
+            $this->rollback();
+            throw new Exception("Erreur Mysql adresseModify " . $e->getMessage());
+            return "errrrrrrooooOOor";
+        }
+    
+        $this->dbDisConnect();
     }
 
     protected function contactAddressAdd($value)

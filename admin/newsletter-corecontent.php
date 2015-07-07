@@ -15,7 +15,7 @@ if (!empty($_GET)){ //Modif
 	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
-		$id= 			$_GET['id'];
+		$id_produit= 			$_GET['id'];
 		$titre=  		$result[0]['titre'];
 		$date= 			traitement_datetime_affiche($result[0]['date']);
 		$bas_page= 		nl2br($result[0]['bas_page']);

@@ -25,14 +25,14 @@ require 'classes/Catproduct.php';
 			$message = 'Aucun enregistrements';
 		} else {
 			$labelTitle = 'Newsletter N°: '. $_GET['id'];
-			$id= 			$_GET['id'];
+			$id_produit= 			$_GET['id'];
 			$titre=  		$result[0]['titre'];
 			$date= 			traitement_datetime_affiche($result[0]['date']);
 		}
 	} else { //ajout News
 		$action = 'add';
 		$labelTitle = 'Edition Nouvelle Newsletter ';
-		$id= 			null;
+		$id_produit= 			null;
 		$titre=  		null;
 	}
 ?>
@@ -57,7 +57,7 @@ require 'classes/Catproduct.php';
 							<form name="formulaire" class="form-horizontal" method="POST"  action="formprocess.php" >
 								<input type="hidden" name="reference" value="categorie">
 								<input type="hidden" name="action" id="action" value="<?php echo $action ?>">
-								<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+								<input type="hidden" name="id" id="id" value="<?php echo $id_produit ?>">
 								
 								<input type="hidden"  name="idImage"  id="idImage" value=""><br>
 								<div class="row">

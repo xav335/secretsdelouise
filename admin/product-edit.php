@@ -30,7 +30,7 @@ if (!empty($_GET)){ //Modif
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle= 	'Produit N°: '. $_GET['id'];
-		$id= 			$_GET['id'];
+		$id_produit= 			$_GET['id'];
 		$label=  		$result[0]['label'];
 		$prix=  		$result[0]['prix'];
 		$shipping=  	$result[0]['shipping'];
@@ -72,7 +72,7 @@ if (!empty($_GET)){ //Modif
 } else { //ajout 
 	$action= 		'add';
 	$labelTitle= 	'Edition Produit ';
-	$id= 			null;
+	$id_produit= 			null;
 	$label=  		null;
 	$prix=  		null;
 	$shipping=		null;
@@ -107,7 +107,7 @@ if (!empty($_GET)){ //Modif
 				<form name="formulaire" class="form-horizontal" method="POST"  action="product-fp.php">
 					<input type="hidden" name="reference" value="product">
 					<input type="hidden" name="action" value="<?php echo $action ?>">
-					<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+					<input type="hidden" name="id" id="id" value="<?php echo $id_produit ?>">
 					<input type="hidden" name="rubrique" id="rubrique" value="<?php echo $rubrique ?>">
 					<input type="hidden" name="categorie" id="categorie" value="<?php echo $categorie ?>">
 					

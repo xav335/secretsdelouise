@@ -467,7 +467,7 @@ class Catproduct extends StorageManager {
 			} else {
 				$sql = "SELECT product.*
 							FROM product 
-							WHERE product.id=". $id . " AND actif = $actif" ;
+							WHERE product.id=". $id  ;
 			}
 			//print_r($sql);
 			$new_array = null;

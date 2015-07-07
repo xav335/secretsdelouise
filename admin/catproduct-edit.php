@@ -13,7 +13,7 @@ if (!empty($_GET)){ //Modif
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle = 'Catégorie N°: '. $_GET['id'];
-		$id= 			$_GET['id'];
+		$id_produit= 			$_GET['id'];
 		$label=  		$result[0]['label'];
 		$description= 		$result[0]['description'];
 		$image= 	$result[0]['image'];
@@ -43,7 +43,7 @@ if (!empty($_GET)){ //Modif
 				<form name="formulaire" class="form-horizontal" method="POST"  action="catproduct-fp.php">
 					<input type="hidden" name="reference" value="categorie">
 					<input type="hidden" name="action" value="<?php echo $action ?>">
-					<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+					<input type="hidden" name="id" id="id" value="<?php echo $id_produit ?>">
 					<input type="hidden"  name="idImage"  id="idImage" value="">
 					<div class="form-group" >
 						<label class="col-sm-1" for="titre">Titre :</label>

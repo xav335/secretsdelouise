@@ -5,18 +5,18 @@
 
 require 'classes/Panier.php';
 require 'classes/Contact.php';
-
-define('TODO', 'TODO');
-
 try {
     $panier = new Panier();
-    $result = $panier->getCommandes($_GET['id']);
-    //print_r($result);exit;
-    $date_commande = $result[0]['date_ajout'];
-    $id_contact = $result[0]['id_contact'];
-    $id_facturation  = $result[0]['id_facturation'];
-    $id_livraison    = $result[0]['id_livraison'];
-    $session = $result[0]['session'];
+    $commande = $panier->getCommandes($_GET['id']);
+ //print_r($commande);exit;
+    $id_contact = $commande[0]['id_contact'];
+    $id_facturation  = $commande[0]['id_facturation'];
+    $id_livraison    = $commande[0]['id_livraison'];
+    $statut_paiement = $commande[0]['statut_paiement'];
+    $statut_commande = $commande[0]['statut_commande'];
+    $date_commande = $commande[0]['date_ajout'];
+    $colissimo = $commande[0]['colissimo'];
+    $session = $commande[0]['session'];
     
     if (! empty($id_contact)) {
         $contact = new Contact();
@@ -60,6 +60,7 @@ try {
         //print_r($resultPanier);
         foreach ($resultPanier as $lignePanier) {
             $prodTmp = null;
+            //On recupère dans le log de chaque produit du panier les données aux moment de l'achat.
             $productOri = unserialize($lignePanier['serialproduct']);
             //print_r($productOri);
             $prodTmp['id_sousref']  = $lignePanier['id_sousref'];
@@ -69,6 +70,8 @@ try {
             $prodTmp['label'] = $productOri['label'];
             $prodTmp['prix'] =  $productOri['prix'];
             $prodTmp['shipping'] =  $productOri['shipping'];
+            $prodTmp['fraisport'] =  $productOri['fraisport'];
+            $prodTmp['tva'] =  $productOri['tva'];
             $prodTmp['reference'] =  $productOri['reference'];
             foreach ($productOri['sousref'] as $value) {
                 if ($value['id'] == $prodTmp['id_sousref']) {
@@ -195,6 +198,8 @@ try {
         							foreach ($produitsPanier as $value) : 
         							     $totalTTC += $value['prix']*$value['quantite'];
         							     $extraLiv += $value['shipping'];
+        							     $totalLiv = $value['fraisport'];
+        							     $tva = $value['tva'];
         							?>
 								
 							<tr align="left" valign="top"><? //echo $row["lot"] ."  ". $row["quantite"] ?> 

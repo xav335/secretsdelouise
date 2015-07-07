@@ -15,7 +15,7 @@ if (!empty($_GET)){ //Modif
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle = 'Newsletter N°: '. $_GET['id'];
-		$id= 			$_GET['id'];
+		$id_produit= 			$_GET['id'];
 		$titre=  		$result[0]['titre'];
 		$date= 			traitement_datetime_affiche($result[0]['date']);
 		$bas_page= 		$result[0]['bas_page'];
@@ -24,7 +24,7 @@ if (!empty($_GET)){ //Modif
 } else { //ajout News
 	$action = 'add';
 	$labelTitle = 'Edition Nouvelle Newsletter ';
-	$id= 			null;
+	$id_produit= 			null;
 	$titre=  		null;
 	$date= 	null;
 	$bas_page= 		null;
@@ -49,7 +49,7 @@ if (!empty($_GET)){ //Modif
 					<input type="hidden" name="action" id="action" value="<?php echo $action ?>">
 					<input type="hidden" name="postaction" id="postaction" value="">
 					<input type="hidden" name="idbloc" id="idbloc" value="">
-					<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+					<input type="hidden" name="id" id="id" value="<?php echo $id_produit ?>">
 					
 					<input type="hidden"  name="idImage"  id="idImage" value=""><br>
 					<div class="form-group" >

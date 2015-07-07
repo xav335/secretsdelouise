@@ -5,19 +5,19 @@ require 'admin/classes/utils.php';
 require 'admin/classes/pagination.php';
 session_start();
 
-(!empty($_GET['id'])) ? $id = $_GET['id'] : $id = null;
+(!empty($_GET['id'])) ? $id_produit = $_GET['id'] : $id_produit = null;
 (!empty($_GET['idcat'])) ? $idcat = $_GET['idcat'] : $idcat = null;
 
 
 $catproduct = new Catproduct();
 try {
-		$result = $catproduct->productGet($id, null, null, null, null,1);
-		$value = $result[0];
-		$descriptionTailles = "/photos/categories".$value['categories'][0]['descat'];
+		$result = $catproduct->productGet($id_produit, null, null, null, null,null);
+		$produit = $result[0];
+		$descriptionTailles = "/photos/categories".$produit['categories'][0]['descat'];
 		//print_r($value);
 		
 		if (empty($idcat)) {
-			$idcat = $value['categories'][0]['catid'];
+			$idcat = $produit['categories'][0]['catid'];
 		}
 		
 		if (!empty($idcat)) {
@@ -48,51 +48,51 @@ try {
 	
 <?php include('inc/header.php'); ?>
 <div class="row breadcrumb">
-	<a href="./">Accueil</a> > <a href="categories.php">Produits</a> > <?php echo  $libCategorie ?><?php echo $value['label']?> 
+	<a href="./">Accueil</a> > <a href="categories.php">Produits</a> > <?php echo  $libCategorie ?><?php echo $produit['label']?> 
 </div>				
 				
 				<!-- Produit -->
 				<div class="row produit">
 					<div class="large-5 medium-5 small-5 columns">
-						<a href="/photos/products<?php echo $value['image1']?>"  class="fancybox lnk-produit<?php echo $value['id']?>"><img src="/photos/products<?php echo $value['image1']?>" alt=""  class="img-produit<?php echo $value['id']?>" /></a> 
+						<a href="/photos/products<?php echo $produit['image1']?>"  class="fancybox lnk-produit<?php echo $produit['id']?>"><img src="/photos/products<?php echo $produit['image1']?>" alt=""  class="img-produit<?php echo $produit['id']?>" /></a> 
 						<div class="row thumb">
 							<div class="large-4 medium-4 small-4 columns">
-								<?php if (!empty($value['image1'])) { ?>
-									<a href="/photos/products<?php echo $value['image1']?>" id="thumblink1<?php echo $value['id']?>" class="fancybox" data-fancybox-group="produit<?php echo $value['id']?>"><img src="/photos/products/thumbs<?php echo $value['image1']?>" id="thumbimg1<?php echo $value['id']?>" alt="" /></a>
+								<?php if (!empty($produit['image1'])) { ?>
+									<a href="/photos/products<?php echo $produit['image1']?>" id="thumblink1<?php echo $produit['id']?>" class="fancybox" data-fancybox-group="produit<?php echo $produit['id']?>"><img src="/photos/products/thumbs<?php echo $produit['image1']?>" id="thumbimg1<?php echo $produit['id']?>" alt="" /></a>
 									<script>
 										$(document).ready(function() {
-											$('#thumblink1<?php echo $value['id']?>').mouseover(function() {
-												var lien = $('#thumblink1<?php echo $value['id']?>').attr('href');
-												$('.img-produit<?php echo $value['id']?>').attr('src', lien);
-												$('.lnk-produit<?php echo $value['id']?>').attr('href', lien);
+											$('#thumblink1<?php echo $produit['id']?>').mouseover(function() {
+												var lien = $('#thumblink1<?php echo $produit['id']?>').attr('href');
+												$('.img-produit<?php echo $produit['id']?>').attr('src', lien);
+												$('.lnk-produit<?php echo $produit['id']?>').attr('href', lien);
 											});
 										});	
 									</script>
 								<?php } ?>	
 							</div>
 							<div class="large-4 medium-4 small-4 columns">
-								<?php if (!empty($value['image2'])) { ?>
-									<a href="/photos/products<?php echo $value['image2']?>" id="thumblink2<?php echo $value['id']?>" class="fancybox" data-fancybox-group="produit<?php echo $value['id']?>"><img src="/photos/products/thumbs<?php echo $value['image2']?>" id="thumbimg2<?php echo $value['id']?>" alt="" /></a>
+								<?php if (!empty($produit['image2'])) { ?>
+									<a href="/photos/products<?php echo $produit['image2']?>" id="thumblink2<?php echo $produit['id']?>" class="fancybox" data-fancybox-group="produit<?php echo $produit['id']?>"><img src="/photos/products/thumbs<?php echo $produit['image2']?>" id="thumbimg2<?php echo $produit['id']?>" alt="" /></a>
 									<script>
 										$(document).ready(function() {
-											$('#thumblink2<?php echo $value['id']?>').mouseover(function() {
-												var lien = $('#thumblink2<?php echo $value['id']?>').attr('href');
-												$('.img-produit<?php echo $value['id']?>').attr('src', lien);
-												$('.lnk-produit<?php echo $value['id']?>').attr('href', lien);
+											$('#thumblink2<?php echo $produit['id']?>').mouseover(function() {
+												var lien = $('#thumblink2<?php echo $produit['id']?>').attr('href');
+												$('.img-produit<?php echo $produit['id']?>').attr('src', lien);
+												$('.lnk-produit<?php echo $produit['id']?>').attr('href', lien);
 											});
 										});	
 									</script>
 								<?php } ?>	
 							</div>
 							<div class="large-4 medium-4 small-4 columns">
-								<?php if (!empty($value['image3'])) { ?>	
-									<a href="/photos/products<?php echo $value['image3']?>" id="thumblink3<?php echo $value['id']?>" class="fancybox" data-fancybox-group="produit<?php echo $value['id']?>"><img src="/photos/products/thumbs<?php echo $value['image3']?>" id="thumbimg3<?php echo $value['id']?>" alt="" /></a>
+								<?php if (!empty($produit['image3'])) { ?>	
+									<a href="/photos/products<?php echo $produit['image3']?>" id="thumblink3<?php echo $produit['id']?>" class="fancybox" data-fancybox-group="produit<?php echo $produit['id']?>"><img src="/photos/products/thumbs<?php echo $produit['image3']?>" id="thumbimg3<?php echo $produit['id']?>" alt="" /></a>
 									<script>
 										$(document).ready(function() {
-											$('#thumblink3<?php echo $value['id']?>').mouseover(function() {
-												var lien = $('#thumblink3<?php echo $value['id']?>').attr('href');
-												$('.img-produit<?php echo $value['id']?>').attr('src', lien);
-												$('.lnk-produit<?php echo $value['id']?>').attr('href', lien);
+											$('#thumblink3<?php echo $produit['id']?>').mouseover(function() {
+												var lien = $('#thumblink3<?php echo $produit['id']?>').attr('href');
+												$('.img-produit<?php echo $produit['id']?>').attr('src', lien);
+												$('.lnk-produit<?php echo $produit['id']?>').attr('href', lien);
 											});
 										});	
 									</script>
@@ -101,22 +101,25 @@ try {
 						</div>
 					</div>
 					<div class="large-7 medium-7 small-7 columns">
-						<h1><?php echo $value['label']?></h1>
-						<h2>Réf. : <?php echo $value['reference']?></h2>
+						<h1><?php echo $produit['label']?></h1>
+						<h2>Réf. : <?php echo $produit['reference']?></h2>
 						<p>
-							<?php echo nl2br($value['description'])?>
+							<?php echo nl2br($produit['description'])?>
 						</p>
 						<form class="row" method="POST" action="admin/panier-fp.php">
 							<input type="hidden" name="reference" value="panier">
 							<input type="hidden" name="action" value="ajout">
+							<input type="hidden" name="idproduit" value="<?php echo $id_produit?>">
 							<?php 
-							$ListeOperatSeri = htmlspecialchars(serialize($value));
+							//print_r($produit);
+							//$ListeOperatSeri = htmlspecialchars(serialize($produit));
 							//echo "<input type='hidden' value='".$ListeOperatSeri."' name='product' />";
 							?>
-							<input type="hidden" name="product" value="<?php echo $ListeOperatSeri?>">
-							<span class="prix"><?php echo number_format($value['prix'], 2, ',', ' ');?>&nbsp;<?php echo $value['libprix']?></span><br>
+							<!--  <input type="hidden" name="product" value="<?php //echo $ListeOperatSeri?>"> --> 
+							
+							<span class="prix"><?php echo number_format($produit['prix'], 2, ',', ' ');?>&nbsp;<?php echo $produit['libprix']?></span><br>
 							<?php 
-								$resultSousRef = $value['sousref'];
+								$resultSousRef = $produit['sousref'];
 								$yaDesSousRefsAvecStockPositif = false;
 								if (!empty($resultSousRef)) {
 								    foreach ($resultSousRef as $value2) {
@@ -162,19 +165,19 @@ try {
 							<?php endif; ?>
 						</form>
 						<div class="plus-produit hide-for-small">
-							<h3><?php echo $value['titreaccroche']?></h3>
+							<h3><?php echo $produit['titreaccroche']?></h3>
 							<div class="row">
 								<div class="large-12 medium-12 small-12 columns">
-									<?php echo nl2br($value['accroche'])?>
+									<?php echo nl2br($produit['accroche'])?>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="small-12 columns plus-produit show-for-small">
-						<h3><?php echo $value['titreaccroche']?></h3>
+						<h3><?php echo $produit['titreaccroche']?></h3>
 						<div class="row">
 							<div class="large-12 medium-12 small-12 columns">
-								<?php echo nl2br($value['accroche'])?>
+								<?php echo nl2br($produit['accroche'])?>
 							</div>
 						</div>
 					</div>

@@ -190,7 +190,7 @@ if (!empty($id_contact)){
                         			
                         			<div class="row">
                         				<div class="large-12 columns">
-                        					<input type="checkbox" id="livraisonident" name="livraisonident" />  Adresse de livraison identique
+                        					<input type="checkbox"  id="livraisonident" name="livraisonident" />  <strong>Adresse de livraison identique</strong>
                         				</div>
                         			</div>
 							</div>
@@ -273,6 +273,7 @@ if (!empty($id_contact)){
 					$(document).on('click','#livraisonident',function(e) {
 						
 						if ($("#livraisonident")[0].checked){
+							$("#livraison").hide();
 							$("#nomliv").val($("#nom").val());
 	    		        	$("#prenomliv").val($("#prenom").val());
 	    		        	$("#emailliv").val($("#email").val());
@@ -282,6 +283,7 @@ if (!empty($id_contact)){
 	    		        	$("#villeliv").val($("#ville").val());
 	    		        	
 						} else {
+							$("#livraison").show();
 							$("#nomliv").val("");
 	    		        	$("#prenomliv").val("");
 	    		        	$("#emailliv").val("");

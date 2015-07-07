@@ -44,6 +44,22 @@ if (!empty($_POST)){
 		}
 	}
 	
+	// traitement des adresses
+	if ($_POST['reference'] == 'adresse'){
+	    $contact = new Contact();
+	    if ($_POST['action'] == 'modif') { //Modifier
+	        try {
+	            $result = $contact->adresseModify($_POST);
+	            $contact = null;
+	            header('Location: /admin/commande-edit.php?id='. $_POST['id_commande']);
+	        } catch (Exception $e) {
+	            echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
+	            $contact = null;
+	            exit();
+	        }
+	
+	    } 
+	}
 	
 	
 } elseif (!empty($_GET)) { // GET GET GET

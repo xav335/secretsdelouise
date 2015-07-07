@@ -13,10 +13,11 @@ if (!empty($_GET)){ //Modif
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle= 	'Contact N°: '. $_GET['id'];
-		$id= 			$_GET['id'];
+		$id_produit= 			$_GET['id'];
 		$name=  			$result[0]['name'];
 		$email=  		$result[0]['email'];
 		$firstname= 	$result[0]['firstname'];
+		$password= 	$result[0]['password'];
 		($result[0]['newsletter']=='1') ? $online = 'checked' : $online = '';
 		($result[0]['fromcontact']=='1') ? $fromcontact = "origine: formulaire de contact" : $fromcontact = '';
 		($result[0]['fromgoldbook']=='1') ? $fromgoldbook = "origine: livre d'or" : $fromgoldbook = '';
@@ -24,7 +25,7 @@ if (!empty($_GET)){ //Modif
 } else { //ajout goldbook
 	$action = 'add';
 	$labelTitle = 'Edition Contact';
-	$id= 			null;
+	$id_produit= 			null;
 	$name=  			null;
 	$email= 		null;
 	$firstname= 		null;
@@ -50,22 +51,25 @@ if (!empty($_GET)){ //Modif
 					<form name="formulaire" class="form-horizontal" method="POST"  action="contact-fp.php">
 						<input type="hidden" name="reference" value="contact">
 						<input type="hidden" name="action" value="<?php echo $action ?>">
-						<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
+						<input type="hidden" name="id" id="id" value="<?php echo $id_produit ?>">
 						
 						<div class="form-group" >
-							<label class="col-sm-1" for="titre">Prénom :</label>
-						    <input type="text" class="col-sm-11" name="firstname" required  value="<?php echo $firstname ?>">
+							<label class="col-sm-2" for="titre">Prénom :</label>
+						    <input type="text" class="col-sm-10" name="firstname" required  value="<?php echo $firstname ?>">
 						</div>
 						<div class="form-group" >
-							<label class="col-sm-1" for="titre">Nom :</label>
-						    <input type="text" class="col-sm-11" name="name" required  value="<?php echo $name ?>">
+							<label class="col-sm-2" for="titre">Nom :</label>
+						    <input type="text" class="col-sm-10" name="name" required  value="<?php echo $name ?>">
 						</div>
 						
 						<div class="form-group" >
-							<label class="col-sm-1" for="titre">Email :</label>
-						    <input class="col-sm-11" name="email" type="email" required  value="<?php echo $email ?>">
+							<label class="col-sm-2" for="titre">Email :</label>
+						    <input class="col-sm-10" name="email" type="email" required  value="<?php echo $email ?>">
 						</div>
-						
+						<div class="form-group" >
+							<label class="col-sm-2" for="titre">Password :</label>
+						    <input class="col-sm-10" name="password" type="text" required  value="<?php echo $password ?>">
+						</div>
 						<div class="form-group" >
 							<label for="titre"> Newsletter:</label>
 						    <input type="checkbox" name="newsletter" <?php echo  $online ?>>

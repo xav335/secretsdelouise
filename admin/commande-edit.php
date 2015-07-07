@@ -5,88 +5,99 @@
 
 require 'classes/Panier.php';
 require 'classes/Contact.php';
-try {
-    $panier = new Panier();
-    $result = $panier->getCommandes($_GET['id']);
- //print_r($result);exit;
-    $id_contact = $result[0]['id_contact'];
-    $id_facturation  = $result[0]['id_facturation'];
-    $id_livraison    = $result[0]['id_livraison'];
-    $statut_paiement = $result[0]['statut_paiement'];
-    $statut_commande = $result[0]['statut_commande'];
-    $colissimo = $result[0]['colissimo'];
-    $session = $result[0]['session'];
-    
-    if (! empty($id_contact)) {
-        $contact = new Contact();
-        try {
-            //$result = $contact->contactGet($id_contact, null, null);
-           
-            // Facturation
-            $result = $contact->contactAddresseGet($id_facturation);
-            //print_r($result);exit;
-          
-            $nom = $result[0]['nom'];
-            $prenom = $result[0]['prenom'];
-            $email = $result[0]['email'];
-            $tel = $result[0]['tel'];
-            $adresse = $result[0]['adresse'];
-            $cp = $result[0]['cp'];
-            $ville = $result[0]['ville'];
-            // Livraison
-            $result = $contact->contactAddresseGet($id_livraison);
-            $nomliv = $result[0]['nom'];
-            $prenomliv = $result[0]['prenom'];
-            $emailliv = $result[0]['email'];
-            $telliv = $result[0]['tel'];
-            $adresseliv = $result[0]['adresse'];
-            $cpliv = $result[0]['cp'];
-            $villeliv = $result[0]['ville'];
-            $message = $result[0]['message'];
-            
-            $action = 'modif';
-        } catch (Exception $e) {
-            echo 'Erreur contactez votre administrateur <br> :', $e->getMessage(), "\n";
-            $panier = null;
-            exit();
+if (!empty($_GET['id'])){
+    try {
+        $panier = new Panier();
+        $commande = $panier->getCommandes($_GET['id']);
+     //print_r($result);exit;
+        $id_contact = $commande[0]['id_contact'];
+        $id_facturation  = $commande[0]['id_facturation'];
+        $id_livraison    = $commande[0]['id_livraison'];
+        $statut_paiement = $commande[0]['statut_paiement'];
+        $statut_commande = $commande[0]['statut_commande'];
+        $date_commande = $commande[0]['date_ajout'];
+        $colissimo = $commande[0]['colissimo'];
+        $session = $commande[0]['session'];
+        
+        if (! empty($id_contact)) {
+            $contact = new Contact();
+            try {
+                //$result = $contact->contactGet($id_contact, null, null);
+               
+                // Facturation
+                $result = $contact->contactAddresseGet($id_facturation);
+                //print_r($result);exit;
+              
+                $nom = $result[0]['nom'];
+                $prenom = $result[0]['prenom'];
+                $email = $result[0]['email'];
+                $tel = $result[0]['tel'];
+                $adresse = $result[0]['adresse'];
+                $cp = $result[0]['cp'];
+                $ville = $result[0]['ville'];
+                // Livraison
+                $result = $contact->contactAddresseGet($id_livraison);
+                $nomliv = $result[0]['nom'];
+                $prenomliv = $result[0]['prenom'];
+                $emailliv = $result[0]['email'];
+                $telliv = $result[0]['tel'];
+                $adresseliv = $result[0]['adresse'];
+                $cpliv = $result[0]['cp'];
+                $villeliv = $result[0]['ville'];
+                $message = $result[0]['message'];
+                
+                $action = 'modif';
+            } catch (Exception $e) {
+                echo 'Erreur contactez votre administrateur <br> :', $e->getMessage(), "\n";
+                $panier = null;
+                exit();
+            }
         }
-    }
-    
-    
-    if (! empty($session)) {
-        $produitsPanier = null;
-        $resultPanier = $panier->panierCommandeGet($session);
-        //print_r($resultPanier);
-        foreach ($resultPanier as $lignePanier) {
-            $prodTmp = null;
-            $productOri = unserialize($lignePanier['serialproduct']);
-            //print_r($productOri);
-            $prodTmp['id_sousref']  = $lignePanier['id_sousref'];
-            $prodTmp['quantite'] = $lignePanier['quantite'];
-            
-            $prodTmp['id_produit']  = $productOri['id'];
-            $prodTmp['label'] = $productOri['label'];
-            $prodTmp['prix'] =  $productOri['prix'];
-            $prodTmp['shipping'] =  $productOri['shipping'];
-            $prodTmp['reference'] =  $productOri['reference'];
-            foreach ($productOri['sousref'] as $value) {
-                if ($value['id'] == $prodTmp['id_sousref']) {
-                   $prodTmp['sousref'] = $value['sousref'];
-                   $prodTmp['color'] = $value['color'];
-                   $prodTmp['size'] = $value['size'];
-                }
-            }   
-            $produitsPanier[] = $prodTmp;
-           
+        
+        
+        if (! empty($session)) {
+            $produitsPanier = null;
+            $resultPanier = $panier->panierCommandeGet($session);
+            //print_r($resultPanier);
+            foreach ($resultPanier as $lignePanier) {
+                $prodTmp = null;
+                //On recupère dans le log de chaque produit du panier les données aux moment de l'achat.
+                $productOri = unserialize($lignePanier['serialproduct']);
+                //print_r($productOri);
+                $prodTmp['id_sousref']  = $lignePanier['id_sousref'];
+                $prodTmp['quantite'] = $lignePanier['quantite'];
+                
+                $prodTmp['id_produit']  = $productOri['id'];
+                $prodTmp['label'] = $productOri['label'];
+                $prodTmp['prix'] =  $productOri['prix'];
+                $prodTmp['shipping'] =  $productOri['shipping'];
+                $prodTmp['fraisport'] =  $productOri['fraisport'];
+                $prodTmp['tva'] =  $productOri['tva'];
+                $prodTmp['reference'] =  $productOri['reference'];
+                foreach ($productOri['sousref'] as $value) {
+                    if ($value['id'] == $prodTmp['id_sousref']) {
+                       $prodTmp['sousref'] = $value['sousref'];
+                       $prodTmp['color'] = $value['color'];
+                       $prodTmp['size'] = $value['size'];
+                    }
+                }   
+                $produitsPanier[] = $prodTmp;
+               
+            }
         }
+        
+        
+    } catch (Exception $e) {
+        echo 'Erreur contactez votre administrateur <br> :', $e->getMessage(), "\n";
+        $contact = null;
+        exit();
     }
-    
-    
-} catch (Exception $e) {
-    echo 'Erreur contactez votre administrateur <br> :', $e->getMessage(), "\n";
-    $contact = null;
-    exit();
+} else {
+    echo 'pas d\'id defini';
+    exit;
 }
+
+
 ?>
 
 <!doctype html>
@@ -110,8 +121,9 @@ try {
         				</div>
         				<div class="panel-body">
         					<p>
-        						    <?php echo $nom ?><br>
+        						   
                                     <?php echo $prenom ?>
+                                     <?php echo $nom ?><br>
                                     <?php echo $email ?><br>
                                      Tél. <?php echo $tel ?><br>
                                     <?php echo $adresse ?><br>
@@ -119,7 +131,7 @@ try {
                                     <?php echo $ville ?><br>
         					</p>
         					<p>
-        						<a class="btn btn-info pull-right" href="/admin/">Editer</a>
+        						<a class="btn btn-info pull-right" href="/admin/contact-adresse-edit.php?id=<?php echo $id_facturation?>&id_commande=<?php echo $_GET['id']?>">Editer</a>
         					</p>
         				</div>
         			</div>
@@ -141,7 +153,7 @@ try {
                                     Message: <?php echo $message ?>
         					</p>
         					<p>
-        						<a class="btn btn-info pull-right" href="/admin/">Editer</a>
+        						<a class="btn btn-info pull-right" href="/admin/contact-adresse-edit.php?id=<?php echo $id_livraison?>&id_commande=<?php echo $_GET['id']?>">Editer</a>
         					</p>
         				</div>
         			</div>
@@ -198,7 +210,7 @@ try {
         					<h3 class="panel-title">Detail commande</h3>
         				</div>
         				<div class="panel-body">
-        					<pre><?php //print_r($produitsPanier)?></pre>
+        					<pre>Date : <?= traitement_datetime_affiche($date_commande) ?></pre>
         					<table class="table table-hover table-bordered table-condensed table-striped" >
         					<thead>
                                 <tr>
@@ -219,6 +231,8 @@ try {
         							foreach ($produitsPanier as $value) : 
         							     $totalTTC += $value['prix']*$value['quantite'];
         							     $extraLiv += $value['shipping'];
+        							     $totalLiv = $value['fraisport'];
+        							     $tva = $value['tva'];
         							?>
         							<tr>
         								<td><a href="product-edit.php?id=<?php echo $value['id_produit']?>"><?php echo $value['reference'] ?></a> / <a href="product-sousref-edit.php?id=<?php echo $value['id_produit']?>&rubrique=&categorie="><?php echo $value['sousref'] ?></a></td>
