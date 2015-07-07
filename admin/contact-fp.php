@@ -1,6 +1,7 @@
 <?php include_once '../inc/inc.config.php'; ?>
 <?php
 require 'classes/Contact.php';
+require 'classes/ContactCommande.php';
 session_start();
 
 //Security
@@ -46,7 +47,7 @@ if (!empty($_POST)){
 	
 	// traitement des adresses
 	if ($_POST['reference'] == 'adresse'){
-	    $contact = new Contact();
+	    $contact = new ContactCommande();
 	    if ($_POST['action'] == 'modif') { //Modifier
 	        try {
 	            $result = $contact->adresseModify($_POST);

@@ -1,6 +1,6 @@
 <?php include_once '../inc/inc.config.php'; ?>
 <?php
-require 'classes/Contact.php';
+require 'classes/ContactCommande.php';
 session_start();
 
  //print_r($_POST);exit();
@@ -9,7 +9,7 @@ if (! empty($_POST)) {
     
     // traitement des Contact
     if ($_POST['reference'] == 'contactFront') {
-        $contact = new Contact();
+        $contact = new ContactCommande();
         if ($_POST['action'] == 'creation') { // ajout adresse
             try {
                 $result1 = $contact->contactGetByEmail($_POST['email']);
@@ -111,7 +111,7 @@ if (! empty($_POST)) {
     
 } elseif (! empty($_GET)) { // GET GET GET
     if ($_GET['reference'] == 'contactFront') { // supprimer
-        $contact = new Contact();
+        $contact = new ContactCommande();
         if ($_GET['action'] == 'delete') {
             try {
                 $result = $contact->contactDelete($_GET['id']);

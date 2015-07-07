@@ -1,13 +1,13 @@
 <?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/Panier.php';
-require 'admin/classes/Contact.php';
+require 'admin/classes/ContactCommande.php';
 require 'admin/classes/utils.php';
 session_start();
 
 (!empty($_SESSION['id_contact'])) ? $id_contact =$_SESSION['id_contact'] : $id_contact = null;
 if (!empty($id_contact)){
-    $contact = new Contact();
+    $contact = new ContactCommande();
     try {
         $result = $contact->contactGet($id_contact, null, null);
         //print_r($result);exit;
@@ -16,10 +16,10 @@ if (!empty($id_contact)){
         $id_facturation  = $result[0]['facturation'][0]['id_adresse'];
         $id_livraison    = $result[0]['livraison'][0]['id_adresse'];
         
-        $nom =      $result[0]['name'];
-        $prenom =   $result[0]['firstname'];
+        $nom =      $result[0]['facturation'][0]['nom'];
+        $prenom =   $result[0]['facturation'][0]['prenom'];
         $email =    $result[0]['email'];
-        $tel =      $result[0]['tel'];
+        $tel =      $result[0]['facturation'][0]['tel'];
         $adresse =  $result[0]['facturation'][0]['adresse'];
         $cp =       $result[0]['facturation'][0]['cp'];
         $ville =    $result[0]['facturation'][0]['ville'];

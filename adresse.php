@@ -1,6 +1,6 @@
 <?php require_once 'inc/inc.config.php';?>
 <?php 
-require 'admin/classes/Contact.php';
+require 'admin/classes/ContactCommande.php';
 require 'admin/classes/utils.php';
 session_start();
 
@@ -11,19 +11,22 @@ session_start();
 
 
 if (!empty($id_contact)){
-    $contact = new Contact();
+    $contact = new ContactCommande();
     try {
         $result = $contact->contactGet($id_contact, null, null);
         //print_r($result);exit;
         //Facturation
-        $nom =      $result[0]['name'];
-        $prenom =   $result[0]['firstname'];
+       
+        
         $email =    $result[0]['email'];
-        $tel =      $result[0]['tel'];
+        
         if (!empty($result[0]['facturation'])) {
+            $nom =      $result[0]['facturation'][0]['nom'];
+            $prenom =   $result[0]['facturation'][0]['prenom'];
             $adresse =  $result[0]['facturation'][0]['adresse'];
             $cp =       $result[0]['facturation'][0]['cp'];
             $ville =    $result[0]['facturation'][0]['ville'];
+            $tel =      $result[0]['facturation'][0]['tel'];
         } else {
              $adresse = '';
              $cp ='';
@@ -62,13 +65,13 @@ if (!empty($id_contact)){
     }
     $contact = null;
 } else {
-    $nom ='Gonzzza';
-    $prenom ='Jav';
-    $email ='jav_gonz@yahoo.com';
-    $tel ='0909090909';
-    $adresse = '36 route de Bordeaux';
-    $cp ='33360';
-    $ville ='Latresne';
+    $nom ='';
+    $prenom ='';
+    $email ='';
+    $tel ='';
+    $adresse = '';
+    $cp ='';
+    $ville ='';
     
     $nomliv ='';
     $prenomliv ='';

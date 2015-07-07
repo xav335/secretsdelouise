@@ -2,14 +2,14 @@
 <?php include_once 'inc-auth-granted.php';?>
 <?php include_once 'classes/utils.php';?>
 <?php 
-require 'classes/Contact.php';
+require 'classes/ContactCommande.php';
 
 (!empty($_GET['id'])) ? $id_adresse = $_GET['id'] : $id_adresse = null;
 (!empty($_GET['id_commande'])) ? $id_commande = $_GET['id_commande'] : $id_commande = null;
 
 if (!empty($id_adresse)) {
 
-    $contact = new Contact();
+    $contact = new ContactCommande();
     try {
             //$result = $contact->contactGet($id_contact, null, null);
            

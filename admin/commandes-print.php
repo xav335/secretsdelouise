@@ -4,7 +4,7 @@
 <?php
 
 require 'classes/Panier.php';
-require 'classes/Contact.php';
+require 'classes/ContactCommande.php';
 try {
     $panier = new Panier();
     $commande = $panier->getCommandes($_GET['id']);
@@ -19,7 +19,7 @@ try {
     $session = $commande[0]['session'];
     
     if (! empty($id_contact)) {
-        $contact = new Contact();
+        $contact = new ContactCommande();
         try {
             //$result = $contact->contactGet($id_contact, null, null);
            
