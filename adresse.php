@@ -384,11 +384,12 @@ if (!empty($id_contact)){
 								<button class="continuer" onclick="location.href='adresse.php?action=creation'">Sinon créer un compte</button>
 							</div>
 						</div>
-					</div>
+					
 					<?php 
 					endif;
 					?>
 					</form>
+					</div>
 				</div>
 				<!-- End Products list -->
 				
