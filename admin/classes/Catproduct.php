@@ -417,6 +417,61 @@ class Catproduct extends StorageManager {
 		return $new_array[0]['nb'];
 	}
 	
+	public function colorProductNumberGet($id_color,$actif){
+	    $this->dbConnect();
+	
+        $sql = "SELECT count(*) as nb
+				FROM product
+				INNER JOIN product_couleur
+				    ON product_couleur.id_product=product.id
+				WHERE product_couleur.id_couleur=". $id_color . "
+				 AND actif=$actif;" ;
+	
+	    //print_r($requete);
+	    $new_array = null;
+	    $result = mysqli_query($this->mysqli,$sql);
+	    if (!$result) {
+	        throw new Exception('Erreur Mysql colorProductNumberGet sql = : '.$sql);
+	    }
+	    while( ($row = mysqli_fetch_assoc( $result)) != false) {
+	        $new_array[] = $row;
+	    }
+	    $this->dbDisConnect();
+	    return $new_array[0]['nb'];
+	}
+	
+	
+	public function colorProductGet($offset, $count, $id_color,$actif){
+	    $this->dbConnect();
+	    try {
+	        
+            $sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
+                ,product.image1,product.accroche
+                FROM product 
+                INNER JOIN product_couleur
+				    ON product_couleur.id_product=product.id
+				WHERE product_couleur.id_couleur=". $id_color . "
+				 AND actif=$actif ORDER BY  product.label ASC
+                LIMIT ". $offset .",". $count .";" ;
+	
+        	//print_r($sql);
+        	$new_array = null;
+        	$result = mysqli_query($this->mysqli,$sql);
+        	while( ($row = mysqli_fetch_assoc( $result)) != false){
+            	$new_array[] = $row;
+        	}
+        		
+        	$this->dbDisConnect();
+        	return $new_array;
+    	} catch (Exception $e) {
+    			die('Erreur : ' . $e->getMessage());
+    	       //throw new Exception("Erreur Mysql productGet ". $e->getMessage());
+    	       return "errrrrrrooooOOor";
+    	}
+	}
+	
+	
+	
 	public function productGet($id, $offset, $count, $categorie, $rubrique, $actif){
 		$this->dbConnect();
 		try {
