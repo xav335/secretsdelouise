@@ -77,7 +77,8 @@ class Panier extends StorageManager {
 	    //TODO: refacto : prendre les info produit dans le serializeproduct de la table Panier
 	    
         $sql = "SELECT panier.id as id_panier,panier.quantite,product.label,product.prix,
-                    product.id,product.image1,size.label as size, color.label as color,product.shipping 
+                    product.id,product.image1,size.label as size, color.label as color,product.shipping,
+                    product_sousref.id as id_sousref, product.reference, product_sousref.sousref 
 				FROM panier
 				INNER JOIN product_sousref ON product_sousref.id =  panier.id_sousref
                 INNER JOIN color ON color.id =  product_sousref.id_color
@@ -239,8 +240,8 @@ class Panier extends StorageManager {
 	
 	
 	
-	public function ajoutCommande($session, $id_contact,$id_facturation, $id_livraison){
-	    //print_r($session);print_r($id_contact);exit();
+	public function ajoutCommande($session, $id_contact,$id_facturation, $id_livraison, $panierlst){
+	    //print_r($panierlst);exit();
 	
 	    $this->dbConnect();
 	    $this->begin();
@@ -248,12 +249,13 @@ class Panier extends StorageManager {
 	    if (empty($nbRef)){
 	
 	        $sql = "INSERT INTO  `commande`
-    					(`session`,`id_contact`,`id_facturation`,`id_livraison`)
+    					(`session`,`id_contact`,`id_facturation`,`id_livraison`, `panier`)
     					VALUES (
     					'". $session ."',
     					". $id_contact .",
     					". $id_facturation .",
-    					". $id_livraison ."
+    					". $id_livraison .",
+    					'". addslashes($panierlst) ."'    
     				);";
 	        $result = mysqli_query($this->mysqli,$sql);
 	         

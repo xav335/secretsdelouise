@@ -5,9 +5,9 @@
 require 'classes/Goldbook.php';
 
 	$goldbook = new Goldbook();
-	$result = $goldbook->goldbookGet(null);
+	$panierlst = $goldbook->goldbookGet(null);
 	//print_r($result);
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -56,9 +56,9 @@ require 'classes/Goldbook.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($result)) {
+						if (!empty($panierlst)) {
 							$i=0;
-							foreach ($result as $value) { 
+							foreach ($panierlst as $value) { 
 							$i++;
 							if($value['online']=='1') {
 								$online = 'check';

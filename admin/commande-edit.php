@@ -18,6 +18,8 @@ if (!empty($_GET['id'])){
         $date_commande = $commande[0]['date_ajout'];
         $colissimo = $commande[0]['colissimo'];
         $session = $commande[0]['session'];
+        $panierlst = unserialize($commande[0]['panier']);
+        //print_r($panierlst);
         
         if (! empty($id_contact)) {
             $contact = new ContactCommande();
@@ -25,26 +27,26 @@ if (!empty($_GET['id'])){
                 //$result = $contact->contactGet($id_contact, null, null);
                
                 // Facturation
-                $result = $contact->contactAddresseGet($id_facturation);
+                $contactResult = $contact->contactAddresseGet($id_facturation);
                 //print_r($result);exit;
               
-                $nom = $result[0]['nom'];
-                $prenom = $result[0]['prenom'];
-                $email = $result[0]['email'];
-                $tel = $result[0]['tel'];
-                $adresse = $result[0]['adresse'];
-                $cp = $result[0]['cp'];
-                $ville = $result[0]['ville'];
+                $nom = $contactResult[0]['nom'];
+                $prenom = $contactResult[0]['prenom'];
+                $email = $contactResult[0]['email'];
+                $tel = $contactResult[0]['tel'];
+                $adresse = $contactResult[0]['adresse'];
+                $cp = $contactResult[0]['cp'];
+                $ville = $contactResult[0]['ville'];
                 // Livraison
-                $result = $contact->contactAddresseGet($id_livraison);
-                $nomliv = $result[0]['nom'];
-                $prenomliv = $result[0]['prenom'];
-                $emailliv = $result[0]['email'];
-                $telliv = $result[0]['tel'];
-                $adresseliv = $result[0]['adresse'];
-                $cpliv = $result[0]['cp'];
-                $villeliv = $result[0]['ville'];
-                $message = $result[0]['message'];
+                $contactResult = $contact->contactAddresseGet($id_livraison);
+                $nomliv = $contactResult[0]['nom'];
+                $prenomliv = $contactResult[0]['prenom'];
+                $emailliv = $contactResult[0]['email'];
+                $telliv = $contactResult[0]['tel'];
+                $adresseliv = $contactResult[0]['adresse'];
+                $cpliv = $contactResult[0]['cp'];
+                $villeliv = $contactResult[0]['ville'];
+                $message = $contactResult[0]['message'];
                 
                 $action = 'modif';
             } catch (Exception $e) {
@@ -55,32 +57,26 @@ if (!empty($_GET['id'])){
         }
         
         
-        if (! empty($session)) {
+        if (! empty($panierlst)) {
             $produitsPanier = null;
-            $resultPanier = $panier->panierCommandeGet($session);
-            //print_r($resultPanier);
-            foreach ($resultPanier as $lignePanier) {
-                $prodTmp = null;
-                //On recupère dans le log de chaque produit du panier les données aux moment de l'achat.
-                $productOri = unserialize($lignePanier['serialproduct']);
-                //print_r($productOri);
+            //print_r($panierlst);exit;
+            $prodTmp = null;
+            $tvaTmp = $panierlst[0]['tva'];
+            $fraisportTmp = $panierlst[0]['totalLiv'];
+            foreach ($panierlst as $lignePanier) {
+              
                 $prodTmp['id_sousref']  = $lignePanier['id_sousref'];
                 $prodTmp['quantite'] = $lignePanier['quantite'];
-                
-                $prodTmp['id_produit']  = $productOri['id'];
-                $prodTmp['label'] = $productOri['label'];
-                $prodTmp['prix'] =  $productOri['prix'];
-                $prodTmp['shipping'] =  $productOri['shipping'];
-                $prodTmp['fraisport'] =  $productOri['fraisport'];
-                $prodTmp['tva'] =  $productOri['tva'];
-                $prodTmp['reference'] =  $productOri['reference'];
-                foreach ($productOri['sousref'] as $value) {
-                    if ($value['id'] == $prodTmp['id_sousref']) {
-                       $prodTmp['sousref'] = $value['sousref'];
-                       $prodTmp['color'] = $value['color'];
-                       $prodTmp['size'] = $value['size'];
-                    }
-                }   
+                $prodTmp['id_produit']  = $lignePanier['id'];
+                $prodTmp['label'] = $lignePanier['label'];
+                $prodTmp['prix'] =  $lignePanier['prix'];
+                $prodTmp['shipping'] =  $lignePanier['shipping'];
+                $prodTmp['fraisport'] =  $fraisportTmp;
+                $prodTmp['tva'] =  $tvaTmp;
+                $prodTmp['reference'] =  $lignePanier['reference'];
+                $prodTmp['sousref'] = $lignePanier['sousref'];
+                $prodTmp['color'] = $lignePanier['color'];
+                $prodTmp['size'] = $lignePanier['size'];
                 $produitsPanier[] = $prodTmp;
                
             }
@@ -168,7 +164,7 @@ if (!empty($_GET['id'])){
 					           <input type="hidden" name="reference" value="commande"> 
 					           <input type="hidden" name="action" value="modif"> 
 					           <input type="hidden" name="id_commande" id="id_commande" value="<?php echo $_GET['id'] ?>">
-                                 
+                               <input type="hidden" name="old_statut_commande" value="<?php echo $statut_commande?>">   
                                     <div class="col-md-12 bg-info ">
     									<label class="text-warning">Paiement :</label><br>
     									Non Payé:<input type="radio" name="statut_paiement" value="0" <?php if ($statut_paiement==0) echo 'checked' ;?>>&nbsp;
@@ -179,6 +175,7 @@ if (!empty($_GET['id'])){
 					                       <input type="text" class="col-sm-7" name="colissimo"  value="<?php echo $colissimo ?>">
 					                       &nbsp;<br>
 					                 </div>
+					                 
 									<div class="col-md-12 bg-success ">
     									<label class="text-info">Commande :</label><br>
     									<label class="text-danger">Non aboutie: &nbsp;</label><input type="radio" name="statut_commande" value="0" <?php if ($statut_commande==0) echo 'checked' ;?>>&nbsp;&nbsp;&nbsp;
@@ -225,7 +222,8 @@ if (!empty($_GET['id'])){
         					</thead>
         					<tbody>
         						<?php 
-        						if (!empty($result)) :
+        						//print_r($produitsPanier);
+        						if (!empty($produitsPanier)) :
         						    $totalTTC = 0;
         						    $extraLiv = 0;
         							foreach ($produitsPanier as $value) : 

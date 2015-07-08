@@ -6,8 +6,8 @@ session_start();
 
 //Security
 if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
-	$result = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
-	if (!$result){
+	$panierlst = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
+	if (!$panierlst){
 		header('Location: /admin/?action=error');
 	} else {
 		$_SESSION['accessGranted'] = true;
@@ -23,7 +23,7 @@ if (!empty($_POST)){
 		$contact = new Contact();
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {
-				$result = $contact->contactModify($_POST);
+				$panierlst = $contact->contactModify($_POST);
 				$contact = null;
 				header('Location: /admin/contact-list.php');
 			} catch (Exception $e) {
@@ -34,9 +34,9 @@ if (!empty($_POST)){
 	
 		} else {  //ajouter
 			try {
-				$result = $contact->contactAdd($_POST);
+				$panierlst = $contact->contactAdd($_POST);
 				$contact = null;
-				header('Location: /admin/contact-edit.php?id='.$result);
+				header('Location: /admin/contact-edit.php?id='.$panierlst);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$contact = null;
@@ -50,7 +50,7 @@ if (!empty($_POST)){
 	    $contact = new ContactCommande();
 	    if ($_POST['action'] == 'modif') { //Modifier
 	        try {
-	            $result = $contact->adresseModify($_POST);
+	            $panierlst = $contact->adresseModify($_POST);
 	            $contact = null;
 	            header('Location: /admin/commande-edit.php?id='. $_POST['id_commande']);
 	        } catch (Exception $e) {
@@ -68,7 +68,7 @@ if (!empty($_POST)){
 		$contact = new Contact();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$result = $contact->contactDelete($_GET['id']);
+				$panierlst = $contact->contactDelete($_GET['id']);
 				$contact = null;
 				header('Location: /admin/contact-list.php');
 			} catch (Exception $e) {

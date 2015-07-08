@@ -10,7 +10,7 @@ require 'classes/Catproduct.php';
 	try {
 		$catproduct = new Catproduct();
 		
-		$result = $catproduct->productsousrefGetByStock($stock);
+		$panierlst = $catproduct->productsousrefGetByStock($stock);
 		//print_r($result);exit;
 		$catproduct = null;
 	} catch (Exception $e) {
@@ -19,7 +19,7 @@ require 'classes/Catproduct.php';
 		exit();
 	}	
 	
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -77,9 +77,9 @@ require 'classes/Catproduct.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($result)) {
+						if (!empty($panierlst)) {
 							$i=0;
-							foreach ($result as $value) { 
+							foreach ($panierlst as $value) { 
 							
 							?>
 							<tr>

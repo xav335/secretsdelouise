@@ -8,9 +8,9 @@ require 'classes/Panier.php';
 
 try {
 	$panier = new Panier();
-	$result = $panier->getAllCommandes($statutCommande);
+	$panierlst = $panier->getAllCommandes($statutCommande);
 	//print_r($result);
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -61,7 +61,7 @@ try {
 								Edition
 							</th>
 							<th class="col-md-1">
-								Produit
+								Panier
 							</th>
 							<th class="col-md-1">
 								Paypal
@@ -70,9 +70,9 @@ try {
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($result)) {
+						if (!empty($panierlst)) {
 							$i=0;
-							foreach ($result as $value) { 
+							foreach ($panierlst as $value) { 
 							$i++;
 							if($value['statut_paiement']=='1') {
 								$online = 'check';

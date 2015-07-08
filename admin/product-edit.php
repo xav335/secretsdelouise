@@ -21,45 +21,45 @@ $resultRubrique = $catproduct->getRubriques();
 
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
-	$result = $catproduct->productGet($_GET['id'],null,null,null,null,1);
+	$panierlst = $catproduct->productGet($_GET['id'],null,null,null,null,1);
 	//print_r($result);exit();
 	//print_r($result[0]['categories']);
 	$catproduct=null;
 	
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle= 	'Produit N°: '. $_GET['id'];
 		$id_produit= 			$_GET['id'];
-		$label=  		$result[0]['label'];
-		$prix=  		$result[0]['prix'];
-		$shipping=  	$result[0]['shipping'];
-		$libprix=  		$result[0]['libprix'];
-		$reference=  	$result[0]['reference'];
-		$titreaccroche= $result[0]['titreaccroche'];
-		$accroche= 		$result[0]['accroche'];
-		$description= 	$result[0]['description'];
+		$label=  		$panierlst[0]['label'];
+		$prix=  		$panierlst[0]['prix'];
+		$shipping=  	$panierlst[0]['shipping'];
+		$libprix=  		$panierlst[0]['libprix'];
+		$reference=  	$panierlst[0]['reference'];
+		$titreaccroche= $panierlst[0]['titreaccroche'];
+		$accroche= 		$panierlst[0]['accroche'];
+		$description= 	$panierlst[0]['description'];
 		$categories= 	null;
-		if (!empty($result[0]['categories'])){
-			foreach ($result[0]['categories'] as $value) {
+		if (!empty($panierlst[0]['categories'])){
+			foreach ($panierlst[0]['categories'] as $value) {
 				$categories[]=$value['catid'];
 			}
 		}
 		$rubriques= 	null;
-		if (!empty($result[0]['rubriques'])){
-			foreach ($result[0]['rubriques'] as $value) {
+		if (!empty($panierlst[0]['rubriques'])){
+			foreach ($panierlst[0]['rubriques'] as $value) {
 				$rubriques[]=$value['rubid'];
 			}
 		}
 		$couleurs= 	null;
-		if (!empty($result[0]['couleurs'])){
-			foreach ($result[0]['couleurs'] as $value) {
+		if (!empty($panierlst[0]['couleurs'])){
+			foreach ($panierlst[0]['couleurs'] as $value) {
 				$couleurs[]=$value['couleurid'];
 			}
 		}
 		//print_r($categories);exit();
 		for ($i=1;$i<4;$i++) {
-			$image[$i] = 	$result[0]['image'.$i];
+			$image[$i] = 	$panierlst[0]['image'.$i];
 			if(empty($image[$i]) || !isset($image[$i])){
 				$img[$i]  = '/img/favicon.png';
 				$imgval[$i]  = '';

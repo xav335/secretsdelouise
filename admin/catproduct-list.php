@@ -6,7 +6,7 @@ require 'classes/Catproduct.php';
 
 	$catproduct = new Catproduct();
 	$catproduct->catproduitViewIterative(null);
-	$result = $catproduct->tabView;
+	$panierlst = $catproduct->tabView;
 	$catproduct = null;
 	
 	//print_r($result);
@@ -55,7 +55,7 @@ require 'classes/Catproduct.php';
 											<select name="parent" id="num_parent">
 											<option value="0" selected>-- racine --</option>
 											<?
-											foreach ($result as $value) { 
+											foreach ($panierlst as $value) { 
 												$decalage = "";
 												for ($i=0; $i<($value['level'] * 5); $i++) {
 													$decalage .= "&nbsp;";
@@ -110,9 +110,9 @@ require 'classes/Catproduct.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($result)) {
+						if (!empty($panierlst)) {
 							$i=0;
-							foreach ($result as $value) { 
+							foreach ($panierlst as $value) { 
 								$decalage = "";
 								for ($i=0; $i<($value['level'] * 10); $i++) {
 									$decalage .= "&nbsp;";

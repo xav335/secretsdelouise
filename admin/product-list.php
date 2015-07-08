@@ -62,7 +62,7 @@ if (empty($_GET['actif'])) {
 		$start = ($current * $epp - $epp);
 		
 		// Récupération des données à afficher pour la page courante
-		$result = $catproduct->productGet(null, $start, $epp, $categ, $rub,$actif);
+		$panierlst = $catproduct->productGet(null, $start, $epp, $categ, $rub,$actif);
 		
 		$catproduct->catproduitViewIterative(null);
 		$catresult = $catproduct->tabView;
@@ -76,7 +76,7 @@ if (empty($_GET['actif'])) {
 		exit();
 	}	
 	
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -176,9 +176,9 @@ if (empty($_GET['actif'])) {
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($result)) {
+						if (!empty($panierlst)) {
 							$i=0;
-							foreach ($result as $value) { 
+							foreach ($panierlst as $value) { 
 							$i++;
 								//Catégries
 								//print_r($value['categories']);

@@ -7,24 +7,24 @@ require 'classes/News.php';
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
 	$news = new News();
-	$result = $news->newsGet($_GET['id']);
+	$panierlst = $news->newsGet($_GET['id']);
 	//print_r($result);
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle = 'Actu N°: '. $_GET['id'];
 		$id_produit= 			$_GET['id'];
-		$titre=  		$result[0]['titre'];
-		$date_news= 	traitement_datetime_affiche($result[0]['date_news']);
-		$accroche= 		$result[0]['accroche'];
-		$contenu= 	$result[0]['contenu'];
-		if($result[0]['online']=='1') {
+		$titre=  		$panierlst[0]['titre'];
+		$date_news= 	traitement_datetime_affiche($panierlst[0]['date_news']);
+		$accroche= 		$panierlst[0]['accroche'];
+		$contenu= 	$panierlst[0]['contenu'];
+		if($panierlst[0]['online']=='1') {
 			$online = 'checked';
 		} else {
 			$online = '';
 		}
 		for ($i=1;$i<2;$i++) {
-			$image[$i] = 	$result[0]['image'.$i];
+			$image[$i] = 	$panierlst[0]['image'.$i];
 			if(empty($image[$i]) || !isset($image[$i])){
 				$img[$i]  = '/img/favicon.png';
 				$imgval[$i]  = '';

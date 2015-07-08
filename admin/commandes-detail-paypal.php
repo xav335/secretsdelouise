@@ -5,9 +5,9 @@
 require 'classes/Panier.php';
 try {
 	$panier = new Panier();
-	$result = $panier->getCommandes($_GET['id']);
+	$panierlst = $panier->getCommandes($_GET['id']);
 	//print_r($result);
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -32,7 +32,7 @@ try {
 			     <h3>Détail du retour Paypal</h3>
 			     <pre>
                 <?php 
-                print_r(unserialize($result[0]['logpayment']));
+                print_r(unserialize($panierlst[0]['logpayment']));
                 ?>
                 </pre>
 			</div>

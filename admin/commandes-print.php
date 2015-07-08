@@ -5,92 +5,95 @@
 
 require 'classes/Panier.php';
 require 'classes/ContactCommande.php';
-try {
-    $panier = new Panier();
-    $commande = $panier->getCommandes($_GET['id']);
- //print_r($commande);exit;
-    $id_contact = $commande[0]['id_contact'];
-    $id_facturation  = $commande[0]['id_facturation'];
-    $id_livraison    = $commande[0]['id_livraison'];
-    $statut_paiement = $commande[0]['statut_paiement'];
-    $statut_commande = $commande[0]['statut_commande'];
-    $date_commande = $commande[0]['date_ajout'];
-    $colissimo = $commande[0]['colissimo'];
-    $session = $commande[0]['session'];
-    
-    if (! empty($id_contact)) {
-        $contact = new ContactCommande();
-        try {
-            //$result = $contact->contactGet($id_contact, null, null);
-           
-            // Facturation
-            $result = $contact->contactAddresseGet($id_facturation);
-            //print_r($result);exit;
-          
-            $nom = $result[0]['nom'];
-            $prenom = $result[0]['prenom'];
-            $email = $result[0]['email'];
-            $tel = $result[0]['tel'];
-            $adresse = $result[0]['adresse'];
-            $cp = $result[0]['cp'];
-            $ville = $result[0]['ville'];
-            // Livraison
-            $result = $contact->contactAddresseGet($id_livraison);
-            $nomliv = $result[0]['nom'];
-            $prenomliv = $result[0]['prenom'];
-            $emailliv = $result[0]['email'];
-            $telliv = $result[0]['tel'];
-            $adresseliv = $result[0]['adresse'];
-            $cpliv = $result[0]['cp'];
-            $villeliv = $result[0]['ville'];
-            $message = $result[0]['message'];
-            
-            $action = 'modif';
-        } catch (Exception $e) {
-            echo 'Erreur contactez votre administrateur <br> :', $e->getMessage(), "\n";
-            $panier = null;
-            exit();
+if (!empty($_GET['id'])){
+    try {
+        $panier = new Panier();
+        $commande = $panier->getCommandes($_GET['id']);
+     //print_r($result);exit;
+        $id_contact = $commande[0]['id_contact'];
+        $id_facturation  = $commande[0]['id_facturation'];
+        $id_livraison    = $commande[0]['id_livraison'];
+        $statut_paiement = $commande[0]['statut_paiement'];
+        $statut_commande = $commande[0]['statut_commande'];
+        $date_commande = $commande[0]['date_ajout'];
+        $colissimo = $commande[0]['colissimo'];
+        $session = $commande[0]['session'];
+        $panierlst = unserialize($commande[0]['panier']);
+        //print_r($panierlst);
+        
+        if (! empty($id_contact)) {
+            $contact = new ContactCommande();
+            try {
+                //$result = $contact->contactGet($id_contact, null, null);
+               
+                // Facturation
+                $contactResult = $contact->contactAddresseGet($id_facturation);
+                //print_r($result);exit;
+              
+                $nom = $contactResult[0]['nom'];
+                $prenom = $contactResult[0]['prenom'];
+                $email = $contactResult[0]['email'];
+                $tel = $contactResult[0]['tel'];
+                $adresse = $contactResult[0]['adresse'];
+                $cp = $contactResult[0]['cp'];
+                $ville = $contactResult[0]['ville'];
+                // Livraison
+                $contactResult = $contact->contactAddresseGet($id_livraison);
+                $nomliv = $contactResult[0]['nom'];
+                $prenomliv = $contactResult[0]['prenom'];
+                $emailliv = $contactResult[0]['email'];
+                $telliv = $contactResult[0]['tel'];
+                $adresseliv = $contactResult[0]['adresse'];
+                $cpliv = $contactResult[0]['cp'];
+                $villeliv = $contactResult[0]['ville'];
+                $message = $contactResult[0]['message'];
+                
+                $action = 'modif';
+            } catch (Exception $e) {
+                echo 'Erreur contactez votre administrateur <br> :', $e->getMessage(), "\n";
+                $panier = null;
+                exit();
+            }
         }
-    }
-    
-    
-    if (! empty($session)) {
-        $produitsPanier = null;
-        $resultPanier = $panier->panierCommandeGet($session);
-        //print_r($resultPanier);
-        foreach ($resultPanier as $lignePanier) {
+        
+        
+        if (! empty($panierlst)) {
+            $produitsPanier = null;
+            //print_r($panierlst);exit;
             $prodTmp = null;
-            //On recupère dans le log de chaque produit du panier les données aux moment de l'achat.
-            $productOri = unserialize($lignePanier['serialproduct']);
-            //print_r($productOri);
-            $prodTmp['id_sousref']  = $lignePanier['id_sousref'];
-            $prodTmp['quantite'] = $lignePanier['quantite'];
-            
-            $prodTmp['id_produit']  = $productOri['id'];
-            $prodTmp['label'] = $productOri['label'];
-            $prodTmp['prix'] =  $productOri['prix'];
-            $prodTmp['shipping'] =  $productOri['shipping'];
-            $prodTmp['fraisport'] =  $productOri['fraisport'];
-            $prodTmp['tva'] =  $productOri['tva'];
-            $prodTmp['reference'] =  $productOri['reference'];
-            foreach ($productOri['sousref'] as $value) {
-                if ($value['id'] == $prodTmp['id_sousref']) {
-                   $prodTmp['sousref'] = $value['sousref'];
-                   $prodTmp['color'] = $value['color'];
-                   $prodTmp['size'] = $value['size'];
-                }
-            }   
-            $produitsPanier[] = $prodTmp;
-           
+            $tvaTmp = $panierlst[0]['tva'];
+            $fraisportTmp = $panierlst[0]['totalLiv'];
+            foreach ($panierlst as $lignePanier) {
+              
+                $prodTmp['id_sousref']  = $lignePanier['id_sousref'];
+                $prodTmp['quantite'] = $lignePanier['quantite'];
+                $prodTmp['id_produit']  = $lignePanier['id'];
+                $prodTmp['label'] = $lignePanier['label'];
+                $prodTmp['prix'] =  $lignePanier['prix'];
+                $prodTmp['shipping'] =  $lignePanier['shipping'];
+                $prodTmp['fraisport'] =  $fraisportTmp;
+                $prodTmp['tva'] =  $tvaTmp;
+                $prodTmp['reference'] =  $lignePanier['reference'];
+                $prodTmp['sousref'] = $lignePanier['sousref'];
+                $prodTmp['color'] = $lignePanier['color'];
+                $prodTmp['size'] = $lignePanier['size'];
+                $produitsPanier[] = $prodTmp;
+               
+            }
         }
+        
+        
+    } catch (Exception $e) {
+        echo 'Erreur contactez votre administrateur <br> :', $e->getMessage(), "\n";
+        $contact = null;
+        exit();
     }
-    
-    
-} catch (Exception $e) {
-    echo 'Erreur contactez votre administrateur <br> :', $e->getMessage(), "\n";
-    $contact = null;
-    exit();
+} else {
+    echo 'pas d\'id defini';
+    exit;
 }
+
+
 ?>
 
 	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -192,7 +195,7 @@ try {
 							  <td height="30" class="entete_panier">Prix Total /&euro;</td>
 							</tr>
 							<?php 
-        						if (!empty($result)) :
+        						if (!empty($panierlst)) :
         						    $totalTTC = 0;
         						    $extraLiv = 0;
         							foreach ($produitsPanier as $value) : 

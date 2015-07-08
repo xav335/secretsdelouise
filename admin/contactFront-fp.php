@@ -19,8 +19,8 @@ if (! empty($_POST)) {
                     exit;
                 }
                 
-                $result = $contact->contactAdressesAdd($_POST);
-                $_SESSION['id_contact'] = $result;
+                $panierlst = $contact->contactAdressesAdd($_POST);
+                $_SESSION['id_contact'] = $panierlst;
                 $contact = null;
                 header('Location: /livraison.php');
             } catch (Exception $e) {
@@ -34,7 +34,7 @@ if (! empty($_POST)) {
             // TODO: tester si l contact existe déjà et si c'est le cas redirger vers identifiants
             //print_r($_POST);exit;
             try {
-            $result = $contact->contactAdressesModif($_POST);
+            $panierlst = $contact->contactAdressesModif($_POST);
                 $contact = null;
                 header('Location: /livraison.php');
             } catch (Exception $e) {
@@ -47,14 +47,14 @@ if (! empty($_POST)) {
         if ($_POST['action'] == 'ident') { //Identification contact
             // print_r($_POST);exit;
             try {
-                $result = $contact->contactGetByIdent($_POST);
+                $panierlst = $contact->contactGetByIdent($_POST);
                 //print_r($result);exit;
                
                 $contact = null;
-                if (empty($result)){
+                if (empty($panierlst)){
                    header('Location: /adresse.php?error=noident');
                 } else {
-                    $_SESSION['id_contact'] = $result[0]['id'];
+                    $_SESSION['id_contact'] = $panierlst[0]['id'];
                     header('Location: /adresse.php');
                 }
                
@@ -114,7 +114,7 @@ if (! empty($_POST)) {
         $contact = new ContactCommande();
         if ($_GET['action'] == 'delete') {
             try {
-                $result = $contact->contactDelete($_GET['id']);
+                $panierlst = $contact->contactDelete($_GET['id']);
                 $contact = null;
                 header('Location: /admin/contact-list.php');
             } catch (Exception $e) {

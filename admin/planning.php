@@ -4,17 +4,17 @@
 <?php 
 require 'classes/Planning.php';
 $planning = new Planning();
-$result = $planning->planningGet();
+$panierlst = $planning->planningGet();
 //print_r($result);
 $planning = null;
 
 $titre= null;
 $url= null;
 $pdf= null;
-if (!empty($result)) {
-	$titre= $result[0]['titre'];
-	$url= $result[0]['url'];
-	$pdf= $result[0]['pdf'];
+if (!empty($panierlst)) {
+	$titre= $panierlst[0]['titre'];
+	$url= $panierlst[0]['url'];
+	$pdf= $panierlst[0]['pdf'];
 }
 //print_r($result);
 ?>

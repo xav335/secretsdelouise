@@ -13,25 +13,25 @@ session_start();
 if (!empty($id_contact)){
     $contact = new Contact();
     try {
-        $result = $contact->contactGet($id_contact, null, null);
+        $panierlst = $contact->contactGet($id_contact, null, null);
         //print_r($result);exit;
         //Facturation
-        $nom =      $result[0]['name'];
-        $prenom =   $result[0]['firstname'];
-        $email =    $result[0]['email'];
-        $tel =      $result[0]['tel'];
-        $adresse =  $result[0]['facturation'][0]['adresse'];
-        $cp =       $result[0]['facturation'][0]['cp'];
-        $ville =    $result[0]['facturation'][0]['ville'];
+        $nom =      $panierlst[0]['name'];
+        $prenom =   $panierlst[0]['firstname'];
+        $email =    $panierlst[0]['email'];
+        $tel =      $panierlst[0]['tel'];
+        $adresse =  $panierlst[0]['facturation'][0]['adresse'];
+        $cp =       $panierlst[0]['facturation'][0]['cp'];
+        $ville =    $panierlst[0]['facturation'][0]['ville'];
         //Livraison
-        $nomliv =   $result[0]['livraison'][0]['nom'];
-        $prenomliv= $result[0]['livraison'][0]['prenom'];;
-        $emailliv = $result[0]['livraison'][0]['email'];
-        $telliv =   $result[0]['livraison'][0]['tel'];
-        $adresseliv=$result[0]['livraison'][0]['adresse'];
-        $cpliv =    $result[0]['livraison'][0]['cp'];
-        $villeliv = $result[0]['livraison'][0]['ville'];
-        $message=   $result[0]['livraison'][0]['message'];
+        $nomliv =   $panierlst[0]['livraison'][0]['nom'];
+        $prenomliv= $panierlst[0]['livraison'][0]['prenom'];;
+        $emailliv = $panierlst[0]['livraison'][0]['email'];
+        $telliv =   $panierlst[0]['livraison'][0]['tel'];
+        $adresseliv=$panierlst[0]['livraison'][0]['adresse'];
+        $cpliv =    $panierlst[0]['livraison'][0]['cp'];
+        $villeliv = $panierlst[0]['livraison'][0]['ville'];
+        $message=   $panierlst[0]['livraison'][0]['message'];
         
         $action = 'modif';
     

@@ -39,7 +39,7 @@ try {
 		$start = ($current * $epp - $epp);
 		
 		// Récupération des données à afficher pour la page courante
-		$result = $catproduct->productGet(null, $start, $epp, $idcat, $idrub,1);
+		$panierlst = $catproduct->productGet(null, $start, $epp, $idcat, $idrub,1);
 		//print_r($result);
 		
 		
@@ -150,8 +150,8 @@ try {
 					<div class="large-9 medium-9 small-12 columns">
 						<div class="row products-list">
 							<?php 
-							if (!empty($result)) {
-								foreach ($result as $value) { 
+							if (!empty($panierlst)) {
+								foreach ($panierlst as $value) { 
 								?>
 							<div class="large-4 medium-4 small-12 columns">
 								<div class="content">

@@ -7,20 +7,20 @@ require 'classes/Contact.php';
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
 	$contact = new Contact();
-	$result = $contact->contactGet($_GET['id'], null, null);
+	$panierlst = $contact->contactGet($_GET['id'], null, null);
 	//print_r($result);
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle= 	'Contact N°: '. $_GET['id'];
 		$id_produit= 			$_GET['id'];
-		$name=  			$result[0]['name'];
-		$email=  		$result[0]['email'];
-		$firstname= 	$result[0]['firstname'];
-		$password= 	$result[0]['password'];
-		($result[0]['newsletter']=='1') ? $online = 'checked' : $online = '';
-		($result[0]['fromcontact']=='1') ? $fromcontact = "origine: formulaire de contact" : $fromcontact = '';
-		($result[0]['fromgoldbook']=='1') ? $fromgoldbook = "origine: livre d'or" : $fromgoldbook = '';
+		$name=  			$panierlst[0]['name'];
+		$email=  		$panierlst[0]['email'];
+		$firstname= 	$panierlst[0]['firstname'];
+		$password= 	$panierlst[0]['password'];
+		($panierlst[0]['newsletter']=='1') ? $online = 'checked' : $online = '';
+		($panierlst[0]['fromcontact']=='1') ? $fromcontact = "origine: formulaire de contact" : $fromcontact = '';
+		($panierlst[0]['fromgoldbook']=='1') ? $fromgoldbook = "origine: livre d'or" : $fromgoldbook = '';
 	}
 } else { //ajout goldbook
 	$action = 'add';
@@ -65,10 +65,6 @@ if (!empty($_GET)){ //Modif
 						<div class="form-group" >
 							<label class="col-sm-2" for="titre">Email :</label>
 						    <input class="col-sm-10" name="email" type="email" required  value="<?php echo $email ?>">
-						</div>
-						<div class="form-group" >
-							<label class="col-sm-2" for="titre">Password :</label>
-						    <input class="col-sm-10" name="password" type="text" required  value="<?php echo $password ?>">
 						</div>
 						<div class="form-group" >
 							<label for="titre"> Newsletter:</label>

@@ -6,8 +6,8 @@ session_start();
 
 //Security
 if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
-	$result = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
-	if (!$result){
+	$panierlst = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
+	if (!$panierlst){
 		header('Location: /admin/?action=error');
 	} else {
 		$_SESSION['accessGranted'] = true;
@@ -44,7 +44,7 @@ if (!empty($_POST)){
 		if ($_POST['action'] == 'modif' ) { //Modifier
 			try {
 				if ($_POST['postaction'] !='delBloc') {
-					$result = $newsletter->newsletterModify($_POST);
+					$panierlst = $newsletter->newsletterModify($_POST);
 				}
 				if ($_POST['postaction'] == 'preview' ) {
 					$newsletter = null;
@@ -78,9 +78,9 @@ if (!empty($_POST)){
 				
 		} else {  //ajouter
 			try {
-				$result = $newsletter->newsletterAdd($_POST);
+				$panierlst = $newsletter->newsletterAdd($_POST);
 				$newsletter = null;
-				header('Location: /admin/newsletter-edit.php?id='.$result);
+				header('Location: /admin/newsletter-edit.php?id='.$panierlst);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$newsletter = null;
@@ -96,7 +96,7 @@ if (!empty($_POST)){
 		$newsletter = new Newsletter();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$result = $newsletter->newsletterDelete($_GET['id']);
+				$panierlst = $newsletter->newsletterDelete($_GET['id']);
 				$newsletter = null;
 				header('Location: /admin/newsletter-list.php');
 			} catch (Exception $e) {

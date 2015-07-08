@@ -5,9 +5,9 @@
 require 'classes/Panier.php';
 try {
 	$panier = new Panier();
-	$result = $panier->getCommandes($_GET['id']);
+	$panierlst = $panier->getCommandes($_GET['id']);
 	//print_r($result);
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -29,10 +29,10 @@ try {
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
-			     <h3>Détail du produit</h3>
+			     <h3>Détail du Panier</h3>
 			     <pre>
                 <?php 
-                print_r(unserialize($result[0]['serialproduct']));
+                print_r(unserialize($panierlst[0]['panier']));
                 ?>
                 </pre>
 			</div>

@@ -7,19 +7,19 @@ require 'classes/Newsletter.php';
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
 	$newsletter = new Newsletter();
-	$result = $newsletter->newsletterAllGet($_GET['id']);
+	$panierlst = $newsletter->newsletterAllGet($_GET['id']);
 	//print_r($result);
 	//print_r($result[0]['newsletter_detail']);
 	//exit();
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle = 'Newsletter N°: '. $_GET['id'];
 		$id_produit= 			$_GET['id'];
-		$titre=  		$result[0]['titre'];
-		$date= 			traitement_datetime_affiche($result[0]['date']);
-		$bas_page= 		$result[0]['bas_page'];
-		$ndencards=  	sizeof($result[0]['newsletter_detail']);
+		$titre=  		$panierlst[0]['titre'];
+		$date= 			traitement_datetime_affiche($panierlst[0]['date']);
+		$bas_page= 		$panierlst[0]['bas_page'];
+		$ndencards=  	sizeof($panierlst[0]['newsletter_detail']);
 	}
 } else { //ajout News
 	$action = 'add';
@@ -62,8 +62,8 @@ if (!empty($_GET)){ //Modif
 					</div>
 					<?php 
 					$i = 1;
-					if (isset($result[0]['newsletter_detail'])) {
-						foreach ($result[0]['newsletter_detail'] as $value) { 
+					if (isset($panierlst[0]['newsletter_detail'])) {
+						foreach ($panierlst[0]['newsletter_detail'] as $value) { 
 							$url = $value['url'];
 							if ($value['url']=='') 
 								$url='/ajoutImage.jpg';  ?>

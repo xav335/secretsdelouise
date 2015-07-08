@@ -17,6 +17,14 @@ if (!empty($_POST)){
 		if ($_POST['action'] == 'modif') {  //Modifier
 			try {
 			    $panier->updateStatutCommande($_POST['id_commande'], $_POST['statut_paiement'], $_POST['statut_commande'], $_POST['colissimo']);
+			    
+			    //Gestion du stock
+			    if ($_POST['old_statut_commande']==0 && $_POST['statut_commande']==1) {
+			        //on décroit le stock;
+			    } elseif ($_POST['old_statut_commande']!=0 && $_POST['statut_commande']==0){
+			        //on accroit le stock;
+			    }
+			    
 				header('Location: /admin/commande-edit.php?id='.$_POST['id_commande']);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";

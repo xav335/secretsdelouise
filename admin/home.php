@@ -6,19 +6,19 @@ session_start();
 
 $authentication = new Authentication();
 if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
-	$result = $authentication->grantAccess($_POST['login'], $_POST['mdp']);
-	if (!$result){
+	$panierlst = $authentication->grantAccess($_POST['login'], $_POST['mdp']);
+	if (!$panierlst){
 		header('Location: /admin/?action=error');
 	} else {
 		$_SESSION['accessGranted'] = true;
 	}
 }
 $goldbook = new Goldbook();
-$result = $goldbook->goldbookUnvalidateGet();
-if (empty($result)) {
+$panierlst = $goldbook->goldbookUnvalidateGet();
+if (empty($panierlst)) {
 	$message = 'Tous les messages sont validés';
 } else {
-	$message = 'Vous avez '. $result[0]['nb'] .' message(s) à valider';
+	$message = 'Vous avez '. $panierlst[0]['nb'] .' message(s) à valider';
 }
 
 ?>

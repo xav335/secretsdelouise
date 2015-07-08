@@ -13,37 +13,40 @@ session_start();
 if (!empty($id_contact)){
     $contact = new ContactCommande();
     try {
-        $result = $contact->contactGet($id_contact, null, null);
+        $contactResult = $contact->contactGet($id_contact, null, null);
         //print_r($result);exit;
         //Facturation
        
         
-        $email =    $result[0]['email'];
+        $email =    $contactResult[0]['email'];
         
-        if (!empty($result[0]['facturation'])) {
-            $nom =      $result[0]['facturation'][0]['nom'];
-            $prenom =   $result[0]['facturation'][0]['prenom'];
-            $adresse =  $result[0]['facturation'][0]['adresse'];
-            $cp =       $result[0]['facturation'][0]['cp'];
-            $ville =    $result[0]['facturation'][0]['ville'];
-            $tel =      $result[0]['facturation'][0]['tel'];
+        if (!empty($contactResult[0]['facturation'])) {
+            $nom =      $contactResult[0]['facturation'][0]['nom'];
+            $prenom =   $contactResult[0]['facturation'][0]['prenom'];
+            $adresse =  $contactResult[0]['facturation'][0]['adresse'];
+            $cp =       $contactResult[0]['facturation'][0]['cp'];
+            $ville =    $contactResult[0]['facturation'][0]['ville'];
+            $tel =      $contactResult[0]['facturation'][0]['tel'];
         } else {
+             $nom = '';
+             $prenom = '';
              $adresse = '';
              $cp ='';
              $ville ='';
+             $tel='';
         }
        
         //Livraison
         
-        if (!empty($result[0]['livraison'])) {
-            $nomliv =   $result[0]['livraison'][0]['nom'];
-            $prenomliv= $result[0]['livraison'][0]['prenom'];;
-            $emailliv = $result[0]['livraison'][0]['email'];
-            $telliv =   $result[0]['livraison'][0]['tel'];
-            $adresseliv=$result[0]['livraison'][0]['adresse'];
-            $cpliv =    $result[0]['livraison'][0]['cp'];
-            $villeliv = $result[0]['livraison'][0]['ville'];
-            $message=   $result[0]['livraison'][0]['message'];
+        if (!empty($contactResult[0]['livraison'])) {
+            $nomliv =   $contactResult[0]['livraison'][0]['nom'];
+            $prenomliv= $contactResult[0]['livraison'][0]['prenom'];;
+            $emailliv = $contactResult[0]['livraison'][0]['email'];
+            $telliv =   $contactResult[0]['livraison'][0]['tel'];
+            $adresseliv=$contactResult[0]['livraison'][0]['adresse'];
+            $cpliv =    $contactResult[0]['livraison'][0]['cp'];
+            $villeliv = $contactResult[0]['livraison'][0]['ville'];
+            $message=   $contactResult[0]['livraison'][0]['message'];
         } else {
             $nomliv ='';
             $prenomliv ='';
@@ -118,7 +121,7 @@ if (!empty($id_contact)){
 				    
 					<div class="large-9 medium-9 small-12 columns">
 					   <?php 
-					   if(!empty($result) || $action=='creation' ):
+					   if(!empty($contactResult) || $action=='creation' ):
 					   ?>
 					   <div class="row">
 							<div class="large-12 columns">

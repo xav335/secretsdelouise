@@ -10,16 +10,16 @@ $newsletter = new Newsletter();
 
 if (!empty($_GET)){ //Modif 
 	
-	$result = $newsletter->newsletterAllGet($_GET['id']);
+	$panierlst = $newsletter->newsletterAllGet($_GET['id']);
 	//print_r($result);
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$id_produit= 			$_GET['id'];
-		$titre=  		$result[0]['titre'];
-		$date= 			traitement_datetime_affiche($result[0]['date']);
-		$bas_page= 		nl2br($result[0]['bas_page']);
-		$detail=		$result[0]['newsletter_detail'];
+		$titre=  		$panierlst[0]['titre'];
+		$date= 			traitement_datetime_affiche($panierlst[0]['date']);
+		$bas_page= 		nl2br($panierlst[0]['bas_page']);
+		$detail=		$panierlst[0]['newsletter_detail'];
 	}
 } else { 
 	echo 'Erreur contactez votre administrateur <br> :\n';
@@ -141,10 +141,10 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 	$id_journal = $newsletter->journalNewsletterAdd($_GET['id']);
 	
 	$contact = new Contact();
-	$result = $contact->contactGetForNewsletter();
+	$panierlst = $contact->contactGetForNewsletter();
 	//print_r($result);
-	if (!empty($result)) {
-		foreach ($result as $value) {
+	if (!empty($panierlst)) {
+		foreach ($panierlst as $value) {
 			$_to = $value['email'];
 			$regex = '#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
 			if (preg_match( $regex, $_to)) {

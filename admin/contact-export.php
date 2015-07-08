@@ -9,7 +9,7 @@ $contact = new Contact();
 	//recup du nom du fichier
 	//echo $url;
 	try {
-		$result = $contact->contactExportCSV();
+		$panierlst = $contact->contactExportCSV();
 		$contact = null;
 		header('Location: /admin/contact-import.php');
 	} catch (Exception $e) {

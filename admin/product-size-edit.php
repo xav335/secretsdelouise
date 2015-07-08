@@ -22,7 +22,7 @@ require 'classes/Catproduct.php';
 		(!empty($_GET['categorie'])) ? $categorie = $_GET['categorie'] : $categorie = null;
 		
 	
-		$result = $catproduct->getSizes();
+		$panierlst = $catproduct->getSizes();
 		
 		
 		//print_r($resultsouref);
@@ -32,7 +32,7 @@ require 'classes/Catproduct.php';
 		exit();
 	}	
 	
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -99,9 +99,9 @@ require 'classes/Catproduct.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($result)) {
+						if (!empty($panierlst)) {
 							$i=0;
-							foreach ($result as $value) { 
+							foreach ($panierlst as $value) { 
 							$i++;
 								//Catégries
 								//print_r($value['categories']);

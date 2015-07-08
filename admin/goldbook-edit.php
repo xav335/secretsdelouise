@@ -7,18 +7,18 @@ require 'classes/Goldbook.php';
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
 	$goldbook = new Goldbook();
-	$result = $goldbook->goldbookGet($_GET['id']);
+	$panierlst = $goldbook->goldbookGet($_GET['id']);
 	//print_r($result);
-	if (empty($result)) {
+	if (empty($panierlst)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle= 	'Livre d\' or N°: '. $_GET['id'];
-		$date_goldbook= traitement_datetime_affiche($result[0]['date']);
+		$date_goldbook= traitement_datetime_affiche($panierlst[0]['date']);
 		$id_produit= 			$_GET['id'];
-		$nom=  			$result[0]['nom'];
-		$email=  		$result[0]['email'];
-		$message= 		$result[0]['message'];
-		if($result[0]['online']=='1') { 
+		$nom=  			$panierlst[0]['nom'];
+		$email=  		$panierlst[0]['email'];
+		$message= 		$panierlst[0]['message'];
+		if($panierlst[0]['online']=='1') { 
 			$online = 'checked'; 
 		} else {
 			$online = '';

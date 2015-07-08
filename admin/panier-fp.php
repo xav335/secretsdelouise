@@ -19,8 +19,8 @@ if (!empty($_POST)){
 			try {
 				//$product = unserialize(stripslashes($_POST['product']));
 				//print_r(stripslashes($_POST['product']));exit;
-			    $result = $catproduct->productGet($_POST['idproduit'], null, null, null, null,null);
-			    $produit = $result[0];
+			    $panierlst = $catproduct->productGet($_POST['idproduit'], null, null, null, null,null);
+			    $produit = $panierlst[0];
 			    $produit['fraisport']=$totalLiv;
 			    $produit['tva']=$tva;
 			   
