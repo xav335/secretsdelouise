@@ -53,6 +53,25 @@ class Contact extends StorageManager
             return "errrrrrrooooOOor";
         }
     }
+    
+    public function contactGetByEmail($email)
+    {
+        $this->dbConnect();
+        $sql = "SELECT * FROM `contact` WHERE email='" . $email ."';";
+        // print_r($sql);
+        $new_array = null;
+        $result = mysqli_query($this->mysqli, $sql);
+        if (! $result) {
+            throw new Exception('Erreur Mysql contactGetByEmail sql = : ' . $sql);
+        }
+        while (($row = mysqli_fetch_assoc($result)) != false) {
+            $new_array[] = $row;
+        }
+        //print_r($new_array);exit;
+    
+        $this->dbDisConnect();
+        return $new_array;
+    }
 
     public function contactNumberGet()
     {
@@ -75,8 +94,7 @@ class Contact extends StorageManager
 
     public function contactAdd($value)
     {
-        // print_r($value);
-        // exit();
+        //print_r($value);exit;
         $this->dbConnect();
         $this->begin();
         try {
@@ -89,12 +107,12 @@ class Contact extends StorageManager
 						VALUES (
 						'" . addslashes($value['name']) . "',
 						'" . addslashes($value['email']) . "',
-						'" . addslashes($value['firstname']) . "'
+						'" . addslashes($value['firstname']) . "',
 						" . $newsletter . ",
 						" . $fromgoldbook . ",
 						" . $fromcontact . "
 					);";
-            // error_log(date("Y-m-d H:i:s") ." : ".$sql."\n", 3, "../log/spy.log");
+            
             $result = mysqli_query($this->mysqli, $sql);
             
             if (! $result) {

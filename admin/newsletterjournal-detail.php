@@ -34,11 +34,11 @@ require 'classes/Newsletter.php';
 	$start = ($current * $epp - $epp);
 	
 	// Récupération des données à afficher pour la page courante
-	$panierlst = $newsletter->journalNewsletterDetailGet($_GET['id'], $start, $epp);
+	$result = $newsletter->journalNewsletterDetailGet($_GET['id'], $start, $epp);
 	
 	
 	//print_r($result);
-	if (empty($panierlst)) {
+	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -88,9 +88,9 @@ require 'classes/Newsletter.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($panierlst)) {
+						if (!empty($result)) {
 							$i=0;
-							foreach ($panierlst as $value) { 
+							foreach ($result as $value) { 
 							$i++;
 							if($value['read']=='1') {
 								$online = 'check';

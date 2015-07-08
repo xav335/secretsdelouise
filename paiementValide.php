@@ -9,8 +9,8 @@ session_regenerate_id(true);
 $panier = new Panier();
 
 try {
-		$panierlst = $panier->panierGet(session_id());
-		print_r($panierlst);
+		$result = $panier->panierGet(session_id());
+		print_r($result);
 		
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";

@@ -6,8 +6,8 @@ session_start();
 
 //Security
 if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
-	$panierlst = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
-	if (!$panierlst){
+	$result = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
+	if (!$result){
 		header('Location: /admin/?action=error');
 	} else {
 		$_SESSION['accessGranted'] = true;
@@ -44,7 +44,7 @@ if (!empty($_POST)){
 		
 		if ($_POST['action'] == 'modif') { //Modifier la news
 			try {
-				$panierlst = $news->newsModify($_POST);
+				$result = $news->newsModify($_POST);
 				header('Location: /admin/news-list.php');
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
@@ -53,8 +53,8 @@ if (!empty($_POST)){
 			
 		} else {  //ajouter une news
 			try {
-				$panierlst = $news->newsAdd($_POST);
-				header('Location: /admin/news-edit.php?id='.$panierlst);
+				$result = $news->newsAdd($_POST);
+				header('Location: /admin/news-edit.php?id='.$result);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				exit();
@@ -70,7 +70,7 @@ if (!empty($_POST)){
 		$news = new News();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$panierlst = $news->newsDelete($_GET['id']);
+				$result = $news->newsDelete($_GET['id']);
 				$news = null;
 				header('Location: /admin/news-list.php');
 			} catch (Exception $e) {

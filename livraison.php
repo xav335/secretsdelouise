@@ -9,29 +9,29 @@ session_start();
 if (!empty($id_contact)){
     $contact = new ContactCommande();
     try {
-        $panierlst = $contact->contactGet($id_contact, null, null);
+        $result = $contact->contactGet($id_contact, null, null);
         //print_r($result);exit;
         //Facturation
         
-        $id_facturation  = $panierlst[0]['facturation'][0]['id_adresse'];
-        $id_livraison    = $panierlst[0]['livraison'][0]['id_adresse'];
+        $id_facturation  = $result[0]['facturation'][0]['id_adresse'];
+        $id_livraison    = $result[0]['livraison'][0]['id_adresse'];
         
-        $email =    $panierlst[0]['email'];
-        $nom =      $panierlst[0]['facturation'][0]['nom'];
-        $prenom =   $panierlst[0]['facturation'][0]['prenom'];
-        $tel =      $panierlst[0]['facturation'][0]['tel'];
-        $adresse =  $panierlst[0]['facturation'][0]['adresse'];
-        $cp =       $panierlst[0]['facturation'][0]['cp'];
-        $ville =    $panierlst[0]['facturation'][0]['ville'];
+        $email =    $result[0]['email'];
+        $nom =      $result[0]['facturation'][0]['nom'];
+        $prenom =   $result[0]['facturation'][0]['prenom'];
+        $tel =      $result[0]['facturation'][0]['tel'];
+        $adresse =  $result[0]['facturation'][0]['adresse'];
+        $cp =       $result[0]['facturation'][0]['cp'];
+        $ville =    $result[0]['facturation'][0]['ville'];
         //Livraison
-        $nomliv =   $panierlst[0]['livraison'][0]['nom'];
-        $prenomliv= $panierlst[0]['livraison'][0]['prenom'];;
-        $emailliv = $panierlst[0]['livraison'][0]['email'];
-        $telliv =   $panierlst[0]['livraison'][0]['tel'];
-        $adresseliv=$panierlst[0]['livraison'][0]['adresse'];
-        $cpliv =    $panierlst[0]['livraison'][0]['cp'];
-        $villeliv = $panierlst[0]['livraison'][0]['ville'];
-        $message=   $panierlst[0]['livraison'][0]['message'];
+        $nomliv =   $result[0]['livraison'][0]['nom'];
+        $prenomliv= $result[0]['livraison'][0]['prenom'];;
+        $emailliv = $result[0]['livraison'][0]['email'];
+        $telliv =   $result[0]['livraison'][0]['tel'];
+        $adresseliv=$result[0]['livraison'][0]['adresse'];
+        $cpliv =    $result[0]['livraison'][0]['cp'];
+        $villeliv = $result[0]['livraison'][0]['ville'];
+        $message=   $result[0]['livraison'][0]['message'];
 
         $action = 'modif';
 
@@ -47,12 +47,12 @@ if (!empty($id_contact)){
 $panier = new Panier();
 
 try {
-		$panierlst = $panier->panierGet(session_id());
+		$result = $panier->panierGet(session_id());
 		
 		//on renseigne la TVA et les frais de livraison au moment de la commande
-		$panierlst[0]['tva']=$tva;
-		$panierlst[0]['totalLiv']=$totalLiv;
-		$id_commande =$panier->ajoutCommande(session_id(), $id_contact, $id_facturation, $id_livraison, serialize($panierlst));
+		$result[0]['tva']=$tva;
+		$result[0]['totalLiv']=$totalLiv;
+		$id_commande =$panier->ajoutCommande(session_id(), $id_contact, $id_facturation, $id_livraison, serialize($result));
 		
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
@@ -93,7 +93,7 @@ $extraLiv =0;
 					</div>
 					<div class="large-9 medium-9 small-12 columns">
 					<?php 
-					if (!empty($panierlst)):
+					if (!empty($result)):
 					?>
 						<table name="panier">
 						  <thead>
@@ -116,7 +116,7 @@ $extraLiv =0;
 							    <?php 
 							    $totalTTC = 0;
 							    
-                                foreach ($panierlst as $value):
+                                foreach ($result as $value):
                                     $totalTTC += $value['prix']*$value['quantite'];
                                     $extraLiv += $value['shipping'];
                                 ?>

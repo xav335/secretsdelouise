@@ -104,7 +104,7 @@ if (!empty($id_contact)){
 					<div class="large-3 medium-3 small-12 columns menu-panier">
 						<ul>
 							<li >
-								<a href="panier.php"><span>1 -</span> Récapitulatif <?php echo $id_contact?></a>
+								<a href="panier.php"><span>1 -</span> Récapitulatif</a>
 							</li>
 							<li class="active">
 								<a href="adresse.php"><span>2 -</span> Adresses</a>

@@ -6,7 +6,7 @@ require 'classes/Catproduct.php';
 
 	$catproduct = new Catproduct();
 	$catproduct->catproduitViewIterative(null);
-	$panierlst = $catproduct->tabView;
+	$result = $catproduct->tabView;
 	$catproduct = null;
 	
 	//print_r($result);
@@ -21,13 +21,13 @@ require 'classes/Catproduct.php';
 		//print_r($result);
 		//print_r($result[0]['newsletter_detail']);
 		//exit();
-		if (empty($panierlst)) {
+		if (empty($result)) {
 			$message = 'Aucun enregistrements';
 		} else {
 			$labelTitle = 'Newsletter N°: '. $_GET['id'];
 			$id_produit= 			$_GET['id'];
-			$titre=  		$panierlst[0]['titre'];
-			$date= 			traitement_datetime_affiche($panierlst[0]['date']);
+			$titre=  		$result[0]['titre'];
+			$date= 			traitement_datetime_affiche($result[0]['date']);
 		}
 	} else { //ajout News
 		$action = 'add';
@@ -66,7 +66,7 @@ require 'classes/Catproduct.php';
 											<select name="num_parent" id="num_parent">
 											<option value="0" selected>-- racine --</option>
 											<?
-											foreach ($panierlst as $value) { 
+											foreach ($result as $value) { 
 												$decalage = "";
 												for ($i=0; $i<($value['level'] * 5); $i++) {
 													$decalage .= "&nbsp;";
@@ -144,9 +144,9 @@ require 'classes/Catproduct.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($panierlst)) {
+						if (!empty($result)) {
 							$i=0;
-							foreach ($panierlst as $value) { 
+							foreach ($result as $value) { 
 								$decalage = "";
 								for ($i=0; $i<($value['level'] * 10); $i++) {
 									$decalage .= "&nbsp;";

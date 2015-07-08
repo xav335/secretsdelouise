@@ -25,7 +25,7 @@ require 'classes/Catproduct.php';
 		
 		
 	
-		$panierlst = $catproduct->getColors();
+		$result = $catproduct->getColors();
 		
 		
 		//print_r($resultsouref);
@@ -35,7 +35,7 @@ require 'classes/Catproduct.php';
 		exit();
 	}	
 	
-	if (empty($panierlst)) {
+	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -102,9 +102,9 @@ require 'classes/Catproduct.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($panierlst)) {
+						if (!empty($result)) {
 							$i=0;
-							foreach ($panierlst as $value) { 
+							foreach ($result as $value) { 
 							$i++;
 								//Catégries
 								//print_r($value['categories']);

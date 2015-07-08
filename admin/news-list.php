@@ -5,9 +5,9 @@
 require 'classes/News.php';
 
 	$news = new News();
-	$panierlst = $news->newsGet(null);
+	$result = $news->newsGet(null);
 	//print_r($result);
-	if (empty($panierlst)) {
+	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -56,9 +56,9 @@ require 'classes/News.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($panierlst)) {
+						if (!empty($result)) {
 							$i=0;
-							foreach ($panierlst as $value) { 
+							foreach ($result as $value) { 
 							$i++;
 							if($value['online']=='1') {
 								$online = 'check';

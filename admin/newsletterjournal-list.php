@@ -5,9 +5,9 @@
 require 'classes/Newsletter.php';
 
 	$newsletter = new Newsletter();
-	$panierlst = $newsletter->journalNewsletterGet();
+	$result = $newsletter->journalNewsletterGet();
 	//print_r($result);
-	if (empty($panierlst)) {
+	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -47,9 +47,9 @@ require 'classes/Newsletter.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($panierlst)) {
+						if (!empty($result)) {
 							$i=0;
-							foreach ($panierlst as $value) { 
+							foreach ($result as $value) { 
 							$i++;
 							?>
 							<tr class="<?php if ($i%2!=0) echo 'info'?>">

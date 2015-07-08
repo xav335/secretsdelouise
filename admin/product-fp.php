@@ -7,8 +7,8 @@ session_start();
 
 //Security
 if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
-	$panierlst = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
-	if (!$panierlst){
+	$result = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
+	if (!$result){
 		header('Location: /admin/?action=error');
 	} else {
 		$_SESSION['accessGranted'] = true;
@@ -42,7 +42,7 @@ if (!empty($_POST)){
 
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {
-				$panierlst = $catproduct->productModify($_POST);
+				$result = $catproduct->productModify($_POST);
 				$catproduct = null;
 				header('Location: /admin/product-list.php?rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
@@ -54,7 +54,7 @@ if (!empty($_POST)){
 		} else {  //ajouter
 			try {
 				//print_r($_POST);exit();
-				$panierlst = $catproduct->productAdd($_POST);
+				$result = $catproduct->productAdd($_POST);
 				$catproduct = null;
 				header('Location: /admin/product-list.php');
 			} catch (Exception $e) {
@@ -71,7 +71,7 @@ if (!empty($_POST)){
 		$catproduct = new Catproduct();
 		if ($_POST['action'] == 'modif') { //Modifier
 			try {
-				$panierlst = $catproduct->productsousrefModify($_POST);
+				$result = $catproduct->productsousrefModify($_POST);
 				$catproduct = null;
 				header('Location: /admin/product-sousref-edit.php?id='.$_POST['id']. '&rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
@@ -84,7 +84,7 @@ if (!empty($_POST)){
 			try {
 				//print_r($_POST);exit();(!empty($rubriques) && in_array($value['id'], $rubriques)) ? $check = 'checked' : $check = '';
 				if (empty($_POST['sousref']))  $_POST['sousref']=randomChar(5);
-				$panierlst = $catproduct->productsousrefAdd($_POST);
+				$result = $catproduct->productsousrefAdd($_POST);
 				$catproduct = null;
 				header('Location: /admin/product-sousref-edit.php?id='.$_POST['id'] .'&rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
@@ -100,7 +100,7 @@ if (!empty($_POST)){
 		$catproduct = new Catproduct();
 		if ($_POST['action'] == 'add') { //add
 			try {
-				$panierlst = $catproduct->colorAdd($_POST);
+				$result = $catproduct->colorAdd($_POST);
 				$catproduct = null;
 				header('Location: /admin/product-color-edit.php?id_product='.$_POST['id_product'].'&rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
@@ -116,7 +116,7 @@ if (!empty($_POST)){
 		$catproduct = new Catproduct();
 		if ($_POST['action'] == 'add') { //add
 			try {
-				$panierlst = $catproduct->sizeAdd($_POST);
+				$result = $catproduct->sizeAdd($_POST);
 				$catproduct = null;
 				header('Location: /admin/product-size-edit.php?id_product='.$_POST['id_product'].'&rubrique='.$_POST['rubrique'].'&categorie='.$_POST['categorie']);
 			} catch (Exception $e) {
@@ -134,7 +134,7 @@ if (!empty($_POST)){
 		$catproduct = new Catproduct();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$panierlst = $catproduct->productDelete($_GET['id']);
+				$result = $catproduct->productDelete($_GET['id']);
 				$catproduct = null;
 				header('Location: /admin/product-list.php?rubrique='.$_GET['rubrique'].'&categorie='.$_GET['categorie']);
 			} catch (Exception $e) {
@@ -149,7 +149,7 @@ if (!empty($_POST)){
 	    $catproduct = new Catproduct();
 	    if ($_GET['action'] == 'reactive'){
 	        try {
-	            $panierlst = $catproduct->productActive($_GET['id']);
+	            $result = $catproduct->productActive($_GET['id']);
 	            $catproduct = null;
 	            header('Location: /admin/product-list.php?actif=OFFrubrique='.$_GET['rubrique'].'&categorie='.$_GET['categorie']);
 	        } catch (Exception $e) {
@@ -164,7 +164,7 @@ if (!empty($_POST)){
 		$catproduct = new Catproduct();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$panierlst = $catproduct->productsousrefDelete($_GET['id_sousref']);
+				$result = $catproduct->productsousrefDelete($_GET['id_sousref']);
 				$catproduct = null;
 				header('Location: /admin/product-sousref-edit.php?id='.$_GET['id'].'&rubrique='.$_GET['rubrique'].'&categorie='.$_GET['categorie']);
 			} catch (Exception $e) {
@@ -179,7 +179,7 @@ if (!empty($_POST)){
 		$catproduct = new Catproduct();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$panierlst = $catproduct->colorDelete($_GET['id']);
+				$result = $catproduct->colorDelete($_GET['id']);
 				$catproduct = null;
 				header('Location: /admin/product-color-edit.php?id_product='.$_GET['id_product']);
 			} catch (Exception $e) {
@@ -194,7 +194,7 @@ if (!empty($_POST)){
 		$catproduct = new Catproduct();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$panierlst = $catproduct->sizeDelete($_GET['id']);
+				$result = $catproduct->sizeDelete($_GET['id']);
 				$catproduct = null;
 				header('Location: /admin/product-size-edit.php?id_product='.$_GET['id_product']);
 			} catch (Exception $e) {

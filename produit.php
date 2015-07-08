@@ -11,8 +11,8 @@ session_start();
 
 $catproduct = new Catproduct();
 try {
-		$panierlst = $catproduct->productGet($id_produit, null, null, null, null,null);
-		$produit = $panierlst[0];
+		$result = $catproduct->productGet($id_produit, null, null, null, null,null);
+		$produit = $result[0];
 		$descriptionTailles = "/photos/categories".$produit['categories'][0]['descat'];
 		//print_r($value);
 		

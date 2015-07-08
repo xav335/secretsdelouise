@@ -14,16 +14,16 @@ if (!empty($id_adresse)) {
             //$result = $contact->contactGet($id_contact, null, null);
            
             // Facturation
-            $panierlst = $contact->contactAddresseGet($id_adresse);
+            $result = $contact->contactAddresseGet($id_adresse);
             //print_r($result);exit;
           
-            $nom = $panierlst[0]['nom'];
-            $prenom = $panierlst[0]['prenom'];
-            $email = $panierlst[0]['email'];
-            $tel = $panierlst[0]['tel'];
-            $adresse = $panierlst[0]['adresse'];
-            $cp = $panierlst[0]['cp'];
-            $ville = $panierlst[0]['ville'];
+            $nom = $result[0]['nom'];
+            $prenom = $result[0]['prenom'];
+            $email = $result[0]['email'];
+            $tel = $result[0]['tel'];
+            $adresse = $result[0]['adresse'];
+            $cp = $result[0]['cp'];
+            $ville = $result[0]['ville'];
             
             $contact = null;
         } catch (Exception $e) {

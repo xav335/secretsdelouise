@@ -18,7 +18,7 @@ error_log(date("Y-m-d H:i:s") . " : " . $_POST['newsletter'] . "\n", 3, "../log/
 
 if ($_POST["action"] == "sendMail") {
     try {
-        $panierlst = $goldbook->goldbookAdd($_POST);
+        $result = $goldbook->goldbookAdd($_POST);
         $goldbook = null;
         // Ajout dans contact pour la newsletter
         $result1 = $contact->contactGetByEmail($_POST['email']);

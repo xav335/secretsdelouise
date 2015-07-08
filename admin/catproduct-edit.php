@@ -7,16 +7,16 @@ require 'classes/Catproduct.php';
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
 	$catproduct = new Catproduct();
-	$panierlst = $catproduct->catproductGet($_GET['id']);
+	$result = $catproduct->catproductGet($_GET['id']);
 	//print_r($result);exit();
-	if (empty($panierlst)) {
+	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle = 'Catégorie N°: '. $_GET['id'];
 		$id_produit= 			$_GET['id'];
-		$label=  		$panierlst[0]['label'];
-		$description= 		$panierlst[0]['description'];
-		$image= 	$panierlst[0]['image'];
+		$label=  		$result[0]['label'];
+		$description= 		$result[0]['description'];
+		$image= 	$result[0]['image'];
 		if(empty($image) || !isset($image)){
 			$img = 'img/favicon.png';
 			$imgval = '';

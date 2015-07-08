@@ -6,8 +6,8 @@ session_start();
 
 //Security
 if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
-	$panierlst = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
-	if (!$panierlst){
+	$result = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
+	if (!$result){
 		header('Location: /admin/?action=error');
 	} else {
 		$_SESSION['accessGranted'] = true;
@@ -42,7 +42,7 @@ if (!empty($_POST)){
 				}
 				$imageManager =null;
 				
-				$panierlst = $catproduct->catproductModify($_POST);
+				$result = $catproduct->catproductModify($_POST);
 				$catproduct = null;
 				header('Location: /admin/catproduct-list.php');
 			} catch (Exception $e) {
@@ -54,7 +54,7 @@ if (!empty($_POST)){
 		} else {  //ajouter
 			try {
 				//print_r($_POST);exit();
-				$panierlst = $catproduct->catproductAdd($_POST);
+				$result = $catproduct->catproductAdd($_POST);
 				$catproduct = null;
 				header('Location: /admin/catproduct-list.php');
 			} catch (Exception $e) {
@@ -72,7 +72,7 @@ if (!empty($_POST)){
 		$catproduct = new Catproduct();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$panierlst = $catproduct->catproductDelete($_GET['id']);
+				$result = $catproduct->catproductDelete($_GET['id']);
 				$catproduct = null;
 				header('Location: /admin/catproduct-list.php');
 			} catch (Exception $e) {

@@ -4,7 +4,7 @@ require 'admin/classes/Goldbook.php';
 require 'admin/classes/utils.php';
 session_start();
 $goldbook = new Goldbook();
-$panierlst = $goldbook->goldbookValidGet();
+$result = $goldbook->goldbookValidGet();
 $goldbook = null;
 //print_r($result);
 ?>
@@ -66,9 +66,9 @@ $goldbook = null;
 		
 			<h1>Livre d'or</h1>
 			<?php 
-				if (!empty($panierlst)) {
+				if (!empty($result)) {
 					$i=0;
-					foreach ($panierlst as $value) { 
+					foreach ($result as $value) { 
 					$i++;
 					?>
 					<div class="row">

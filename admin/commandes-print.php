@@ -18,7 +18,7 @@ if (!empty($_GET['id'])){
         $date_commande = $commande[0]['date_ajout'];
         $colissimo = $commande[0]['colissimo'];
         $session = $commande[0]['session'];
-        $panierlst = unserialize($commande[0]['panier']);
+        $result = unserialize($commande[0]['panier']);
         //print_r($panierlst);
         
         if (! empty($id_contact)) {
@@ -57,13 +57,13 @@ if (!empty($_GET['id'])){
         }
         
         
-        if (! empty($panierlst)) {
+        if (! empty($result)) {
             $produitsPanier = null;
             //print_r($panierlst);exit;
             $prodTmp = null;
-            $tvaTmp = $panierlst[0]['tva'];
-            $fraisportTmp = $panierlst[0]['totalLiv'];
-            foreach ($panierlst as $lignePanier) {
+            $tvaTmp = $result[0]['tva'];
+            $fraisportTmp = $result[0]['totalLiv'];
+            foreach ($result as $lignePanier) {
               
                 $prodTmp['id_sousref']  = $lignePanier['id_sousref'];
                 $prodTmp['quantite'] = $lignePanier['quantite'];
@@ -195,7 +195,7 @@ if (!empty($_GET['id'])){
 							  <td height="30" class="entete_panier">Prix Total /&euro;</td>
 							</tr>
 							<?php 
-        						if (!empty($panierlst)) :
+        						if (!empty($result)) :
         						    $totalTTC = 0;
         						    $extraLiv = 0;
         							foreach ($produitsPanier as $value) : 

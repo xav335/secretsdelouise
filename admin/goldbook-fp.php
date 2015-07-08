@@ -5,8 +5,8 @@ session_start();
 
 //Security
 if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
-	$panierlst = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
-	if (!$panierlst){
+	$result = $storageManager->grantAccess($_POST['login'], $_POST['mdp']);
+	if (!$result){
 		header('Location: /admin/?action=error');
 	} else {
 		$_SESSION['accessGranted'] = true;
@@ -21,7 +21,7 @@ if (!empty($_POST)){
 		$goldbook = new Goldbook();
 		if ($_POST['action'] == 'modif') { //Modifier 
 			try {
-				$panierlst = $goldbook->goldbookModify($_POST);
+				$result = $goldbook->goldbookModify($_POST);
 				$goldbook = null;
 				header('Location: /admin/goldbook-list.php');
 			} catch (Exception $e) {
@@ -32,9 +32,9 @@ if (!empty($_POST)){
 				
 		} else {  //ajouter 
 			try {
-				$panierlst = $goldbook->goldbookAdd($_POST);
+				$result = $goldbook->goldbookAdd($_POST);
 				$goldbook = null;
-				header('Location: /admin/goldbook-list.php?id='.$panierlst);
+				header('Location: /admin/goldbook-list.php?id='.$result);
 			} catch (Exception $e) {
 				echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";
 				$goldbook = null;
@@ -50,7 +50,7 @@ if (!empty($_POST)){
 		$goldbook = new Goldbook();
 		if ($_GET['action'] == 'delete'){
 			try {
-				$panierlst = $goldbook->goldbookDelete($_GET['id']);
+				$result = $goldbook->goldbookDelete($_GET['id']);
 				$goldbook = null;
 				header('Location: /admin/goldbook-list.php');
 			} catch (Exception $e) {

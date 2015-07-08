@@ -34,11 +34,11 @@ require 'classes/Contact.php';
 	$start = ($current * $epp - $epp);
 	
 	// Récupération des données à afficher pour la page courante
-	$panierlst = $contact->contactGet(null, $start, $epp);
+	$result = $contact->contactGet(null, $start, $epp);
 	
 	
 	//print_r($res);
-	if (empty($panierlst)) {
+	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -85,9 +85,9 @@ require 'classes/Contact.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($panierlst)) {
+						if (!empty($result)) {
 							$i=0;
-							foreach ($panierlst as $value) { 
+							foreach ($result as $value) { 
 							$i++;
 							if($value['newsletter']=='1') {
 								$online = 'check';

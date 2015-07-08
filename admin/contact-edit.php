@@ -7,20 +7,19 @@ require 'classes/Contact.php';
 if (!empty($_GET)){ //Modif 
 	$action = 'modif';
 	$contact = new Contact();
-	$panierlst = $contact->contactGet($_GET['id'], null, null);
+	$result = $contact->contactGet($_GET['id'], null, null);
 	//print_r($result);
-	if (empty($panierlst)) {
+	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$labelTitle= 	'Contact N°: '. $_GET['id'];
 		$id_produit= 			$_GET['id'];
-		$name=  			$panierlst[0]['name'];
-		$email=  		$panierlst[0]['email'];
-		$firstname= 	$panierlst[0]['firstname'];
-		$password= 	$panierlst[0]['password'];
-		($panierlst[0]['newsletter']=='1') ? $online = 'checked' : $online = '';
-		($panierlst[0]['fromcontact']=='1') ? $fromcontact = "origine: formulaire de contact" : $fromcontact = '';
-		($panierlst[0]['fromgoldbook']=='1') ? $fromgoldbook = "origine: livre d'or" : $fromgoldbook = '';
+		$name=  			$result[0]['name'];
+		$email=  		$result[0]['email'];
+		$firstname= 	$result[0]['firstname'];
+		($result[0]['newsletter']=='1') ? $online = 'checked' : $online = '';
+		($result[0]['fromcontact']=='1') ? $fromcontact = "origine: formulaire de contact" : $fromcontact = '';
+		($result[0]['fromgoldbook']=='1') ? $fromgoldbook = "origine: livre d'or" : $fromgoldbook = '';
 	}
 } else { //ajout goldbook
 	$action = 'add';

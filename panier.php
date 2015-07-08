@@ -7,7 +7,7 @@ session_start();
 $panier = new Panier();
 
 try {
-		$panierlst = $panier->panierGet(session_id());
+		$result = $panier->panierGet(session_id());
 		//print_r($result);
 		
 } catch (Exception $e) {
@@ -48,7 +48,7 @@ $panier =null;
 					</div>
 					<div class="large-9 medium-9 small-12 columns">
 					<?php 
-					if (!empty($panierlst)):
+					if (!empty($result)):
 					?>
 						<table name="panier">
 							<thead>
@@ -65,7 +65,7 @@ $panier =null;
 							<tbody>
 							    <?php 
 							    $totalTTC = 0;
-                                foreach ($panierlst as $value):
+                                foreach ($result as $value):
                                 $totalTTC += $value['prix']*$value['quantite'];
                                 ?>
 								<tr>

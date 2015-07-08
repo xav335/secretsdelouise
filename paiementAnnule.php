@@ -8,7 +8,7 @@ session_start();
 $panier = new Panier();
 
 try {
-		$panierlst = $panier->panierGet(session_id());
+		$result = $panier->panierGet(session_id());
 		//print_r($result);
 		
 } catch (Exception $e) {

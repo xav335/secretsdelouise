@@ -30,7 +30,7 @@ require 'classes/Catproduct.php';
 		(!empty($_GET['rubrique'])) ? $rubrique = $_GET['rubrique'] : $rubrique = null;
 		(!empty($_GET['categorie'])) ? $categorie = $_GET['categorie'] : $categorie = null;
 	
-		$panierlst = $catproduct->productsousrefGet($_GET['id'],null);	
+		$result = $catproduct->productsousrefGet($_GET['id'],null);	
 		
 		
 		$colorResult = $catproduct->getColors();
@@ -43,7 +43,7 @@ require 'classes/Catproduct.php';
 		exit();
 	}	
 	
-	if (empty($panierlst)) {
+	if (empty($result)) {
 		$message = 'Aucun enregistrements';
 	} else {
 		$message = '';
@@ -149,9 +149,9 @@ require 'classes/Catproduct.php';
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($panierlst)) {
+						if (!empty($result)) {
 							$i=0;
-							foreach ($panierlst as $value) { 
+							foreach ($result as $value) { 
 							$i++;
 								//Catégries
 								//print_r($value['categories']);

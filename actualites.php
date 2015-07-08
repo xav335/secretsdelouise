@@ -5,21 +5,21 @@ require 'admin/classes/utils.php';
 session_start();
 $news = new News();
 if (!empty($_GET)){
-	$panierlst = $news->newsGet($_GET['id']);
+	$result = $news->newsGet($_GET['id']);
 } else {
-	$panierlst = $news->newsGet(null);
+	$result = $news->newsGet(null);
 }	
 	//print_r($result);
-	if (empty($panierlst)) {
+	if (empty($result)) {
 		$titre=  		'';
 		$date_news= 	'';
 		$accroche= 		'Pas de news pour le moment.';
 		$contenu= 		'';
 	} else {
-		$titre=  		$panierlst[0]['titre'];
-		$date_news= 	traitement_datetime_affiche($panierlst[0]['date_news']);
-		$accroche= 		$panierlst[0]['accroche'];
-		$contenu= 		$panierlst[0]['contenu'];
+		$titre=  		$result[0]['titre'];
+		$date_news= 	traitement_datetime_affiche($result[0]['date_news']);
+		$accroche= 		$result[0]['accroche'];
+		$contenu= 		$result[0]['contenu'];
 	}
 ?>
 <!doctype html>
@@ -40,9 +40,9 @@ if (!empty($_GET)){
 	<div class="row actualites">
 		<h1>Actualités</h1><br>
 		<?php 
-			if (!empty($panierlst)) {
+			if (!empty($result)) {
 				$i=0;
-				foreach ($panierlst as $value) { 
+				foreach ($result as $value) { 
 				$i++;
 				?>
 				<div class="row">
