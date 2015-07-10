@@ -4,7 +4,7 @@ require 'classes/ContactCommande.php';
 require 'classes/Contact.php';
 session_start();
 
- //print_r($_POST);exit();
+ //print_r($_POST);exit;
 // Forms processing
 if (! empty($_POST)) {
     
@@ -44,7 +44,7 @@ if (! empty($_POST)) {
             }
         } 
         
-        if ($_POST['action'] == 'modif') { // ajout adresse
+        if ($_POST['action'] == 'modif') { // ajout adresse modifAdresses
             // TODO: tester si l contact existe déjà et si c'est le cas redirger vers identifiants
             //print_r($_POST);exit;
             try {
@@ -57,6 +57,20 @@ if (! empty($_POST)) {
                 exit();
             }
         }
+        
+        if ($_POST['action'] == 'modifAdresses') { // ajout adresse modifAdresses
+            // TODO: tester si l contact existe déjà et si c'est le cas redirger vers identifiants
+            //print_r($_POST);exit;
+            try {
+                $result = $contact->contactAdressesModif($_POST);
+                $contact = null;
+                header('Location: /moncompte.php');
+            } catch (Exception $e) {
+                echo 'Erreur contactez votre administrateur <br> :', $e->getMessage(), "\n";
+                $contact = null;
+                exit();
+            }
+         }
         
         if ($_POST['action'] == 'ident') { //Identification contact
             // print_r($_POST);exit;

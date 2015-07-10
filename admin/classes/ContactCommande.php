@@ -215,7 +215,7 @@ class ContactCommande extends StorageManager
 
     public function contactAdressesAdd($value)
     {
-        // print_r($value);exit();
+        //print_r($value);exit();
         $this->dbConnect();
         $this->begin();
         try {
@@ -231,15 +231,16 @@ class ContactCommande extends StorageManager
             $id_facturation = $this->adresseAdd($value);
             
             // Création adresse de livraison
-            $value['nom'] = $value['nomliv'];
-            $value['prenom'] = $value['prenomliv'];
-            $value['adresse'] = $value['adresseliv'];
-            $value['cp'] = $value['cpliv'];
-            $value['tel'] = $value['telliv'];
-            $value['ville'] = $value['villeliv'];
-            $value['email'] = $value['emailliv'];
+            if ($value['livraisonident'] != 'on'){
+                $value['nom'] = $value['nomliv'];
+                $value['prenom'] = $value['prenomliv'];
+                $value['adresse'] = $value['adresseliv'];
+                $value['cp'] = $value['cpliv'];
+                $value['tel'] = $value['telliv'];
+                $value['ville'] = $value['villeliv'];
+                $value['email'] = $value['emailliv'];
+            }
             $value['livraison'] = 1;
-            
             $id_livraison = $this->adresseAdd($value);
             
             // Création du contact
@@ -280,13 +281,15 @@ class ContactCommande extends StorageManager
             $id_facturation = $this->adresseAdd($value);
             
             // Création adresse de livraison
-            $value['nom'] = $value['nomliv'];
-            $value['prenom'] = $value['prenomliv'];
-            $value['adresse'] = $value['adresseliv'];
-            $value['cp'] = $value['cpliv'];
-            $value['tel'] = $value['telliv'];
-            $value['ville'] = $value['villeliv'];
-            $value['email'] = $value['emailliv'];
+            if ($value['livraisonident'] != 'on'){
+                $value['nom'] = $value['nomliv'];
+                $value['prenom'] = $value['prenomliv'];
+                $value['adresse'] = $value['adresseliv'];
+                $value['cp'] = $value['cpliv'];
+                $value['tel'] = $value['telliv'];
+                $value['ville'] = $value['villeliv'];
+                $value['email'] = $value['emailliv'];
+            }    
             $value['livraison'] = 1;
             
             $id_livraison = $this->adresseAdd($value);

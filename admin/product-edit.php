@@ -163,7 +163,7 @@ if (!empty($_GET)){ //Modif
 		           		<textarea class="col-sm-11" name="description" id="description" rows="6" ><?php echo $description ?></textarea>
 		            </div>
 		            <div class="form-group" >
-						<label class="col-sm-2" for="titre">Titre encard Vert. :</label>
+						<label class="col-sm-2" for="titre">Titre encard :</label>
 					    <input type="text" class="col-sm-4" name="titreaccroche" required  value="<?php echo $titreaccroche ?>">
 					</div>
 		            <div class="form-group">

@@ -120,11 +120,13 @@ if (!empty($id_contact)){
 							</li>
 						</ul>
 					</div>
-					<?php else:?>
+					<?php else:
+					   $action='modifAdresses';
+					?>
 					<div class="large-3 medium-3 small-12 columns menu-panier">
 						<ul>
 							<li>
-								<a href="mescommandes.php"><span>1 -</span> Mes commandes</a>
+								<a href="moncompte.php"><span>1 -</span> Mes commandes</a>
 							</li>
 							<li  class="active">
 								<a href="adresse.php?source=moncompte"><span>2 -</span> Mes adresses</a>
@@ -207,6 +209,14 @@ if (!empty($id_contact)){
                         					</label>
                         					<small class="error">Votre ville est obligatoire</small>
                         				</div>
+                        				<div class="row">
+                            				<div class="large-12 columns">
+                            					<label>Message au livreur ou information complémentaire.
+                            						<textarea name="message" id="message" placeholder="Votre message"><?php echo $message?></textarea>
+                            					</label>
+                            					<small class="error">Merci de saisir votre message</small>
+                            				</div>
+                            			</div>
                         			</div>
                         			
                         			<div class="row">
@@ -265,14 +275,7 @@ if (!empty($id_contact)){
                         					<small class="error">Votre ville est obligatoire</small>
                         				</div>
                         			</div>
-                        		    <div class="row">
-                        				<div class="large-12 columns">
-                        					<label>Message au livreur ou information complémentaire.
-                        						<textarea name="message" id="message" placeholder="Votre message"><?php echo $message?></textarea>
-                        					</label>
-                        					<small class="error">Merci de saisir votre message</small>
-                        				</div>
-                        			</div>
+                        		    
 							</div>
 						</div>
 						<div class="row">
@@ -280,6 +283,7 @@ if (!empty($id_contact)){
             					<input type="checkbox" id="newsletter" name="newsletter"  checked/> J'accepte de recevoir la newsletter.
             				</div>
             			</div>
+            			 <?php if ($source!='moncompte'):?>
 						<div class="row">
 							<div class="large-6 medium-6 small-6 columns" >
 								<button  class="continuer" onclick="location.href='panier.php';return false;">Retour au panier</button>
@@ -288,6 +292,16 @@ if (!empty($id_contact)){
 								<input class="envoi" type="submit" value="Livraison"/>
 							</div>
 						</div>
+						<?php else:?>
+						<div class="row">
+							<div class="large-6 medium-6 small-6 columns" >
+								
+							</div>
+							<div class="large-6 medium-6 small-6 columns" style="text-align:right;">
+								<input class="envoi" type="submit" value="Modifier"/>
+							</div>
+						</div>
+						<?php endif;?>
 					</div>
 					<script type="text/javascript">
 
@@ -295,13 +309,13 @@ if (!empty($id_contact)){
 						
 						if ($("#livraisonident")[0].checked){
 							$("#livraison").hide();
-							$("#nomliv").val($("#nom").val());
-	    		        	$("#prenomliv").val($("#prenom").val());
-	    		        	$("#emailliv").val($("#email").val());
-	    		        	$("#telliv").val($("#tel").val());
-	    		        	$("#cpliv").val($("#cp").val());
-	    		        	$("#adresseliv").val($("#adresse").val());
-	    		        	$("#villeliv").val($("#ville").val());
+							$("#nomliv").val('zzz');
+	    		        	$("#prenomliv").val('zzz');
+	    		        	$("#emailliv").val('zzz@zz.zz');
+	    		        	$("#telliv").val('000');
+	    		        	$("#cpliv").val('000');
+	    		        	$("#adresseliv").val('zzz');
+	    		        	$("#villeliv").val('zzz');
 	    		        	
 						} else {
 							$("#livraison").show();
@@ -396,7 +410,7 @@ if (!empty($id_contact)){
 								<input class="envoi" type="submit" value="Valider"/>
 							</div>
 							<div class="large-6 medium-6 small-6 columns">
-								<button class="continuer" onclick="location.href='adresse.php?action=creation'">Sinon créer un compte</button>
+								<button class="continuer" onclick="document.location.href='adresse.php?action=creation';return false;">Sinon créer un compte</button>
 							</div>
 						</div>
 					

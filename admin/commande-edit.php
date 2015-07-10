@@ -139,8 +139,8 @@ if (!empty($_GET['id'])){
         				</div>
         				<div class="panel-body">
         					<p>
-        						    <?php echo $nomliv ?>
-                                    <?php echo $prenomliv ?><br>
+        						    <?php echo $prenomliv ?>
+                                    <?php echo $nomliv ?><br>
                                     <?php echo $emailliv ?><br>
                                      Tél. <?php echo $telliv ?><br>
                                     <?php echo $adresseliv ?><br>

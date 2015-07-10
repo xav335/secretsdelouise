@@ -47,7 +47,7 @@ if (!empty($id_contact)){
 					<div class="large-3 medium-3 small-12 columns menu-panier">
 						<ul>
 							<li class="active">
-								<a href="mescommandes.php"><span>1 -</span> Mes commandes</a>
+								<a href="momcompte.php"><span>1 -</span> Mes commandes</a>
 							</li>
 							<li >
 								<a href="adresse.php?source=moncompte"><span>2 -</span> Mes adresses</a>
