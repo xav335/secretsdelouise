@@ -146,8 +146,8 @@ if (!empty($_GET['id'])){
 							<br>
 						        <table cellpadding=0 cellspacing=0  width="100%"  border="1" bordercolor="#000000">
 		                                		<tr>
-		                                			<td align="center" class="td_normal">Adresse de livraison</td>
 		                                			<td align="center" class="td_normal">Adresse de facturation</td>
+		                                			<td align="center" class="td_normal">Adresse de livraison</td>
 		                           			</tr>
 		                                		<tr>
 		                                			<td class="td_normal">
