@@ -37,6 +37,7 @@ if (!empty($id_contact)){
 	<head>
 		<title>Les Secrets de Louise - Bijoux &amp; accessoires</title>
 <?php include('inc/meta.php'); ?>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 	</head>
 	<body class="page-panier">
 	
@@ -121,7 +122,7 @@ if (!empty($id_contact)){
     						</div>
     						
     						<div id="previ" style="display: none;">
-          						<iframe id="laframe" src="" style="width:100%;height:100%" frameborder="0"></iframe>
+          						<iframe id="laframe" class="popup" src="" style="width:100%;height:100%"></iframe>
         					</div>
         					<script type="text/javascript">
         						function openImp(id){

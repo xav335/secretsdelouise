@@ -20,6 +20,19 @@ body {font-family:'Tinos', serif;}
 .fullwidth {max-width:none;}
 .content {max-width:62.5em;}
 
+.popup {margin-top: 20px;
+  margin-bottom: 30px;
+
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+
+  -moz-box-shadow: 4px 4px 14px #000;
+  -webkit-box-shadow: 4px 4px 14px #000;
+  box-shadow: 4px 4px 14px #000;
+
+ }
+
 /* Header */
 .header {background:#dcd9cf;text-transform:uppercase;height:2.4em;}
 .header ul {list-style-type:none;}
