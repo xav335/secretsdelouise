@@ -1,6 +1,7 @@
 <?php require_once 'inc/inc.config.php';?>
 <?php 
 require 'admin/classes/Contact.php';
+require 'admin/classes/Panier.php';
 require 'admin/classes/utils.php';
 session_start();
 
@@ -13,8 +14,10 @@ session_start();
 if (!empty($id_contact)){
     $contact = new Contact();
     try {
-       
-        
+        $panier = new Panier();
+        $statutCommande =1;
+        $result = $panier->getCommandesByContact($id_contact,$statutCommande);
+        //print_r($result);
         $action = 'modif';
     
     } catch (Exception $e) {
@@ -47,10 +50,7 @@ if (!empty($id_contact)){
 								<a href="mescommandes.php"><span>1 -</span> Mes commandes</a>
 							</li>
 							<li >
-								<a href="adresse.php"><span>2 -</span> Mes adresses</a>
-							</li>
-							<li >
-								<a href="adresse.php"><span>2 -</span> Mes informations</a>
+								<a href="adresse.php?source=moncompte"><span>2 -</span> Mes adresses</a>
 							</li>
 						</ul>
 					</div>
@@ -60,14 +60,76 @@ if (!empty($id_contact)){
 					    <?php 
 					   if($action=='modif'):
 					   ?>
-					       <div class="row">
-    							 <div class="large-8 columns">
-    							    <h5>Monn compte</h5>
-    								
-                                   
-    							</div>
-    						</div>
 					   
+					       
+					       <div class="row">
+    							 <table name="panier">
+        							<thead>
+        								<tr>
+        									<th>Date</th>
+        									<th>N° Commande</th>
+        									<th class="text-center">Statut</th>
+        									<th>Tracking colis</th>
+        									<th class="text-center">Facture</th>
+        								</tr>
+        							</thead>
+        							
+        							<tbody>
+        							    <?php 
+                                        foreach ($result as $value):
+                                            switch ($value['statut_commande']) {
+                                                case 0:
+                                                    $statut_commande = 'non aboutie';
+                                                    break;
+                                                case 1:
+                                                    $statut_commande = 'à traiter';
+                                                    break;
+                                                case 2:
+                                                    $statut_commande = 'à livrer';
+                                                    break;
+                                                case 3:
+                                                    $statut_commande = 'Livrée';
+                                                    break;
+                                                default:
+                                                    $statut_commande ='';
+                                                    break;
+                                            }
+                                        ?>
+        								<tr>
+        									<td><?php echo traitement_heure_affiche($value['date_ajout'])?></td>
+        									<td><?php echo $value['id']?></td>
+        									<td class="text-center"><?php echo $statut_commande?></td>
+								            <td><a href="http://www.colissimo.fr/portail_colissimo/suivre.do?language=fr_FR" target="_blank"><?php echo $value['colissimo']?></a></td>
+								            <td class="text-center"><img src="/admin/img/imp.png" width="20" alt="preview" onclick="openImp('<?php echo $value['id']?>')"></td>
+        								</tr>
+        								<?php 
+                                        endforeach;
+                                        ?>
+        							</tbody>
+        							
+        							<tfoot>
+        								<tr>
+        									<td rowspan="2" colspan="2">
+        										
+        									</td>
+        									<td colspan="2" > </td>
+        									<td colspan="2" class="text-right"></td>
+        								</tr>
+        								
+        							</tfoot>
+        						</table>
+    						</div>
+    						
+    						<div id="previ" style="display: none;">
+          						<iframe id="laframe" src="" style="width:100%;height:100%" frameborder="0"></iframe>
+        					</div>
+        					<script type="text/javascript">
+        						function openImp(id){
+        							$('#laframe').attr('src', '/admin/commandes-print.php?id='+id);
+        						 	$('#previ').dialog({modal:true, width:900,height:500});
+        						}
+        					</script>
+					      
 					   <?php 
     					elseif($action=='mdp'):
     					?>
@@ -156,7 +218,7 @@ if (!empty($id_contact)){
 				<!-- End Products list -->
 				
 <?php include('inc/footer.php'); ?>
-<script>
+    <script>
 		$('.header .content2 ul li:nth-child(1)').addClass('active');
 	</script>
 	</body>

@@ -145,6 +145,30 @@ class Panier extends StorageManager {
 	    return $new_array;
 	}
 	
+	public function getCommandesByContact($id_contact,$statut_commande){
+	    $this->dbConnect();
+	
+	    $sql = "SELECT *
+				FROM commande ";
+	
+	    if (!empty($statut_commande)) {
+	        $sql.= "WHERE commande.id_contact=". $id_contact ." AND commande.statut_commande='". $statut_commande ."' " ;
+	    }
+	    $sql.= "ORDER BY commande.date_ajout DESC;";
+	
+	    $new_array = null;
+	    $result = mysqli_query($this->mysqli,$sql);
+	    if (!$result) {
+	        throw new Exception('Erreur Mysql Panier.getCommandesByContact  sql = : '.$sql);
+	    }
+	    while(($row = mysqli_fetch_assoc($result)) != false){
+	        $new_array[] = $row;
+	    }
+	
+	    $this->dbDisConnect();
+	    return $new_array;
+	}
+	
 	public function getCommandes($id_commande){
 	    $this->dbConnect();
 	     

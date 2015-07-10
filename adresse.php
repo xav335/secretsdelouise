@@ -4,6 +4,8 @@ require 'admin/classes/ContactCommande.php';
 require 'admin/classes/utils.php';
 session_start();
 
+(!empty($_GET['source'])) ? $source =$_GET['source'] : $source = null;
+
 (!empty($_GET['action'])) ? $action =$_GET['action'] : $action = 'ident';
 
 (!empty($_GET['error'])) ? $error =$_GET['error'] : $error = null;
@@ -101,6 +103,7 @@ if (!empty($id_contact)){
 				
 				<!-- Products list -->
 				<div class="row">
+				    <?php if ($source!='moncompte'):?>
 					<div class="large-3 medium-3 small-12 columns menu-panier">
 						<ul>
 							<li >
@@ -117,6 +120,18 @@ if (!empty($id_contact)){
 							</li>
 						</ul>
 					</div>
+					<?php else:?>
+					<div class="large-3 medium-3 small-12 columns menu-panier">
+						<ul>
+							<li>
+								<a href="mescommandes.php"><span>1 -</span> Mes commandes</a>
+							</li>
+							<li  class="active">
+								<a href="adresse.php?source=moncompte"><span>2 -</span> Mes adresses</a>
+							</li>
+						</ul>
+					</div>
+					<?php endif;?>
 				    <form data-abide id="formulaire" method="POST"  action="admin/contactFront-fp.php">
 				    
 					<div class="large-9 medium-9 small-12 columns">
