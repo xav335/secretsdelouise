@@ -187,11 +187,11 @@ try {
 				
 				<!-- Products list -->
 				<div class="row products-list">
-					<div class="large-3 medium-3 small-6 columns" onclick="location.href='categories.php?idrub="'">
+					<div class="large-3 medium-3 small-6 columns" onclick="location.href='categories.php?idrub=3'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux2.jpg" alt="" class="img" />
+								<img src="img/img-bijoux.jpg" alt="" class="img" />
 							</span>
 							<h4>Nouveauté</h4>
 						</div>
@@ -205,20 +205,20 @@ try {
 							<h4>Coup de cœur</h4>
 						</div>
 					</div>
-					<div class="large-3 medium-3 small-6 columns" onclick="location.href='categories.php'">
+					<div class="large-3 medium-3 small-6 columns" onclick="location.href='categories.php?idrub=2'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux3.jpg" alt="" class="img" />
+								<img src="img/img-bijoux.jpg" alt="" class="img" />
 							</span>
-							<h4>Votre boutique</h4>
+							<h4>Vente Flash</h4>
 						</div>
 					</div>
 					<div class="large-3 medium-3 small-6 columns" onclick="location.href='categories.php?idrub=1'">
 						<div class="content">
 							<span>
 								<img src="img/couronne.png" alt="" class="couronne" />
-								<img src="img/img-bijoux5.jpg" alt="" class="img" />
+								<img src="img/img-bijoux.jpg" alt="" class="img" />
 							</span>
 							<h4>Promotions</h4>
 						</div>

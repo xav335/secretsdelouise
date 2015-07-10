@@ -21,7 +21,7 @@
 							<p>Bijoux &amp; accessoires</p>
 						</div>
 						<div class="large-12 columns mentions">
-							© les secrets de Louise <a href="mentionslegales.php">mentions légales</a> <a href="http://www.iconeo.fr" target="_blank">création iconeo</a>
+							© les secrets de Louise <a href="mentions.php">mentions légales</a> <a href="http://www.iconeo.fr" target="_blank">création iconeo</a>
 						</div>
 					</div>
 				</div>		
