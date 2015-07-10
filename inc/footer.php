@@ -4,13 +4,13 @@
 					<div class="row">
 						<div class="large-6 medium-6 columns">
 							<div>
-								<a href="#">Promo !</a>
-								<a href="#">Ventes flash</a>
-								<a href="#">Nouveauté</a>
-								<a href="#">Coup de cœur</a>
+								<a href="categories.php?idrub=1">Promo !</a>
+								<a href="categories.php?idrub=2">Ventes flash</a>
+								<a href="categories.php?idrub=3">Nouveauté</a>
+								<a href="categories.php?idrub=4">Coup de cœur</a>
 							</div>
 							<div class="contacts">
-								<a href="#">Votre boutique</a>
+								<a href="categories.php">Votre boutique</a>
 								<a href="actualites.php">Actualités</a>
 								<a href="livre-d-or.php">Livre d'or</a>
 								<a href="contact.php">Contact</a>
@@ -21,7 +21,7 @@
 							<p>Bijoux &amp; accessoires</p>
 						</div>
 						<div class="large-12 columns mentions">
-							© les secrets de Louise <a href="#">mentions légales</a> <a href="http://www.iconeo.fr" target="_blank">création iconeo</a>
+							© les secrets de Louise <a href="conditionslegales.php">mentions légales</a> <a href="http://www.iconeo.fr" target="_blank">création iconeo</a>
 						</div>
 					</div>
 				</div>		
