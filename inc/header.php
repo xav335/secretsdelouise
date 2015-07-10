@@ -16,7 +16,7 @@ $panier = null;
 <div class="off-canvas-wrap" data-offcanvas>
 			<div class="inner-wrap">
 			
-				<a class="left-off-canvas-toggle" href="#"><img src="img/bt-menu.png" /></a>
+				<a class="left-off-canvas-toggle" href="#"><img src="../img/bt-menu.png" /></a>
 				
 				<!-- Off Canvas Menu -->
 				<aside class="left-off-canvas-menu">
