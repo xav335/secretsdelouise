@@ -44,7 +44,7 @@ class ContactCommande extends StorageManager
     public function contactGetByEmail($email)
     {
         $this->dbConnect();
-        $sql = "SELECT * FROM `contact` WHERE email='" . $email ."';";
+        $sql = "SELECT * FROM `contact_commande` WHERE email='" . $email ."';";
         // print_r($sql);
         $new_array = null;
         $result = mysqli_query($this->mysqli, $sql);
