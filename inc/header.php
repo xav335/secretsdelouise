@@ -78,5 +78,6 @@ $panier = null;
 					</div>
 				</div>
 				<!-- End Top -->
-				
+	</div>
+	</div>			
 				

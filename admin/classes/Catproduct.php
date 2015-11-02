@@ -481,7 +481,7 @@ class Catproduct extends StorageManager {
 						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
 									,product.image1,product.accroche
 									FROM product WHERE actif = $actif 
-									ORDER BY  product.label ASC
+									ORDER BY  product.reference ASC
 									LIMIT ". $offset .",". $count .";" ;
 						
 					} elseif (!empty($categorie) && empty($rubrique)) {
@@ -491,7 +491,7 @@ class Catproduct extends StorageManager {
 									INNER JOIN product_categorie 
 									ON product_categorie.id_product=product.id
 									WHERE product_categorie.id_categorie=". $categorie . " AND actif = $actif 
-									ORDER BY  product.label ASC
+									ORDER BY  product.reference ASC
 									LIMIT ". $offset .",". $count .";" ;
 					} elseif (empty($categorie) && !empty($rubrique)) {
 						$sql = "SELECT product.id,product.reference,product.prix,product.shipping,product.libprix,product.label
@@ -500,7 +500,7 @@ class Catproduct extends StorageManager {
 									INNER JOIN product_rubrique
 									ON product_rubrique.id_product=product.id
 									WHERE product_rubrique.id_rubrique=". $rubrique . " AND actif = $actif 
-									ORDER BY product.label ASC
+									ORDER BY product.reference ASC
 									LIMIT ". $offset .",". $count .";" ;
 						
 					} elseif (!empty($categorie) && !empty($rubrique)) {	
@@ -513,11 +513,11 @@ class Catproduct extends StorageManager {
 									ON product_categorie.id_product=product.id
 									WHERE product_rubrique.id_rubrique=". $rubrique . "
 									AND product_categorie.id_categorie=". $categorie . " AND actif = $actif 
-									ORDER BY product.label ASC
+									ORDER BY product.reference ASC
 									LIMIT ". $offset .",". $count .";" ;
 					}
 				} else {
-					$sql = "SELECT * FROM `product` WHERE actif = $actif  ORDER BY `label`;" ;
+					$sql = "SELECT * FROM `product` WHERE actif = $actif  ORDER BY `reference`;" ;
 				}
 			} else {
 				$sql = "SELECT product.*
