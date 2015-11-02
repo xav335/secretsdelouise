@@ -20,7 +20,7 @@ try {
 		$total = $catproduct->productNumberGet($idcat,$idrub,1);
 		//$result = $contact->contactGet(null, $offset, $count);
 		
-		$epp = 6; // nombre d'entrées à afficher par page (entries per page)
+		$epp = 33; // nombre d'entrées à afficher par page (entries per page)
 		$nbPages = ceil($total/$epp); // calcul du nombre de pages $nbPages (on arrondit à l'entier supérieur avec la fonction ceil())
 		 
 		// Récupération du numéro de la page courante depuis l'URL avec la méthode GET
