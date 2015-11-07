@@ -27,6 +27,12 @@
 			$user = "secretsdelouise";
 			$mdp = "secretsdelouise33";
 			break;
+		default:
+			$localhost = "localhost";
+                        $dbname = "secretsdelouise";
+                        $user = "secretsdelouise";
+                        $mdp = "secretsdelouise33";
+                        break;
 	}
 	
 	define( "DBHOST", $localhost );

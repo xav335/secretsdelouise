@@ -1,5 +1,6 @@
 <?php require_once 'inc/inc.config.php';?>
 <?php 
+require './admin/classes/Catproduct.php';
 require 'admin/classes/utils.php';
 session_start();
 

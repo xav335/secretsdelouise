@@ -1,5 +1,6 @@
 <?
 	require_once 'inc/inc.config.php';
+	require './admin/classes/Catproduct.php';
 	require 'admin/classes/Panier.php';
 	require 'admin/classes/ContactCommande.php';
 	require 'admin/classes/utils.php';

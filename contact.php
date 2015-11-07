@@ -1,4 +1,5 @@
 <?php require_once 'inc/inc.config.php';
+require './admin/classes/Catproduct.php';
 session_start();
 ?>
 <!doctype html>
