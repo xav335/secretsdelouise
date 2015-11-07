@@ -117,18 +117,19 @@ if (!empty($_GET)){ //Modif
 					</div>
 					<div class="form-group" >
 						<label class="col-sm-2" for="titre">Rubrique :</label>
-							<?php 
-							if (!empty($resultRubrique)) {
+							<? 
+							if ( !empty( $resultRubrique ) ) {
 								$i=0;
-								foreach ($resultRubrique as $value) { 
-								$i++;
-								(!empty($rubriques) && in_array($value['id'], $rubriques)) ? $activ = 'checked' : $activ = '';
-								?>
-								
-								<?php echo $value['label'] ?>:<input type="checkbox"  name="rubriques[]" value="<?php echo $value['id'] ?>" <?php echo $activ ?> >&nbsp;
-								
-								<?php } ?>
-							<?php } ?>	
+								foreach ( $resultRubrique as $value ) {
+									
+									// ---- On ne prend pas en compte #1 ---- //
+									if ( $value['id'] != 1 ) {
+										$activ = ( !empty( $rubriques ) && in_array( $value['id'], $rubriques ) ) ? 'checked' : '';
+										echo $value['label'] . ":<input type='checkbox'  name='rubriques[]' value='" . $value['id'] . "' " . $activ . " >&nbsp;\n";
+									}
+								}
+							}
+							?>
 					</div>
 					<div class="form-group" >
 						<label class="col-sm-2" for="titre">Accord couleurs :</label>

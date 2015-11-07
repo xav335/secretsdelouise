@@ -100,14 +100,14 @@ if (! empty($_POST)) {
                 //print_r($password);exit;
                 if (!empty($password[0]['password'])) {
                     $_to = $_POST['email'];
-                    $sujet = "$mailNameCustomer - Recupération du compte";
+                    $sujet = MAIL_NAME_CUSTOMER . " - Recupération du compte";
                     $sujet = utf8_decode($sujet);
                     //echo "Envoi du message à " . $_to . "<br>";
         
-                    $entete = "From:$mailNameCustomer <$mailCustomer>\n";
+                    $entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";
                     $entete .= "MIME-version: 1.0\n";
                     $entete .= "Content-type: text/html; charset= iso-8859-1\n";
-                    $entete .= "Bcc: ". $mailBcc ."\n";
+                    $entete .= "Bcc: ". MAIL_BCC ."\n";
         
                     $corps = "";
                     $corps .= "Bonjour,<br>";

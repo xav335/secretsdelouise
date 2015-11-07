@@ -173,4 +173,12 @@
 		else
 			return false;
 	}
+	
+	// Affiche un tableau de manière structurée
+	function print_pre( $tab ) {
+		echo "<pre>";
+		print_r( $tab );
+		echo "</pre>";
+	}
+	
 ?>

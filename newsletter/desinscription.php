@@ -7,10 +7,10 @@ if (!empty($_POST)){
 	$contact->contactUnsubscribeNewsletter($_POST['email'], $_POST['message']);
 	$contact = null;
 	
-	$_to = $mailContact;
-	$sujet = "$mailNameCustomer - Desinscription Newsletter";
+	$_to = MAIL_CONTACT;
+	$sujet = MAIL_NAME_CUSTOMER . " - Desinscription Newsletter";
 	
-	$entete = "From:$mailNameCustomer <$mailCustomer>\n";
+	$entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";
 	$entete .= "MIME-version: 1.0\n";
 	$entete .= "Content-type: text/html; charset= iso-8859-1\n";
 	$entete .= "Bcc: fjavi.gonzalez@gmail.com,xav335@hotmail.com\n";
@@ -29,7 +29,7 @@ if (!empty($_POST)){
 <html class="no-js" lang="fr">
 <head>
 <meta charset="utf-8">
-<title><?php echo $mailNameCustomer?> newsletter désinscription</title>
+<title><?=MAIL_NAME_CUSTOMER?> newsletter désinscription</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>

@@ -1,5 +1,5 @@
-<?php include_once '../inc/inc.config.php'; ?>
-<?php
+<? include_once '../inc/inc.config.php'; ?>
+<?
 require 'classes/Catproduct.php';
 require 'classes/Panier.php';
 require 'classes/utils.php';
@@ -21,8 +21,8 @@ if (!empty($_POST)){
 				//print_r(stripslashes($_POST['product']));exit;
 			    $result = $catproduct->productGet($_POST['idproduit'], null, null, null, null,null);
 			    $produit = $result[0];
-			    $produit['fraisport']=$totalLiv;
-			    $produit['tva']=$tva;
+			    $produit[ 'fraisport' ] = FRAIS_LIVRAISON;
+			    $produit[ 'tva' ] = TVA;
 			   
 			    $_POST['product'] = serialize($produit);
 				$idsousref = $_POST['idsousref'];

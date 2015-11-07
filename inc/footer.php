@@ -1,13 +1,25 @@
-
+	<?
+	// ---- Liste des rubriques disponibles ------- //
+	if ( 1 == 1 ) {
+		$__rubrique = new Catproduct();
+		$liste_rubrique = $__rubrique->getRubriques();
+	}
+	// -------------------------------------------- //
+	?>
+	
 				<!-- Footer -->
 				<div class="row footer fullwidth">
 					<div class="row">
 						<div class="large-6 medium-6 columns">
 							<div>
-								<a href="categories.php?idrub=1">Promo !</a>
-								<a href="categories.php?idrub=2">Ventes flash</a>
-								<a href="categories.php?idrub=3">Nouveauté</a>
-								<a href="categories.php?idrub=4">Coup de cœur</a>
+								<?
+								if ( !empty( $liste_rubrique ) ) {
+									foreach( $liste_rubrique as $_rubrique ) {
+										if ( $_rubrique[ "id" ] != 1 )
+											echo "<a href='categories.php?idrub=" . $_rubrique[ "id" ]  . "'>" . $_rubrique[ "label" ]  . "</a>\n";
+									}
+								}
+								?>
 							</div>
 							<div class="contacts">
 								<a href="categories.php">Votre boutique</a>

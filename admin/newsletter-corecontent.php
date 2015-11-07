@@ -37,7 +37,7 @@ $corps = <<<EOD
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Newsletter $mailNameCustomer</title>
+<title>Newsletter <?=MAIL_NAME_CUSTOMER?></title>
 <style type="text/css">
 	
 	body {background: #fff;font-family:'PT Sans Narrow', sans-serif;}
@@ -91,7 +91,7 @@ EOD;
 }
 $corps .= <<<EOD
 
-					<a href="$facebookLink"><img  src="http://$urlSite/newsletter/fb.png" alt=""></a><br>
+					<a href="FACEBOOK_LINK"><img  src="http://$urlSite/newsletter/fb.png" alt=""></a><br>
 					<p>$bas_page</p>
 					<p class="bas">Si vous souhaitez vous désinscrire de cette newslettrer suivez le lien suivant : <a href="http://$urlSite/newsletter/desinscription.php?id=" >désinscription</a></p>
 					<img src="http://$urlSite/newsletter/track.php?id=XwXwXwXw" alt="">
@@ -110,8 +110,8 @@ if (empty($_GET['action']) && empty($_GET['postaction']) ) {
 
 //$corps = utf8_decode( $corps );
 
-$sujet = "$mailNameCustomer - Newsletter ";
-$entete = "From:$mailNameCustomer <$mailCustomer>\n";
+$sujet = MAIL_NAME_CUSTOMER . " - Newsletter ";
+$entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";
 $entete .= "MIME-version: 1.0\n";
 $entete .= "Content-type: text/html; charset= iso-8859-1\n";
 
@@ -121,8 +121,8 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 		<a href='javascript:history.back()'>retour</a>";
 	
 	//$_to = "fjavi.gonzalez@gmail.com";
-	$_to = $mailContact;
-	$entete .= "Bcc: ". $mailBcc ."\n";
+	$_to = MAIL_CONTACT;
+	$entete .= "Bcc: ". MAIL_BCC ."\n";
 	//echo "Envoi du message à " . $_to . "<br>";
 	$corpsCode = str_replace('XwXwXwXw', randomChar(), $corps);
 	//echo $corps;
@@ -130,10 +130,10 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 	//mail($_to, $sujet, stripslashes($corps), $entete);
 	///////////////////////////////////////////////////////////
 	////////////////ELASTIC MAIL ICONEO!!!!!!!!!!////////////
-	sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
-	sendElasticEmail("fjavi.gonzalez@gmail.com", $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
-	sendElasticEmail("xav335@hotmail.com", $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
-	sendElasticEmail("jav_gonz@yahoo.com", $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
+	sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), MAIL_CUSTOMER, MAIL_NAME_CUSTOMER );
+	sendElasticEmail("fjavi.gonzalez@gmail.com", $sujet, "", stripslashes($corpsCode), MAIL_CUSTOMER, MAIL_NAME_CUSTOMER );
+	sendElasticEmail("xav335@hotmail.com", $sujet, "", stripslashes($corpsCode), MAIL_CUSTOMER, MAIL_NAME_CUSTOMER );
+	sendElasticEmail("jav_gonz@yahoo.com", $sujet, "", stripslashes($corpsCode), MAIL_CUSTOMER, MAIL_NAME_CUSTOMER );
 	///////////////////////////////////////////////////////////
 	
 } elseif (!empty($_GET['postaction']) && $_GET['postaction']=='envoi') { 
@@ -155,7 +155,7 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 				//mail($_to, $sujet, stripslashes($corpsCode), $entete);
 				///////////////////////////////////////////////////////////
 				////////////////ELASTIC MAIL ICONEO!!!!!!!!!!////////////
-				sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), $mailCustomer, $mailNameCustomer);
+				sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), MAIL_CUSTOMER, MAIL_NAME_CUSTOMER );
 				///////////////////////////////////////////////////////////
 				error_log(date("Y-m-d H:i:s") ." envoi : OK : ". $value['email'] ."\n", 3, "newsletterspy.log");
 				//echo "envoi OK : ". $value['email'] ."<br>";

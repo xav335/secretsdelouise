@@ -1,41 +1,44 @@
-<?php include_once '../inc/inc.config.php'; ?>
-<?php include_once 'inc-auth-granted.php';?>
-<?php include_once 'classes/utils.php';?>
-<?php include_once 'classes/pagination.php';?>
-<?php 
-require 'classes/Catproduct.php';
-
-if (empty($_GET['actif'])) {
-    $actif=1; 
-} else {
-    $actif=0;
-}
-
-
-	if (!empty($_POST['rubrique'])){
-		$rub = $_POST['rubrique'];
+<?
+	include_once '../inc/inc.config.php';
+	include_once 'inc-auth-granted.php';
+	include_once 'classes/utils.php';
+	include_once 'classes/pagination.php';
+	require 'classes/Catproduct.php';
+	
+	if (empty($_GET[ "actif" ])) {
+	    $actif=1; 
 	} else {
-		if (!empty($_GET['rubrique'])){
-			$rub = $_GET['rubrique'];
+	    $actif=0;
+	}
+
+	if (!empty($_POST[ "rubrique" ])){
+		$rub = $_POST[ "rubrique" ];
+	} else {
+		if (!empty($_GET[ "rubrique" ])){
+			$rub = $_GET[ "rubrique" ];
 		} else {
 			$rub = null;
 		}
 	}
 
-	if (!empty($_POST['categorie'])){
-		$categ = $_POST['categorie'];
+	if (!empty($_POST[ "categorie" ])){
+		$categ = $_POST[ "categorie" ];
 	} else {
-		if (!empty($_GET['categorie'])){
-			$categ = $_GET['categorie'];
+		if (!empty($_GET[ "categorie" ])){
+			$categ = $_GET[ "categorie" ];
 		} else {
 			$categ = null;
 		}
 	}
 	//print_r($categ);
+	
 	try {
 		$catproduct = new Catproduct();
 		
-		$total = $catproduct->productNumberGet($categ,$rub,$actif);
+		//echo "--- categ : " . $categ . "<br>";
+		//echo "--- rub : " . $rub . "<br>";
+		//echo "--- actif : " . $actif . "<br>";
+		$total = $catproduct->productNumberGet( $categ, $rub, $actif, false );
 		//$result = $contact->contactGet(null, $offset, $count);
 		
 		$epp = 15; // nombre d'entrées à afficher par page (entries per page)
@@ -44,8 +47,8 @@ if (empty($_GET['actif'])) {
 		// Récupération du numéro de la page courante depuis l'URL avec la méthode GET
 		// S'il s'agit d'un nombre on traite, sinon on garde la valeur par défaut : 1
 		$current = 1;
-		if (isset($_GET['p']) && is_numeric($_GET['p'])) {
-			$page = intval($_GET['p']);
+		if (isset($_GET[ "p" ]) && is_numeric($_GET[ "p" ])) {
+			$page = intval($_GET[ "p" ]);
 			if ($page >= 1 && $page <= $nbPages) {
 				// cas normal
 				$current=$page;
@@ -62,7 +65,7 @@ if (empty($_GET['actif'])) {
 		$start = ($current * $epp - $epp);
 		
 		// Récupération des données à afficher pour la page courante
-		$result = $catproduct->productGet(null, $start, $epp, $categ, $rub,$actif);
+		$result = $catproduct->productGet( null, $start, $epp, $categ, $rub, $actif, false );
 		
 		$catproduct->catproduitViewIterative(null);
 		$catresult = $catproduct->tabView;
@@ -109,12 +112,12 @@ if (empty($_GET['actif'])) {
 					<?
 					foreach ($catresult as $value) { 
 						$decalage = "";
-						for ($i=0; $i<($value['level'] * 5); $i++) {
+						for ($i=0; $i<($value[ "level" ] * 5); $i++) {
 							$decalage .= "&nbsp;";
 						}
 						?>
-						<option value="<?php echo $value['id'] ?>" <? if ( $categ ==  $value['id'] ) { ?> selected <? } ?>>
-							<?=$decalage?><?php echo $value['label'] ?>
+						<option value="<?php echo $value[ "id" ] ?>" <? if ( $categ ==  $value[ "id" ] ) { ?> selected <? } ?>>
+							<?=$decalage?><?php echo $value[ "label" ] ?>
 						</option>
 						<?
 					}
@@ -130,8 +133,8 @@ if (empty($_GET['actif'])) {
 					<?
 					foreach ($rubresult as $value) { 
 						?>
-						<option value="<?php echo $value['id'] ?>" <? if ( $rub ==  $value['id'] ) { ?> selected <? } ?>>
-							<?php echo $value['label'] ?>
+						<option value="<?php echo $value[ "id" ] ?>" <? if ( $rub ==  $value[ "id" ] ) { ?> selected <? } ?>>
+							<?php echo $value[ "label" ] ?>
 						</option>
 						<?
 					}
@@ -160,6 +163,9 @@ if (empty($_GET['actif'])) {
 								Prix
 							</th>
 							<th class="col-md-1" style="">
+								Stock
+							</th>
+							<th class="col-md-1" style="">
 								Catégorie
 							</th>
 							<th class="col-md-1" style="">
@@ -176,58 +182,67 @@ if (empty($_GET['actif'])) {
 					</thead>
 					<tbody>
 						<?php 
-						if (!empty($result)) {
+						if ( !empty( $result) )  {
 							$i=0;
-							foreach ($result as $value) { 
-							$i++;
-								//Catégries
-								//print_r($value['categories']);
+							$produit = new Catproduct();
+							
+							foreach ( $result as $value ) { 
+								$i++;
+								//print_pre( $value );
+								
+								// ---- Stock restant ----------- //
+								$data_stock = $produit->getStockByProduit( $value[ "id" ], false );
+								//print_pre( $data_stock );
+								
+								//Catégories
+								//print_r($value[ "categories" ]);
 								$categs = '';
-								if (!empty($value['categories'])) {
-									foreach ($value['categories'] as $value2) {
-										$categs .= '- '. $value2['catlabel'] .' <br> ';
+								if (!empty($value[ "categories" ])) {
+									foreach ($value[ "categories" ] as $value2) {
+										$categs .= '- '. $value2[ "catlabel" ] .' <br> ';
 									}
 								} 
 								$rubs = '';
-								if (!empty($value['rubriques'])) {
-									foreach ($value['rubriques'] as $value2) {
-										$rubs .= '- '. $value2['rublabel'] .' <br> ';
+								if (!empty($value[ "rubriques" ])) {
+									foreach ($value[ "rubriques" ] as $value2) {
+										$rubs .= '- '. $value2[ "rublabel" ] .' <br> ';
 									}
 								}
 								$sousref = '';
-								if (!empty($value['sousref'])) {
-									foreach ($value['sousref'] as $value3) {
-										$sousref .= '- '. $value3['color'] .'-'. $value3['size'] .'='. $value3['stock'] .' <br> ';
+								if (!empty($value[ "sousref" ])) {
+									foreach ($value[ "sousref" ] as $value3) {
+										$sousref .= '- '. $value3[ "color" ] .'-'. $value3[ "size" ] .'='. $value3[ "stock" ] .' <br> ';
 									}
 								}
 							?>
 							<tr class="<?php if ($i%2!=0) echo 'info'?>">
-								<td><?php echo $value['reference']?></td>
-								<td><?php echo $value['label'] ?></td>
-								<td><?php echo $value['prix']?></td>
+								<td><?php echo $value[ "reference" ]?></td>
+								<td><?php echo $value[ "label" ] ?></td>
+								<td><?php echo $value[ "prix" ]?></td>
+								<td><?php echo $data_stock[ 0 ][ "stock" ]?></td>
 								<td><?php echo $categs?></td>
 								<td><?php echo $rubs?></td>
 								<td><?php echo $sousref?></td>
 								<td>
-									<a href="product-edit.php?id=<?php echo $value['id'] ?>&rubrique=<?php echo $rub ?>&categorie=<?php echo $categ ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a>
+									<a href="product-edit.php?id=<?php echo $value[ "id" ] ?>&rubrique=<?php echo $rub ?>&categorie=<?php echo $categ ?>"><img src="img/modif.png" width="30" alt="Modifier" ></a>
 									&nbsp;&nbsp;&nbsp;&nbsp;
-									<a href="product-sousref-edit.php?id=<?php echo $value['id'] ?>&rubrique=<?php echo $rub ?>&categorie=<?php echo $categ ?>"><img src="img/sr.png" width="30" alt="Modifier" ></a>
+									<a href="product-sousref-edit.php?id=<?php echo $value[ "id" ] ?>&rubrique=<?php echo $rub ?>&categorie=<?php echo $categ ?>"><img src="img/sr.png" width="30" alt="Modifier" ></a>
 									&nbsp;&nbsp;&nbsp;&nbsp;
 									<?php if ($actif==0):?>
-									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
-								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
+									<div style="display: none;" class="supp<?php echo $value[ "id" ]?> alert alert-warning alert-dismissible fade in" role="alert">
+								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value[ "id" ]?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
 								      <strong>Voulez vous réactiver ce produit ?</strong>
-								      <button type="button" class="btn btn-success" onclick="location.href='product-fp.php?reference=product&action=reactive&id=<?php echo $value['id'] ?>'">Oui !</button>
+								      <button type="button" class="btn btn-success" onclick="location.href='product-fp.php?reference=product&action=reactive&id=<?php echo $value[ "id" ] ?>'">Oui !</button>
 								 	</div>
-									<img src="img/check.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> 
+									<img src="img/check.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value[ "id" ]?>').css('display', 'block');"> 
 									
 									<?php else:?>
-									<div style="display: none;" class="supp<?php echo $value['id']?> alert alert-warning alert-dismissible fade in" role="alert">
-								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value['id']?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
+									<div style="display: none;" class="supp<?php echo $value[ "id" ]?> alert alert-warning alert-dismissible fade in" role="alert">
+								      <button type="button" class="close"  aria-label="Close" onclick="$('.supp<?php echo $value[ "id" ]?>').css('display', 'none');"><span aria-hidden="true">×</span></button>
 								      <strong>Voulez vous vraiment supprimer ?</strong>
-								      <button type="button" class="btn btn-danger" onclick="location.href='product-fp.php?reference=product&action=delete&id=<?php echo $value['id'] ?>'">Oui !</button>
+								      <button type="button" class="btn btn-danger" onclick="location.href='product-fp.php?reference=product&action=delete&id=<?php echo $value[ "id" ] ?>'">Oui !</button>
 								 	</div>
-									<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value['id']?>').css('display', 'block');"> 
+									<img src="img/del.png" width="20" alt="Supprimer" onclick="$('.supp<?php echo $value[ "id" ]?>').css('display', 'block');"> 
 									<?php endif;?>
 								</td>
 							</tr>

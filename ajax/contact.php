@@ -35,14 +35,14 @@ if ($_POST["action"] == "sendMail") {
 	}
 
 	//$_to = "fjavi.gonzalez@gmail.com";
-	$_to = $mailContact;
-	$sujet = "$mailNameCustomer - Contact Site";
+	$_to = MAIL_CONTACT;
+	$sujet = MAIL_NAME_CUSTOMER . " - Contact Site";
 	//echo "Envoi du message à " . $_to . "<br>";
 		
-	$entete = "From:$mailNameCustomer <$mailCustomer>\n";
+	$entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";
 	$entete .= "MIME-version: 1.0\n";
 	$entete .= "Content-type: text/html; charset= iso-8859-1\n";
-	$entete .= "Bcc: ". $mailBcc ."\n";
+	$entete .= "Bcc: ". MAIL_BCC ."\n";
 		
 	$corps = "";
 	$corps .= "Bonjour,<br>";

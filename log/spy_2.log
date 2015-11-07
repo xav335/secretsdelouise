@@ -1,0 +1,551 @@
+2015-11-05 20:43:45 : - Debut traitement.
+2015-11-05 20:43:45 : - 127.0.0.1
+2015-11-05 20:43:45 : - Req : cmd=_notify-validate&mc_gross=33.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=D3R3G2JPH8GM2&tax=4.67&address_street=36+route+de+Bordeaux&payment_date=11%3A43%3A41+Nov+05%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=33360&first_name=Christine&mc_fee=1.37&address_country_code=FR&address_name=Javier+Gonzalez&notify_version=3.8&custom=2%3B1%3B23.33%3B5.00%3B4.67&payer_status=verified&business=xav335%40hotmail.com&address_country=France&address_city=Latresne&quantity=1&verify_sign=ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m&payer_email=xavier%40iconeo.es&txn_id=06H75912KW848933K&payment_type=instant&payer_business_name=Christine+TENNENBAUM%27s+Test+Store&last_name=TENNENBAUM&address_state=&receiver_email=xav335%40hotmail.com&payment_fee=&receiver_id=PVHUN68DV2Y8N&txn_type=web_accept&item_name=Ma+commande+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&test_ipn=1&handling_amount=0.00&transaction_subject=2%3B1%3B23.33%3B5.00%3B4.67&payment_gross=&shipping=5.00&ipn_track_id=9248f3bb56286
+2015-11-05 20:43:46 : - Contenu POST :
+2015-11-05 20:43:46 : - Array
+(
+    [mc_gross] => 33.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => D3R3G2JPH8GM2
+    [tax] => 4.67
+    [address_street] => 36 route de Bordeaux
+    [payment_date] => 11:43:41 Nov 05, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33360
+    [first_name] => Christine
+    [mc_fee] => 1.37
+    [address_country_code] => FR
+    [address_name] => Javier Gonzalez
+    [notify_version] => 3.8
+    [custom] => 2;1;23.33;5.00;4.67
+    [payer_status] => verified
+    [business] => xav335@hotmail.com
+    [address_country] => France
+    [address_city] => Latresne
+    [quantity] => 1
+    [verify_sign] => ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m
+    [payer_email] => xavier@iconeo.es
+    [txn_id] => 06H75912KW848933K
+    [payment_type] => instant
+    [payer_business_name] => Christine TENNENBAUM's Test Store
+    [last_name] => TENNENBAUM
+    [address_state] => 
+    [receiver_email] => xav335@hotmail.com
+    [payment_fee] => 
+    [receiver_id] => PVHUN68DV2Y8N
+    [txn_type] => web_accept
+    [item_name] => Ma commande "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => 2;1;23.33;5.00;4.67
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 9248f3bb56286
+)
+
+2015-11-05 20:43:46 : - Validation HTTP : OK
+2015-11-05 20:43:46 : -> HTTP/1.1 200 OK
+
+2015-11-05 20:43:46 : -> Date: Thu, 05 Nov 2015 19:43:46 GMT
+
+2015-11-05 20:43:46 : -> Server: Apache
+
+2015-11-05 20:43:46 : -> X-Frame-Options: SAMEORIGIN
+
+2015-11-05 20:43:46 : -> Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=2yydksEJgEO_TvWQiq61aAsoKPz_l0h_mzz7YCD96pfrFiUhMOBSLINkNkJeQivF9-29YhePk8fTjjwABKlYrgL9zi-hrA5bClA16Z1pB7DNT3VcHfUcPbtNpC_sf8CPlIsFVr9K_A589PMvbm3BNKFgzaL6wWZU5jy96ZOZQ4qzOaqMfa6KzrPL-uPk9FDeSYPHdt38IkjI7HOEaqZAG2eucdQgObQGphu7pRHOM6C9PadnKSfqU6XTTtxPxV7WQ4MFHKzAa3OkffQ90HuSy43Hs_lJq87JteuncaTPb_lApO7D5Zhc5om0tywEGt1sneSJqWW4mBFIBjI1k2vU0a-Pw3u0sVkT3b9Z9CRVYil46z4e_qZl65dAAIuFpfV-0f26TU09dgpvgG7EDU6MSWsAiKKwlLOg2p_fSzfaY7Ig2y3hFixYciD4pc0; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:43:46 : -> Set-Cookie: cookie_check=yes; expires=Sun, 02-Nov-2025 19:43:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:43:46 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:43:46 : -> Set-Cookie: navlns=0.0; expires=Sat, 04-Nov-2017 19:43:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:43:46 : -> Set-Cookie: Apache=10.72.108.11.1446752626196320; path=/; expires=Sat, 28-Oct-45 19:43:46 GMT
+
+2015-11-05 20:43:46 : -> Vary: Accept-Encoding,User-Agent
+
+2015-11-05 20:43:46 : -> Connection: close
+
+2015-11-05 20:43:46 : -> Paypal-Debug-Id: 19974a132ac8d
+
+2015-11-05 20:43:46 : -> Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1924217686; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:43:46 : -> Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+
+2015-11-05 20:43:46 : -> Set-Cookie: Apache=10.72.128.11.1446752626174964; path=/; expires=Sat, 28-Oct-45 19:43:46 GMT
+
+2015-11-05 20:43:46 : -> Strict-Transport-Security: max-age=14400
+
+2015-11-05 20:43:46 : -> Content-Type: text/html; charset=UTF-8
+
+2015-11-05 20:43:46 : -> 
+
+2015-11-05 20:43:46 : -> VERIFIED
+2015-11-05 20:43:46 : - Transaction : OK 
+2015-11-05 20:43:46 : - Paiement statut : OK 
+2015-11-05 20:43:46 : - Transaction ID : OK 
+2015-11-05 20:43:46 : - Compte PayPal : OK 
+2015-11-05 20:44:10 : - Debut traitement.
+2015-11-05 20:44:10 : - 127.0.0.1
+2015-11-05 20:44:10 : - Req : cmd=_notify-validate&mc_gross=33.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=D3R3G2JPH8GM2&tax=4.67&address_street=36+route+de+Bordeaux&payment_date=11%3A43%3A41+Nov+05%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=33360&first_name=Christine&mc_fee=1.37&address_country_code=FR&address_name=Javier+Gonzalez&notify_version=3.8&custom=2%3B1%3B23.33%3B5.00%3B4.67&payer_status=verified&business=xav335%40hotmail.com&address_country=France&address_city=Latresne&quantity=1&verify_sign=ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m&payer_email=xavier%40iconeo.es&txn_id=06H75912KW848933K&payment_type=instant&payer_business_name=Christine+TENNENBAUM%27s+Test+Store&last_name=TENNENBAUM&address_state=&receiver_email=xav335%40hotmail.com&payment_fee=&receiver_id=PVHUN68DV2Y8N&txn_type=web_accept&item_name=Ma+commande+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&test_ipn=1&handling_amount=0.00&transaction_subject=2%3B1%3B23.33%3B5.00%3B4.67&payment_gross=&shipping=5.00&ipn_track_id=9248f3bb56286
+2015-11-05 20:44:11 : - Contenu POST :
+2015-11-05 20:44:11 : - Array
+(
+    [mc_gross] => 33.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => D3R3G2JPH8GM2
+    [tax] => 4.67
+    [address_street] => 36 route de Bordeaux
+    [payment_date] => 11:43:41 Nov 05, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33360
+    [first_name] => Christine
+    [mc_fee] => 1.37
+    [address_country_code] => FR
+    [address_name] => Javier Gonzalez
+    [notify_version] => 3.8
+    [custom] => 2;1;23.33;5.00;4.67
+    [payer_status] => verified
+    [business] => xav335@hotmail.com
+    [address_country] => France
+    [address_city] => Latresne
+    [quantity] => 1
+    [verify_sign] => ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m
+    [payer_email] => xavier@iconeo.es
+    [txn_id] => 06H75912KW848933K
+    [payment_type] => instant
+    [payer_business_name] => Christine TENNENBAUM's Test Store
+    [last_name] => TENNENBAUM
+    [address_state] => 
+    [receiver_email] => xav335@hotmail.com
+    [payment_fee] => 
+    [receiver_id] => PVHUN68DV2Y8N
+    [txn_type] => web_accept
+    [item_name] => Ma commande "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => 2;1;23.33;5.00;4.67
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 9248f3bb56286
+)
+
+2015-11-05 20:44:11 : - Validation HTTP : OK
+2015-11-05 20:44:12 : -> HTTP/1.1 200 OK
+
+2015-11-05 20:44:12 : -> Date: Thu, 05 Nov 2015 19:44:11 GMT
+
+2015-11-05 20:44:12 : -> Server: Apache
+
+2015-11-05 20:44:12 : -> X-Frame-Options: SAMEORIGIN
+
+2015-11-05 20:44:12 : -> Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=Wbpg_3KEdbtJ9JxkJXXOJ0qOIJ_pkhrHPWq3Ru-rr1_rw3vnpChYiygfIO0VSLjr7WYGO-NgHvymSdIG-V6nJTtUtv2ZBVNDmHL26PcpGOwvrzZ7xdzGEOtinygvCZLBsdif6dedsqb66l0v2obyCclJGV4qqQpBMwHDmHwO-Jd0xe5Yke9x9kO_gVI-9kMdWPdHSeVN_fhx07s9cxPJOJ-WtSFYEj42Y02Wab7ww9GQYnmzjU4pL5MSK4zuLU6785Gn_VFkpBrSYKgbRiTs5hs6J3X-v14JUZRpeu5oKIR8EYJ-GGLRoNldOYoKrgofcQ4OedkZpZi8q77wN7KsbKv2aiDw612jla7wtxczLTx28K2QyxR3FK4_IH5TRrbsSemOPzDYHxUSQS-THOpEu3C9upar7AOu-e6vNxacirz1ECRmjbz-Ri8Fgom; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:12 : -> Set-Cookie: cookie_check=yes; expires=Sun, 02-Nov-2025 19:44:11 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:12 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:12 : -> Set-Cookie: navlns=0.0; expires=Sat, 04-Nov-2017 19:44:11 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:12 : -> Set-Cookie: Apache=10.72.108.11.1446752651508842; path=/; expires=Sat, 28-Oct-45 19:44:11 GMT
+
+2015-11-05 20:44:12 : -> Vary: Accept-Encoding,User-Agent
+
+2015-11-05 20:44:12 : -> Connection: close
+
+2015-11-05 20:44:12 : -> Paypal-Debug-Id: eea09ce077f3d
+
+2015-11-05 20:44:12 : -> Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D2343648086; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:12 : -> Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+
+2015-11-05 20:44:12 : -> Set-Cookie: Apache=10.72.128.11.1446752651491078; path=/; expires=Sat, 28-Oct-45 19:44:11 GMT
+
+2015-11-05 20:44:12 : -> Strict-Transport-Security: max-age=14400
+
+2015-11-05 20:44:12 : -> Content-Type: text/html; charset=UTF-8
+
+2015-11-05 20:44:12 : -> 
+
+2015-11-05 20:44:12 : -> VERIFIED
+2015-11-05 20:44:12 : - Transaction : OK 
+2015-11-05 20:44:12 : - Paiement statut : OK 
+2015-11-05 20:44:12 : - Transaction ID : OK 
+2015-11-05 20:44:12 : - Compte PayPal : OK 
+2015-11-05 20:44:51 : - Debut traitement.
+2015-11-05 20:44:51 : - 127.0.0.1
+2015-11-05 20:44:51 : - Req : cmd=_notify-validate&mc_gross=33.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=D3R3G2JPH8GM2&tax=4.67&address_street=36+route+de+Bordeaux&payment_date=11%3A43%3A41+Nov+05%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=33360&first_name=Christine&mc_fee=1.37&address_country_code=FR&address_name=Javier+Gonzalez&notify_version=3.8&custom=2%3B1%3B23.33%3B5.00%3B4.67&payer_status=verified&business=xav335%40hotmail.com&address_country=France&address_city=Latresne&quantity=1&verify_sign=ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m&payer_email=xavier%40iconeo.es&txn_id=06H75912KW848933K&payment_type=instant&payer_business_name=Christine+TENNENBAUM%27s+Test+Store&last_name=TENNENBAUM&address_state=&receiver_email=xav335%40hotmail.com&payment_fee=&receiver_id=PVHUN68DV2Y8N&txn_type=web_accept&item_name=Ma+commande+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&test_ipn=1&handling_amount=0.00&transaction_subject=2%3B1%3B23.33%3B5.00%3B4.67&payment_gross=&shipping=5.00&ipn_track_id=9248f3bb56286
+2015-11-05 20:44:52 : - Contenu POST :
+2015-11-05 20:44:52 : - Array
+(
+    [mc_gross] => 33.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => D3R3G2JPH8GM2
+    [tax] => 4.67
+    [address_street] => 36 route de Bordeaux
+    [payment_date] => 11:43:41 Nov 05, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33360
+    [first_name] => Christine
+    [mc_fee] => 1.37
+    [address_country_code] => FR
+    [address_name] => Javier Gonzalez
+    [notify_version] => 3.8
+    [custom] => 2;1;23.33;5.00;4.67
+    [payer_status] => verified
+    [business] => xav335@hotmail.com
+    [address_country] => France
+    [address_city] => Latresne
+    [quantity] => 1
+    [verify_sign] => ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m
+    [payer_email] => xavier@iconeo.es
+    [txn_id] => 06H75912KW848933K
+    [payment_type] => instant
+    [payer_business_name] => Christine TENNENBAUM's Test Store
+    [last_name] => TENNENBAUM
+    [address_state] => 
+    [receiver_email] => xav335@hotmail.com
+    [payment_fee] => 
+    [receiver_id] => PVHUN68DV2Y8N
+    [txn_type] => web_accept
+    [item_name] => Ma commande "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => 2;1;23.33;5.00;4.67
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 9248f3bb56286
+)
+
+2015-11-05 20:44:52 : - Validation HTTP : OK
+2015-11-05 20:44:52 : -> HTTP/1.1 200 OK
+
+2015-11-05 20:44:52 : -> Date: Thu, 05 Nov 2015 19:44:52 GMT
+
+2015-11-05 20:44:52 : -> Server: Apache
+
+2015-11-05 20:44:52 : -> X-Frame-Options: SAMEORIGIN
+
+2015-11-05 20:44:52 : -> Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=5fq9EgESLV0aJaqqJs6TsxJCgOJR9gLwla_xGkEs0PrQtPrc2npVa2pve9FPGJzaVCyCXxX5QJn7dKWwPmpSnPeY0J32Pub6sEkP84ubGTKLeMTn32MBmlsfPYPLshYyXD0a-hMWYiFzSr4dcswoR7kQaBuAFZ2VTnDUey0QdG3ZDsORNOo3lWg6hsnN-AY6Vfv5zK-NF4R_JQO61MHGN4vWIJIt8lSHIIkt82aBh-U56WP5iBAlpQn8o6QijzCWZUEeuOyGzisor8sDqT_5tOIdS6SXkuvKCJ70RBFlrOjFF1UuzLDIcFQvm_NC1HQSuR1ZkCxhedFANtkaCw8mK-8Mh6MWQ2uvHJfKHInjG2STZr4Rght5AYkr_QcG55TDcdh9WNY5g79v1_MffV3CmVPtB403NGMME5fX-vrpLm2vV9GlTspaibmMSj8; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:52 : -> Set-Cookie: cookie_check=yes; expires=Sun, 02-Nov-2025 19:44:52 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:52 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:52 : -> Set-Cookie: navlns=0.0; expires=Sat, 04-Nov-2017 19:44:52 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:52 : -> Set-Cookie: Apache=10.72.108.11.1446752692227427; path=/; expires=Sat, 28-Oct-45 19:44:52 GMT
+
+2015-11-05 20:44:52 : -> Vary: Accept-Encoding,User-Agent
+
+2015-11-05 20:44:52 : -> Connection: close
+
+2015-11-05 20:44:52 : -> Paypal-Debug-Id: 7c39e7a832b78
+
+2015-11-05 20:44:52 : -> Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3031513942; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:44:52 : -> Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+
+2015-11-05 20:44:52 : -> Set-Cookie: Apache=10.72.128.11.1446752692207398; path=/; expires=Sat, 28-Oct-45 19:44:52 GMT
+
+2015-11-05 20:44:52 : -> Strict-Transport-Security: max-age=14400
+
+2015-11-05 20:44:52 : -> Content-Type: text/html; charset=UTF-8
+
+2015-11-05 20:44:52 : -> 
+
+2015-11-05 20:44:52 : -> VERIFIED
+2015-11-05 20:44:52 : - Transaction : OK 
+2015-11-05 20:44:52 : - Paiement statut : OK 
+2015-11-05 20:44:52 : - Transaction ID : OK 
+2015-11-05 20:44:52 : - Compte PayPal : OK 
+2015-11-05 20:45:40 : - Debut traitement.
+2015-11-05 20:45:40 : - 127.0.0.1
+2015-11-05 20:45:40 : - Req : cmd=_notify-validate&mc_gross=33.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=D3R3G2JPH8GM2&tax=4.67&address_street=36+route+de+Bordeaux&payment_date=11%3A43%3A41+Nov+05%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=33360&first_name=Christine&mc_fee=1.37&address_country_code=FR&address_name=Javier+Gonzalez&notify_version=3.8&custom=2%3B1%3B23.33%3B5.00%3B4.67&payer_status=verified&business=xav335%40hotmail.com&address_country=France&address_city=Latresne&quantity=1&verify_sign=ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m&payer_email=xavier%40iconeo.es&txn_id=06H75912KW848933K&payment_type=instant&payer_business_name=Christine+TENNENBAUM%27s+Test+Store&last_name=TENNENBAUM&address_state=&receiver_email=xav335%40hotmail.com&payment_fee=&receiver_id=PVHUN68DV2Y8N&txn_type=web_accept&item_name=Ma+commande+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&test_ipn=1&handling_amount=0.00&transaction_subject=2%3B1%3B23.33%3B5.00%3B4.67&payment_gross=&shipping=5.00&ipn_track_id=9248f3bb56286
+2015-11-05 20:45:40 : - Contenu POST :
+2015-11-05 20:45:40 : - Array
+(
+    [mc_gross] => 33.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => D3R3G2JPH8GM2
+    [tax] => 4.67
+    [address_street] => 36 route de Bordeaux
+    [payment_date] => 11:43:41 Nov 05, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33360
+    [first_name] => Christine
+    [mc_fee] => 1.37
+    [address_country_code] => FR
+    [address_name] => Javier Gonzalez
+    [notify_version] => 3.8
+    [custom] => 2;1;23.33;5.00;4.67
+    [payer_status] => verified
+    [business] => xav335@hotmail.com
+    [address_country] => France
+    [address_city] => Latresne
+    [quantity] => 1
+    [verify_sign] => ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m
+    [payer_email] => xavier@iconeo.es
+    [txn_id] => 06H75912KW848933K
+    [payment_type] => instant
+    [payer_business_name] => Christine TENNENBAUM's Test Store
+    [last_name] => TENNENBAUM
+    [address_state] => 
+    [receiver_email] => xav335@hotmail.com
+    [payment_fee] => 
+    [receiver_id] => PVHUN68DV2Y8N
+    [txn_type] => web_accept
+    [item_name] => Ma commande "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => 2;1;23.33;5.00;4.67
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 9248f3bb56286
+)
+
+2015-11-05 20:45:40 : - Validation HTTP : OK
+2015-11-05 20:45:41 : -> HTTP/1.1 200 OK
+
+2015-11-05 20:45:41 : -> Date: Thu, 05 Nov 2015 19:45:40 GMT
+
+2015-11-05 20:45:41 : -> Server: Apache
+
+2015-11-05 20:45:41 : -> X-Frame-Options: SAMEORIGIN
+
+2015-11-05 20:45:41 : -> Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=nVQonQw-Isry0rmQWvW9uzoxyuWTjryyTZB464KVNd21c5xdtKoIDMNgTOEUKpb3q2ArF5AA517LmddBaZTvOlvUJRBck0rSntmLbR1mVFyBENkRQ4V9dwK84WPNgwjIJ1Ll3XT7aOrcDOLebMowecDEol685VJMX7BqGrDgNBPPzHmO6t32YSOsdtqN9S4t1DwYVdqPomK7gHcP_rnW2XIbB4kcG9SI8XWmsit1kXCYopwUErTNzGENpCXXyWNGOH678LXCpjFJOu26RKvARleRWbWAb7-F07IKeq_mqyW-fKQHiVrhj1KJWMeHckQwDxGOk_bNqAildE-eVyFQoRkwDuhXsINza5I5xAUXgvVC2QjST1oqckTin177pWiUig9nTrrH4xjRjUaZDdxXAO55FTGETpCAhQHOIIyBwiyNJI2D4nf9a0ch9ny; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:45:41 : -> Set-Cookie: cookie_check=yes; expires=Sun, 02-Nov-2025 19:45:41 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:45:41 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:45:41 : -> Set-Cookie: navlns=0.0; expires=Sat, 04-Nov-2017 19:45:41 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:45:41 : -> Set-Cookie: Apache=10.72.108.11.1446752740737751; path=/; expires=Sat, 28-Oct-45 19:45:40 GMT
+
+2015-11-05 20:45:41 : -> Vary: Accept-Encoding,User-Agent
+
+2015-11-05 20:45:41 : -> Connection: close
+
+2015-11-05 20:45:41 : -> Paypal-Debug-Id: cf737254afe9b
+
+2015-11-05 20:45:41 : -> Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3836820310; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:45:41 : -> Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+
+2015-11-05 20:45:41 : -> Set-Cookie: Apache=10.72.128.11.1446752740720360; path=/; expires=Sat, 28-Oct-45 19:45:40 GMT
+
+2015-11-05 20:45:41 : -> Strict-Transport-Security: max-age=14400
+
+2015-11-05 20:45:41 : -> Content-Type: text/html; charset=UTF-8
+
+2015-11-05 20:45:41 : -> 
+
+2015-11-05 20:45:41 : -> VERIFIED
+2015-11-05 20:45:41 : - Transaction : OK 
+2015-11-05 20:45:41 : - Paiement statut : OK 
+2015-11-05 20:45:41 : - Transaction ID : OK 
+2015-11-05 20:45:41 : - Compte PayPal : OK 
+2015-11-05 20:47:05 : - Debut traitement.
+2015-11-05 20:47:05 : - 127.0.0.1
+2015-11-05 20:47:05 : - Req : cmd=_notify-validate&mc_gross=33.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=D3R3G2JPH8GM2&tax=4.67&address_street=36+route+de+Bordeaux&payment_date=11%3A43%3A41+Nov+05%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=33360&first_name=Christine&mc_fee=1.37&address_country_code=FR&address_name=Javier+Gonzalez&notify_version=3.8&custom=2%3B1%3B23.33%3B5.00%3B4.67&payer_status=verified&business=xav335%40hotmail.com&address_country=France&address_city=Latresne&quantity=1&verify_sign=ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m&payer_email=xavier%40iconeo.es&txn_id=06H75912KW848933K&payment_type=instant&payer_business_name=Christine+TENNENBAUM%27s+Test+Store&last_name=TENNENBAUM&address_state=&receiver_email=xav335%40hotmail.com&payment_fee=&receiver_id=PVHUN68DV2Y8N&txn_type=web_accept&item_name=Ma+commande+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&test_ipn=1&handling_amount=0.00&transaction_subject=2%3B1%3B23.33%3B5.00%3B4.67&payment_gross=&shipping=5.00&ipn_track_id=9248f3bb56286
+2015-11-05 20:47:05 : - Contenu POST :
+2015-11-05 20:47:05 : - Array
+(
+    [mc_gross] => 33.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => D3R3G2JPH8GM2
+    [tax] => 4.67
+    [address_street] => 36 route de Bordeaux
+    [payment_date] => 11:43:41 Nov 05, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33360
+    [first_name] => Christine
+    [mc_fee] => 1.37
+    [address_country_code] => FR
+    [address_name] => Javier Gonzalez
+    [notify_version] => 3.8
+    [custom] => 2;1;23.33;5.00;4.67
+    [payer_status] => verified
+    [business] => xav335@hotmail.com
+    [address_country] => France
+    [address_city] => Latresne
+    [quantity] => 1
+    [verify_sign] => ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m
+    [payer_email] => xavier@iconeo.es
+    [txn_id] => 06H75912KW848933K
+    [payment_type] => instant
+    [payer_business_name] => Christine TENNENBAUM's Test Store
+    [last_name] => TENNENBAUM
+    [address_state] => 
+    [receiver_email] => xav335@hotmail.com
+    [payment_fee] => 
+    [receiver_id] => PVHUN68DV2Y8N
+    [txn_type] => web_accept
+    [item_name] => Ma commande "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => 2;1;23.33;5.00;4.67
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 9248f3bb56286
+)
+
+2015-11-05 20:47:05 : - Validation HTTP : OK
+2015-11-05 20:47:06 : -> HTTP/1.1 200 OK
+
+2015-11-05 20:47:06 : -> Date: Thu, 05 Nov 2015 19:47:05 GMT
+
+2015-11-05 20:47:06 : -> Server: Apache
+
+2015-11-05 20:47:06 : -> X-Frame-Options: SAMEORIGIN
+
+2015-11-05 20:47:06 : -> Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=LxKWUESHEGPEzrpks6MCWJEI31SdwmrwqAZRzUXn2jWq1d0Dy2moqXZzyFv9PhIuZbzB5ajjMAONSwlw8Cey6_qy_IVSGaX7hMgRSD9uk1xXbjrwobPf8DwAqt5WpjdWNoXZYZUDXsLiV5ks5J88Lr22zD1Nuorcp82h8P0sc_O_2KWz4Lgq7DBYgH1Ae38wPNwzSyzrKZ5UKVRTIQcOywAnRq4hGM51L4RXbioLopgi_1MVLdHOBEGrAnjEkfQ1yFiOUGuE56Z3n335MszIjo7flULXi0wj_WfYf3JE0Ti51sd3hFMnGJu8x0RcdMQpjZrn2cycVgMYpk0qW-leXlcLa8mksAB8iUun6irrF1b4PAAqQMroLwFiK9iWzgevFO-Z-Porxh58f0RWwWztvoztYV5ktoPU_3bvgi-9YOuuTDX_rGg0h36w7ia; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:47:06 : -> Set-Cookie: cookie_check=yes; expires=Sun, 02-Nov-2025 19:47:06 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:47:06 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:47:06 : -> Set-Cookie: navlns=0.0; expires=Sat, 04-Nov-2017 19:47:06 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:47:06 : -> Set-Cookie: Apache=10.72.108.11.1446752825825112; path=/; expires=Sat, 28-Oct-45 19:47:05 GMT
+
+2015-11-05 20:47:06 : -> Vary: Accept-Encoding,User-Agent
+
+2015-11-05 20:47:06 : -> Connection: close
+
+2015-11-05 20:47:06 : -> Paypal-Debug-Id: ab6ef5a5c524c
+
+2015-11-05 20:47:06 : -> Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D967981910; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:47:06 : -> Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+
+2015-11-05 20:47:06 : -> Set-Cookie: Apache=10.72.128.11.1446752825807252; path=/; expires=Sat, 28-Oct-45 19:47:05 GMT
+
+2015-11-05 20:47:06 : -> Strict-Transport-Security: max-age=14400
+
+2015-11-05 20:47:06 : -> Content-Type: text/html; charset=UTF-8
+
+2015-11-05 20:47:06 : -> 
+
+2015-11-05 20:47:06 : -> VERIFIED
+2015-11-05 20:47:06 : - Transaction : OK 
+2015-11-05 20:47:06 : - Paiement statut : OK 
+2015-11-05 20:47:06 : - Transaction ID : OK 
+2015-11-05 20:47:06 : - Compte PayPal : OK 
+2015-11-05 20:49:48 : - Debut traitement.
+2015-11-05 20:49:48 : - 127.0.0.1
+2015-11-05 20:49:48 : - Req : cmd=_notify-validate&mc_gross=33.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=D3R3G2JPH8GM2&tax=4.67&address_street=36+route+de+Bordeaux&payment_date=11%3A43%3A41+Nov+05%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=33360&first_name=Christine&mc_fee=1.37&address_country_code=FR&address_name=Javier+Gonzalez&notify_version=3.8&custom=2%3B1%3B23.33%3B5.00%3B4.67&payer_status=verified&business=xav335%40hotmail.com&address_country=France&address_city=Latresne&quantity=1&verify_sign=ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m&payer_email=xavier%40iconeo.es&txn_id=06H75912KW848933K&payment_type=instant&payer_business_name=Christine+TENNENBAUM%27s+Test+Store&last_name=TENNENBAUM&address_state=&receiver_email=xav335%40hotmail.com&payment_fee=&receiver_id=PVHUN68DV2Y8N&txn_type=web_accept&item_name=Ma+commande+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&test_ipn=1&handling_amount=0.00&transaction_subject=2%3B1%3B23.33%3B5.00%3B4.67&payment_gross=&shipping=5.00&ipn_track_id=9248f3bb56286
+2015-11-05 20:49:49 : - Contenu POST :
+2015-11-05 20:49:49 : - Array
+(
+    [mc_gross] => 33.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => D3R3G2JPH8GM2
+    [tax] => 4.67
+    [address_street] => 36 route de Bordeaux
+    [payment_date] => 11:43:41 Nov 05, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33360
+    [first_name] => Christine
+    [mc_fee] => 1.37
+    [address_country_code] => FR
+    [address_name] => Javier Gonzalez
+    [notify_version] => 3.8
+    [custom] => 2;1;23.33;5.00;4.67
+    [payer_status] => verified
+    [business] => xav335@hotmail.com
+    [address_country] => France
+    [address_city] => Latresne
+    [quantity] => 1
+    [verify_sign] => ADAlj7qDik1WwaWXS17hYRxoWM2yAjukVynyo.J4PGS7w8QwqhezjG1m
+    [payer_email] => xavier@iconeo.es
+    [txn_id] => 06H75912KW848933K
+    [payment_type] => instant
+    [payer_business_name] => Christine TENNENBAUM's Test Store
+    [last_name] => TENNENBAUM
+    [address_state] => 
+    [receiver_email] => xav335@hotmail.com
+    [payment_fee] => 
+    [receiver_id] => PVHUN68DV2Y8N
+    [txn_type] => web_accept
+    [item_name] => Ma commande "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => 2;1;23.33;5.00;4.67
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 9248f3bb56286
+)
+
+2015-11-05 20:49:49 : - Validation HTTP : OK
+2015-11-05 20:49:49 : -> HTTP/1.1 200 OK
+
+2015-11-05 20:49:49 : -> Date: Thu, 05 Nov 2015 19:49:48 GMT
+
+2015-11-05 20:49:49 : -> Server: Apache
+
+2015-11-05 20:49:49 : -> Set-Cookie: Apache=10.72.108.11.1446752988933954; path=/; expires=Sat, 28-Oct-45 19:49:48 GMT
+
+2015-11-05 20:49:49 : -> Vary: Accept-Encoding,User-Agent
+
+2015-11-05 20:49:49 : -> Connection: close
+
+2015-11-05 20:49:49 : -> Content-Length: 54
+
+2015-11-05 20:49:49 : -> Paypal-Debug-Id: 6aa9d473dfd44
+
+2015-11-05 20:49:49 : -> Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3702668118; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-05 20:49:49 : -> Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+
+2015-11-05 20:49:49 : -> Set-Cookie: Apache=10.72.128.11.1446752988916542; path=/; expires=Sat, 28-Oct-45 19:49:48 GMT
+
+2015-11-05 20:49:49 : -> Strict-Transport-Security: max-age=14400
+
+2015-11-05 20:49:49 : -> Content-Type: text/html; charset=ISO-8859-1
+
+2015-11-05 20:49:49 : -> 
+
+2015-11-05 20:49:49 : -> <html>
+
+2015-11-05 20:49:49 : -> <body>
+
+2015-11-05 20:49:49 : -> Fatal Failure <br>
+
+2015-11-05 20:49:49 : -> </body>
+
+2015-11-05 20:49:49 : -> </html>
+
+2015-11-05 20:49:49 : ----------- FIN TRAITEMENT ----------- 
+2015-11-05 20:49:49 : - Commande annulee

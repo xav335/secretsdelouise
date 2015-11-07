@@ -92,8 +92,8 @@ $panier =null;
 								</tr>
 								<?php 
                                 endforeach;
-                                $totalTVA = ($totalTTC*$tva)/(1+$tva);
-                                $totalHT = $totalTVA/$tva;
+                                $totalTVA = ( $totalTTC * TVA ) / ( 1 + TVA );
+                                $totalHT = $totalTVA / TVA;
                                 ?>
 							</tbody>
 							<tfoot>
