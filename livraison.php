@@ -149,7 +149,8 @@
 	//$type_champ = ( $debug_paypal ) ? "text" : "hidden";
 	$type_champ = "hidden";
 	$target = ( $debug_paypal ) ? "target='_blank'" : "";
-	$custom = $id_commande . ";" . $_SESSION[ "id_contact" ] . ";" . number_format( $totalHT, 2 ) . ";" . number_format( $frais_livraison, 2 ) . ";" . number_format( $totalTVA, 2 )
+	$custom = $id_commande . ";" . $_SESSION[ "id_contact" ] . ";" . number_format( $totalHT, 2 ) . ";" . number_format( $frais_livraison, 2 ) . ";" . number_format( $totalTVA, 2 );
+	$item_name = 'Commande No.' . $id_commande . ' "les secrets de Louise"';
 ?>
 
 <!doctype html>
@@ -263,7 +264,7 @@
 					<input type="<?=$type_champ?>" name="tax" value="<?=number_format( $totalTVA, 2, '.', ' ' )?>" />
 					<input type="<?=$type_champ?>" name="cmd" value="_xclick" />
 					<input type="<?=$type_champ?>" name="business" value="<?=$business_code?>" />
-					<input type="<?=$type_champ?>" name="item_name" value='Ma commande "les secrets de Louise"' />
+					<input type="<?=$type_champ?>" name="item_name" value='<?=$item_name?>' />
 					<input type="<?=$type_champ?>" name="no_note" value="1" />
 					<input type="<?=$type_champ?>" name="lc" value="FR" />
 					<input type="<?=$type_champ?>" name="bn" value="PP-BuyNowBF" />
