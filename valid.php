@@ -32,8 +32,8 @@
 	
 	$mail_paypal = ( $_SERVER[ "DOCUMENT_ROOT" ] == "/var/www/lessecretsdelouise.com" )
 		? "bijoux.secretsdelouise@gmail.com"
-		: "xav335@hotmail.com";
-	$mail_paypal = "xav335@hotmail.com";
+		: "bijoux.secretsdelouise@gmail.com";
+	//$mail_paypal = "bijoux.secretsdelouise@gmail.com";
 	
 	$fic_log = "spy_" . $id_commande . ".log";
 	$commande_ok = false;

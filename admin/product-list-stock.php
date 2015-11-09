@@ -38,7 +38,7 @@ require 'classes/Catproduct.php';
 		<div class="row">
 				<form name="formulaire" class="form-horizontal" method="GET"  action="product-list-stock.php" >
 				<div class="col-md-3">	
-					<label>Indiquez le stock des sous réferences:</label>
+					<label>Indiquez le stock des sous rÃ©ferences:</label>
 				</div>
 				<div class="col-md-2">		
 					 <input type="number" step="1" name="stock" required value="<?php echo $stock?>">

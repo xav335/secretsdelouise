@@ -145,7 +145,7 @@
 		? "https://www.sandbox.paypal.com/cgi-bin/webscr"
 		: "#";
 
-	$business_code = ( $debug_paypal ) ? "xav335@hotmail.com" : "bijoux.secretsdelouise@gmail.com";
+	$business_code = ( $debug_paypal ) ? "bijoux.secretsdelouise@gmail.com" : "bijoux.secretsdelouise@gmail.com";
 	//$type_champ = ( $debug_paypal ) ? "text" : "hidden";
 	$type_champ = "hidden";
 	$target = ( $debug_paypal ) ? "target='_blank'" : "";
