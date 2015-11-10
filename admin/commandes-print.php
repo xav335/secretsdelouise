@@ -68,10 +68,11 @@
 	        // ---- Traitement du panier --------------------------- //
 	        if ( ! empty( $liste_article[ "panier" ] ) ) {
 	            $contenu_tableau = '';
-	            
+
 	            foreach ( $liste_article[ "panier" ] as $_article ) {
 					$contenu_tableau .= "<tr align='left' valign='top'>\n";
 					$contenu_tableau .= "	<td bgcolor='#FFFFFF'><b>" . $_article[ "label" ] . "</b></td>\n";
+					$contenu_tableau .= "	<td bgcolor='#FFFFFF'><b>" . $_article[ "reference" ] ." / ". $_article[ "sousref" ] . "</b></td>\n";
 					$contenu_tableau .= "	<td bgcolor='#FFFFFF'><b>" . $_article[ "size" ] . "</b></td>\n";
 					$contenu_tableau .= "	<td bgcolor='#FFFFFF'><b>" . $_article[ "color" ] . "</b></td>\n";
 					$contenu_tableau .= "	<td bgcolor='#FFFFFF'><b>" . $_article[ "quantite" ] . "</b></td>\n";
@@ -122,10 +123,10 @@
 					<td class="td_normal" width="30%">
 						<p>
 							<img src="img/logo.png" width="320"><br><br>
-							26 avenue Gambetta 
+							www.lessecretsdelouise.com     <br><br>
+							clients@lessecretsdelouise.com <br>
 						</p>
-						<p>33120 ARCACHON</p>
-						<p>T&eacute;l. : 09.67.44.38.98</p>
+						<p>T&eacute;l. : 05.57.52.24.99</p>
 						<p>Mode de paiement : Paypal CB</p>
 					</td>
 					<td class="td_normal" width=10>&nbsp;</td>
@@ -153,7 +154,7 @@
 						</table>
 						<br>
 						
-						<table cellpadding=0 cellspacing=0  width="100%"  border="1" bordercolor="#000000">
+						<table cellpadding=3 cellspacing=0  width="100%"  border="1" bordercolor="#000000">
 						<tr>
 							<td align="center" class="td_normal">Adresse de facturation</td>
 							<td align="center" class="td_normal">Adresse de livraison</td>
@@ -189,12 +190,13 @@
 		<tr>
 			<td class="td_normal">
 				
-				<table width="100%" border="0" align="left" cellpadding="10" >
+				<table width="100%" border="0" align="left" cellpadding="0" >
 				<tr>
 					<td align="left" valign="top" id="texte3_blanc">
 						<table width="100%" border="1" cellpadding="5" cellspacing="0" bordercolor="B9133C" id="texte2">
 						<tr align="left" valign="middle">
 							<td height="30" class="entete_panier">Désignation</td>
+							<td height="30" class="entete_panier">Réf.</td>
 							<td height="30" class="entete_panier">Taille</td>
 							<td height="30" class="entete_panier">Coloris</td>
 							<td height="30" class="entete_panier">Qté.</td>
@@ -210,10 +212,12 @@
 							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
+							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td colspan="2" bgcolor="#FFFFFF"><b>Montant total</b></td>
 							<td id="fond_rouge" align="right"><span id="texte2_blanc"><?=number_format( $totalTTC, 2 ) ?></span></td>
 						</tr>
 						<tr align="left" valign="top"> 
+							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
@@ -224,10 +228,12 @@
 							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
+							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td colspan="2" bgcolor="#FFFFFF"><b>Dont TVA <?=$taux_tva?>%</b></td>
 							<td id="fond_rouge" align="right"><span id="texte2_blanc"><?=number_format( $totalTVA, 2 ) ?></span></td>
 						</tr>
 						<tr align="left" valign="top"> 
+							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
 							<td bgcolor="#FFFFFF">&nbsp;</td>
@@ -275,20 +281,27 @@
 		</tr>
 		<tr>
 			<td class="td_normal">
-				<table cellpadding=0 cellspacing=0  width="100%"  border="1" bordercolor="#000000">
-					<tr>
-						<td class="td_normal">Entreprise individuelle - SIRET 22222222222 </td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-		<tr>
-			<td class="td_normal">
 				<br><p>Madame, Monsieur,<br>
 				Nous vous remercions de votre commande et esp&eacute;rons qu'elle vous donnera toute satisfaction.
 				</p>
 			</td>
 		</tr>
+		<tr>
+			<td class="td_normal">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="td_normal">
+				<table cellpadding=3 cellspacing=0  width="100%"  border="1" bordercolor="#000000">
+					<tr>
+						<td class="td_normal">LSL e-services, SAS au capital de 1000 euros, inscrite au RCS de Bordeaux 799 399 936,<br>
+						12 bis, cours Héricart de Thury 33120 ARCACHON - SIRET : 799 399 936 00019 - <br> APE : 4778C - TVA : FR 47799399936.
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		
 		<tr>
 			<td class="td_normal">&nbsp;</td>
 		</tr>
