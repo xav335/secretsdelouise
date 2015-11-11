@@ -194,23 +194,37 @@ class Panier extends StorageManager {
 	   
 	}
 	
-	public function getAllCommandes($statut_commande){
+	public function getAllCommandes( $statut_commande, $all=false, $debug=false ){
 		$this->dbConnect();
+		$new_array = null;
 		
 		$sql = "SELECT * FROM commande";
-		$sql.= " WHERE transaction_id != ''";
+		$sql .= " WHERE id > 0 ";
 		
-		if ( !empty( $statut_commande ) )
-			$sql.= " AND commande.statut_commande='". $statut_commande ."' " ;
-
+		if ( !empty( $statut_commande ) ) $sql.= " AND commande.statut_commande='" . $statut_commande . "' " ;
+		else {
+			
+			// ---- Toutes les commandes ----------- //
+			if ( $all ) {
+				$sql .= " AND ( commande.statut_commande > '0' " ;
+				$sql .= " OR transaction_id != '' ) ";
+			}
+			
+			
+			// ---- Commandes NON abouties --------- //
+			else {
+				$sql .= " AND commande.statut_commande = '0' " ;
+				$sql .= " AND transaction_id = '' ";
+			}
+		}
+		
 		$sql.= "ORDER BY commande.date_ajout DESC;";
-		
-		$new_array = null;
-		$result = mysqli_query($this->mysqli,$sql);
-		if (!$result) {
+		if ( $debug ) echo $sql . "<br>";
+		$result = mysqli_query( $this->mysqli, $sql );
+		if ( !$result ) {
 			throw new Exception('Erreur Mysql Panier.getAllCommandes sql = : '.$sql);
 		}
-		while(($row = mysqli_fetch_assoc($result)) != false){
+		while( ( $row = mysqli_fetch_assoc( $result)) != false){
 			$new_array[] = $row;
 		}
 		
@@ -218,28 +232,27 @@ class Panier extends StorageManager {
 		return $new_array;
 	}
 	
-	public function getCommandesByContact($id_contact,$statut_commande){
-	  $this->dbConnect();
+	public function getCommandesByContact( $id_contact, $debug=false ){
+		$this->dbConnect();
+		$new_array = null;
+		
+		$sql = "SELECT * FROM commande";
+		$sql .= " WHERE id > 0 ";
+		$sql .= " AND commande.id_contact = " . $id_contact;
+		$sql .= " AND ( commande.statut_commande >= '1' OR transaction_id != '' )" ;
+		$sql .= " ORDER BY commande.date_ajout DESC;";
 	
-	  $sql = "SELECT *
-				FROM commande ";
-	
-	  if (!empty($statut_commande)) {
-	    $sql.= "WHERE commande.id_contact=". $id_contact ." AND commande.statut_commande='". $statut_commande ."' " ;
-	  }
-	  $sql.= "ORDER BY commande.date_ajout DESC;";
-	
-	  $new_array = null;
-	  $result = mysqli_query($this->mysqli,$sql);
-	  if (!$result) {
-	    throw new Exception('Erreur Mysql Panier.getCommandesByContact sql = : '.$sql);
-	  }
-	  while(($row = mysqli_fetch_assoc($result)) != false){
-	    $new_array[] = $row;
-	  }
-	
-	  $this->dbDisConnect();
-	  return $new_array;
+		if ( $debug ) echo $sql . "<br>";
+		$result = mysqli_query($this->mysqli,$sql);
+		if (!$result) {
+			throw new Exception('Erreur Mysql Panier.getCommandesByContact sql = : '.$sql);
+		}
+		while(($row = mysqli_fetch_assoc($result)) != false){
+			$new_array[] = $row;
+		}
+		
+		$this->dbDisConnect();
+		return $new_array;
 	}
 	
 	public function getCommandes( $id_commande, $debug=false ){

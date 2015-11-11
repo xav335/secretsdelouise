@@ -29,10 +29,10 @@
 			break;
 		default:
 			$localhost = "localhost";
-                        $dbname = "secretsdelouise";
-                        $user = "secretsdelouise";
-                        $mdp = "secretsdelouise33";
-                        break;
+			$dbname = "secretsdelouise";
+			$user = "secretsdelouise";
+			$mdp = "secretsdelouise33";
+			break;
 	}
 	
 	define( "DBHOST", $localhost );
@@ -40,16 +40,17 @@
 	define( "DBUSER", $user );
 	define( "DBPASSWD", $mdp );
 	
-	define( "TVA", 0.2 );
-	define( "FRAIS_LIVRAISON", 5 ); 	// Frais de livraison TTC
-	define( "SEUIL_FDL_GRATOS", 100 );	// Frais de port gratuits au delà de x€
+	define( "TVA", 				0.2 );
+	define( "FRAIS_LIVRAISON", 	5 ); 		// Frais de livraison TTC
+	define( "SEUIL_FDL_GRATOS", 40.83 );	// Frais de port gratuits au delà de 49€ TTC
 	
-	define( "MAIL_CUSTOMER", "contact@lessecretsdelouise.com" );
-	define( "MAIL_NAME_CUSTOMER", "LesSecretsDeLouise" );
-	define( "URL_SITE_DEFAULT", "http://www.lessecretsdelouise.com/" );
-	define( "FACEBOOK_LINK", "https://www.facebook.com/lessecretsdelouise" );
+	define( "MAIL_TEST", 			"xav335@hotmail.com" );				// Si vide alors les mails partent vers les bons destinataires!!!
+	define( "MAIL_CUSTOMER", 		"contact@lessecretsdelouise.com" );
+	define( "MAIL_NAME_CUSTOMER", 	"LesSecretsDeLouise" );
+	define( "URL_SITE_DEFAULT", 	"http://www.lessecretsdelouise.com/" );
+	define( "FACEBOOK_LINK", 		"https://www.facebook.com/lessecretsdelouise" );
 	
 	// Mail d'envoi
 	define( "MAIL_CONTACT", "fjavi.gonzalez@gmail.com" );
-	define( "MAIL_BCC", "xav335@hotmail.com,xavier.gonzalez@laposte.net,jav_gonz@yahoo.com" );
+	define( "MAIL_BCC", 	"xav335@hotmail.com,xavier.gonzalez@laposte.net,jav_gonz@yahoo.com" );
 ?>

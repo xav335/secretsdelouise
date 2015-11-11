@@ -35,7 +35,9 @@ if ($_POST["action"] == "sendMail") {
 	}
 
 	//$_to = "fjavi.gonzalez@gmail.com";
-	$_to = MAIL_CONTACT;
+	$_to = ( MAIL_TEST != '' )
+    	? MAIL_TEST
+    	: MAIL_CONTACT;
 	$sujet = MAIL_NAME_CUSTOMER . " - Contact Site";
 	//echo "Envoi du message à " . $_to . "<br>";
 		

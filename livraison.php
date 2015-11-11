@@ -72,7 +72,7 @@
 			if ( !empty( $liste_article ) ) {
 				$totalTTC = 0;
 				$extraLiv = 0;
-			    $frais_livraison = 0;
+			    $frais_livraison = FRAIS_LIVRAISON;
 			    $contenu_tableau = '';
 			    
                 foreach ( $liste_article as $_article ) {
@@ -101,7 +101,7 @@
 				}
 				
 				$totalTVA = ( $totalTTC * TVA ) / ( 1 + TVA );
-				$totalHT = $totalTVA / TVA;
+				$totalHT = number_format( $totalTVA / TVA, 2 );
 				$frais_livraison += $extraLiv;
 			}
 			// --------------------------------------------------------------------------------- //
@@ -112,7 +112,7 @@
 				$data_commande[ "divers" ][ "seuil_fdl_gratos" ] = SEUIL_FDL_GRATOS;
 				$data_commande[ "divers" ][ "frais_livraison_calcule" ] = $frais_livraison;
 				
-				if ( $totalTTC >= SEUIL_FDL_GRATOS ) $frais_livraison = 0;
+				if ( $totalHT >= SEUIL_FDL_GRATOS ) $frais_livraison = 0;
 				$data_commande[ "divers" ][ "frais_livraison_pratique" ] = $frais_livraison;
 				$totalTTCLIV = $totalTTC + $frais_livraison;
 				

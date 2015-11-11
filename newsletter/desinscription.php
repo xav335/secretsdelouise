@@ -7,7 +7,9 @@ if (!empty($_POST)){
 	$contact->contactUnsubscribeNewsletter($_POST['email'], $_POST['message']);
 	$contact = null;
 	
-	$_to = MAIL_CONTACT;
+	$_to = ( MAIL_TEST != '' )
+    	? MAIL_TEST
+    	: MAIL_CONTACT;
 	$sujet = MAIL_NAME_CUSTOMER . " - Desinscription Newsletter";
 	
 	$entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";

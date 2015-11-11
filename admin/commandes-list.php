@@ -4,12 +4,19 @@
 	include_once 'classes/utils.php';
 	require 'classes/Panier.php';
 	
-	(!empty($_GET[ "statutCommande" ])) ? $statutCommande= $_GET[ "statutCommande" ] : $statutCommande = null;
+	$debug = false;
+	$statutCommande = ( !empty( $_GET[ "statutCommande" ] ) ) ? $_GET[ "statutCommande" ] : null;
+	$all = ( $_GET[ "all" ] != '' )
+		? ( ( $_GET[ "all" ] == 1 ) ? true : false )
+		: '';
+	
+	//echo "--- statutCommande : " . $statutCommande . "<br>";
+	//echo "--- transaction_id : " . $transaction_id . "<br>";
 	
 	try {
 		$panier = new Panier();
-		$result = $panier->getAllCommandes($statutCommande);
-		//print_r($result);
+		$result = $panier->getAllCommandes( $statutCommande, $all, $debug );
+		//print_pre( $result );
 		
 		if (empty($result)) {
 			$message = 'Aucun enregistrements';

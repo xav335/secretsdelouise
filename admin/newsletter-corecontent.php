@@ -121,7 +121,9 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 		<a href='javascript:history.back()'>retour</a>";
 	
 	//$_to = "fjavi.gonzalez@gmail.com";
-	$_to = MAIL_CONTACT;
+	$_to =$_to = ( MAIL_TEST != '' )
+    	? MAIL_TEST
+    	: MAIL_CONTACT;
 	$entete .= "Bcc: ". MAIL_BCC ."\n";
 	//echo "Envoi du message à " . $_to . "<br>";
 	$corpsCode = str_replace('XwXwXwXw', randomChar(), $corps);
@@ -145,7 +147,9 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 	//print_r($result);
 	if (!empty($result)) {
 		foreach ($result as $value) {
-			$_to = $value['email'];
+			$_to = ( MAIL_TEST != '' )
+		    	? MAIL_TEST
+		    	: $value['email'];
 			$regex = '#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
 			if (preg_match( $regex, $_to)) {
 				$codeRandom =randomChar();

@@ -41,7 +41,9 @@ if (! empty($_POST)) {
                 $contact = null;
                 //print_r($password);exit;
                 if (!empty($password[0]['password'])) {
-                    $_to = $_POST['email'];
+                    $_to = ( MAIL_TEST != '' )
+				    	? MAIL_TEST
+				    	: $_POST['email'];
                     $sujet = MAIL_NAME_CUSTOMER . " - Recupération du compte";
                     $sujet = utf8_decode($sujet);
                     //echo "Envoi du message à " . $_to . "<br>";

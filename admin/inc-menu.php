@@ -31,10 +31,12 @@
 					        <li class="dropdown">
 					          	<a href="commandes-list.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Commandes<span class="caret"></span></a>
 					          	<ul class="dropdown-menu" role="menu">
-					            	<li><a href="/admin/commandes-list.php">Toutes les commandes</a></li>
+					            	<li><a href="/admin/commandes-list.php?all=1">Toutes les commandes</a></li>
 					            	<li><a href="/admin/commandes-list.php?statutCommande=1">Commandes à traiter</a></li>
 					            	<li><a href="/admin/commandes-list.php?statutCommande=2">Commandes à livrer</a></li>
 					            	<li><a href="/admin/commandes-list.php?statutCommande=3">Commandes Traitées & livrées</a></li>
+					            	<li><hr></li>
+					            	<li><a href="/admin/commandes-list.php">Commandes non abouties</a></li>
 					          	</ul>
 					        </li>
 	           				<li class="dropdown">

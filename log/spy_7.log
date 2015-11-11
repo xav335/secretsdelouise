@@ -1,0 +1,94 @@
+2015-11-09 15:52:43 : - Debut traitement.
+2015-11-09 15:52:43 : - 127.0.0.1
+2015-11-09 15:52:43 : - Req : cmd=_notify-validate&mc_gross=29.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=D3R3G2JPH8GM2&tax=4.00&address_street=36+route+de+Bordeaux&payment_date=06%3A52%3A39+Nov+09%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=33360&first_name=Christine&mc_fee=1.24&address_country_code=FR&address_name=Javier+Gonzalez&notify_version=3.8&custom=7%3B1%3B20.00%3B5.00%3B4.00&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=Latresne&quantity=1&verify_sign=AzAi.J4SFCBUyNiiSIwTEoUMSTIMAFLCVHySc3yUqvJ0Dx76wzpIOPNJ&payer_email=xavier%40iconeo.es&txn_id=6A9570170H878513E&payment_type=instant&payer_business_name=Christine+TENNENBAUM%27s+Test+Store&last_name=TENNENBAUM&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=NRBY4RCQWLHPJ&txn_type=web_accept&item_name=Commande+No.7+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&test_ipn=1&handling_amount=0.00&transaction_subject=7%3B1%3B20.00%3B5.00%3B4.00&payment_gross=&shipping=5.00&ipn_track_id=f43e303cc3065
+2015-11-09 15:52:44 : - Contenu POST :
+2015-11-09 15:52:44 : - Array
+(
+    [mc_gross] => 29.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => D3R3G2JPH8GM2
+    [tax] => 4.00
+    [address_street] => 36 route de Bordeaux
+    [payment_date] => 06:52:39 Nov 09, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33360
+    [first_name] => Christine
+    [mc_fee] => 1.24
+    [address_country_code] => FR
+    [address_name] => Javier Gonzalez
+    [notify_version] => 3.8
+    [custom] => 7;1;20.00;5.00;4.00
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => Latresne
+    [quantity] => 1
+    [verify_sign] => AzAi.J4SFCBUyNiiSIwTEoUMSTIMAFLCVHySc3yUqvJ0Dx76wzpIOPNJ
+    [payer_email] => xavier@iconeo.es
+    [txn_id] => 6A9570170H878513E
+    [payment_type] => instant
+    [payer_business_name] => Christine TENNENBAUM's Test Store
+    [last_name] => TENNENBAUM
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => NRBY4RCQWLHPJ
+    [txn_type] => web_accept
+    [item_name] => Commande No.7 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => 7;1;20.00;5.00;4.00
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => f43e303cc3065
+)
+
+2015-11-09 15:52:44 : - Validation HTTP : OK
+2015-11-09 15:52:45 : -> HTTP/1.1 200 OK
+
+2015-11-09 15:52:45 : -> Date: Mon, 09 Nov 2015 14:52:44 GMT
+
+2015-11-09 15:52:45 : -> Server: Apache
+
+2015-11-09 15:52:45 : -> X-Frame-Options: SAMEORIGIN
+
+2015-11-09 15:52:45 : -> Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=blJI8VJx39Wy9fDIHM02k-JJOeGZZG1Rv6Dkmuy5zkxXOI5T-8iEkP0yDDT6X4wikrf0qIMBYIcBySSOIzD2IyHuUOvwhIXAO6AH0pHTSjRPjsvqS7mmwoQE3Wr2NVBiUS6p5KLLdiWFtwQKnG1srUcSrtSCuJKD9CNy4NfWlLeITTdNgAWlawSXK_w-xOFwSag2TW8HRShEPkJ93J3eRYwRMN3dWtUOl1VMrn4CFGC5FuhQzNutVVF5TkTDJmHFI0Dasf0oft_8Qa8weVCpKntIJR0sTDy15kQ4D6mM_-jHJVE5VHxhZXGWIQx-A0BDkn2PGqkaAkI0w1oyFIVVUSVG4LXBwAhfE7JA4UbLew1_6NN7vj4BjnCOA0q0Zj9yVbCxuQPM6m_HG8nJw8FlPXU7D06mSE7qYJIrSnZsaJk0fJbqsnfws71h33W; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-09 15:52:45 : -> Set-Cookie: cookie_check=yes; expires=Thu, 06-Nov-2025 14:52:44 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-09 15:52:45 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-09 15:52:45 : -> Set-Cookie: navlns=0.0; expires=Wed, 08-Nov-2017 14:52:44 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-09 15:52:45 : -> Set-Cookie: Apache=10.72.108.11.1447080764503516; path=/; expires=Wed, 01-Nov-45 14:52:44 GMT
+
+2015-11-09 15:52:45 : -> Vary: Accept-Encoding,User-Agent
+
+2015-11-09 15:52:45 : -> Connection: close
+
+2015-11-09 15:52:45 : -> Paypal-Debug-Id: ffaca97a7643f
+
+2015-11-09 15:52:45 : -> Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1018380374; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-09 15:52:45 : -> Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+
+2015-11-09 15:52:45 : -> Set-Cookie: Apache=10.72.128.11.1447080764484124; path=/; expires=Wed, 01-Nov-45 14:52:44 GMT
+
+2015-11-09 15:52:45 : -> Strict-Transport-Security: max-age=14400
+
+2015-11-09 15:52:45 : -> Content-Type: text/html; charset=UTF-8
+
+2015-11-09 15:52:45 : -> 
+
+2015-11-09 15:52:45 : -> VERIFIED
+2015-11-09 15:52:45 : - Transaction : OK 
+2015-11-09 15:52:45 : - Paiement statut : OK 
+2015-11-09 15:52:45 : - Transaction ID : OK 
+2015-11-09 15:52:45 : - Compte PayPal : NOK (bijoux.secretsdelouise@gmail.com / xav335@hotmail.com) 
+2015-11-09 15:52:45 : ----------- FIN TRAITEMENT ----------- 
+2015-11-09 15:52:45 : - Commande annulee

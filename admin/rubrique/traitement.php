@@ -6,6 +6,7 @@
 	session_start();
 	
 	$debug = false;
+	if ( $debug ) print_pre( $_POST );
 	
 	// ---- Security ---------------------------------------------------------- //
 	if ( !isset( $_SESSION[ "accessGranted" ] ) || !$_SESSION[ "accessGranted" ] ) {
@@ -38,7 +39,7 @@
 					$destination = $_SERVER[ "DOCUMENT_ROOT" ] . '/photos/rubrique' . $filenameDest;
 					if ( $debug ) echo "Destination : " . $destination . "<br>";
 					
-					$imageManager->imageResize( $source, $destination, 291, 291 );
+					$imageManager->imageResize( $source, $destination, 291, 291, ZEBRA_IMAGE_CROP_CENTER );
 					
 					$_POST[ "image" ] = $filenameDest;
 				}

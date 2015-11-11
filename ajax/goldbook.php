@@ -35,7 +35,9 @@ if ($_POST["action"] == "sendMail") {
     }
     
     // $_to = "contact@alleedubio.fr";
-    $_to = MAIL_CONTACT;
+    $_to = ( MAIL_TEST != '' )
+    	? MAIL_TEST
+    	: MAIL_CONTACT;
     $sujet = MAIL_NAME_CUSTOMER . " - Nv message Livre d'or ";
     // echo "Envoi du message à " . $_to . "<br>";
     

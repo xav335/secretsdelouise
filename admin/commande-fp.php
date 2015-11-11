@@ -1,5 +1,6 @@
 <?
 	include_once '../inc/inc.config.php';
+	require 'classes/ContactCommande.php';
 	require 'classes/Panier.php';
 	require 'classes/Catproduct.php';
 	require 'classes/utils.php';
@@ -13,6 +14,7 @@
 		
 		// ---- Traitement des Produits ------------- //
 		if ( $_POST[ "reference" ] == 'commande' ) {
+	        $contact = new ContactCommande();
 	        $panier = new Panier();
 	        $produit = new Catproduct();
 	        
@@ -20,6 +22,11 @@
 				
 				// ---- Chargement de la commande -------- //
 				$panier->load( $_POST[ "id_commande" ] );
+				$ancien_etat_commande = $panier->statut_paiement;
+				$liste_article = unserialize( $panier->panier );
+				
+				// ---- Chargement des infos client ------ //
+				$contactResult = $contact->contactAddresseGet( $panier->id_facturation );
 				
 				// ---- Gestion des états de paiement ---- //
 				if ( 1 == 1 ) {
@@ -87,6 +94,58 @@
 				    		
 				    	}
 				    	
+				    }
+				    // ------------------------------ //
+				    
+				    // ---- Mail de confirmation ---- //
+				    if ( $ancien_etat_commande == 0 ) {
+				    	//$_to = "franck.langleron@gmail.com";
+				    	$_to = ( MAIL_TEST != '' )
+					    	? MAIL_TEST
+					    	: $contactResult[ 0 ][ "email" ];
+					    
+					    $sujet = MAIL_NAME_CUSTOMER . " - Confirmation de commande";
+					    if ( $debug ) echo "Envoi du message à " . $contactResult[ 0 ][ "email" ] . "<br>";
+					    
+					    $entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";
+					    $entete .= "MIME-version: 1.0\n";
+					    $entete .= "Content-type: text/html; charset= utf-8\n";
+					    $entete .= "Bcc: " . MAIL_BCC . "\n";
+					    
+					    $corps = "";
+					    $corps .= "Bonjour " . ucfirst( $contactResult[ 0 ][ "prenom" ] ) . ",<br><br>";
+					    $corps .= "Votre commande du " . traitement_datetime_affiche( $panier->date_ajout ) . " vient d'être confirmée.<br>";
+					    $corps .= "Vous la recevrez dans les plus brefs délais.<br><br>";
+					    $corps .= "<b>Résumé de votre commande :</b><br>";
+					    
+					    if ( ! empty( $liste_article[ "panier" ] ) ) {
+				            foreach ( $liste_article[ "panier" ] as $_article ) {
+				            	$nom = $_article[ "label" ];
+				            	$detail = ( $_article[ "color" ] != '' || $value[ "size" ] != '' )
+				            		? " (" . $_article[ "color" ] . " / " . $value[ "size" ] . ")"
+				            		: '';
+				            	$prix = number_format( $_article[ "prix" ], 2 );
+								$corps .= "- " . $nom . $detail ." - X" . $_article[ "quantite" ] . " : " . $prix . "€<br>";
+							}
+							
+							$totalHT = $liste_article[ "divers" ][ "total_ht_commande_hors_fdp" ];
+							$totalTTC = $totalHT * ( 1 + $liste_article[ "divers" ][ "tva" ] );
+							$totalTVA = $totalTTC - $totalHT;
+							$totalLiv = $liste_article[ "divers" ][ "frais_livraison_pratique" ];
+							$totalTTCLIV = $totalTTC + $totalLiv;
+							
+							$corps .= "<br><b>Frais de livraison : </b>" . number_format( $totalLiv, 2 ) . "€<br>";
+							$corps .= "<b>TOTAL : </b>" . number_format( $totalTTCLIV, 2 ) . "€<br>";
+				        }
+					    
+					    $corps .= "<br>(<i>Une facture plus détaillée est à votre disposition sur notre site, à la rubrique \"Mon compte\".</i>)<br>";
+					    $corps .= "<br><br>L'équipe Les secrets de Louise.<br>";
+					    $corps .= "<a href='http://www.lessecretsdelouise.com'>www.lessecretsdelouise.com</a><br>";
+					    $corps = ( $corps );
+					    if ( $debug ) echo $corps . "<br>";
+					    
+					    // Envoi du mail
+					    if ( !$debug ) mail( $_to, $sujet, stripslashes( $corps ), $entete );
 				    }
 				    // ------------------------------ //
 				    

@@ -1,0 +1,93 @@
+2015-11-10 19:32:24 : - Debut traitement.
+2015-11-10 19:32:24 : - 127.0.0.1
+2015-11-10 19:32:24 : - Req : cmd=_notify-validate&mc_gross=39.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=DWJAJGBVWF7ML&tax=6.50&address_street=55+rue+anatole+france&payment_date=10%3A32%3A19+Nov+10%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=33150&first_name=xavier&mc_fee=1.58&address_country_code=FR&address_name=xavier+Alvarez&notify_version=3.8&custom=13%3B4%3B32.50%3B0.00%3B6.50&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=Cenon&quantity=1&verify_sign=AivFIBVgCVTqveMHIxh0lvPo5SscAcNCR77ikvZhWsoJBugvOCUGjwlT&payer_email=fjavi.gonzalez%40gmail.com&txn_id=41T0878604473440M&payment_type=instant&last_name=gonzalez&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=NRBY4RCQWLHPJ&txn_type=web_accept&item_name=Commande+No.13+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&test_ipn=1&handling_amount=0.00&transaction_subject=13%3B4%3B32.50%3B0.00%3B6.50&payment_gross=&shipping=0.00&ipn_track_id=4e453c0824761
+2015-11-10 19:32:25 : - Contenu POST :
+2015-11-10 19:32:25 : - Array
+(
+    [mc_gross] => 39.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => DWJAJGBVWF7ML
+    [tax] => 6.50
+    [address_street] => 55 rue anatole france
+    [payment_date] => 10:32:19 Nov 10, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33150
+    [first_name] => xavier
+    [mc_fee] => 1.58
+    [address_country_code] => FR
+    [address_name] => xavier Alvarez
+    [notify_version] => 3.8
+    [custom] => 13;4;32.50;0.00;6.50
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => Cenon
+    [quantity] => 1
+    [verify_sign] => AivFIBVgCVTqveMHIxh0lvPo5SscAcNCR77ikvZhWsoJBugvOCUGjwlT
+    [payer_email] => fjavi.gonzalez@gmail.com
+    [txn_id] => 41T0878604473440M
+    [payment_type] => instant
+    [last_name] => gonzalez
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => NRBY4RCQWLHPJ
+    [txn_type] => web_accept
+    [item_name] => Commande No.13 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => 13;4;32.50;0.00;6.50
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 4e453c0824761
+)
+
+2015-11-10 19:32:25 : - Validation HTTP : OK
+2015-11-10 19:32:26 : -> HTTP/1.1 200 OK
+
+2015-11-10 19:32:26 : -> Date: Tue, 10 Nov 2015 18:32:25 GMT
+
+2015-11-10 19:32:26 : -> Server: Apache
+
+2015-11-10 19:32:26 : -> X-Frame-Options: SAMEORIGIN
+
+2015-11-10 19:32:26 : -> Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=tlrpyglwGBTa8WdjokNLOftBPfbBefN1Hkcd2boXCQiRZqfO0H66h8ppkcltoQT29-UVzH-nia1Hw_gYT62MSuzPpmTASPO14IcMP4iM1XqOjQJguGlt3rsT38CY1JM_YtH2_a73inkUey8fss_lcISD2lvxGJOGbjF7bkSSAKZezyo5Jd3OJIBg-HqJd_76wjHGgNPZgsFFmniyqlJxHwEAMlT5B7C0BKUiPOSkJ_6_jEGXDIvatvzFZVJRxQYU8nAnDP9Lf3tvj4qW-XKFH44QAhqj7pvHrKK6QsaFjh7pWnqxttaprczZsYJK5WfHlOoFsG3l1ftYMAt2od_9jRfa45PHtqXW213OgxjNqVrvI9rNmuTFWBWeFNnTIu0_j6wZxQYRzitj73NDX4_oUV_7kkUcGLHtmb_fFP-j9qu_St-jHZOB43kXETm; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-10 19:32:26 : -> Set-Cookie: cookie_check=yes; expires=Fri, 07-Nov-2025 18:32:25 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-10 19:32:26 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-10 19:32:26 : -> Set-Cookie: navlns=0.0; expires=Thu, 09-Nov-2017 18:32:25 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-10 19:32:26 : -> Set-Cookie: Apache=10.72.108.11.1447180345441809; path=/; expires=Thu, 02-Nov-45 18:32:25 GMT
+
+2015-11-10 19:32:26 : -> Vary: Accept-Encoding,User-Agent
+
+2015-11-10 19:32:26 : -> Connection: close
+
+2015-11-10 19:32:26 : -> Paypal-Debug-Id: 3fb311667cdf
+
+2015-11-10 19:32:26 : -> Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D959988310; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-10 19:32:26 : -> Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+
+2015-11-10 19:32:26 : -> Set-Cookie: Apache=10.72.128.11.1447180345425002; path=/; expires=Thu, 02-Nov-45 18:32:25 GMT
+
+2015-11-10 19:32:26 : -> Strict-Transport-Security: max-age=14400
+
+2015-11-10 19:32:26 : -> Content-Type: text/html; charset=UTF-8
+
+2015-11-10 19:32:26 : -> 
+
+2015-11-10 19:32:26 : -> VERIFIED
+2015-11-10 19:32:26 : - Transaction : OK 
+2015-11-10 19:32:26 : - Paiement statut : OK 
+2015-11-10 19:32:26 : - Transaction ID : OK 
+2015-11-10 19:32:26 : - Compte PayPal : OK 
+2015-11-10 19:32:26 : ----------- FIN TRAITEMENT ----------- 
+2015-11-10 19:32:26 : - Confirmation de commande
