@@ -173,6 +173,34 @@ class Panier extends StorageManager {
 	 
 	}
 	
+	public function panierGetById($id){
+	    $this->dbConnect();
+	    //TODO: refacto : prendre les info produit dans le serializeproduct de la table Panier
+	     
+	    $sql = "SELECT panier.id as id_panier,panier.quantite,product.label,product.prix,
+          product.id,product.image1,size.label as size, color.label as color,product.shipping,
+          product_sousref.id as id_sousref, product.reference, product_sousref.sousref, product_sousref.stock
+				FROM panier
+				INNER JOIN product_sousref ON product_sousref.id = panier.id_sousref
+        INNER JOIN color ON color.id = product_sousref.id_color
+        INNER JOIN size ON size.id = product_sousref.id_size
+				INNER JOIN product ON product_sousref.id_product = product.id
+				WHERE panier.id='". $id ."';" ;
+	    //print_r($sql);
+	    $new_array = null;
+	    $result = mysqli_query($this->mysqli,$sql);
+	    if (!$result) {
+	        throw new Exception('Erreur Mysql panierGetById sql = : '.$sql);
+	    }
+	    while(($row = mysqli_fetch_assoc($result)) != false){
+	        $new_array[] = $row;
+	    }
+	
+	    $this->dbDisConnect();
+	    return $new_array;
+	
+	}
+	
 	public function panierCommandeGet($session){
 	  $this->dbConnect();
 	   

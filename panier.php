@@ -9,7 +9,7 @@ $panier = new Panier();
 
 try {
 		$result = $panier->panierGet(session_id());
-		//print_r($result);
+		//print_pre($result);
 		
 } catch (Exception $e) {
 	echo 'Erreur contactez votre administrateur <br> :',  $e->getMessage(), "\n";

@@ -78,7 +78,16 @@ if (!empty($_POST)){
               if ($_GET['quantite'] == 0) {
 		          $panier->productDelete($_GET['id_panier']);
 		      } else {
-		          $panier->modifQuantitePanier($_GET['id_panier'], $_GET['quantite']);
+		          //Ajouter le check du stock
+		          //si $_GET['quantite'] > stock => message d'erreur pas assez de stock
+		          //Récupération produit et sousreferences
+		          $result = $panier->panierGetById($_GET['id_panier']);
+		          $stock = $result[0]['stock'];
+		          if ($stock > $_GET['quantite']){
+		              $panier->modifQuantitePanier($_GET['id_panier'], $_GET['quantite']);
+		          }else{
+		              //rien
+		          }
 		      }
     				
 			  $panier = null;
