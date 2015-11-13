@@ -569,7 +569,7 @@ class Catproduct extends StorageManager {
 									INNER JOIN product_categorie 
 									ON product_categorie.id_product=product.id
 									WHERE product_categorie.id_categorie=". $categorie . " AND actif = $actif 
-									ORDER BY product.label ASC
+									ORDER BY product.reference ASC
 									LIMIT ". $offset .",". $count .";" ;
 					} elseif (empty($categorie) && !empty($rubrique)) {
 						if ( $debug ) echo "--- 3<br>";
@@ -579,7 +579,7 @@ class Catproduct extends StorageManager {
 									INNER JOIN product_rubrique
 									ON product_rubrique.id_product=product.id
 									WHERE product_rubrique.id_rubrique=". $rubrique . " AND actif = $actif 
-									ORDER BY product.label ASC
+									ORDER BY product.reference ASC
 									LIMIT ". $offset .",". $count .";" ;
 						
 					} elseif (!empty($categorie) && !empty($rubrique)) {	
@@ -593,12 +593,12 @@ class Catproduct extends StorageManager {
 									ON product_categorie.id_product=product.id
 									WHERE product_rubrique.id_rubrique=". $rubrique . "
 									AND product_categorie.id_categorie=". $categorie . " AND actif = $actif 
-									ORDER BY product.label ASC
+									ORDER BY product.reference ASC
 									LIMIT ". $offset .",". $count .";" ;
 					}
 				} else {
 					if ( $debug ) echo "--- 5<br>";
-					$sql = "SELECT * FROM `product` WHERE actif = $actif ORDER BY `label`;" ;
+					$sql = "SELECT * FROM `product` WHERE actif = $actif ORDER BY `reference`;" ;
 				}
 			} else {
 				if ( $debug ) echo "--- 6<br>";

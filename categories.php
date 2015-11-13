@@ -282,7 +282,7 @@
 					<div class="large-12 columns">
 						<?
 						if (empty($id_color)) {
-							echo paginate('categories.php?idcat='.$idcat, '&p=', $nbPages, $current);
+							echo paginate('categories.php?idcat='.$idcat.'&idrub='.$idrub, '&p=', $nbPages, $current);
 						}
 						else {
 						echo paginate('categories.php?id_color='.$id_color, '&p=', $nbPages, $current);

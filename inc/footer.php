@@ -30,7 +30,7 @@
 						</div>
 						<div class="large-6 medium-6 columns">
 							<h1>Les secrets de Louise</h1>
-							<p>Bijoux &amp; accessoires</p>
+							<p>Bijoux &amp; Accessoires</p>
 						</div>
 						<div class="large-12 columns mentions">
 							© les secrets de Louise <a href="mentions.php">mentions légales</a> <a href="http://www.iconeo.fr" target="_blank">création iconeo</a>
