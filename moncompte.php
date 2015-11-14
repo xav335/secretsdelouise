@@ -45,7 +45,7 @@
 			<div class="large-3 medium-3 small-12 columns menu-panier">
 				<ul>
 					<li class="active">
-						<a href="momcompte.php"><span>1 -</span> Mes commandes</a>
+						<a href="moncompte.php"><span>1 -</span> Mes commandes</a>
 					</li>
 					<li >
 						<a href="adresse.php?source=moncompte"><span>2 -</span> Mes adresses</a>
@@ -196,7 +196,7 @@
                         				</div>
                         				<div class="large-12 columns">
                         					<label>Mot de passe
-                        						<input name="password" id="password" type="text" placeholder="mot de passe" required />
+                        						<input name="password" id="password" type="password" placeholder="mot de passe" required />
                         					</label>
                         					<small class="error">Votre mot de passe est obligatoire</small>
                         				</div>

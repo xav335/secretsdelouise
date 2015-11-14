@@ -180,7 +180,7 @@
 								}
 								
 								if ( $value[ "level" ] != 0 ) { 
-									echo "	<li " . $activ . "><a href='categories.php?idcat=" . $value[ "id" ] . "'>" . $decalage . $value[ "label" ] . "</a></li>\n";
+									echo "	<li " . $activ . "><a href='categories.php?idcat=" . $value[ "id" ] . "'>- " . $decalage . $value[ "label" ] . "</a></li>\n";
 								}
 							} 
 							
