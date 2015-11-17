@@ -73,17 +73,17 @@
 		
 		// ---- Serveur PROD ------------------------------------- //
 		DEFAULT:
-			/*$header = "POST /cgi-bin/webscr HTTP/1.0\r\n";
+			$header = "POST /cgi-bin/webscr HTTP/1.0\r\n";
 			$header .= "Host: ipnpb.paypal.com:443\r\n";
 			$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 			$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
-			$fp = fsockopen ('ssl://ipnpb.paypal.com', 443, $errno, $errstr, 30);*/
+			$fp = fsockopen ('ssl://ipnpb.paypal.com', 443, $errno, $errstr, 30);
 			
-			$header = "POST /cgi-bin/webscr HTTP/1.0\r\n";
+			/*$header = "POST /cgi-bin/webscr HTTP/1.0\r\n";
 			$header .= "Host: www.sandbox.paypal.com:443\r\n";
 			$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 			$header .= "Content-Length: " . strlen( $req ) . "\r\n\r\n";
-			$fp = fsockopen ('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
+			$fp = fsockopen ('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);*/
 			break;
 	}
 	

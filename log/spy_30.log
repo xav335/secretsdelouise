@@ -1,0 +1,83 @@
+2015-11-17 11:31:31 : - Debut traitement.
+2015-11-17 11:31:31 : - 127.0.0.1
+2015-11-17 11:31:31 : - Req : cmd=_notify-validate&mc_gross=0.01&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=HBG5J8XFL6PAE&tax=0.00&address_street=55+rue+anatole+france&payment_date=02%3A31%3A17+Nov+17%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=33150&first_name=xavier&mc_fee=0.01&address_country_code=FR&address_name=xavier+Alvarez&notify_version=3.8&custom=30%3B4%3B0.01%3B0.00%3B0.00&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=cenon&quantity=1&verify_sign=A2D4DKJFlDsBtCK3KOnr2fCSH4sUASOk1tMVTeOcsfPNLyzlFuH7Blu4&payer_email=fjavi.gonzalez%40gmail.com&txn_id=3RJ84348J8446461R&payment_type=instant&payer_business_name=ICONEO&last_name=gonzalez&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.30+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&handling_amount=0.00&transaction_subject=30%3B4%3B0.01%3B0.00%3B0.00&payment_gross=&shipping=0.00&ipn_track_id=b53fbed58703
+2015-11-17 11:31:32 : - Contenu POST :
+2015-11-17 11:31:32 : - Array
+(
+    [mc_gross] => 0.01
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => HBG5J8XFL6PAE
+    [tax] => 0.00
+    [address_street] => 55 rue anatole france
+    [payment_date] => 02:31:17 Nov 17, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33150
+    [first_name] => xavier
+    [mc_fee] => 0.01
+    [address_country_code] => FR
+    [address_name] => xavier Alvarez
+    [notify_version] => 3.8
+    [custom] => 30;4;0.01;0.00;0.00
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => cenon
+    [quantity] => 1
+    [verify_sign] => A2D4DKJFlDsBtCK3KOnr2fCSH4sUASOk1tMVTeOcsfPNLyzlFuH7Blu4
+    [payer_email] => fjavi.gonzalez@gmail.com
+    [txn_id] => 3RJ84348J8446461R
+    [payment_type] => instant
+    [payer_business_name] => ICONEO
+    [last_name] => gonzalez
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.30 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [handling_amount] => 0.00
+    [transaction_subject] => 30;4;0.01;0.00;0.00
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => b53fbed58703
+)
+
+2015-11-17 11:31:32 : - Validation HTTP : OK
+2015-11-17 11:31:33 : -> HTTP/1.1 200 OK
+
+2015-11-17 11:31:33 : -> Date: Tue, 17 Nov 2015 10:31:32 GMT
+
+2015-11-17 11:31:33 : -> Server: Apache
+
+2015-11-17 11:31:33 : -> X-Frame-Options: SAMEORIGIN
+
+2015-11-17 11:31:33 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=kcPSTKrkW_qZ-Rc_JTnqRGgZrLkIvhT3Q7qilO0dLtmYnN0XhoQ690ZUfEno_AZRo06CZe_tq0a7VVv_bhba-Us9c1R1RuTfZx4pxSuPz6IIzxA37apwtptvCDxPhOJI_KpD9KPCS4HXIDPEZdMsNOuNK5OEuiT6CXHLbi6Y8TAuMNYyBZo1xF2Lm2rU9eGyGzymS3ADp5GH2zP4K64kF_eoJf1uPVywoWvqCi0SuJD6B71lA5ZqOOXDZ5eZ-THtAHwZHF9vfX4ajWC8DcJKJaDjmpXPXt2CodFB8pNk7moxYskTaq1PmXUpDCRslgzL1rhnLVuXmRl0BiIQAWWuVUgOElWASsEPrf-JdwpdlmuDJsuk-8G4_xTCZ1666wQTXKtybBotaiYmIbxHCrj0wiw3E7czgkOgk2nbwhXmntY45sY-ohtEm-6gyNC; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-17 11:31:33 : -> Set-Cookie: cookie_check=yes; expires=Fri, 14-Nov-2025 10:31:32 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-17 11:31:33 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-17 11:31:33 : -> Set-Cookie: navlns=0.0; expires=Thu, 16-Nov-2017 10:31:32 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-17 11:31:33 : -> Set-Cookie: Apache=10.17.1.8.1447756292584868; path=/; expires=Thu, 09-Nov-45 10:31:32 GMT
+
+2015-11-17 11:31:33 : -> Vary: Accept-Encoding
+
+2015-11-17 11:31:33 : -> Connection: close
+
+2015-11-17 11:31:33 : -> Content-Type: text/html; charset=UTF-8
+
+2015-11-17 11:31:33 : -> 
+
+2015-11-17 11:31:33 : -> VERIFIED
+2015-11-17 11:31:33 : - Transaction : OK 
+2015-11-17 11:31:33 : - Paiement statut : OK 
+2015-11-17 11:31:33 : - Transaction ID : OK 
+2015-11-17 11:31:33 : - Compte PayPal : OK 
+2015-11-17 11:31:33 : ----------- FIN TRAITEMENT ----------- 
+2015-11-17 11:31:33 : - Confirmation de commande

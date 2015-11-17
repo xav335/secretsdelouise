@@ -15,7 +15,7 @@ if (!empty($_POST)){
 	$entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";
 	$entete .= "MIME-version: 1.0\n";
 	$entete .= "Content-type: text/html; charset= iso-8859-1\n";
-	$entete .= "Bcc: fjavi.gonzalez@gmail.com,xav335@hotmail.com\n";
+	$entete .= "Bcc: " . MAIL_BCC . "\n";
 	
 	$corps = "";
 	$corps .= "Email à désinscrire :" . $_POST['email']  ."<br>";

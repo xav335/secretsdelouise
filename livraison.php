@@ -7,7 +7,7 @@
 	session_start();
 
 	$debug = false;
-	$debug_paypal = true;
+	$debug_paypal = false;
 	( !empty( $_SESSION[ "id_contact" ] ) ) ? $id_contact = $_SESSION[ "id_contact" ] : $id_contact = null;
 	$data_commande = array();
 	
@@ -141,9 +141,16 @@
 	}
 	
 	$panier = null;
+	
+	if ( $email == "xavier@gonzalez.pm" ) {
+		$totalHT = 0.01;
+		$frais_livraison = 0;
+		$totalTVA = 0;
+	}
+	
 	$serveur_paypal = ( $debug_paypal )
 		? "https://www.sandbox.paypal.com/cgi-bin/webscr"
-		: "#";
+		: "https://www.paypal.com/cgi-bin/webscr";
 
 	$business_code = ( $debug_paypal ) ? "bijoux.secretsdelouise@gmail.com" : "bijoux.secretsdelouise@gmail.com";
 	//$type_champ = ( $debug_paypal ) ? "text" : "hidden";
