@@ -16,7 +16,7 @@ error_log(date("Y-m-d H:i:s") . " : " . $_POST['message'] . "\n", 3, "../log/spy
 error_log(date("Y-m-d H:i:s") . " : " . $_POST['action'] . "\n", 3, "../log/spy.log");
 error_log(date("Y-m-d H:i:s") . " : " . $_POST['newsletter'] . "\n", 3, "../log/spy.log");
 
-if ($_POST["action"] == "sendMail") {
+if ($_POST[ "action" ] == "sendMail") {
     try {
         $result = $goldbook->goldbookAdd($_POST);
         $goldbook = null;
@@ -34,7 +34,6 @@ if ($_POST["action"] == "sendMail") {
         exit();
     }
     
-    // $_to = "contact@alleedubio.fr";
     $_to = ( MAIL_TEST != '' )
     	? MAIL_TEST
     	: MAIL_CONTACT;
@@ -43,15 +42,15 @@ if ($_POST["action"] == "sendMail") {
     
     $entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";
     $entete .= "MIME-version: 1.0\n";
-    $entete .= "Content-type: text/html; charset= iso-8859-1\n";
+    $entete .= "Content-type: text/html; charset= utf-8\n";
     $entete .= "Bcc: " . MAIL_BCC . "\n";
     
     $corps = "";
     $corps .= "Bonjour,<br><br>";
-    $corps .= "Nv message pour le livre d'or de :<br><b>" . $_POST["name"] . " " . "</b> (" . $_POST["email"] . ")<br>";
+    $corps .= "Nv message pour le livre d'or de :<br><b>" . utf8_decode( $_POST[ "name" ] ) . " " . "</b> (" . $_POST[ "email" ] . ")<br><br>";
     $corps .= "<b>Message :</b><br>";
-    $corps .= $_POST["message"] . "<br><br>";
-    $corps = utf8_decode($corps);
+    $corps .= utf8_decode( $_POST[ "message" ] ) . "<br><br>";
+    $corps = utf8_encode( $corps );
     // echo $corps . "<br>";
     
     // Envoi des identifiants par mail

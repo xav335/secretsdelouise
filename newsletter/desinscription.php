@@ -4,7 +4,7 @@ require '../admin/classes/Contact.php';
 
 if (!empty($_POST)){
 	$contact = new Contact();
-	$contact->contactUnsubscribeNewsletter($_POST['email'], $_POST['message']);
+	$contact->contactUnsubscribeNewsletter($_POST[ "email" ], $_POST[ "message" ]);
 	$contact = null;
 	
 	$_to = ( MAIL_TEST != '' )
@@ -14,13 +14,13 @@ if (!empty($_POST)){
 	
 	$entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";
 	$entete .= "MIME-version: 1.0\n";
-	$entete .= "Content-type: text/html; charset= iso-8859-1\n";
+	$entete .= "Content-type: text/html; charset= utf-8\n";
 	$entete .= "Bcc: " . MAIL_BCC . "\n";
 	
 	$corps = "";
-	$corps .= "Email à désinscrire :" . $_POST['email']  ."<br>";
-	$corps .= "Message : ". $_POST["message"] ."<br>";
-	$corps = utf8_decode( $corps );
+	$corps .= "Email à désinscrire :" . $_POST[ "email" ]  ."<br>";
+	$corps .= "Message : ". utf8_decode( $_POST[ "message" ] ) ."<br>";
+	$corps = utf8_encode( $corps );
 	//echo $corps . "<br>";
 	
 	// Envoi des identifiants par mail
@@ -41,7 +41,7 @@ if (!empty($_POST)){
 <?php if (!empty($_POST)){ ?>
 	<br><br>Votre désincription a été prise en compte ! <br><br>
 	
-	<a href="http://<?php echo $_SERVER['HTTP_HOST']?>" >Allez sur le site </a>
+	<a href="http://<?php echo $_SERVER[ "HTTP_HOST" ]?>" >Allez sur le site </a>
 <?php } else { ?>
 	<form name="formulaire" class="form-horizontal" method="POST"  action="desinscription.php">
 		Indiquez votre e-mail<br>

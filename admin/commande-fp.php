@@ -120,9 +120,9 @@
 					    
 					    if ( ! empty( $liste_article[ "panier" ] ) ) {
 				            foreach ( $liste_article[ "panier" ] as $_article ) {
-				            	$nom = $_article[ "label" ];
+				            	$nom = utf8_decode( $_article[ "label" ] );
 				            	$detail = ( $_article[ "color" ] != '' || $value[ "size" ] != '' )
-				            		? " (" . $_article[ "color" ] . " / " . $value[ "size" ] . ")"
+				            		? " (" . utf8_decode( $_article[ "color" ] . " / " . $value[ "size" ] ) . ")"
 				            		: '';
 				            	$prix = number_format( $_article[ "prix" ], 2 );
 								$corps .= "- " . $nom . $detail ." - X" . $_article[ "quantite" ] . " : " . $prix . "€<br>";
@@ -141,7 +141,7 @@
 					    $corps .= "<br>(<i>Une facture plus détaillée est à votre disposition sur notre site, à la rubrique \"Mon compte\".</i>)<br>";
 					    $corps .= "<br><br>L'équipe Les secrets de Louise.<br>";
 					    $corps .= "<a href='http://www.lessecretsdelouise.com'>www.lessecretsdelouise.com</a><br>";
-					    $corps = ( $corps );
+					    $corps = utf8_encode( $corps );
 					    if ( $debug ) echo $corps . "<br>";
 					    
 					    // Envoi du mail

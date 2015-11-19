@@ -108,15 +108,16 @@ if (! empty($_POST)) {
         
                     $entete = "From:" . MAIL_NAME_CUSTOMER . " <" . MAIL_CUSTOMER . ">\n";
                     $entete .= "MIME-version: 1.0\n";
-                    $entete .= "Content-type: text/html; charset= iso-8859-1\n";
+                    $entete .= "Content-type: text/html; charset= utf-8\n";
                     $entete .= "Bcc: ". MAIL_BCC ."\n";
         
                     $corps = "";
                     $corps .= "Bonjour,<br>";
-                    $corps .= "Votre mot de passe est :  ". $password[0]['password']. "<br>";
+                    $corps .= "Votre mot de passe est :  ". $password[0][ "password" ]. "<br>";
                     $corps .= "Identifiez-vous sur : http://". $_SERVER['HTTP_HOST'] . "/adresse.php<br>";
-                    $corps = utf8_decode( $corps );
-                    //echo $corps . "<br>";exit;
+                    $corps = utf8_encode( $corps );
+                    //echo $corps . "<br>";
+                    
                     // Envoi des identifiants par mail
                     mail($_to, $sujet, stripslashes($corps), $entete);
         
