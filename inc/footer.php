@@ -10,7 +10,7 @@
 				<!-- Footer -->
 				<div class="row footer fullwidth">
 					<div class="row">
-						<div class="large-6 medium-6 columns">
+						<div class="large-5 medium-5 columns">
 							<div>
 								<?
 								if ( !empty( $liste_rubrique ) ) {
@@ -28,7 +28,10 @@
 								<a href="contact.php">Contact</a>
 							</div>
 						</div>
-						<div class="large-6 medium-6 columns">
+						<div class="large-2 medium-2 columns">
+							<p></p>
+						</div>
+						<div class="large-5 medium-5 columns">
 							<h1>Les secrets de Louise</h1>
 							<p>Bijoux &amp; Accessoires</p>
 						</div>
