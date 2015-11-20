@@ -95,7 +95,9 @@ if (!empty($id_contact)){
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
-		<title>Les Secrets de Louise - Bijoux &amp; accessoires</title>
+		<title>Les Secrets de Louise - Gestion des adresses</title>
+		<meta name="description" content="les secrets de louise - adresses " />
+	<meta name="keywords" content="actus, evenements, news" />
 <?php include('inc/meta.php'); ?>
 	</head>
 	<body class="page-panier">

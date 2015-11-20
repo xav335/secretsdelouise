@@ -12,7 +12,9 @@ $goldbook = null;
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<title>Les secrets de Louise - Actualités</title>
+	<title>Les secrets de Louise - Livre d'or</title>
+	<meta name="description" content="les secrets de louise - Livre d'or" />
+	<meta name="keywords" content="Livre d'or" />
 <?php include('inc/meta.php'); ?>
 </head>
 <body>

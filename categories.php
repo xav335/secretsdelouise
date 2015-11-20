@@ -124,6 +124,8 @@
 <html class="no-js" lang="en">
 	<head>
 		<title>Les Secrets de Louise - Bijoux &amp; accessoires</title>
+		<meta name="description" content="les secrets de louise - bijoux & accessoires " />
+	    <meta name="keywords" content="bijoux, bijoux fantaisie, colliers, montres, sacs, bagues, bracelets, boucles d'oreilles, créoles, maroquinerie, portes clés, jonc, ras du coup, sautoirs" />
 		<? include( "inc/meta.php" ); ?>
 	</head>
 	

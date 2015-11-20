@@ -9,6 +9,8 @@ session_start();
 <html class="no-js" lang="en">
 <head>
 	<title>Les secrets de Louise - Mentions Légales</title>
+	<meta name="description" content="les secrets de louise - Mentions Légales" />
+	<meta name="keywords" content="Mentions Légales" />
 <?php include('inc/meta.php'); ?>
 </head>
 <body>

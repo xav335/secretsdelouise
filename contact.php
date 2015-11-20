@@ -6,6 +6,8 @@ session_start();
 <html class="no-js" lang="en">
 <head>
 	<title>Les secrets de Louise | Contact</title>
+	<meta name="description" content="les secrets de louise - Contact " />
+	<meta name="keywords" content="Contact" />
 <?php include('inc/meta.php'); ?>
 </head>
 <body>

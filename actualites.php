@@ -27,6 +27,9 @@ if (!empty($_GET)){
 <html class="no-js" lang="en">
 <head>
 	<title>Les secrets de Louise - Actualités</title>
+	<meta name="description" content="les secrets de louise - Actualités " />
+	<meta name="keywords" content="actus, evenements, news" />
+		
 <?php include('inc/meta.php'); ?>
 </head>
 <body>
