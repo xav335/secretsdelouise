@@ -102,7 +102,7 @@
 										echo "	<td>" . $date_ajout . "</td>\n";
 										echo "	<td>" . $value[ "id" ] . "</td>\n";
 										echo "	<td class='text-center'>" . $statut_commande . "</td>\n";
-										echo "	<td><a href='http://www.colissimo.fr/portail_colissimo/suivre.do?language=fr_FR' target='_blank'>" . $value[ "colissimo" ] . "</a></td>\n";
+										echo "	<td><a href='http://www.colissimo.fr/portail_colissimo/suivreResultat.do?parcelnumber=".$value['colissimo']."' target='_blank'>" . $value[ "colissimo" ] . "</a></td>\n";
 										echo "	<td class='text-center'>" . $lien_facture . "</td>\n";
 										echo "</tr>\n";
 									}

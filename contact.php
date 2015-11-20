@@ -18,12 +18,6 @@ session_start();
 	<div class="large-12 columns">
 		<h1>Contactez nous</h1>
 			<div class="large-8 medium-8 small-8 columns" >
-				<p>
-					 26 avenue Gambetta <br>
-					 33120 ARCACHON<br>
-					 tél. <b>09.67.44.38.98</b><br>
-					 <b>Horaires été :</b>  Tous les jours de 10h00 à 13h30 et de 15h00 à 20h00
-				</p>
 				
 			</div>
 		<div id="resultat"></div>
@@ -129,11 +123,6 @@ session_start();
 
 	
 	
-	<!-- Google maps -->
-	<div class="row">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2837.874582806642!2d-1.168413!3d44.660914!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd549f03e85bc695%3A0xddfafa76723c40f3!2s26+Avenue+Gambetta%2C+33120+Arcachon!5e0!3m2!1sfr!2sfr!4v1428405989605" class="gmaps"></iframe>
-	</div>
-	<!-- Fin Google maps -->
 	
 	
 <?php include('inc/footer.php'); ?>
