@@ -4,8 +4,8 @@
 	{
 		$res = "";
 	
-		$data = "username=".urlencode("691f06a3-f0d1-41b6-87c1-b8a769c5c1f1");
-		$data .= "&api_key=".urlencode("691f06a3-f0d1-41b6-87c1-b8a769c5c1f1");
+		$data = "username=".urlencode("5a873eaa-3e10-4529-9120-9db07c76ca8f");
+		$data .= "&api_key=".urlencode("5a873eaa-3e10-4529-9120-9db07c76ca8f");
 		$data .= "&from=".urlencode($from);
 		$data .= "&from_name=".urlencode($fromName);
 		$data .= "&to=".urlencode($to);

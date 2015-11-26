@@ -1,0 +1,88 @@
+2015-11-23 23:05:17 : - Debut traitement.
+2015-11-23 23:05:17 : - 127.0.0.1
+2015-11-23 23:05:17 : - Req : cmd=_notify-validate&mc_gross=33.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=FRCJZT7CKBD4G&tax=4.67&address_street=2+rue+de+pey+Harry+R%C3%A9sidence+diamant+noir+1+apt+9&payment_date=14%3A05%3A05+Nov+23%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=24750&first_name=Amandine&mc_fee=1.37&address_country_code=FR&address_name=Amandine+Caramigeas&notify_version=3.8&custom=54%3B13%3B23.33%3B5.00%3B4.67&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=Boulazac&quantity=1&verify_sign=AwN95I1todZR.HmQ7EkgJds232L3AmxtrkrIxsQyJLPxctEkj3U4fqji&payer_email=dineaman_24%40hotmail.fr&txn_id=9BA420568N444791Y&payment_type=instant&last_name=CARAMIGEAS&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.54+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&handling_amount=0.00&transaction_subject=54%3B13%3B23.33%3B5.00%3B4.67&payment_gross=&shipping=5.00&ipn_track_id=39486a8863988
+2015-11-23 23:05:18 : - Contenu POST :
+2015-11-23 23:05:18 : - Array
+(
+    [mc_gross] => 33.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => FRCJZT7CKBD4G
+    [tax] => 4.67
+    [address_street] => 2 rue de pey Harry Résidence diamant noir 1 apt 9
+    [payment_date] => 14:05:05 Nov 23, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 24750
+    [first_name] => Amandine
+    [mc_fee] => 1.37
+    [address_country_code] => FR
+    [address_name] => Amandine Caramigeas
+    [notify_version] => 3.8
+    [custom] => 54;13;23.33;5.00;4.67
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => Boulazac
+    [quantity] => 1
+    [verify_sign] => AwN95I1todZR.HmQ7EkgJds232L3AmxtrkrIxsQyJLPxctEkj3U4fqji
+    [payer_email] => dineaman_24@hotmail.fr
+    [txn_id] => 9BA420568N444791Y
+    [payment_type] => instant
+    [last_name] => CARAMIGEAS
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.54 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [handling_amount] => 0.00
+    [transaction_subject] => 54;13;23.33;5.00;4.67
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 39486a8863988
+)
+
+2015-11-23 23:05:18 : - Validation HTTP : OK
+2015-11-23 23:05:19 : -> HTTP/1.1 200 OK
+
+2015-11-23 23:05:19 : -> Date: Mon, 23 Nov 2015 22:05:18 GMT
+
+2015-11-23 23:05:19 : -> Server: Apache
+
+2015-11-23 23:05:19 : -> X-Frame-Options: SAMEORIGIN
+
+2015-11-23 23:05:19 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=docvQCAuyxqHeVBNEFxETzFm72-LaGQcjrbqIKsqSPQN7UnNA9b09TA3Y7LttpiJnslzbRQbJEb8T0d4MzoApAmTayB2UmoH6N_o59bXbgFMsJF1EHbvCw_Kp7EIYTE3c7MwHF3qvUo7_1StAtBGWMnep6aJKIHnPmWO-jAP_Trp1zVXe8VpvfzEkXQ2809o15ZID8VAJ1ObpShMpacQIFTm1qnTTu-AuMYnZSLWRlbtVNdQqIHBX7hZSCUO3D39o1Ei6K4xeH0SEU7d2qztx6kl7QvOUodu1lbiSiF6_Y1BeyQeBG3R_zR-XFp9ndqd8Q-8apxYCO3OBfaCWlkOiTOrGN5yDs1R1M7reZNYiTDz8bV5pWfdiE5wW-aF0CzhcXcY15iHomPm2iBMMnYyJC6QXsgfF1BX6_EPNDPMeElulZYdk1WFAUlcZtO; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-23 23:05:19 : -> Set-Cookie: cookie_check=yes; expires=Thu, 20-Nov-2025 22:05:18 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-23 23:05:19 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-23 23:05:19 : -> Set-Cookie: navlns=0.0; expires=Wed, 22-Nov-2017 22:05:18 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-11-23 23:05:19 : -> Set-Cookie: Apache=10.74.8.51.1448316318329003; path=/; expires=Wed, 15-Nov-45 22:05:18 GMT
+
+2015-11-23 23:05:19 : -> Vary: Accept-Encoding
+
+2015-11-23 23:05:19 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2015-11-23 23:05:19 : -> Pragma: no-cache
+
+2015-11-23 23:05:19 : -> Strict-Transport-Security: max-age=14400
+
+2015-11-23 23:05:19 : -> Connection: close
+
+2015-11-23 23:05:19 : -> Content-Type: text/html; charset=UTF-8
+
+2015-11-23 23:05:19 : -> 
+
+2015-11-23 23:05:19 : -> VERIFIED
+2015-11-23 23:05:19 : - Transaction : OK 
+2015-11-23 23:05:19 : - Paiement statut : OK 
+2015-11-23 23:05:19 : - Transaction ID : OK 
+2015-11-23 23:05:19 : - Compte PayPal : OK 
+2015-11-23 23:05:19 : ----------- FIN TRAITEMENT ----------- 
+2015-11-23 23:05:19 : - Confirmation de commande

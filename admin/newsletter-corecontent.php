@@ -6,6 +6,8 @@
 require 'classes/Newsletter.php';
 require 'classes/Contact.php';
 
+$facebooklnk = FACEBOOK_LINK;
+
 $newsletter = new Newsletter();
 
 if (!empty($_GET)){ //Modif 
@@ -91,7 +93,7 @@ EOD;
 }
 $corps .= <<<EOD
 
-					<a href="FACEBOOK_LINK"><img  src="http://$urlSite/newsletter/fb.png" alt=""></a><br>
+					<a href="$facebooklnk"><img  src="http://$urlSite/newsletter/fb.png" alt=""></a><br>
 					<p>$bas_page</p>
 					<p class="bas">Si vous souhaitez vous désinscrire de cette newslettrer suivez le lien suivant : <a href="http://$urlSite/newsletter/desinscription.php?id=" >désinscription</a></p>
 					<img src="http://$urlSite/newsletter/track.php?id=XwXwXwXw" alt="">
@@ -121,7 +123,7 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 		<a href='javascript:history.back()'>retour</a>";
 	
 	//$_to = "fjavi.gonzalez@gmail.com";
-	$_to =$_to = ( MAIL_TEST != '' )
+	$_to = ( MAIL_TEST != '' )
     	? MAIL_TEST
     	: MAIL_CONTACT;
 	$entete .= "Bcc: ". MAIL_BCC ."\n";
