@@ -203,7 +203,7 @@
 						echo "<div class='large-3 medium-3 small-6 columns' onclick=\"location.href='categories.php?idrub=" . $_rubrique[ "id" ] . "'\">\n";
 						echo "	<div class='content'>\n";
 						echo "		<span>\n";
-						echo "			<img src='img/couronne.png' alt='' class='couronne' />\n";
+						//echo "			<img src='img/couronne.png' alt='' class='couronne3' />\n";
 						echo "			<img src='" . $_image . "' alt='' class='img' />\n";
 						echo "		</span>\n";
 						echo "		<h4>" . $_rubrique[ "label" ] . "</h4>\n";

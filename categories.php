@@ -259,7 +259,7 @@
 								<div class="content">
 									<a href="/photos/products<?=$value[ "image1" ] ?>" class="fancybox">
 										<span>
-											<img src="img/couronne.png" alt="" class="couronne" />
+											<img src="img/couronne.png" alt="" class="couronne2" />
 											<img src="/photos/products/thumbs<?=$value[ "image1" ] ?>" alt="" class="img" />
 										</span>
 										<h4><?=$value[ "label" ] ?></h4>
