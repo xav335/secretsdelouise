@@ -68,12 +68,12 @@ body {font-family:'Tinos', serif;}
 
 /* Products list */
 .products-list div {text-align:center;cursor:pointer;}
-.products-list .content {position:relative;border-bottom:1px dotted #989488;margin-top:3em;height:25em;}
+.products-list .content {border-bottom:1px dotted #989488;margin-top:3em;height:25em;}
 .products-list div h4 {text-align:left;color:#e32065;font-size:1.2em;margin-bottom:0;}
 .products-list div p {text-align:left;color:#666;font-size:.88em;line-height:.88em;}
-.products-list div span {position:relative;overflow:hidden;}
-.products-list div span .couronne {position:absolute;top:50%;left:50%;margin-top:-46px;margin-left:-46px;z-index:100;-webkit-transition: all .6s ease-in-out;-moz-transition: all .6s ease-in-out;-o-transition: all .6s ease-in-out;-ms-transition: all .6s ease-in-out;transition: all .6s ease-in-out;/*opacity:0;*/transform-origin: 50% 50%;transform:scale(0, 0);-webkit-transform:scale(0, 0);-moz-transform:scale(0, 0);-o-transform:scale(0, 0);-ms-transform:scale(0, 0);}
-.products-list div .img {position: relative;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-transition: all .6s ease-in-out;-moz-transition: all .6s ease-in-out;-o-transition: all .6s ease-in-out;-ms-transition: all .6s ease-in-out;transition: all .6s ease-in-out;-webkit-filter:grayscale(0);-moz-filter:grayscale(0);-ms-filter:grayscale(0);-o-filter:grayscale(0);filter:grayscale(0);}
+.products-list div span {overflow:hidden;}
+.products-list div span .couronne {position:absolute;top:40%;left:50%;margin-top:-46px;margin-left:-46px;z-index:100;-webkit-transition: all .6s ease-in-out;-moz-transition: all .6s ease-in-out;-o-transition: all .6s ease-in-out;-ms-transition: all .6s ease-in-out;transition: all .6s ease-in-out;/*opacity:0;*/transform-origin: 50% 50%;transform:scale(0, 0);-webkit-transform:scale(0, 0);-moz-transform:scale(0, 0);-o-transform:scale(0, 0);-ms-transform:scale(0, 0);}
+.products-list div .img {-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-transition: all .6s ease-in-out;-moz-transition: all .6s ease-in-out;-o-transition: all .6s ease-in-out;-ms-transition: all .6s ease-in-out;transition: all .6s ease-in-out;-webkit-filter:grayscale(0);-moz-filter:grayscale(0);-ms-filter:grayscale(0);-o-filter:grayscale(0);filter:grayscale(0);}
 .products-list div:hover .img {filter: url('img/grayscale.svg');filter:gray;-webkit-border-radius:200em;-moz-border-radius:200em;border-radius:200em;-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:grayscale(100%);}
 .products-list div:hover span .couronne {/*opacity:1;*/transform:scale(1, 1);-webkit-transform:scale(1, 1);-moz-transform:scale(1, 1);-o-transform: scale(1, 1);-ms-transform:scale(1, 1);}
 .products-list div:hover h4 {color:#545454;}
