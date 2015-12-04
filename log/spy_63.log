@@ -1,0 +1,86 @@
+2015-12-02 22:03:49 : - Debut traitement.
+2015-12-02 22:03:49 : - 127.0.0.1
+2015-12-02 22:03:49 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=BVBQWC8YSXRB6&tax=5.33&address_street=77+boulevard+Clemenceau&payment_date=13%3A03%3A13+Dec+02%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=17340&first_name=Sophie&mc_fee=1.51&address_country_code=FR&address_name=Sophie+Claveau&notify_version=3.8&custom=63%3B20%3B26.67%3B5.00%3B5.33&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=Ch%C3%A2telaillon-Plage&quantity=1&verify_sign=AYkfPMj3Yw-OwsXtwJg49fQYox8cANEGplcTvYTE9qw-NZgP3eAO3.O.&payer_email=sophie.claveau%40yahoo.fr&txn_id=1SB17017VJ2067635&payment_type=instant&last_name=Claveau&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.63+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&handling_amount=0.00&transaction_subject=63%3B20%3B26.67%3B5.00%3B5.33&payment_gross=&shipping=5.00&ipn_track_id=5c2a139bd767
+2015-12-02 22:03:50 : - Contenu POST :
+2015-12-02 22:03:50 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => BVBQWC8YSXRB6
+    [tax] => 5.33
+    [address_street] => 77 boulevard Clemenceau
+    [payment_date] => 13:03:13 Dec 02, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 17340
+    [first_name] => Sophie
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => Sophie Claveau
+    [notify_version] => 3.8
+    [custom] => 63;20;26.67;5.00;5.33
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => Châtelaillon-Plage
+    [quantity] => 1
+    [verify_sign] => AYkfPMj3Yw-OwsXtwJg49fQYox8cANEGplcTvYTE9qw-NZgP3eAO3.O.
+    [payer_email] => sophie.claveau@yahoo.fr
+    [txn_id] => 1SB17017VJ2067635
+    [payment_type] => instant
+    [last_name] => Claveau
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.63 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [handling_amount] => 0.00
+    [transaction_subject] => 63;20;26.67;5.00;5.33
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c2a139bd767
+)
+
+2015-12-02 22:03:50 : - Validation HTTP : OK
+2015-12-02 22:03:50 : -> HTTP/1.1 200 OK
+
+2015-12-02 22:03:50 : -> Date: Wed, 02 Dec 2015 21:03:50 GMT
+
+2015-12-02 22:03:50 : -> Server: Apache
+
+2015-12-02 22:03:50 : -> X-Frame-Options: SAMEORIGIN
+
+2015-12-02 22:03:50 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=etFd55KbFvfucZSw_PtoTfxeDOF4T4V4n46NaU_oz3vRv4UJRsUhnGt5LAtOodBi_ai6bMjgvn2r1oz-Kjo2JW-yfHPKEmTuAlIebt9yDwcLy73Z_Zo7M9TrXZsNl-JnKVJXxS9Zshv7FTMNCFSHHjZmDZmsmE5XiNhyZgu1m5rQBdn8SPdsI2A7P4XAfgat1gNgR7vKrfGPkipaGs1Bh-8l71-46Yk7DjWtn5IIA-EUteBqqHy713F6QGA_JGfZUinbIaVqOxLpZsNrD5iUF4V_W1YGLchXXP_ypI5ukaA0v8o9s9jvLHedGA22jZLk8R0ELUTh9Zq16KZ1sbSnNmtJ9ysDZnYa8y8u47S3j2JWfv5MWnJVA1eV6qSr0fWpicBzmIdH_LYI7K9g63Dimcedp53sg2uvfQDIQ5IoWGR0r-_PGqtJNkgXHhS; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-02 22:03:50 : -> Set-Cookie: cookie_check=yes; expires=Sat, 29-Nov-2025 21:03:50 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-02 22:03:50 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-02 22:03:50 : -> Set-Cookie: navlns=0.0; expires=Fri, 01-Dec-2017 21:03:50 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-02 22:03:50 : -> Vary: Accept-Encoding
+
+2015-12-02 22:03:50 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2015-12-02 22:03:50 : -> Pragma: no-cache
+
+2015-12-02 22:03:50 : -> Strict-Transport-Security: max-age=14400
+
+2015-12-02 22:03:50 : -> Connection: close
+
+2015-12-02 22:03:50 : -> Content-Type: text/html; charset=UTF-8
+
+2015-12-02 22:03:50 : -> 
+
+2015-12-02 22:03:50 : -> VERIFIED
+2015-12-02 22:03:50 : - Transaction : OK 
+2015-12-02 22:03:50 : - Paiement statut : OK 
+2015-12-02 22:03:50 : - Transaction ID : OK 
+2015-12-02 22:03:50 : - Compte PayPal : OK 
+2015-12-02 22:03:50 : ----------- FIN TRAITEMENT ----------- 
+2015-12-02 22:03:50 : - Confirmation de commande
