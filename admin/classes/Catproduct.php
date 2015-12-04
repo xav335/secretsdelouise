@@ -109,7 +109,7 @@ class Catproduct extends StorageManager {
 			$contenu = "<div class='large-4 medium-4 small-12 columns' onclick=\"location.href='categories.php?idrub=" . $data[ "id" ] . "'\">\n";
 			$contenu .= "	<div class='content'>\n";
 			$contenu .= "		<span>\n";
-			$contenu .= "			<img src='img/couronne.png' alt='' class='couronne' />\n";
+			//$contenu .= "			<img src='img/couronne.png' alt='' class='couronne' />\n";
 			$contenu .= "			<img src='" . $_image . "' alt='' class='img' />\n";
 			$contenu .= "		</span>\n";
 			$contenu .= "		<h4>" . $data[ "label" ] . "</h4>\n";
