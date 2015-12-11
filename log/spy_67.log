@@ -1,0 +1,86 @@
+2015-12-08 16:30:45 : - Debut traitement.
+2015-12-08 16:30:45 : - 127.0.0.1
+2015-12-08 16:30:45 : - Req : cmd=_notify-validate&mc_gross=29.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=CG9SYQKBWGLBL&tax=4.00&address_street=4%2C+impasse+Ramus&payment_date=07%3A30%3A29+Dec+08%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=31560&first_name=Anthony&mc_fee=1.24&address_country_code=FR&address_name=Anthony+Laporterie&notify_version=3.8&custom=67%3B23%3B20.00%3B5.00%3B4.00&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=NAILLOUX&quantity=1&verify_sign=AC1iSxMmtIKk8bpIU-IjKOnn3f3WAC7B3.ruhxTJM4Bqhs5.oB7CpMtV&payer_email=thitony31%40yahoo.fr&txn_id=8TW48054TM0251105&payment_type=instant&last_name=Laporterie&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.67+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&handling_amount=0.00&transaction_subject=67%3B23%3B20.00%3B5.00%3B4.00&payment_gross=&shipping=5.00&ipn_track_id=1ae948e6df07b
+2015-12-08 16:30:46 : - Contenu POST :
+2015-12-08 16:30:46 : - Array
+(
+    [mc_gross] => 29.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => CG9SYQKBWGLBL
+    [tax] => 4.00
+    [address_street] => 4, impasse Ramus
+    [payment_date] => 07:30:29 Dec 08, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 31560
+    [first_name] => Anthony
+    [mc_fee] => 1.24
+    [address_country_code] => FR
+    [address_name] => Anthony Laporterie
+    [notify_version] => 3.8
+    [custom] => 67;23;20.00;5.00;4.00
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => NAILLOUX
+    [quantity] => 1
+    [verify_sign] => AC1iSxMmtIKk8bpIU-IjKOnn3f3WAC7B3.ruhxTJM4Bqhs5.oB7CpMtV
+    [payer_email] => thitony31@yahoo.fr
+    [txn_id] => 8TW48054TM0251105
+    [payment_type] => instant
+    [last_name] => Laporterie
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.67 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [handling_amount] => 0.00
+    [transaction_subject] => 67;23;20.00;5.00;4.00
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 1ae948e6df07b
+)
+
+2015-12-08 16:30:46 : - Validation HTTP : OK
+2015-12-08 16:30:46 : -> HTTP/1.1 200 OK
+
+2015-12-08 16:30:46 : -> Date: Tue, 08 Dec 2015 15:30:46 GMT
+
+2015-12-08 16:30:46 : -> Server: Apache
+
+2015-12-08 16:30:46 : -> X-Frame-Options: SAMEORIGIN
+
+2015-12-08 16:30:46 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=fiihZcVgAo1tlG37I057oUUmvuMhW6ue3v_mjZcf5VqSdDOClUHsGPmWKNFAP1od1-AsnUaMB5wj2sGv4BDl1usK-LipYFvPDYoU5ZNEh0h7KxHT4oYIi4SynUWDvwXO__Wql6tyYRFgXnSqZ_eW3Mz1L6dxetyngu41C9deu03mteTq_1dELzWdMeDLLPY35SIcYkpkfsZb6pgytMVIgtLBVqX0gWtj-zCtGqjyQaxe0q30FAnl1vkge704GTTqorYmcKYwO_5HCPLAbak4AqG2FsfdZnshLwHAmCwwZ02iKSSsBx8d2YZVugJaYrdv_PVcWxikkMYiDXeYqIDRYHL3pU6z7emXk3aI4d_hcTUA62Ei1f5Wir-w18iICdMTXY6T0T1ndJI4F9SRV2lW2xONGWjvB8QkkJawifXNV6MyuCnqIDKluKK7O00; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-08 16:30:46 : -> Set-Cookie: cookie_check=yes; expires=Fri, 05-Dec-2025 15:30:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-08 16:30:46 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-08 16:30:46 : -> Set-Cookie: navlns=0.0; expires=Thu, 07-Dec-2017 15:30:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-08 16:30:46 : -> Vary: Accept-Encoding
+
+2015-12-08 16:30:46 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2015-12-08 16:30:46 : -> Pragma: no-cache
+
+2015-12-08 16:30:46 : -> Strict-Transport-Security: max-age=14400
+
+2015-12-08 16:30:46 : -> Connection: close
+
+2015-12-08 16:30:46 : -> Content-Type: text/html; charset=UTF-8
+
+2015-12-08 16:30:46 : -> 
+
+2015-12-08 16:30:46 : -> VERIFIED
+2015-12-08 16:30:46 : - Transaction : OK 
+2015-12-08 16:30:46 : - Paiement statut : OK 
+2015-12-08 16:30:46 : - Transaction ID : OK 
+2015-12-08 16:30:46 : - Compte PayPal : OK 
+2015-12-08 16:30:46 : ----------- FIN TRAITEMENT ----------- 
+2015-12-08 16:30:46 : - Confirmation de commande

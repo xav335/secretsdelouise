@@ -1,0 +1,80 @@
+2015-12-08 22:58:59 : - Debut traitement.
+2015-12-08 22:58:59 : - 127.0.0.1
+2015-12-08 22:58:59 : - Req : cmd=_notify-validate&mc_gross=152.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=73Q5KHTKVHLKU&tax=25.33&address_street=178+rue+Colbert&payment_date=13%3A58%3A42+Dec+08%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=92700&first_name=Elise&mc_fee=5.42&address_country_code=FR&address_name=Elise+Ramin&notify_version=3.8&custom=68%3B24%3B126.67%3B0.00%3B25.33&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=Colombes&quantity=1&verify_sign=AxOdalpSxiz3RSc09A6XB6DUNiHpAcK21eqpim0TrdYu87aALaCsLe4D&payer_email=eliseramin%40yahoo.fr&txn_id=8TX68605DF263053R&payment_type=instant&last_name=Ramin&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.68+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&handling_amount=0.00&transaction_subject=68%3B24%3B126.67%3B0.00%3B25.33&payment_gross=&shipping=0.00&ipn_track_id=4732e625360ed
+2015-12-08 22:59:00 : - Contenu POST :
+2015-12-08 22:59:00 : - Array
+(
+    [mc_gross] => 152.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => 73Q5KHTKVHLKU
+    [tax] => 25.33
+    [address_street] => 178 rue Colbert
+    [payment_date] => 13:58:42 Dec 08, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 92700
+    [first_name] => Elise
+    [mc_fee] => 5.42
+    [address_country_code] => FR
+    [address_name] => Elise Ramin
+    [notify_version] => 3.8
+    [custom] => 68;24;126.67;0.00;25.33
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => Colombes
+    [quantity] => 1
+    [verify_sign] => AxOdalpSxiz3RSc09A6XB6DUNiHpAcK21eqpim0TrdYu87aALaCsLe4D
+    [payer_email] => eliseramin@yahoo.fr
+    [txn_id] => 8TX68605DF263053R
+    [payment_type] => instant
+    [last_name] => Ramin
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.68 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [handling_amount] => 0.00
+    [transaction_subject] => 68;24;126.67;0.00;25.33
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 4732e625360ed
+)
+
+2015-12-08 22:59:00 : - Validation HTTP : OK
+2015-12-08 22:59:00 : -> HTTP/1.1 200 OK
+
+2015-12-08 22:59:00 : -> Date: Tue, 08 Dec 2015 21:59:00 GMT
+
+2015-12-08 22:59:00 : -> Server: Apache
+
+2015-12-08 22:59:00 : -> X-Frame-Options: SAMEORIGIN
+
+2015-12-08 22:59:00 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=xgn8VR6M3seY_iM5y21nViq39wo6FhsbBrJRCbYD9DxpbZiKtvJ7a_7E_9KJF3qv0q97Tyz9Q8cUPHTiQyryenrPyW2-pmH7FlpFo4-XxlxFxkaes1bi_0KXyQKhWEkC7MnPupJhpmecXTkym0K7TgiYzfABz0-iplYkBOHZrpMDSVHIjJ1lE627qo3srqhTwahVIfL9GBV2Qf_R5IQiSHp_BL5KcAGf3_GaY2yc0WBQ-2MuaNOgC0Qt8SldzKKECjuhSYJMeyNCz-dPHvHh06GpZOdSd3Z-qg8e8XORaC0tWDI4T8Lj0ZIwYju2S-4jQrawP6NiWwH8jIfQ47BzZ68SByHk9RzYixso7zN9AEqQK1rmbxO-ZRJXy_TTFEOgQ7bX5gCovvagoOToU4MP5N2PXWAZwf92XMcZbMYYMiE2go6YJU00frQn1Ba; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-08 22:59:00 : -> Set-Cookie: cookie_check=yes; expires=Fri, 05-Dec-2025 21:59:00 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-08 22:59:00 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-08 22:59:00 : -> Set-Cookie: navlns=0.0; expires=Thu, 07-Dec-2017 21:59:00 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-08 22:59:00 : -> Vary: Accept-Encoding
+
+2015-12-08 22:59:00 : -> Connection: close
+
+2015-12-08 22:59:00 : -> Content-Type: text/html; charset=UTF-8
+
+2015-12-08 22:59:00 : -> 
+
+2015-12-08 22:59:00 : -> VERIFIED
+2015-12-08 22:59:00 : - Transaction : OK 
+2015-12-08 22:59:00 : - Paiement statut : OK 
+2015-12-08 22:59:00 : - Transaction ID : OK 
+2015-12-08 22:59:00 : - Compte PayPal : OK 
+2015-12-08 22:59:00 : ----------- FIN TRAITEMENT ----------- 
+2015-12-08 22:59:00 : - Confirmation de commande

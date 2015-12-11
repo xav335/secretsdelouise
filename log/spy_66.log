@@ -1,0 +1,88 @@
+2015-12-05 19:47:18 : - Debut traitement.
+2015-12-05 19:47:18 : - 127.0.0.1
+2015-12-05 19:47:18 : - Req : cmd=_notify-validate&mc_gross=29.00&protection_eligibility=Ineligible&address_status=unconfirmed&payer_id=9XAU922M5UPXN&tax=4.00&address_street=10+rue+l%E9on+lalanne%0D%0AR%E9sidence+du+centre+B%E2timent+2+Apt+46&payment_date=10%3A46%3A59+Dec+05%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=40+000&first_name=Sarah&mc_fee=1.24&address_country_code=FR&address_name=Sarah+Beaudoux&notify_version=3.8&custom=66%3B22%3B20.00%3B5.00%3B4.00&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=mont-de-marsan&quantity=1&verify_sign=AHimQYsMLD0-U7HrwrPnd9TO-MT-AXN07lKRxP1PJPDmUQ9WmuPDGAyE&payer_email=sarah.beaudoux%40cegetel.net&txn_id=2JC54957NH368073U&payment_type=instant&last_name=Beaudoux&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.66+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=5454-7947-6194-0210&handling_amount=0.00&transaction_subject=66%3B22%3B20.00%3B5.00%3B4.00&payment_gross=&shipping=5.00&ipn_track_id=e9386bdcf1cf2
+2015-12-05 19:47:19 : - Contenu POST :
+2015-12-05 19:47:19 : - Array
+(
+    [mc_gross] => 29.00
+    [protection_eligibility] => Ineligible
+    [address_status] => unconfirmed
+    [payer_id] => 9XAU922M5UPXN
+    [tax] => 4.00
+    [address_street] => 10 rue léon lalanne
+Résidence du centre Bâtiment 2 Apt 46
+    [payment_date] => 10:46:59 Dec 05, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 40 000
+    [first_name] => Sarah
+    [mc_fee] => 1.24
+    [address_country_code] => FR
+    [address_name] => Sarah Beaudoux
+    [notify_version] => 3.8
+    [custom] => 66;22;20.00;5.00;4.00
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => mont-de-marsan
+    [quantity] => 1
+    [verify_sign] => AHimQYsMLD0-U7HrwrPnd9TO-MT-AXN07lKRxP1PJPDmUQ9WmuPDGAyE
+    [payer_email] => sarah.beaudoux@cegetel.net
+    [txn_id] => 2JC54957NH368073U
+    [payment_type] => instant
+    [last_name] => Beaudoux
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.66 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 5454-7947-6194-0210
+    [handling_amount] => 0.00
+    [transaction_subject] => 66;22;20.00;5.00;4.00
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => e9386bdcf1cf2
+)
+
+2015-12-05 19:47:19 : - Validation HTTP : OK
+2015-12-05 19:47:20 : -> HTTP/1.1 200 OK
+
+2015-12-05 19:47:20 : -> Date: Sat, 05 Dec 2015 18:47:19 GMT
+
+2015-12-05 19:47:20 : -> Server: Apache
+
+2015-12-05 19:47:20 : -> X-Frame-Options: SAMEORIGIN
+
+2015-12-05 19:47:20 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=LB1i78os1FBpU_RKyRBf9b-aCe6me2xSzS2qZYTEgefn2UH4dMLWHnm3wK20HGLNZ2l62ycG5bCnoxPRb4Vs-dC6aWhA11ExB-KaTRsjRzMkuQMOZfGjim86OaCH0Dw45lte6L_7rLBjwnn_krJ2EOtmvFQ9Lbh8JxWmKqfJVq6RVSH2MfX8NKdR1IMYy0SVV1JvSXnL98IsBf2h9ZgyyZ6_joCjLEHP47ui9g_qG5Ic1GSEmKSGg4fOErHicVJr-g-Yht5WMvgigx5PrmAun_Ae78OZ0xwhfB6FeKLjZvkbWwHRi2XE_OXhXyjyCEeAFAXXHdHXlGb7PylajytFnoZmZNn34nXAlIa7GMt2yR3NSQDoPH-keE2zviDiYHu5Nr8o3H1Gd7yU0yBNXXmHzSY3g40kus5ekiIWCUGXQzPsvT_2O3MkCDfpMG8; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-05 19:47:20 : -> Set-Cookie: cookie_check=yes; expires=Tue, 02-Dec-2025 18:47:20 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-05 19:47:20 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-05 19:47:20 : -> Set-Cookie: navlns=0.0; expires=Mon, 04-Dec-2017 18:47:20 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-05 19:47:20 : -> Vary: Accept-Encoding
+
+2015-12-05 19:47:20 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2015-12-05 19:47:20 : -> Pragma: no-cache
+
+2015-12-05 19:47:20 : -> Strict-Transport-Security: max-age=14400
+
+2015-12-05 19:47:20 : -> Connection: close
+
+2015-12-05 19:47:20 : -> Content-Type: text/html; charset=UTF-8
+
+2015-12-05 19:47:20 : -> 
+
+2015-12-05 19:47:20 : -> VERIFIED
+2015-12-05 19:47:20 : - Transaction : OK 
+2015-12-05 19:47:20 : - Paiement statut : OK 
+2015-12-05 19:47:20 : - Transaction ID : OK 
+2015-12-05 19:47:20 : - Compte PayPal : OK 
+2015-12-05 19:47:20 : ----------- FIN TRAITEMENT ----------- 
+2015-12-05 19:47:20 : - Confirmation de commande
