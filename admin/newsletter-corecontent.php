@@ -161,7 +161,7 @@ if (!empty($_GET['postaction']) && $_GET['postaction']=='preview') {
 				//mail($_to, $sujet, stripslashes($corpsCode), $entete);
 				///////////////////////////////////////////////////////////
 				////////////////ELASTIC MAIL ICONEO!!!!!!!!!!////////////
-				sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), MAIL_CUSTOMER, MAIL_NAME_CUSTOMER );
+				//sendElasticEmail($_to, $sujet, "", stripslashes($corpsCode), MAIL_CUSTOMER, MAIL_NAME_CUSTOMER );
 				///////////////////////////////////////////////////////////
 				error_log(date("Y-m-d H:i:s") ." envoi : OK : ". $value['email'] ."\n", 3, "newsletterspy.log");
 				//echo "envoi OK : ". $value['email'] ."<br>";

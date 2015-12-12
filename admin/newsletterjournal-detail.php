@@ -57,7 +57,7 @@ require 'classes/Newsletter.php';
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
 			<h3>Tracking de l'envoi de mail n°: <?php echo $_GET['id']?></h3>
-				<?php echo paginate('journalnewsletter-detail.php?id='. $_GET['id'], '&p=', $nbPages, $current); ?>
+				<?php echo paginate('newsletterjournal-detail.php?id='. $_GET['id'], '&p=', $nbPages, $current); ?>
 				<a class="btn btn-success pull-right" href="/admin/newsletterjournal-list.php">Retour</a>
 			</div>
 		</div>
@@ -111,7 +111,7 @@ require 'classes/Newsletter.php';
 
 				<h3><?php echo $message?></h3>
 			</div>
-			<?php echo paginate('journalnewsletter-detail.php?id='. $_GET['id'], '&p=', $nbPages, $current); ?>
+			<?php echo paginate('newsletterjournal-detail.php?id='. $_GET['id'], '&p=', $nbPages, $current); ?>
 		</div>
 	</div>
 </body>
