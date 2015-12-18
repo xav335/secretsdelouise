@@ -1,0 +1,87 @@
+2015-12-17 15:01:44 : - Debut traitement.
+2015-12-17 15:01:44 : - 127.0.0.1
+2015-12-17 15:01:44 : - Req : cmd=_notify-validate&mc_gross=29.00&protection_eligibility=Ineligible&address_status=unconfirmed&payer_id=5N9VSWU5H3LWQ&tax=4.00&address_street=144+route+de+salvagnac&payment_date=06%3A00%3A51+Dec+17%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=81310&first_name=Patty&mc_fee=1.24&address_country_code=FR&address_name=Patty+Geniey&notify_version=3.8&custom=78%3B29%3B20.00%3B5.00%3B4.00&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=lisle+sur+tarn&quantity=1&verify_sign=A19LTdRzlGQP6UdbKKthOR8iXy-HAhjG6OnMdOm-mL7UNRNJZtPynaEY&payer_email=pattygeniey%40gmail.com&txn_id=7W792003BN206603N&payment_type=instant&last_name=Geniey&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.78+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=0104-3111-9168-2281&handling_amount=0.00&transaction_subject=78%3B29%3B20.00%3B5.00%3B4.00&payment_gross=&shipping=5.00&ipn_track_id=91aa94d64d3cd
+2015-12-17 15:01:45 : - Contenu POST :
+2015-12-17 15:01:45 : - Array
+(
+    [mc_gross] => 29.00
+    [protection_eligibility] => Ineligible
+    [address_status] => unconfirmed
+    [payer_id] => 5N9VSWU5H3LWQ
+    [tax] => 4.00
+    [address_street] => 144 route de salvagnac
+    [payment_date] => 06:00:51 Dec 17, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 81310
+    [first_name] => Patty
+    [mc_fee] => 1.24
+    [address_country_code] => FR
+    [address_name] => Patty Geniey
+    [notify_version] => 3.8
+    [custom] => 78;29;20.00;5.00;4.00
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => lisle sur tarn
+    [quantity] => 1
+    [verify_sign] => A19LTdRzlGQP6UdbKKthOR8iXy-HAhjG6OnMdOm-mL7UNRNJZtPynaEY
+    [payer_email] => pattygeniey@gmail.com
+    [txn_id] => 7W792003BN206603N
+    [payment_type] => instant
+    [last_name] => Geniey
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.78 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 0104-3111-9168-2281
+    [handling_amount] => 0.00
+    [transaction_subject] => 78;29;20.00;5.00;4.00
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 91aa94d64d3cd
+)
+
+2015-12-17 15:01:45 : - Validation HTTP : OK
+2015-12-17 15:01:45 : -> HTTP/1.1 200 OK
+
+2015-12-17 15:01:45 : -> Date: Thu, 17 Dec 2015 14:01:45 GMT
+
+2015-12-17 15:01:45 : -> Server: Apache
+
+2015-12-17 15:01:45 : -> X-Frame-Options: SAMEORIGIN
+
+2015-12-17 15:01:45 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=5RO0MhpCn6THnu446LkYTbFlKBndZb09BwAJPZF3fOLGO5tQr7-9hn3ibbmB03mDq7cd2IKe2Y_gWoNP-PkGTmZbWOhhiyQr-ytLJzAt_sBZzJ8ujA0gkIQy64AQhJLAixgIcEkq1yulKnyUGjTAvEfzYLiv5JNv092xTFHz3x3EIUkTQ83eHhZ_pFdpHZ_HR-Hc2oznXyP6_tfuVUhGoL6fJGDCNIQwBM7oHvzdvckBS0M259Ld-v7yxookYQW5JyD-zyru3TJb4JDhshm_Bd9XfBABDNODDVrRjCb1TI_ooGPZ1BpXcifR6mpesf-rnhjUn-Qr5M6fN0P41SPmKy5DXthlYp5kq54v9NYLbjEDq4be6BjgA-STahxe1EWLvobLH2J1PDqT1ajG2LlPYdmYCBU6D8bH9qpxzfppMIhG63-qnfSLoijyx0a; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-17 15:01:45 : -> Set-Cookie: cookie_check=yes; expires=Sun, 14-Dec-2025 14:01:45 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-17 15:01:45 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-17 15:01:45 : -> Set-Cookie: navlns=0.0; expires=Sat, 16-Dec-2017 14:01:45 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-17 15:01:45 : -> Vary: Accept-Encoding
+
+2015-12-17 15:01:45 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2015-12-17 15:01:45 : -> Pragma: no-cache
+
+2015-12-17 15:01:45 : -> Strict-Transport-Security: max-age=14400
+
+2015-12-17 15:01:45 : -> Connection: close
+
+2015-12-17 15:01:45 : -> Content-Type: text/html; charset=UTF-8
+
+2015-12-17 15:01:45 : -> 
+
+2015-12-17 15:01:45 : -> VERIFIED
+2015-12-17 15:01:45 : - Transaction : OK 
+2015-12-17 15:01:45 : - Paiement statut : OK 
+2015-12-17 15:01:45 : - Transaction ID : OK 
+2015-12-17 15:01:45 : - Compte PayPal : OK 
+2015-12-17 15:01:46 : ----------- FIN TRAITEMENT ----------- 
+2015-12-17 15:01:46 : - Confirmation de commande

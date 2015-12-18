@@ -1,0 +1,81 @@
+2015-12-15 21:28:48 : - Debut traitement.
+2015-12-15 21:28:48 : - 127.0.0.1
+2015-12-15 21:28:48 : - Req : cmd=_notify-validate&mc_gross=29.00&protection_eligibility=Ineligible&address_status=unconfirmed&payer_id=3FNCW397MAMBN&tax=4.00&address_street=1219+chemin+des+brules&payment_date=12%3A27%3A50+Dec+15%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=45570&first_name=donald&mc_fee=1.24&address_country_code=FR&address_name=donald+cochin&notify_version=3.8&custom=76%3B27%3B20.00%3B5.00%3B4.00&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=ouzouer+sur+loire&quantity=1&verify_sign=AcaB-24BDavsXA1yBk.S7iQOyvWQAWuVUFCa6MGusa.Gb5MgjzxJTJod&payer_email=docochin%40yahoo.fr&txn_id=2BH12504JF327042S&payment_type=instant&last_name=cochin&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.76+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=3703-9083-5063-2012&handling_amount=0.00&transaction_subject=76%3B27%3B20.00%3B5.00%3B4.00&payment_gross=&shipping=5.00&ipn_track_id=4721c8636fee9
+2015-12-15 21:28:48 : - Contenu POST :
+2015-12-15 21:28:48 : - Array
+(
+    [mc_gross] => 29.00
+    [protection_eligibility] => Ineligible
+    [address_status] => unconfirmed
+    [payer_id] => 3FNCW397MAMBN
+    [tax] => 4.00
+    [address_street] => 1219 chemin des brules
+    [payment_date] => 12:27:50 Dec 15, 2015 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 45570
+    [first_name] => donald
+    [mc_fee] => 1.24
+    [address_country_code] => FR
+    [address_name] => donald cochin
+    [notify_version] => 3.8
+    [custom] => 76;27;20.00;5.00;4.00
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => ouzouer sur loire
+    [quantity] => 1
+    [verify_sign] => AcaB-24BDavsXA1yBk.S7iQOyvWQAWuVUFCa6MGusa.Gb5MgjzxJTJod
+    [payer_email] => docochin@yahoo.fr
+    [txn_id] => 2BH12504JF327042S
+    [payment_type] => instant
+    [last_name] => cochin
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.76 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 3703-9083-5063-2012
+    [handling_amount] => 0.00
+    [transaction_subject] => 76;27;20.00;5.00;4.00
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 4721c8636fee9
+)
+
+2015-12-15 21:28:48 : - Validation HTTP : OK
+2015-12-15 21:28:49 : -> HTTP/1.1 200 OK
+
+2015-12-15 21:28:49 : -> Date: Tue, 15 Dec 2015 20:28:48 GMT
+
+2015-12-15 21:28:49 : -> Server: Apache
+
+2015-12-15 21:28:49 : -> X-Frame-Options: SAMEORIGIN
+
+2015-12-15 21:28:49 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=t_nwRXyhvMvxEm_16SPjM5BiBIpoDTcvlH0r21gsXaT4xf21GFcSfxqW7szEhpiDdnsmHMJ9NlQFb2tUgDtqwUlcBq4LwjhfAT2jRphO8UhBNRzkCLdjns96PeYhXkY-aENTSRSD1oF-Dvk_s-wx_xJB81MqFjAOhfv9k6yuMRTDKdQro7UQ37v_q_O4am-piuepHN6bD2NvGYrwwE6oxQBKLXAPfI_9t127vBwNq22GlzZDMJZ39lnXUeKudCgP0S-2XedkN1kKBq--HKGFGSnjBSmfB2BDnsjEAvFjsom4U9XsRGcIZaIIRaa64JLDEs-isple0hJMKrKMOrvDCgQYN1oKmtKWWR90ft4CmVkfQ5X67MSAwjwOU5nHfaPno22F5iHcLCu3I3pn3x9W8xfRt5rtvqMsMW9hbGnchrvmQG6XaSOD1SBFiKW; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-15 21:28:49 : -> Set-Cookie: cookie_check=yes; expires=Fri, 12-Dec-2025 20:28:49 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-15 21:28:49 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-15 21:28:49 : -> Set-Cookie: navlns=0.0; expires=Thu, 14-Dec-2017 20:28:49 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2015-12-15 21:28:49 : -> Vary: Accept-Encoding
+
+2015-12-15 21:28:49 : -> Connection: close
+
+2015-12-15 21:28:49 : -> Content-Type: text/html; charset=UTF-8
+
+2015-12-15 21:28:49 : -> 
+
+2015-12-15 21:28:49 : -> VERIFIED
+2015-12-15 21:28:49 : - Transaction : OK 
+2015-12-15 21:28:49 : - Paiement statut : OK 
+2015-12-15 21:28:49 : - Transaction ID : OK 
+2015-12-15 21:28:49 : - Compte PayPal : OK 
+2015-12-15 21:28:49 : ----------- FIN TRAITEMENT ----------- 
+2015-12-15 21:28:49 : - Confirmation de commande
