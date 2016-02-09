@@ -1,0 +1,80 @@
+2016-01-04 18:30:50 : - Debut traitement.
+2016-01-04 18:30:50 : - 127.0.0.1
+2016-01-04 18:30:50 : - Req : cmd=_notify-validate&mc_gross=29.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=DQCNLRZ5QPQDE&tax=4.00&address_street=15+all%C3%A9e+des+mimosas&payment_date=09%3A30%3A20+Jan+04%2C+2016+PST&payment_status=Completed&charset=windows-1252&address_zip=51160&first_name=alexandra&mc_fee=1.24&address_country_code=FR&address_name=Alexandra+Boudin&notify_version=3.8&custom=90%3B33%3B20.00%3B5.00%3B4.00&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=ay&quantity=1&verify_sign=AusmIN29LIicRmek2mgEdl89yDgwAlUa6UboxJcxe1Wz1rBlyZ3YvGOZ&payer_email=Alexandra51160%40gmx.fr&txn_id=6JD39232VR435514P&payment_type=instant&last_name=Boudin&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.90+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&handling_amount=0.00&transaction_subject=90%3B33%3B20.00%3B5.00%3B4.00&payment_gross=&shipping=5.00&ipn_track_id=fac2d6352650
+2016-01-04 18:30:51 : - Contenu POST :
+2016-01-04 18:30:51 : - Array
+(
+    [mc_gross] => 29.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => DQCNLRZ5QPQDE
+    [tax] => 4.00
+    [address_street] => 15 allée des mimosas
+    [payment_date] => 09:30:20 Jan 04, 2016 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 51160
+    [first_name] => alexandra
+    [mc_fee] => 1.24
+    [address_country_code] => FR
+    [address_name] => Alexandra Boudin
+    [notify_version] => 3.8
+    [custom] => 90;33;20.00;5.00;4.00
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => ay
+    [quantity] => 1
+    [verify_sign] => AusmIN29LIicRmek2mgEdl89yDgwAlUa6UboxJcxe1Wz1rBlyZ3YvGOZ
+    [payer_email] => Alexandra51160@gmx.fr
+    [txn_id] => 6JD39232VR435514P
+    [payment_type] => instant
+    [last_name] => Boudin
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.90 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [handling_amount] => 0.00
+    [transaction_subject] => 90;33;20.00;5.00;4.00
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => fac2d6352650
+)
+
+2016-01-04 18:30:51 : - Validation HTTP : OK
+2016-01-04 18:30:51 : -> HTTP/1.1 200 OK
+
+2016-01-04 18:30:51 : -> Date: Mon, 04 Jan 2016 17:30:51 GMT
+
+2016-01-04 18:30:51 : -> Server: Apache
+
+2016-01-04 18:30:51 : -> X-Frame-Options: SAMEORIGIN
+
+2016-01-04 18:30:51 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=FohhsFGfT8XT1jF4Aashc9l0FKdIUn8J11t5UNh80Q_36kwdZQloLDTGYn3Og6y6L-pbUhoa-0Mv3ES8oDILaRiv7m_DQo5q24Lr1kGu3n8e2e_Ed2xzgWJXiDPsqmYuhuqVpQQv0QXVIi2w8cboPT6vNd_acY_k_hfKPM4hQvTPB-XO7zq2hOp_5KgHvMfBImRfBPqkA817DpkYKnoYjhu40rY8WlDxb7TSrQS-mSIrVicCKnGU8_GDyzKT-FFPHfFLy8tUfyxLIdqlP68Oj0s1JNmjx2gua9FKp20NDjH7g9agJ60UK97Vu0PB6AbL7vaOukkpiH4OUBIy04IYcJzboyE4ThAu84hQHDUpkMHMXQMmwlrXSPXlEiuiYXXABDX3LIO3j45rw9qzc-lBZTfhN9h8xIxN4VH5MfzL0oO7NrbxrndXHfr379W; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-01-04 18:30:51 : -> Set-Cookie: cookie_check=yes; expires=Thu, 01-Jan-2026 17:30:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-01-04 18:30:51 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-01-04 18:30:51 : -> Set-Cookie: navlns=0.0; expires=Wed, 03-Jan-2018 17:30:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-01-04 18:30:51 : -> Vary: Accept-Encoding
+
+2016-01-04 18:30:51 : -> Connection: close
+
+2016-01-04 18:30:51 : -> Content-Type: text/html; charset=UTF-8
+
+2016-01-04 18:30:51 : -> 
+
+2016-01-04 18:30:51 : -> VERIFIED
+2016-01-04 18:30:51 : - Transaction : OK 
+2016-01-04 18:30:51 : - Paiement statut : OK 
+2016-01-04 18:30:51 : - Transaction ID : OK 
+2016-01-04 18:30:51 : - Compte PayPal : OK 
+2016-01-04 18:30:51 : ----------- FIN TRAITEMENT ----------- 
+2016-01-04 18:30:51 : - Confirmation de commande

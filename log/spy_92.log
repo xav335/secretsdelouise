@@ -1,0 +1,81 @@
+2016-01-14 18:08:20 : - Debut traitement.
+2016-01-14 18:08:20 : - 127.0.0.1
+2016-01-14 18:08:20 : - Req : cmd=_notify-validate&mc_gross=43.00&protection_eligibility=Ineligible&address_status=unconfirmed&payer_id=HC9NSW3XKDABS&tax=6.33&address_street=11+rue+simone+signoret&payment_date=09%3A08%3A07+Jan+14%2C+2016+PST&payment_status=Completed&charset=windows-1252&address_zip=72000&first_name=claudine&mc_fee=1.71&address_country_code=FR&address_name=claudine+METTRA&notify_version=3.8&custom=92%3B36%3B31.67%3B5.00%3B6.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=LE+MANS&quantity=1&verify_sign=AYuK.fkGZ2oTLW-A8lbAGEOXCqMaAX7RAFaKz13ThZzUjA8nQulbM2hH&payer_email=claudine.apolinaire%40neuf.fr&txn_id=4FP10685420504004&payment_type=instant&last_name=METTRA&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.92+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4171-1075-2831-8189&handling_amount=0.00&transaction_subject=92%3B36%3B31.67%3B5.00%3B6.33&payment_gross=&shipping=5.00&ipn_track_id=efeeae0ad4734
+2016-01-14 18:08:20 : - Contenu POST :
+2016-01-14 18:08:20 : - Array
+(
+    [mc_gross] => 43.00
+    [protection_eligibility] => Ineligible
+    [address_status] => unconfirmed
+    [payer_id] => HC9NSW3XKDABS
+    [tax] => 6.33
+    [address_street] => 11 rue simone signoret
+    [payment_date] => 09:08:07 Jan 14, 2016 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 72000
+    [first_name] => claudine
+    [mc_fee] => 1.71
+    [address_country_code] => FR
+    [address_name] => claudine METTRA
+    [notify_version] => 3.8
+    [custom] => 92;36;31.67;5.00;6.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => LE MANS
+    [quantity] => 1
+    [verify_sign] => AYuK.fkGZ2oTLW-A8lbAGEOXCqMaAX7RAFaKz13ThZzUjA8nQulbM2hH
+    [payer_email] => claudine.apolinaire@neuf.fr
+    [txn_id] => 4FP10685420504004
+    [payment_type] => instant
+    [last_name] => METTRA
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.92 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4171-1075-2831-8189
+    [handling_amount] => 0.00
+    [transaction_subject] => 92;36;31.67;5.00;6.33
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => efeeae0ad4734
+)
+
+2016-01-14 18:08:20 : - Validation HTTP : OK
+2016-01-14 18:08:21 : -> HTTP/1.1 200 OK
+
+2016-01-14 18:08:21 : -> Date: Thu, 14 Jan 2016 17:08:20 GMT
+
+2016-01-14 18:08:21 : -> Server: Apache
+
+2016-01-14 18:08:21 : -> X-Frame-Options: SAMEORIGIN
+
+2016-01-14 18:08:21 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=smA-rGdQANyRowUWVVt6ny5LdvXhutjv6YIFnsCwRsLTaMd-IGOMVHjHniMPb8gifFxWLq9jqsObYPu9iBOpIh3CWCOzQnxoU1eZ9oF303XvOGdWwefGl3F1nyED-GI_iBpd3Vz9Kq9y-wwxHjgtgRW-LyI1Eh5ZVznZ9_NHctQ7WWG6tQHVjPN5rgOxBLnlgAhMtbHUjOdicD_ZIUfiNcNyN95W_E4Yk-zKAWqLcqWYdBIEYgESbJBEBSeDKVqxecpPA-rY7SUJiwlqAVuPoqW0R0yJS9wmmJyOigR5pAWgc6lHk0ylGzTgMdEIxIYWBPLOuRShsBENFIldK7i_9Arcb919kNoYgdmaduukbOfFop14AHrmBVJ2VmnwFwZRaKyiRFr0-neQYS_kUoBkPUMOffHgqoXZwbTeg9B2av_DX1skNxtbR_j2wHe; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-01-14 18:08:21 : -> Set-Cookie: cookie_check=yes; expires=Sun, 11-Jan-2026 17:08:21 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-01-14 18:08:21 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-01-14 18:08:21 : -> Set-Cookie: navlns=0.0; expires=Sat, 13-Jan-2018 17:08:21 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-01-14 18:08:21 : -> Vary: Accept-Encoding
+
+2016-01-14 18:08:21 : -> Connection: close
+
+2016-01-14 18:08:21 : -> Content-Type: text/html; charset=UTF-8
+
+2016-01-14 18:08:21 : -> 
+
+2016-01-14 18:08:21 : -> VERIFIED
+2016-01-14 18:08:21 : - Transaction : OK 
+2016-01-14 18:08:21 : - Paiement statut : OK 
+2016-01-14 18:08:21 : - Transaction ID : OK 
+2016-01-14 18:08:21 : - Compte PayPal : OK 
+2016-01-14 18:08:21 : ----------- FIN TRAITEMENT ----------- 
+2016-01-14 18:08:21 : - Confirmation de commande
