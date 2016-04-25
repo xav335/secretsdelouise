@@ -1,0 +1,88 @@
+2016-02-29 09:24:53 : - Debut traitement.
+2016-02-29 09:24:53 : - 127.0.0.1
+2016-02-29 09:24:53 : - Req : cmd=_notify-validate&mc_gross=82.00&protection_eligibility=Ineligible&address_status=unconfirmed&payer_id=5TYUJLQGQFR9Q&tax=13.67&address_street=123+LES+SOLARIALES%0D%0ADOMAINE+DE+LA+FORGE&payment_date=00%3A24%3A43+Feb+29%2C+2016+PST&payment_status=Completed&charset=windows-1252&address_zip=33260&first_name=SANDRINE&mc_fee=3.04&address_country_code=FR&address_name=SANDRINE+MOUROT&notify_version=3.8&custom=95%3B39%3B68.33%3B0.00%3B13.67&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=LA+TESTE-DE-BUCH&quantity=1&verify_sign=Aa59uhewgyn78hUcRR-uuQfrZ6ApAGI6clRm4lD4Rl1jzSIrcjKANIm-&payer_email=mourot.patrice%40orange.fr&txn_id=13K790526X6697352&payment_type=instant&last_name=MOUROT&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.95+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=1467-7084-0764-0848&handling_amount=0.00&transaction_subject=&payment_gross=&shipping=0.00&ipn_track_id=915578a757a83
+2016-02-29 09:24:54 : - Contenu POST :
+2016-02-29 09:24:54 : - Array
+(
+    [mc_gross] => 82.00
+    [protection_eligibility] => Ineligible
+    [address_status] => unconfirmed
+    [payer_id] => 5TYUJLQGQFR9Q
+    [tax] => 13.67
+    [address_street] => 123 LES SOLARIALES
+DOMAINE DE LA FORGE
+    [payment_date] => 00:24:43 Feb 29, 2016 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 33260
+    [first_name] => SANDRINE
+    [mc_fee] => 3.04
+    [address_country_code] => FR
+    [address_name] => SANDRINE MOUROT
+    [notify_version] => 3.8
+    [custom] => 95;39;68.33;0.00;13.67
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => LA TESTE-DE-BUCH
+    [quantity] => 1
+    [verify_sign] => Aa59uhewgyn78hUcRR-uuQfrZ6ApAGI6clRm4lD4Rl1jzSIrcjKANIm-
+    [payer_email] => mourot.patrice@orange.fr
+    [txn_id] => 13K790526X6697352
+    [payment_type] => instant
+    [last_name] => MOUROT
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.95 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 1467-7084-0764-0848
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 915578a757a83
+)
+
+2016-02-29 09:24:54 : - Validation HTTP : OK
+2016-02-29 09:24:54 : -> HTTP/1.1 200 OK
+
+2016-02-29 09:24:54 : -> Date: Mon, 29 Feb 2016 08:24:54 GMT
+
+2016-02-29 09:24:54 : -> Server: Apache
+
+2016-02-29 09:24:54 : -> X-Frame-Options: SAMEORIGIN
+
+2016-02-29 09:24:54 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=x5md0OtRcuUfUScbpj5bg4B-4MMQSHHqtSkCrdnGNofl3_N8fdBtGrXNPdb7IsS3UPLIRjfH6iSGficp_ihp81M2fNsVGv_hmETGNOMQFIPy7he44zQAz7ljRLsoKe1pFWcYEdAcD7VrZF3giOOMm7BmMArLP1gAmH617LhhrHIRzQt2nzMbspdZgTAYroU4eoFiYOcU9PtfslylIdNfbNS3XVx6Y1oz8nXOVNBx4UXpfqc9-9t6nrSu6ZVvyY5C1FE0HQRrn-_rWSOkvNP5uH8g3RY9PrRjVs7Y3_Z26uQcBItRghlkeusMGbLlZW7JF_6rKeN1j3h-MZtrf4tlUpJMS7AQ09MknNSFJtY-D3j4KmoNDY8gap2AdM7eGpdDNeneT71cYqvHgwkIqGqoUrEnqll4MTtrlR2DlvoovJtsTds1oo5V-rzVlcC; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-02-29 09:24:54 : -> Set-Cookie: cookie_check=yes; expires=Thu, 26-Feb-2026 08:24:54 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-02-29 09:24:54 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-02-29 09:24:54 : -> Set-Cookie: navlns=0.0; expires=Wed, 28-Feb-2018 08:24:54 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-02-29 09:24:54 : -> Vary: Accept-Encoding
+
+2016-02-29 09:24:54 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2016-02-29 09:24:54 : -> Pragma: no-cache
+
+2016-02-29 09:24:54 : -> Strict-Transport-Security: max-age=14400
+
+2016-02-29 09:24:54 : -> Connection: close
+
+2016-02-29 09:24:54 : -> Content-Type: text/html; charset=UTF-8
+
+2016-02-29 09:24:54 : -> 
+
+2016-02-29 09:24:54 : -> VERIFIED
+2016-02-29 09:24:54 : - Transaction : OK 
+2016-02-29 09:24:54 : - Paiement statut : OK 
+2016-02-29 09:24:54 : - Transaction ID : OK 
+2016-02-29 09:24:54 : - Compte PayPal : OK 
+2016-02-29 09:24:54 : ----------- FIN TRAITEMENT ----------- 
+2016-02-29 09:24:54 : - Confirmation de commande

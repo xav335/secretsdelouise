@@ -45,7 +45,7 @@ if ($_POST[ "action" ] == "sendMail") {
 	$entete .= "MIME-version: 1.0\n";
 	$entete .= "Content-type: text/html; charset= utf-8\n";
 	$entete .= "Bcc: ". MAIL_BCC ."\n";
-		
+	$entete .= "Reply-to: " . $_POST[ "email" ] . "\n";		
 	$corps = "";
 	$corps .= "Bonjour,<br>";
 	$corps .= "Sujet : " . utf8_decode( $_POST[ "sujet" ] ) ."<br>";

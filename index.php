@@ -13,7 +13,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
-		<title>Les Secrets de Louise - Bijoux &amp; accessoires</title>
+		<title>Les Secrets de Louise - Bijoux &amp; accessoires - Arcachon</title>
 		<meta name="description" content="les secrets de louise - création de bijoux - bijoux & accessoires " />
 	    <meta name="keywords" content="bijoux, bijoux fantaisie, colliers, montres, sacs, bagues, bracelets, boucles d'oreilles, créoles, maroquinerie, portes clés, jonc, ras du coup, sautoirs" />
 		<? include( "inc/meta.php" ); ?>

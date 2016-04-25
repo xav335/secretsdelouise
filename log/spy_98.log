@@ -1,0 +1,86 @@
+2016-03-31 14:13:57 : - Debut traitement.
+2016-03-31 14:13:57 : - 127.0.0.1
+2016-03-31 14:13:57 : - Req : cmd=_notify-validate&mc_gross=87.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=5LFMYJM5AWRQN&tax=14.50&address_street=40+rue+armand+barb%C3%A8s&payment_date=05%3A13%3A40+Mar+31%2C+2016+PDT&payment_status=Completed&charset=windows-1252&address_zip=87300&first_name=Marie+Line&mc_fee=3.21&address_country_code=FR&address_name=Marie+Line+BONNEAU&notify_version=3.8&custom=98%3B42%3B72.50%3B0.00%3B14.50&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=BELLAC&quantity=1&verify_sign=AF1l47hXqbrLK1bZT.L1VpyhbO.XAqUBQ.00tHdWanPFVl8HvCu1GDqW&payer_email=ml.bonneau%40laposte.net&txn_id=3RX37117J2577842F&payment_type=instant&last_name=BONNEAU&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.98+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&handling_amount=0.00&transaction_subject=&payment_gross=&shipping=0.00&ipn_track_id=1d27666f69bd0
+2016-03-31 14:13:58 : - Contenu POST :
+2016-03-31 14:13:58 : - Array
+(
+    [mc_gross] => 87.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => 5LFMYJM5AWRQN
+    [tax] => 14.50
+    [address_street] => 40 rue armand barbès
+    [payment_date] => 05:13:40 Mar 31, 2016 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 87300
+    [first_name] => Marie Line
+    [mc_fee] => 3.21
+    [address_country_code] => FR
+    [address_name] => Marie Line BONNEAU
+    [notify_version] => 3.8
+    [custom] => 98;42;72.50;0.00;14.50
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => BELLAC
+    [quantity] => 1
+    [verify_sign] => AF1l47hXqbrLK1bZT.L1VpyhbO.XAqUBQ.00tHdWanPFVl8HvCu1GDqW
+    [payer_email] => ml.bonneau@laposte.net
+    [txn_id] => 3RX37117J2577842F
+    [payment_type] => instant
+    [last_name] => BONNEAU
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.98 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 1d27666f69bd0
+)
+
+2016-03-31 14:13:58 : - Validation HTTP : OK
+2016-03-31 14:13:58 : -> HTTP/1.1 200 OK
+
+2016-03-31 14:13:58 : -> Date: Thu, 31 Mar 2016 12:13:58 GMT
+
+2016-03-31 14:13:58 : -> Server: Apache
+
+2016-03-31 14:13:58 : -> X-Frame-Options: SAMEORIGIN
+
+2016-03-31 14:13:58 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=_hW8s6q5sipb2jDcGprK_pkc2fNwzxohK33G3RYGmLeX-kbAjo-5OQTctLQ_SkoYIXQfoUZyBUdLUHaSy8siah4Cghx9r0BDNeAYQuGcvASJHhyLmdiqcb0pqj3XDZN2JqG_w4di4IuDtNw3Gdy9mu2TNWMfTmmN2lkyQqH4oDbiTIbth4oOCicGZGI0UU1RLAr8hF8az2-iiL2W8QiVHofspJ8zviffDZacpYNO3kr5fdoTFct02IjrXLp9S30JwGL1eAa_7F0_aeDhmUE8iYPmyr7t3da9jpR7c_KYWF6T19M04cDhDGMdLgY4wEJwIMyUUvskQv8_fFPQ63MU0zgfmMgaEWNJrH6OlKhcukQF2kkIJOsGd2-T3kBKFUT-5Zc2lH9PHP5cDDaZv8wYOTAXCXkcsE-JnGfL1ieb625kfPTckMj5XIsdA_a; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-03-31 14:13:58 : -> Set-Cookie: cookie_check=yes; expires=Sun, 29-Mar-2026 12:13:58 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-03-31 14:13:58 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-03-31 14:13:58 : -> Set-Cookie: navlns=0.0; expires=Sat, 31-Mar-2018 12:13:58 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-03-31 14:13:58 : -> Vary: Accept-Encoding
+
+2016-03-31 14:13:58 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2016-03-31 14:13:58 : -> Pragma: no-cache
+
+2016-03-31 14:13:58 : -> Strict-Transport-Security: max-age=14400
+
+2016-03-31 14:13:58 : -> Connection: close
+
+2016-03-31 14:13:58 : -> Content-Type: text/html; charset=UTF-8
+
+2016-03-31 14:13:58 : -> 
+
+2016-03-31 14:13:58 : -> VERIFIED
+2016-03-31 14:13:58 : - Transaction : OK 
+2016-03-31 14:13:58 : - Paiement statut : OK 
+2016-03-31 14:13:58 : - Transaction ID : OK 
+2016-03-31 14:13:58 : - Compte PayPal : OK 
+2016-03-31 14:13:58 : ----------- FIN TRAITEMENT ----------- 
+2016-03-31 14:13:58 : - Confirmation de commande

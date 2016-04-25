@@ -1,5 +1,5 @@
 	<meta charset="utf-8" />
-	<meta name="description" content="Les Secrets de Louise vente de bijoux et accessoires" />
+	<meta name="description" content="Les Secrets de Louise vente de bijoux et accessoires - Arcachon" />
 	<meta name="google-site-verification" content="" />
 	<meta name="msvalidate.01" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
