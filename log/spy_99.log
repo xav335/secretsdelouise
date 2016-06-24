@@ -1,0 +1,80 @@
+2016-05-11 15:35:43 : - Debut traitement.
+2016-05-11 15:35:43 : - 127.0.0.1
+2016-05-11 15:35:43 : - Req : cmd=_notify-validate&mc_gross=54.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=CG9SYQKBWGLBL&tax=8.17&address_street=4%2C+impasse+Ramus&payment_date=06%3A27%3A00+May+11%2C+2016+PDT&payment_status=Completed&charset=windows-1252&address_zip=31560&first_name=Anthony&mc_fee=2.09&address_country_code=FR&address_name=Anthony+Laporterie&notify_version=3.8&custom=99%3B23%3B40.83%3B5.00%3B8.17&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=NAILLOUX&quantity=1&verify_sign=A2Ab3TV1KoEWBTo5Y55GiXA2cdWNAgGp5w8MrAvUzfCwkSWKfaqSYQy7&payer_email=thitony31%40yahoo.fr&txn_id=5XW49019P7872430K&payment_type=instant&last_name=Laporterie&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.99+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&handling_amount=0.00&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=f0317625ead9f
+2016-05-11 15:35:44 : - Contenu POST :
+2016-05-11 15:35:44 : - Array
+(
+    [mc_gross] => 54.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => CG9SYQKBWGLBL
+    [tax] => 8.17
+    [address_street] => 4, impasse Ramus
+    [payment_date] => 06:27:00 May 11, 2016 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 31560
+    [first_name] => Anthony
+    [mc_fee] => 2.09
+    [address_country_code] => FR
+    [address_name] => Anthony Laporterie
+    [notify_version] => 3.8
+    [custom] => 99;23;40.83;5.00;8.17
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => NAILLOUX
+    [quantity] => 1
+    [verify_sign] => A2Ab3TV1KoEWBTo5Y55GiXA2cdWNAgGp5w8MrAvUzfCwkSWKfaqSYQy7
+    [payer_email] => thitony31@yahoo.fr
+    [txn_id] => 5XW49019P7872430K
+    [payment_type] => instant
+    [last_name] => Laporterie
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.99 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => f0317625ead9f
+)
+
+2016-05-11 15:35:44 : - Validation HTTP : OK
+2016-05-11 15:35:44 : -> HTTP/1.1 200 OK
+
+2016-05-11 15:35:44 : -> Date: Wed, 11 May 2016 13:35:42 GMT
+
+2016-05-11 15:35:44 : -> Server: Apache
+
+2016-05-11 15:35:44 : -> X-Frame-Options: SAMEORIGIN
+
+2016-05-11 15:35:44 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=AoZXEMjlH4dYcBez_6lekX-D2w4EdTJ1EGbLnbcBhwFeRuO_CB7y4YBs_OgnlNq3dlEqkuKFH5vybPHMNsglxQvmFj4pAtxku6M5i9YGlG8SsiWdrj2NQAr0YMDvSvpb_TQFAOFU4sjAsjn_3wFEM9gCkcoo62TqBQY_n5TufDN8GJPufWyE1sEr1JeNIg7H6sU1FPF5ehOsaU1r5QLEuGY_pZAfY1clNDWYdRrT82cjKcmqUKk0BLsOTBwdlJGhn6cGQiZPvsVGonZfnAiqWtMEgICqHKJSFSp5Oewl8qmogUJS7sWIzdAQdVltNSTk-RVXP2vhm-qBS5rKlg7A9T1Xau3cy1i6RX-DL-QHfoR2YXBpOo795aMtBqne_mEJHAxBcpPHruEA21C6SuHyjGuKpukYOlDTM6OfYZznZYA5kNOk9_IKPm0xyba; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-05-11 15:35:44 : -> Set-Cookie: cookie_check=yes; expires=Sat, 09-May-2026 13:35:43 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-05-11 15:35:44 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-05-11 15:35:44 : -> Set-Cookie: navlns=0.0; expires=Fri, 11-May-2018 13:35:43 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-05-11 15:35:44 : -> Vary: Accept-Encoding
+
+2016-05-11 15:35:44 : -> Connection: close
+
+2016-05-11 15:35:44 : -> Content-Type: text/html; charset=UTF-8
+
+2016-05-11 15:35:44 : -> 
+
+2016-05-11 15:35:44 : -> VERIFIED
+2016-05-11 15:35:44 : - Transaction : OK 
+2016-05-11 15:35:44 : - Paiement statut : OK 
+2016-05-11 15:35:44 : - Transaction ID : OK 
+2016-05-11 15:35:44 : - Compte PayPal : OK 
+2016-05-11 15:35:44 : ----------- FIN TRAITEMENT ----------- 
+2016-05-11 15:35:44 : - Confirmation de commande
