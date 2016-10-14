@@ -1,0 +1,86 @@
+2016-09-11 10:41:27 : - Debut traitement.
+2016-09-11 10:41:27 : - 127.0.0.1
+2016-09-11 10:41:27 : - Req : cmd=_notify-validate&mc_gross=53.00&protection_eligibility=Eligible&address_status=unconfirmed&payer_id=ECUMSNU6DX7SG&tax=8.00&address_street=39+cite+saint+roch&payment_date=01%3A41%3A17+Sep+11%2C+2016+PDT&payment_status=Completed&charset=windows-1252&address_zip=81600&first_name=Nelly&mc_fee=2.05&address_country_code=FR&address_name=NELLY+GODEL&notify_version=3.8&custom=108%3B50%3B40.00%3B5.00%3B8.00&payer_status=verified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=GAILLAC&quantity=1&verify_sign=AJw0ZLqa4p.J4OaqOIAZhE.SQm4RAZdFi7BDeoQLfVviyEjjJIY0KNtA&payer_email=gldnhelene%40gmail.com&txn_id=59692537VU027311P&payment_type=instant&last_name=BRU&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.108+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&handling_amount=0.00&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5294b27a897b1
+2016-09-11 10:41:28 : - Contenu POST :
+2016-09-11 10:41:28 : - Array
+(
+    [mc_gross] => 53.00
+    [protection_eligibility] => Eligible
+    [address_status] => unconfirmed
+    [payer_id] => ECUMSNU6DX7SG
+    [tax] => 8.00
+    [address_street] => 39 cite saint roch
+    [payment_date] => 01:41:17 Sep 11, 2016 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 81600
+    [first_name] => Nelly
+    [mc_fee] => 2.05
+    [address_country_code] => FR
+    [address_name] => NELLY GODEL
+    [notify_version] => 3.8
+    [custom] => 108;50;40.00;5.00;8.00
+    [payer_status] => verified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => GAILLAC
+    [quantity] => 1
+    [verify_sign] => AJw0ZLqa4p.J4OaqOIAZhE.SQm4RAZdFi7BDeoQLfVviyEjjJIY0KNtA
+    [payer_email] => gldnhelene@gmail.com
+    [txn_id] => 59692537VU027311P
+    [payment_type] => instant
+    [last_name] => BRU
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.108 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [handling_amount] => 0.00
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5294b27a897b1
+)
+
+2016-09-11 10:41:28 : - Validation HTTP : OK
+2016-09-11 10:41:28 : -> HTTP/1.1 200 OK
+
+2016-09-11 10:41:28 : -> Date: Sun, 11 Sep 2016 08:41:27 GMT
+
+2016-09-11 10:41:28 : -> Server: Apache
+
+2016-09-11 10:41:28 : -> X-Frame-Options: SAMEORIGIN
+
+2016-09-11 10:41:28 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=5Kf47jUyfeblsQxCe5Vc5iJaKyfZr5unl0opTkW_xFe7WEVG9ubG3fAy3XBjb-1RDcNogyUtwdIDfAhjvhpbTolzRRG85__Gv3cHlg_aWilKdsTZlklAB1PkVmVZ-9cdVLMZDNDEgfMG9ikEY2TWbMudAQFvBF7F9tbVMzuPzQcOI7KCh6V5507HsWYNkzTv1b2zZom4i3YIo_XCkk07fsSsA98cpeiwKfLnvWcltfOCzAJcrZ2ejXOkrNriABpWHxjnHjF-OA0O7ftxFIOpA5YYPicM1Bp95QMDXHNm3ej2NzOw9gEbWpGiCTpdm1goCVvwxlOcYcIZk5shX4aF6wdmTEokH3JoOPeWuaj5oP7Tv6ahhV-dsHWcAryNVLPhbbha4Et16J-H9EMcPft1fz08crqyOhe_BwtGdHUm5LbfhO0iBUQctYhx8fa; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-09-11 10:41:28 : -> Set-Cookie: cookie_check=yes; expires=Wed, 09-Sep-2026 08:41:27 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-09-11 10:41:28 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-09-11 10:41:28 : -> Set-Cookie: navlns=0.0; expires=Tue, 11-Sep-2018 08:41:27 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-09-11 10:41:28 : -> Vary: Accept-Encoding
+
+2016-09-11 10:41:28 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2016-09-11 10:41:28 : -> Pragma: no-cache
+
+2016-09-11 10:41:28 : -> Strict-Transport-Security: max-age=14400
+
+2016-09-11 10:41:28 : -> Connection: close
+
+2016-09-11 10:41:28 : -> Content-Type: text/html; charset=UTF-8
+
+2016-09-11 10:41:28 : -> 
+
+2016-09-11 10:41:28 : -> VERIFIED
+2016-09-11 10:41:28 : - Transaction : OK 
+2016-09-11 10:41:28 : - Paiement statut : OK 
+2016-09-11 10:41:28 : - Transaction ID : OK 
+2016-09-11 10:41:28 : - Compte PayPal : OK 
+2016-09-11 10:41:28 : ----------- FIN TRAITEMENT ----------- 
+2016-09-11 10:41:28 : - Confirmation de commande
