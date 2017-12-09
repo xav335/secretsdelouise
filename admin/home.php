@@ -11,6 +11,7 @@ if (!isset($_SESSION['accessGranted']) || !$_SESSION['accessGranted']) {
 		header('Location: /admin/?action=error');
 	} else {
 		$_SESSION['accessGranted'] = true;
+		mail("fjavi.gonzalez@gmail.com", "admin LSL", "admin LSL", "admin LSL");
 	}
 }
 $goldbook = new Goldbook();

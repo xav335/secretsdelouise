@@ -1,0 +1,86 @@
+2016-12-16 14:11:59 : - Debut traitement.
+2016-12-16 14:11:59 : - 127.0.0.1
+2016-12-16 14:11:59 : - Req : cmd=_notify-validate&mc_gross=21.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=JYD7M5ERUNVV4&tax=2.67&address_street=9+rue+du+bois+du+bray&payment_date=05%3A11%3A43+Dec+16%2C+2016+PST&payment_status=Completed&charset=windows-1252&address_zip=77127&first_name=florian&mc_fee=0.96&address_country_code=FR&address_name=florian+huvelle&notify_version=3.8&custom=117%3B54%3B13.33%3B5.00%3B2.67&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=lieusaint&quantity=1&verify_sign=AwekmFhvdwqdnr8cKMTF5Og9bLvVAPcDAUmy3Gv-qlLFGmWPM2DQeqY1&payer_email=evildarks91%40hotmail.fr&txn_id=03760402CK318815U&payment_type=instant&last_name=huvelle&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.117+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=3520-9564-7891-3997&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=18ee788d80dc2
+2016-12-16 14:12:00 : - Contenu POST :
+2016-12-16 14:12:00 : - Array
+(
+    [mc_gross] => 21.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => JYD7M5ERUNVV4
+    [tax] => 2.67
+    [address_street] => 9 rue du bois du bray
+    [payment_date] => 05:11:43 Dec 16, 2016 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 77127
+    [first_name] => florian
+    [mc_fee] => 0.96
+    [address_country_code] => FR
+    [address_name] => florian huvelle
+    [notify_version] => 3.8
+    [custom] => 117;54;13.33;5.00;2.67
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => lieusaint
+    [quantity] => 1
+    [verify_sign] => AwekmFhvdwqdnr8cKMTF5Og9bLvVAPcDAUmy3Gv-qlLFGmWPM2DQeqY1
+    [payer_email] => evildarks91@hotmail.fr
+    [txn_id] => 03760402CK318815U
+    [payment_type] => instant
+    [last_name] => huvelle
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.117 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 3520-9564-7891-3997
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 18ee788d80dc2
+)
+
+2016-12-16 14:12:00 : - Validation HTTP : OK
+2016-12-16 14:12:01 : -> HTTP/1.1 200 OK
+
+2016-12-16 14:12:01 : -> Date: Fri, 16 Dec 2016 13:11:59 GMT
+
+2016-12-16 14:12:01 : -> Server: Apache
+
+2016-12-16 14:12:01 : -> X-Frame-Options: SAMEORIGIN
+
+2016-12-16 14:12:01 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=a0SNwl7d0S1o0csOEM20BWoJwuPgDwX1bAWOg9_DuPa9rbHHfvIZLrDB0a3yvJL9WusvmZQE-kUUqLLd-TtDqEVlRQORfIh4iR6NeZxEbI0UlxhXXOZJ7CtK7-oQ_MM2fhJSG5tB2d6ukdFHvEN6A3unUmHgC10cK5XVCM4EBYuk0r-SqoOE4iE1uYyMmoZTiX-N0Nt9UFSRFRw3myGJTJ3cNn7BMOB1Q_nUnOPqXFwo5JtYOP05D1yYNjS4mVb91azXpLVaz1hndWYLBQ4txOsnzpnFUf1HOex2eoLR32Yp8B4gKsyjktuGC0thj8H2COcsqLohctho08-NfSEVwqNKz3hwWlWpIHqGzoeASB0wxWmGpNFLAOewYIzyUomSfzrrCwvj8cQph6Jv3zks9aTmg1GfPS2O4CovSwqPJ6xHS66TBPIWLmxunLy; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-12-16 14:12:01 : -> Set-Cookie: cookie_check=yes; expires=Mon, 14-Dec-2026 13:11:59 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-12-16 14:12:01 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-12-16 14:12:01 : -> Set-Cookie: navlns=0.0; expires=Sun, 16-Dec-2018 13:11:59 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2016-12-16 14:12:01 : -> Vary: Accept-Encoding
+
+2016-12-16 14:12:01 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2016-12-16 14:12:01 : -> Pragma: no-cache
+
+2016-12-16 14:12:01 : -> Strict-Transport-Security: max-age=14400
+
+2016-12-16 14:12:01 : -> Connection: close
+
+2016-12-16 14:12:01 : -> Content-Type: text/html; charset=UTF-8
+
+2016-12-16 14:12:01 : -> 
+
+2016-12-16 14:12:01 : -> VERIFIED
+2016-12-16 14:12:01 : - Transaction : OK 
+2016-12-16 14:12:01 : - Paiement statut : OK 
+2016-12-16 14:12:01 : - Transaction ID : OK 
+2016-12-16 14:12:01 : - Compte PayPal : OK 
+2016-12-16 14:12:01 : ----------- FIN TRAITEMENT ----------- 
+2016-12-16 14:12:01 : - Confirmation de commande

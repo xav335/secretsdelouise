@@ -1,0 +1,1663 @@
+2017-01-19 19:22:18 : - Debut traitement.
+2017-01-19 19:22:18 : - 127.0.0.1
+2017-01-19 19:22:18 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 19:22:18 : - Contenu POST :
+2017-01-19 19:22:18 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 19:22:18 : - Validation HTTP : OK
+2017-01-19 19:22:19 : -> HTTP/1.1 200 OK
+
+2017-01-19 19:22:19 : -> Date: Thu, 19 Jan 2017 18:22:17 GMT
+
+2017-01-19 19:22:19 : -> Server: Apache
+
+2017-01-19 19:22:19 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 19:22:19 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=75SKNHfU1nu-lN2G0H79tT4ZOGEJMWhwA0HLE1Pkk67s8Rj22adORwu0OyQBSrNQVBi7P5DVctRkyf3jNWdj3wvAFWHMvXsb6M9rE-d1DZNewRhQTsY6Nrpz_MEWMdnISUgiF5d3C3gxOAXNGZs5zlE_ew634wnlDrisuBLh8ESxr3A7O4Fmifk2pg80ORZERq2R_GudgatFIsFlWRBIgCvGjrR6rEbXOfEOnYaUDq4AoQ87icqsA1Yt5Wy-1ISLmYvoAuJldEgty-1-VZsGPwkZUkSMQXiOUN-6f4UUUVXYaUszAg0R3jikybzuwyOQ7IYTnREnmsGUgV6_5bykh0Z1XmTVD19SV71aJOUooWiMe3VirS18S_T2LCCq0iYQdpRPMfeK0yhRFw-kcEVLM3q680_5yynQpsrYHVdHL84Wt4nlJWq6hfyJNom; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:19 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 18:22:17 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:19 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:19 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 18:22:17 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:19 : -> Vary: Accept-Encoding
+
+2017-01-19 19:22:19 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 19:22:19 : -> Pragma: no-cache
+
+2017-01-19 19:22:19 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 19:22:19 : -> Connection: close
+
+2017-01-19 19:22:19 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 19:22:19 : -> 
+
+2017-01-19 19:22:19 : -> VERIFIED
+2017-01-19 19:22:19 : - Transaction : OK 
+2017-01-19 19:22:19 : - Paiement statut : OK 
+2017-01-19 19:22:19 : - Transaction ID : OK 
+2017-01-19 19:22:19 : - Compte PayPal : OK 
+2017-01-19 19:22:30 : - Debut traitement.
+2017-01-19 19:22:30 : - 127.0.0.1
+2017-01-19 19:22:30 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 19:22:31 : - Contenu POST :
+2017-01-19 19:22:31 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 19:22:31 : - Validation HTTP : OK
+2017-01-19 19:22:31 : -> HTTP/1.1 200 OK
+
+2017-01-19 19:22:31 : -> Date: Thu, 19 Jan 2017 18:22:29 GMT
+
+2017-01-19 19:22:31 : -> Server: Apache
+
+2017-01-19 19:22:31 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 19:22:31 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=gVogErrjI56Lws9yKe2yBQzBVVugpErtiyOdg69rVwNVKklPed9EGizL8EmEAOTK1OKU_XWRh4uw9xDi1ziZWMbf0ltxVaeGzjAvVvMwDgi-EUo9Wr9BU1WGrQ0tM6aV19Dv6tZkyd0tz_NKv1E0CaXxtAIghckTrpFujn_pwq9N1Lx9mX4UcVWJV9qZifh-zf8Jp0hmo0Dv3S5AMA0LT_vd7ijO0qHTD3MFPArpfJBvwuCZLVNuY_52dRt8KyBZLtPodc-2gZ2-ggdBj_bmg8zEwjWKpPhNAuv56FEJkS4FIJ8CRn1GKPfgF6tXpPaJTabIdgWubCc0PwM2gbu1-9d5zRTHeooxo1dK-uExKDmh1J5xfgnnNUHuWv6sF6xDki3uyXmPYJfmKH8_sZvahItVGFjYYdGWdmYLnSVf_ItAPD3vdSzxohoB_ZK; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:31 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 18:22:29 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:31 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:31 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 18:22:29 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:31 : -> Vary: Accept-Encoding
+
+2017-01-19 19:22:31 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 19:22:31 : -> Pragma: no-cache
+
+2017-01-19 19:22:31 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 19:22:31 : -> Connection: close
+
+2017-01-19 19:22:31 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 19:22:31 : -> 
+
+2017-01-19 19:22:31 : -> VERIFIED
+2017-01-19 19:22:31 : - Transaction : OK 
+2017-01-19 19:22:31 : - Paiement statut : OK 
+2017-01-19 19:22:31 : - Transaction ID : OK 
+2017-01-19 19:22:31 : - Compte PayPal : OK 
+2017-01-19 19:22:54 : - Debut traitement.
+2017-01-19 19:22:54 : - 127.0.0.1
+2017-01-19 19:22:54 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 19:22:54 : - Contenu POST :
+2017-01-19 19:22:54 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 19:22:54 : - Validation HTTP : OK
+2017-01-19 19:22:55 : -> HTTP/1.1 200 OK
+
+2017-01-19 19:22:55 : -> Date: Thu, 19 Jan 2017 18:22:53 GMT
+
+2017-01-19 19:22:55 : -> Server: Apache
+
+2017-01-19 19:22:55 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 19:22:55 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=XJdavXpZqkhiIov9GVgrHnI_gggB_DjvT4J1pL2FEefdpUCEBNVETImvZVemhBCE-qmlh0M5dzI9QBrQnXfly72s3-e2Nwqr5o9jZZqbai0PV8-fdw0zzGVilt7ZnmmcQ7Pk0cJLSfCDSKRH_Rm2Tv0-OXqqCcry9Nj2f2zAXB9y-gF5X5rihgwfaKhxpvp7jVlXU3KeYeqvOYgn7qO75JZJix85P5aemiAW7_ZYzfvvykEHRLzU_y8SIhm1_1unfGA2eVgK2RIsa2_dEpUJmwb3npfRGcFFysNI9rTRUjx8yyzF96fexNoyW30IlsLOBM2WoLj89t8u5Amcg9tqRL9Gqv69r7-kcWuWhjmdKtjicURasEA_PQ3mgHjFJKRmN1UiOl96MqCOtSnEr3a5jdcs932Y1GvbLHyPoYeQBHN6zXQHslLgONyqOo4; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:55 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 18:22:53 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:55 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:55 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 18:22:53 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:22:55 : -> Vary: Accept-Encoding
+
+2017-01-19 19:22:55 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 19:22:55 : -> Pragma: no-cache
+
+2017-01-19 19:22:55 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 19:22:55 : -> Connection: close
+
+2017-01-19 19:22:55 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 19:22:55 : -> 
+
+2017-01-19 19:22:55 : -> VERIFIED
+2017-01-19 19:22:55 : - Transaction : OK 
+2017-01-19 19:22:55 : - Paiement statut : OK 
+2017-01-19 19:22:55 : - Transaction ID : OK 
+2017-01-19 19:22:55 : - Compte PayPal : OK 
+2017-01-19 19:23:37 : - Debut traitement.
+2017-01-19 19:23:37 : - 127.0.0.1
+2017-01-19 19:23:37 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 19:23:38 : - Contenu POST :
+2017-01-19 19:23:38 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 19:23:38 : - Validation HTTP : OK
+2017-01-19 19:23:38 : -> HTTP/1.1 200 OK
+
+2017-01-19 19:23:38 : -> Date: Thu, 19 Jan 2017 18:23:36 GMT
+
+2017-01-19 19:23:38 : -> Server: Apache
+
+2017-01-19 19:23:38 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 19:23:38 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=gml_VJgbrQIICo2sCDQhAwLpHlQlO4cql5ZZCPlrowpTMa7XhZ8PP2NQ7NXzwDEOh2zhBJkZA7dScZr08N3PZFrPF1TLR7WquZeo0to0K91Nu3vb6xxgYIDvBgFPxUaqFpro1tOZvGKQ2i8fKLYgCV-cuBY3mfQFZD5UH7_xKXBxjJXT_r7RPRWLuIR0y9x1jbpxwIw3hD4LD6ec3loxYXslSc1nZ9bPgw6PiqkZcVgv7FL2GRHDvE1avNLuDkTM3ONdjn9L0JpaGnKO1vt3fxaRuIPsAgzd9ZAhcCezL6hYWducGhFpVQKPdQ9KFMNCrlJTU1rVX5GIUv8knZSnGQzEabYhRM4E5mrHpHiCbN371LZj1Hxjfs56p3ppmJeVR-NwTl8KJHw1hp0fCWQKOq9x50bkdcIM5LLdV-Hytq5CJx5ozUdXzHrC-PG; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:23:38 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 18:23:36 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:23:38 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:23:38 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 18:23:36 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:23:38 : -> Vary: Accept-Encoding
+
+2017-01-19 19:23:38 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 19:23:38 : -> Pragma: no-cache
+
+2017-01-19 19:23:38 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 19:23:38 : -> Connection: close
+
+2017-01-19 19:23:38 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 19:23:38 : -> 
+
+2017-01-19 19:23:38 : -> VERIFIED
+2017-01-19 19:23:38 : - Transaction : OK 
+2017-01-19 19:23:38 : - Paiement statut : OK 
+2017-01-19 19:23:38 : - Transaction ID : OK 
+2017-01-19 19:23:38 : - Compte PayPal : OK 
+2017-01-19 19:25:00 : - Debut traitement.
+2017-01-19 19:25:00 : - 127.0.0.1
+2017-01-19 19:25:00 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 19:25:00 : - Contenu POST :
+2017-01-19 19:25:00 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 19:25:00 : - Validation HTTP : OK
+2017-01-19 19:25:01 : -> HTTP/1.1 200 OK
+
+2017-01-19 19:25:01 : -> Date: Thu, 19 Jan 2017 18:24:59 GMT
+
+2017-01-19 19:25:01 : -> Server: Apache
+
+2017-01-19 19:25:01 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 19:25:01 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=RfnLeeO9pWIYSrcqeDmQkBGj53pxBe_srA7FJnWaoWbyuMSzoUWloDmJQJI2vCGpW53Qd_s8JjwGsJXj1sNusr6Yk32IJFYOQvfeOTP1Lrz3nOtpl0gNmPvlBuvBg0ec47MVk8CiNGzV2pxeidukyW-cTjbfXEXEZ5HjjxK2JuVFm76jXKj2FDssM7LiH9C1z6aBJjOlg1a0p2m8hek_Ar2ndAmnNA80_JN93I05itWM9Lmwcie-MgH4SGXGqrsp7XXAHRHZcKxwMUxQXIGU832_wFjXznl9EjQ0mEicsdsXb-R1Ye867qEYFIG9Pqv0UHKIWcN92zkmzcPpgeMnOruTloPl6S-mzWkrG13yhLDAnERQDt51OZ3CjEjnlzlYef6J6wUJWV7xr2qAavkBHs8N7jf8S6ylXrRobfbeoLdCZXBDh0_8BDSbE_q; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:25:01 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 18:24:59 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:25:01 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:25:01 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 18:24:59 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:25:01 : -> Vary: Accept-Encoding
+
+2017-01-19 19:25:01 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 19:25:01 : -> Pragma: no-cache
+
+2017-01-19 19:25:01 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 19:25:01 : -> Connection: close
+
+2017-01-19 19:25:01 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 19:25:01 : -> 
+
+2017-01-19 19:25:01 : -> VERIFIED
+2017-01-19 19:25:01 : - Transaction : OK 
+2017-01-19 19:25:01 : - Paiement statut : OK 
+2017-01-19 19:25:01 : - Transaction ID : OK 
+2017-01-19 19:25:01 : - Compte PayPal : OK 
+2017-01-19 19:27:42 : - Debut traitement.
+2017-01-19 19:27:42 : - 127.0.0.1
+2017-01-19 19:27:42 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 19:27:42 : - Contenu POST :
+2017-01-19 19:27:42 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 19:27:42 : - Validation HTTP : OK
+2017-01-19 19:27:43 : -> HTTP/1.1 200 OK
+
+2017-01-19 19:27:43 : -> Date: Thu, 19 Jan 2017 18:27:41 GMT
+
+2017-01-19 19:27:43 : -> Server: Apache
+
+2017-01-19 19:27:43 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 19:27:43 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=m8GED9AR3HWJ0LdOmU8MsFq2PaBLtgsg_BgZGtfIcBqx0wsm8a8MsotvgZgKgMj1QmtyjLjuUfBZ9TmVzasor8EX4JRAEJ0Y5wl_Dae29UhMLwiAyzQB8QQPYuRacxDf6uW974KuUgr3zHzQ8MrvnJ6HzJ-taNTW5EUhpfmtaS1k8HR3UPneSgbcuK636e9GzypoYZ22s4ZCdh_neKScKIJnrGFGRm2atuxEOG-3UdoszynoK8TLtooX2DQmtIKS1cRpMo3ORFPbLes7HwfZWGQqisMjFAEYNR5pOadeOwjaUAD2w-W0PxO5psj3J8AwYz8qu5N72RsOmMailLFszOCAbLHIenEMU2QlztJlPphenG6oIYafcg_8w7rcOz9X7TAV50S38wXhxscbj9UQ7c6V6Juy8KZMQlAyoBHCVAD8Kf-G-WYRPBW5mli; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:27:43 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 18:27:41 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:27:43 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:27:43 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 18:27:41 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:27:43 : -> Vary: Accept-Encoding
+
+2017-01-19 19:27:43 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 19:27:43 : -> Pragma: no-cache
+
+2017-01-19 19:27:43 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 19:27:43 : -> Connection: close
+
+2017-01-19 19:27:43 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 19:27:43 : -> 
+
+2017-01-19 19:27:43 : -> VERIFIED
+2017-01-19 19:27:43 : - Transaction : OK 
+2017-01-19 19:27:43 : - Paiement statut : OK 
+2017-01-19 19:27:43 : - Transaction ID : OK 
+2017-01-19 19:27:43 : - Compte PayPal : OK 
+2017-01-19 19:33:03 : - Debut traitement.
+2017-01-19 19:33:03 : - 127.0.0.1
+2017-01-19 19:33:03 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 19:33:03 : - Contenu POST :
+2017-01-19 19:33:03 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 19:33:03 : - Validation HTTP : OK
+2017-01-19 19:33:04 : -> HTTP/1.1 200 OK
+
+2017-01-19 19:33:04 : -> Date: Thu, 19 Jan 2017 18:33:02 GMT
+
+2017-01-19 19:33:04 : -> Server: Apache
+
+2017-01-19 19:33:04 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 19:33:04 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=Mpmzi2Hti7WG4GlagtydUPcRGepKEiNg_UM82fzNPdUSvy-1EsN7HyGNTzQYO_gfHyyaxhgl_lb2wYYCisIHoJXtX47QwBSCefQqo-8m5lEPvwDN8aMg9hoJazAHMvQuSo1YuBnIk7eyntXPT0iVxSqgyeRi74fQ7bm6t7WcbDHziGlbwOk6_ktnjpjpv9aWxyNb0C6f1_xlTC1nvZ8dKNKDM2SHhZXOf0tGRNLCiz189Woj5lJjnIcs9lpv-kDa5Bxu1XDz9TIxBuHfd1jqy8HysxcZxWXbDz3gEN7kCZnoAOehefiAyLNxMTn08psqAbrAZjIA1fmML517Gr_8nF3Z6LBjd03gBcm1j4dJ9rZEUlmF04naKjYI2Mbn3HEj-IO74bEcpvnG8Vo3uq9x0r_2b8v25FkqqE7Y1B2GSIdg61s5jTqZiB-_bSC; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:33:04 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 18:33:02 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:33:04 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:33:04 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 18:33:02 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:33:04 : -> Vary: Accept-Encoding
+
+2017-01-19 19:33:04 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 19:33:04 : -> Pragma: no-cache
+
+2017-01-19 19:33:04 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 19:33:04 : -> Connection: close
+
+2017-01-19 19:33:04 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 19:33:04 : -> 
+
+2017-01-19 19:33:04 : -> VERIFIED
+2017-01-19 19:33:04 : - Transaction : OK 
+2017-01-19 19:33:04 : - Paiement statut : OK 
+2017-01-19 19:33:04 : - Transaction ID : OK 
+2017-01-19 19:33:04 : - Compte PayPal : OK 
+2017-01-19 19:43:44 : - Debut traitement.
+2017-01-19 19:43:44 : - 127.0.0.1
+2017-01-19 19:43:44 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 19:43:44 : - Contenu POST :
+2017-01-19 19:43:44 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 19:43:44 : - Validation HTTP : OK
+2017-01-19 19:43:45 : -> HTTP/1.1 200 OK
+
+2017-01-19 19:43:45 : -> Date: Thu, 19 Jan 2017 18:43:43 GMT
+
+2017-01-19 19:43:45 : -> Server: Apache
+
+2017-01-19 19:43:45 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 19:43:45 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=ZuEb6E18_yauVOHzP0gjv-atA8XmxvucfhGji2UueJic5S_ZQWBgjb_PadD-3rZG6WwcB50hwRzXcUrixd7Da5sgpZSmywpMojvNQrU7M2qshCwREh1nPjJFBXUBzYi3g2c9-P_PSzJivMd-pZiG3BJghGqDB8MmNDq0Wq26BMC2HGJhVDHTuXwwHtqF304LTJjvQFU6LywnePLyAeG8wZ7dh46pKh0FvxFyo1q7LJdi4tAEIDi5Ynol6Lpa97KRx1Bijk9bvMooPmoMLD3MOxNjw7TCMQkX10HbEM_BhxUH_dwiL-gB3WHhz6PG0jfNDjUsP37MiCEJuVCu3J55aRW6a-rjDG4zm0KlChfZnQxZakkM21QNdzxPwznt38dv1QBwSdaaBqDB_zjd8fqExI9oiwOfmgoVepN5rQPUC9yMt26QN-3TZ9fQ8nG; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:43:45 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 18:43:43 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:43:45 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:43:45 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 18:43:43 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 19:43:45 : -> Vary: Accept-Encoding
+
+2017-01-19 19:43:45 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 19:43:45 : -> Pragma: no-cache
+
+2017-01-19 19:43:45 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 19:43:45 : -> Connection: close
+
+2017-01-19 19:43:45 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 19:43:45 : -> 
+
+2017-01-19 19:43:45 : -> VERIFIED
+2017-01-19 19:43:45 : - Transaction : OK 
+2017-01-19 19:43:45 : - Paiement statut : OK 
+2017-01-19 19:43:45 : - Transaction ID : OK 
+2017-01-19 19:43:45 : - Compte PayPal : OK 
+2017-01-19 20:05:05 : - Debut traitement.
+2017-01-19 20:05:05 : - 127.0.0.1
+2017-01-19 20:05:05 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 20:05:06 : - Contenu POST :
+2017-01-19 20:05:06 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 20:05:06 : - Validation HTTP : OK
+2017-01-19 20:05:06 : -> HTTP/1.1 200 OK
+
+2017-01-19 20:05:06 : -> Date: Thu, 19 Jan 2017 19:05:04 GMT
+
+2017-01-19 20:05:06 : -> Server: Apache
+
+2017-01-19 20:05:06 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 20:05:06 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=1ZpqhEhpzC00zRjaR4I62WFhep1nq8hCIdlXhe_19kv1Pi_JRX56r56etLe20dSdbYOx3Rgm5ZCZZvkxAz4oD0Y3TCBbeFkxhFnDw2ehDdAvQTarx1wLB2Q4HU-j09gHPD-GiqC21EOUys0ulhkct0At6mFj_keJrKhrvu9zZ2IhKTmAvKNpWYrae9uu1EbKlubVISaYIkPAxeudVcdSHK9bVVJOzJY_QjRz1aCwUAWQ5KmTPDGI7MkngH_0eNiVs2pymupflj-ub2n-lUpGKTxG_yefcaAKst5l011mAg7eUL1VSWdBRpfQjFo3Tuxv9K7qOMvFtth_eFlY8LIzMuNTRT3cho4kSlzYmxU_sDQVeoYxtFpwjqJ2oKmBahfgVU9VcyfbrP3uSleqOAe42XJllBLQ3VxDrQ_9Z1bztfG6AP0lJtKnoTBt84u; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 20:05:06 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 19:05:05 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 20:05:06 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 20:05:06 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 19:05:05 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 20:05:06 : -> Vary: Accept-Encoding
+
+2017-01-19 20:05:06 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 20:05:06 : -> Pragma: no-cache
+
+2017-01-19 20:05:06 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 20:05:06 : -> Connection: close
+
+2017-01-19 20:05:06 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 20:05:06 : -> 
+
+2017-01-19 20:05:06 : -> VERIFIED
+2017-01-19 20:05:06 : - Transaction : OK 
+2017-01-19 20:05:06 : - Paiement statut : OK 
+2017-01-19 20:05:06 : - Transaction ID : OK 
+2017-01-19 20:05:06 : - Compte PayPal : OK 
+2017-01-19 20:47:47 : - Debut traitement.
+2017-01-19 20:47:47 : - 127.0.0.1
+2017-01-19 20:47:47 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 20:47:48 : - Contenu POST :
+2017-01-19 20:47:48 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 20:47:48 : - Validation HTTP : OK
+2017-01-19 20:47:48 : -> HTTP/1.1 200 OK
+
+2017-01-19 20:47:48 : -> Date: Thu, 19 Jan 2017 19:47:46 GMT
+
+2017-01-19 20:47:48 : -> Server: Apache
+
+2017-01-19 20:47:48 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 20:47:48 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=79fQN1mLVcHTvaDsfFzYsj2O0Mq_FAsZEKriCZtUJrtukGToe7-izO8t-zZ7ziyGhhvEZIHeFPqPf-jzPYzwjKxOWKocuKR4P4i-bmqnmvXfcxWFa_PmsFXzQQlFEWG8BUZxQwHmjjLIO8lwS5FIXNMpn24me30ZKA4OSHivbE1uUfN37WLdwaOIfuOTcoYQl6TQG_wmf_fs5ihi_N26EcmZknNXtsVy-G9fL85KVmBjasLoGDh3uK5gDpwyZal-EmEYn3A8hjYsndrZYEyjWiBzCphKGUIypqJRkz12fOzJ8NtrAqhgbhuB8R7j2ff0pMaRRe8m51y7Olc2ulntYGiu_39EX9ngDjsXqT9Je7Je9AuX0ymrxdvKk1GT78dCtlpYU4vGUva_wHYMZb6QuZK4P_RRVkkteZeNtwJS2WUHIL4FhgGHoatwPa8; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 20:47:48 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 19:47:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 20:47:48 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 20:47:48 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 19:47:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 20:47:48 : -> Vary: Accept-Encoding
+
+2017-01-19 20:47:48 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 20:47:48 : -> Pragma: no-cache
+
+2017-01-19 20:47:48 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 20:47:48 : -> Connection: close
+
+2017-01-19 20:47:48 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 20:47:48 : -> 
+
+2017-01-19 20:47:48 : -> VERIFIED
+2017-01-19 20:47:48 : - Transaction : OK 
+2017-01-19 20:47:48 : - Paiement statut : OK 
+2017-01-19 20:47:48 : - Transaction ID : OK 
+2017-01-19 20:47:48 : - Compte PayPal : OK 
+2017-01-19 22:13:10 : - Debut traitement.
+2017-01-19 22:13:10 : - 127.0.0.1
+2017-01-19 22:13:10 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-19 22:13:10 : - Contenu POST :
+2017-01-19 22:13:10 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-19 22:13:10 : - Validation HTTP : OK
+2017-01-19 22:13:11 : -> HTTP/1.1 200 OK
+
+2017-01-19 22:13:11 : -> Date: Thu, 19 Jan 2017 21:13:08 GMT
+
+2017-01-19 22:13:11 : -> Server: Apache
+
+2017-01-19 22:13:11 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-19 22:13:11 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=pcArOxHGJwAXSvXMNyav2jsqCSP0QgPWHq14byR5jFdxvO-N3JFMIzAzOSri1Eqqb6zdfe1BYbBigb6UE7IF5Uq16IuPB2dpHxPHvu_vblC6ZLvQRy0dA_sZxw1cYZ25U67Dtx0I8HxxGxez7-VeSNZZDEEn9uTIVPJKkaiV4naD1vk6_3D8sLGNAvUbD_GMkGQB7BumC3BG9qznHi0d3zT5XZZ-dML1Nkjj3sapjVCT9IAyAdk-Yb_wm5lNFOhSY2LyOKN0a8YW5jU8Xw3IMBhbpBdBEa9lXvneLsvRwyKvv2z5PiloNaoZ2R8PMTSunACItQMpXPdmC21MMyYKWQ7Sq7FoZGVHoFsl7rtuDvB6Svi4ZE4hXPEbJkCZi0ukOg0JuXe2_ThytioCZU5xkq2y-ByIqX_qqE6SByb4kO4X2hMMJ2Gtvp4IuxS; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 22:13:11 : -> Set-Cookie: cookie_check=yes; expires=Sun, 17-Jan-2027 21:13:09 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 22:13:11 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 22:13:11 : -> Set-Cookie: navlns=0.0; expires=Sat, 19-Jan-2019 21:13:09 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-19 22:13:11 : -> Vary: Accept-Encoding
+
+2017-01-19 22:13:11 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-19 22:13:11 : -> Pragma: no-cache
+
+2017-01-19 22:13:11 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-19 22:13:11 : -> Connection: close
+
+2017-01-19 22:13:11 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-19 22:13:11 : -> 
+
+2017-01-19 22:13:11 : -> VERIFIED
+2017-01-19 22:13:11 : - Transaction : OK 
+2017-01-19 22:13:11 : - Paiement statut : OK 
+2017-01-19 22:13:11 : - Transaction ID : OK 
+2017-01-19 22:13:11 : - Compte PayPal : OK 
+2017-01-20 01:03:53 : - Debut traitement.
+2017-01-20 01:03:53 : - 127.0.0.1
+2017-01-20 01:03:53 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-20 01:03:53 : - Contenu POST :
+2017-01-20 01:03:53 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-20 01:03:53 : - Validation HTTP : OK
+2017-01-20 01:03:54 : -> HTTP/1.1 200 OK
+
+2017-01-20 01:03:54 : -> Date: Fri, 20 Jan 2017 00:03:51 GMT
+
+2017-01-20 01:03:54 : -> Server: Apache
+
+2017-01-20 01:03:54 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-20 01:03:54 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=fbuH7dKjQeF6Z7QCbOHpCntCmDhuPd14p2RsuTlAAxxpqbp8AODwkjw_TG9vbuPYGuOpT5Oytp4ewZLlpSAhX1CDtQh5gT_3QVQJySjnx26q4jsZ45O0cEsMJRzSo_kQCJvbxibZIy4KT0LzgDiTxIRCbRuZCm7RhDRE6gpVjxi7hIqgmBkJti56OZY6B8horhUSIP4BzqIUjEgSuUcJc7WIsmCTmDAhOuG8_4M7SCwUd-uagL2RW6Kjv9lSgI4oz8cm0uAN0YIeiw036JDQGbnvLt5WJ601o7VYeHa72gP1mSvVZLuSsZBQV4AdgLkbEPHEG6XhgTvGAO5u017eb2guSyUUiWC234ZONn8kWMhsxqeWofCtTYp8UUGiVHGFft3nnI3d-A-jimpXpyrVCGtZdZvp2_7nOXAOhtlIhxVUIB6QWOVHzynW41K; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 01:03:54 : -> Set-Cookie: cookie_check=yes; expires=Mon, 18-Jan-2027 00:03:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 01:03:54 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 01:03:54 : -> Set-Cookie: navlns=0.0; expires=Sun, 20-Jan-2019 00:03:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 01:03:54 : -> Vary: Accept-Encoding
+
+2017-01-20 01:03:54 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-20 01:03:54 : -> Pragma: no-cache
+
+2017-01-20 01:03:54 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-20 01:03:54 : -> Connection: close
+
+2017-01-20 01:03:54 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-20 01:03:54 : -> 
+
+2017-01-20 01:03:54 : -> VERIFIED
+2017-01-20 01:03:54 : - Transaction : OK 
+2017-01-20 01:03:54 : - Paiement statut : OK 
+2017-01-20 01:03:54 : - Transaction ID : OK 
+2017-01-20 01:03:54 : - Compte PayPal : OK 
+2017-01-20 06:45:13 : - Debut traitement.
+2017-01-20 06:45:13 : - 127.0.0.1
+2017-01-20 06:45:13 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-20 06:45:13 : - Contenu POST :
+2017-01-20 06:45:13 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-20 06:45:13 : - Validation HTTP : OK
+2017-01-20 06:45:14 : -> HTTP/1.1 200 OK
+
+2017-01-20 06:45:14 : -> Date: Fri, 20 Jan 2017 05:45:13 GMT
+
+2017-01-20 06:45:14 : -> Server: Apache
+
+2017-01-20 06:45:14 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-20 06:45:14 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=qRVLaaH-Gtx1xTxJ2Ht9446tXFGDDK7QOzelSxdn7Ym3lWyZQtLe9Qf9LpFxnC4FVWcX7MqvNJCGXPPnuQs6jWDQdk0-DItvyLEfNj5r8MRnwuRlE1HGMEL1ssTdy2TQN28f7kbWDgbOZaRk3OSbpVgu6Zu_TjgQe1L6xILCIS0Kq3hD_sqkKTFOEXqdruEmygFCqlpNNSBtvGlxAYBDQeSxsMkC90CEuk9vCaUsLCEQDZ8r5_mBFqnj-qEeaEXascig-aWXqH07xcRvihPgnThHGX9VNRfdqjlRuH6o3dL1KWacNSyO4eRyhMcbsVQpt3wpyiShZWFwc8s8ADfN6DKPVNh5Q352nf5TFjhBJBWTQrvLd91a8K9stkKJAkTU5PpSRzNXojzJ6PZLbGwalMqEj6Sac6CVD8K4Xapk5AaXQSHpnSTHKmzo9Wy; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 06:45:14 : -> Set-Cookie: cookie_check=yes; expires=Mon, 18-Jan-2027 05:45:14 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 06:45:14 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 06:45:14 : -> Set-Cookie: navlns=0.0; expires=Sun, 20-Jan-2019 05:45:14 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 06:45:14 : -> Vary: Accept-Encoding
+
+2017-01-20 06:45:14 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-20 06:45:14 : -> Pragma: no-cache
+
+2017-01-20 06:45:14 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-20 06:45:14 : -> Connection: close
+
+2017-01-20 06:45:14 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-20 06:45:14 : -> 
+
+2017-01-20 06:45:14 : -> VERIFIED
+2017-01-20 06:45:14 : - Transaction : OK 
+2017-01-20 06:45:14 : - Paiement statut : OK 
+2017-01-20 06:45:14 : - Transaction ID : OK 
+2017-01-20 06:45:14 : - Compte PayPal : OK 
+2017-01-20 18:07:56 : - Debut traitement.
+2017-01-20 18:07:56 : - 127.0.0.1
+2017-01-20 18:07:56 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-20 18:07:57 : - Contenu POST :
+2017-01-20 18:07:57 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-20 18:07:57 : - Validation HTTP : OK
+2017-01-20 18:07:57 : -> HTTP/1.1 200 OK
+
+2017-01-20 18:07:57 : -> Date: Fri, 20 Jan 2017 17:07:55 GMT
+
+2017-01-20 18:07:57 : -> Server: Apache
+
+2017-01-20 18:07:57 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-20 18:07:57 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=cCynDw7B-XxNmmkiD3NBBS-JUB9lmvCx4A79xtRhdxGbrz1EDDzAvwy_FQnE4uTciOPb-IW3eQbO0Z2RTy9GwuDSsRLBCkUTV166Gq4HluOMODQoKZa-I1TWUEdalKQKv6SN2VBp5majcx32MtZP3tiOUaNATantiR5_ryVt_ChJKKmN8WtNztKfAejxI0dB1XnQU-FL36nO7TGDRS75c1w74lWTd77XkdwjDD35D7cmMa6DRlNCtoH8nvIMtUsqdWfqFrgHuwMXGpgTuDFPcCfwFRVyVykk_ibCq4gGcmt9nWGOl231tFp_9kAqtGTfAOnTSTG4jhMVsEqyHfljWoj955rbAIs40YJBBfQK8Kh1JASNf7QGyLHCimHp_nacBGvqsMJSl_wppZpvzHjx5RJnlZuGxypaSd8v58-IcxXx7i4Z8VzEuoPr8DW; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 18:07:57 : -> Set-Cookie: cookie_check=yes; expires=Mon, 18-Jan-2027 17:07:56 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 18:07:57 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 18:07:57 : -> Set-Cookie: navlns=0.0; expires=Sun, 20-Jan-2019 17:07:56 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-20 18:07:57 : -> Vary: Accept-Encoding
+
+2017-01-20 18:07:57 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-20 18:07:57 : -> Pragma: no-cache
+
+2017-01-20 18:07:57 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-20 18:07:57 : -> Connection: close
+
+2017-01-20 18:07:57 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-20 18:07:57 : -> 
+
+2017-01-20 18:07:57 : -> VERIFIED
+2017-01-20 18:07:57 : - Transaction : OK 
+2017-01-20 18:07:57 : - Paiement statut : OK 
+2017-01-20 18:07:57 : - Transaction ID : OK 
+2017-01-20 18:07:57 : - Compte PayPal : OK 
+2017-01-21 16:53:19 : - Debut traitement.
+2017-01-21 16:53:19 : - 127.0.0.1
+2017-01-21 16:53:19 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-21 16:53:19 : - Contenu POST :
+2017-01-21 16:53:19 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-21 16:53:19 : - Validation HTTP : OK
+2017-01-21 16:53:20 : -> HTTP/1.1 200 OK
+
+2017-01-21 16:53:20 : -> Date: Sat, 21 Jan 2017 15:53:18 GMT
+
+2017-01-21 16:53:20 : -> Server: Apache
+
+2017-01-21 16:53:20 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-21 16:53:20 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=YjeNPRxBDEQSoZiAsgZGDfGzZKPjkrgbu1EKhltLpvJ9uJ9dkVcWURAZno9YYJ4jX_5mM1wTsxvnRz_YyDD6YFxk23o3qTAX4q-VQ46jILJ60fuQTQhtgrc1nYttS2qVOkWA50Vn-Uu8z4GUh0ByDYuqY9NzGW2J-Pt41q17C0w9iiCUzFaNnuSFeYP8ti_inGBfnqu-eC7oW_rQ42XODm-oFWMQFEkQFcTL6ZoDqrJoKHkA-Y6X6Y5UWzL7XBE3BwGm-qAMMaf19QDE27cUxRkHZX7tbofTXPWMYqNLCuHiEDi_XS4nqvrYvelJQcvRyYQ4V0FhRNtOqP2IxiIfHgv7wx_CavLkC3Ht0mvkDNZNs1WUPvpl8xU7xIv-iL9gCa0E15UtbSpR5SW6t-1oPhON3xNDyK0whbJAMzJ5T5wXhdo37TZywhNftF4; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-21 16:53:20 : -> Set-Cookie: cookie_check=yes; expires=Tue, 19-Jan-2027 15:53:18 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-21 16:53:20 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-21 16:53:20 : -> Set-Cookie: navlns=0.0; expires=Mon, 21-Jan-2019 15:53:18 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-21 16:53:20 : -> Vary: Accept-Encoding
+
+2017-01-21 16:53:20 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-21 16:53:20 : -> Pragma: no-cache
+
+2017-01-21 16:53:20 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-21 16:53:20 : -> Connection: close
+
+2017-01-21 16:53:20 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-21 16:53:20 : -> 
+
+2017-01-21 16:53:20 : -> VERIFIED
+2017-01-21 16:53:20 : - Transaction : OK 
+2017-01-21 16:53:20 : - Paiement statut : OK 
+2017-01-21 16:53:20 : - Transaction ID : OK 
+2017-01-21 16:53:20 : - Compte PayPal : OK 
+2017-01-22 16:53:21 : - Debut traitement.
+2017-01-22 16:53:21 : - 127.0.0.1
+2017-01-22 16:53:21 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-22 16:53:22 : - Contenu POST :
+2017-01-22 16:53:22 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-22 16:53:22 : - Validation HTTP : OK
+2017-01-22 16:53:22 : -> HTTP/1.1 200 OK
+
+2017-01-22 16:53:22 : -> Date: Sun, 22 Jan 2017 15:53:20 GMT
+
+2017-01-22 16:53:22 : -> Server: Apache
+
+2017-01-22 16:53:22 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-22 16:53:22 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=wf58_mX-z1nygWV_eqVgiKKiA0juDZqwz15Y-v7Rd4eqFK6WabD_fxyPOF_VJ4qHDqqwQtz-Dx3OpvhXvFQ-g-UjrHTFHk0eAjqN9dSI4lslAgLYy1fOx1SXhvkzyPe0IgxEl8WxQ19-_1gP1ifGi5_ANkH9njc6RWevyrxeVlS0CatRR-w5TxVSRCscqaxCpvQHuA6tnv1RQVgdHgd2pFWL8jk26CmE635tNe2OLSyK_sOGoTL1YI3bIlC17L8grwJ8L-rTK-xjeFcdhLxweaYDZXB-0mdiAt7cw-L9m7wE4CLgqymOkUn3ikboS9i229Xbi0IUZaByzonBD3DBOx6-9PamtL9oLidkCXi6rUtTsPH5xg3O3HEZFU9v8z81UcbZbt3-K66yixdT6-ps8ZgMVuFquijJd0Z6Ll1WsoqYzyXW-BYkOdNALWy; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-22 16:53:22 : -> Set-Cookie: cookie_check=yes; expires=Wed, 20-Jan-2027 15:53:21 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-22 16:53:22 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-22 16:53:22 : -> Set-Cookie: navlns=0.0; expires=Tue, 22-Jan-2019 15:53:21 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-22 16:53:22 : -> Vary: Accept-Encoding
+
+2017-01-22 16:53:22 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-22 16:53:22 : -> Pragma: no-cache
+
+2017-01-22 16:53:22 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-22 16:53:22 : -> Connection: close
+
+2017-01-22 16:53:22 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-22 16:53:22 : -> 
+
+2017-01-22 16:53:22 : -> VERIFIED
+2017-01-22 16:53:22 : - Transaction : OK 
+2017-01-22 16:53:22 : - Paiement statut : OK 
+2017-01-22 16:53:22 : - Transaction ID : OK 
+2017-01-22 16:53:22 : - Compte PayPal : OK 
+2017-01-23 16:53:23 : - Debut traitement.
+2017-01-23 16:53:23 : - 127.0.0.1
+2017-01-23 16:53:23 : - Req : cmd=_notify-validate&mc_gross=37.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=5Z52KPB7UJGRJ&tax=5.33&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&payment_status=Completed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&custom=119%3B55%3B26.67%3B5.00%3B5.33&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&quantity=1&verify_sign=AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.119+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=5c8f055f390f7
+2017-01-23 16:53:24 : - Contenu POST :
+2017-01-23 16:53:24 : - Array
+(
+    [mc_gross] => 37.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => 5Z52KPB7UJGRJ
+    [tax] => 5.33
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [custom] => 119;55;26.67;5.00;5.33
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [quantity] => 1
+    [verify_sign] => AC7aikQTUycaKhGaSWgR0VkDOsrQAdYtKEbOGDoEOP-AibTvvP0w7O1f
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 5c8f055f390f7
+)
+
+2017-01-23 16:53:24 : - Validation HTTP : OK
+2017-01-23 16:53:24 : -> HTTP/1.1 200 OK
+
+2017-01-23 16:53:24 : -> Date: Mon, 23 Jan 2017 15:53:23 GMT
+
+2017-01-23 16:53:24 : -> Server: Apache
+
+2017-01-23 16:53:24 : -> X-Frame-Options: SAMEORIGIN
+
+2017-01-23 16:53:24 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=wOhg5T7RiY0RgeEun8KFt0vHIZ0fGkznKdFHdGbxzTChqj344j16DFanpKmyhXDH4lv1NO3wR1_kP235SLbPnDo3BS4Pe8SeqZp8jxSDK7OTLKzeIeNIKOrh72FVSBGpp0cnStRzpJXW3qzc1YKxEGZNJJukZBZ2SW0WV2gpk7m-O6CpOamR8qm1NVoj9zQxR69FwOSGg5xJhqTPFHApUtQPkwdDtMVWzWSQFbUsK18ueIuXz1q3rtgyhE1Qrcs8jvGUrwWBDEG4GxN3cXM8gdwY-tsNugnHkpyUcnPQ3BFwPUK8hhUfJncuwz1iUV6oDsiSLQVUAhiN1pr7B0ygly5llPmweF7WVtdSYn-Geh-jbNQuuFPD8cpGaZw3fC7LI1c3vwuseJHWyow2rJ4PZMIh1IR5s65Tu2Lio4NpD3xxE_sVl1zkKUPj5UO; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-23 16:53:24 : -> Set-Cookie: cookie_check=yes; expires=Thu, 21-Jan-2027 15:53:23 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-23 16:53:24 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-23 16:53:24 : -> Set-Cookie: navlns=0.0; expires=Wed, 23-Jan-2019 15:53:23 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-01-23 16:53:24 : -> Vary: Accept-Encoding
+
+2017-01-23 16:53:24 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-01-23 16:53:24 : -> Pragma: no-cache
+
+2017-01-23 16:53:24 : -> Strict-Transport-Security: max-age=14400
+
+2017-01-23 16:53:24 : -> Connection: close
+
+2017-01-23 16:53:24 : -> Content-Type: text/html; charset=UTF-8
+
+2017-01-23 16:53:24 : -> 
+
+2017-01-23 16:53:24 : -> VERIFIED
+2017-01-23 16:53:24 : - Transaction : OK 
+2017-01-23 16:53:24 : - Paiement statut : OK 
+2017-01-23 16:53:24 : - Transaction ID : OK 
+2017-01-23 16:53:24 : - Compte PayPal : OK 
+2017-02-28 16:40:18 : - Debut traitement.
+2017-02-28 16:40:18 : - 127.0.0.1
+2017-02-28 16:40:18 : - Req : cmd=_notify-validate&mc_gross=-35.49&protection_eligibility=Ineligible&payer_id=5Z52KPB7UJGRJ&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=07%3A39%3A19+Feb+28%2C+2017+PST&payment_status=Reversed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=-1.51&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&reason_code=buyer_complaint&custom=119%3B55%3B26.67%3B5.00%3B5.33&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&verify_sign=A07xhyyVgBF5FqBZ8JsE1yeuPIyTAoH1PhE3lSQvQGqrxEvBh.-HTO1D&payer_email=dchuvelle%40hotmail.com&parent_txn_id=4Y96353408960771A&txn_id=0VC78774B0322670F&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&shipping_discount=0.00&receiver_id=JJYAPL2AS7KWA&insurance_amount=0.00&item_name=Commande+No.119+%22les+secrets+de+Louise%22&discount=0.00&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&handling_amount=0.00&shipping_method=Default&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=48a2d315b859d
+2017-02-28 16:40:18 : - Contenu POST :
+2017-02-28 16:40:18 : - Array
+(
+    [mc_gross] => -35.49
+    [protection_eligibility] => Ineligible
+    [payer_id] => 5Z52KPB7UJGRJ
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 07:39:19 Feb 28, 2017 PST
+    [payment_status] => Reversed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => -1.51
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [reason_code] => buyer_complaint
+    [custom] => 119;55;26.67;5.00;5.33
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [verify_sign] => A07xhyyVgBF5FqBZ8JsE1yeuPIyTAoH1PhE3lSQvQGqrxEvBh.-HTO1D
+    [payer_email] => dchuvelle@hotmail.com
+    [parent_txn_id] => 4Y96353408960771A
+    [txn_id] => 0VC78774B0322670F
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [shipping_discount] => 0.00
+    [receiver_id] => JJYAPL2AS7KWA
+    [insurance_amount] => 0.00
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [discount] => 0.00
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [handling_amount] => 0.00
+    [shipping_method] => Default
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => 48a2d315b859d
+)
+
+2017-02-28 16:40:18 : - Validation HTTP : OK
+2017-02-28 16:40:19 : -> HTTP/1.1 200 OK
+
+2017-02-28 16:40:19 : -> Date: Tue, 28 Feb 2017 15:40:17 GMT
+
+2017-02-28 16:40:19 : -> Server: Apache
+
+2017-02-28 16:40:19 : -> X-Frame-Options: SAMEORIGIN
+
+2017-02-28 16:40:19 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=DhwWKBcMJnagXheAK3z_yII0vDPkIHIcyxNrXjCJoEPQRgjLTKAZqbg_0qBEPFWkj35kYAkU46_hG322j9pmzSWCuaVv1GwSIr9LSaBtAa4a7ycHXuc73OwTSBN46fSUc76ZnNv2f9FhANeRmH-QamTNa46LDUyTeqC-Ddz3irn3E1WJfjVqnWzJCZ0FNqtInE4hkRfzIfi95bsf7nhkKl_o1BmOF0rz2B8UtO1aiIh9y620_8EiviWnN_BxN2txFjlICWqWDCgLrIyeyRYFuE8ytk8SP1iu18hKOLHkNU78-svp6EcFbBGNveySt4_M_WEMSLVpxe_NhjfGV5QQQLKwtF-xmuLlao40vxOvavRcfTChTVJa80-YMzpV8a5NAp7u48ihuhMy5L2XPsr4w2VIjIeTgEj3XrcWe3yifod1lWeWEanDlAte-Oa; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-02-28 16:40:19 : -> Set-Cookie: cookie_check=yes; expires=Fri, 26-Feb-2027 15:40:17 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-02-28 16:40:19 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-02-28 16:40:19 : -> Set-Cookie: navlns=0.0; expires=Thu, 28-Feb-2019 15:40:17 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-02-28 16:40:19 : -> Vary: Accept-Encoding
+
+2017-02-28 16:40:19 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-02-28 16:40:19 : -> Pragma: no-cache
+
+2017-02-28 16:40:19 : -> Strict-Transport-Security: max-age=14400
+
+2017-02-28 16:40:19 : -> Connection: close
+
+2017-02-28 16:40:19 : -> Content-Type: text/html; charset=UTF-8
+
+2017-02-28 16:40:19 : -> 
+
+2017-02-28 16:40:19 : -> VERIFIED
+2017-02-28 16:40:19 : - Transaction : OK 
+2017-02-28 16:40:19 : - Paiement statut : NOK 
+2017-02-28 16:40:19 : ----------- FIN TRAITEMENT ----------- 
+2017-02-28 16:40:19 : - Commande annulee
+2017-02-28 16:42:31 : - Debut traitement.
+2017-02-28 16:42:31 : - 127.0.0.1
+2017-02-28 16:42:31 : - Req : cmd=_notify-validate&txn_type=new_case&payment_date=10%3A21%3A38+Jan+19%2C+2017+PST&case_id=PP-005-597-281-323&receipt_id=4760-5460-9891-8828&case_type=complaint&business=bijoux.secretsdelouise%40gmail.com&verify_sign=As7YjUf-EtwWTklniO1RIaVMU-GLANfUvvlQOsFPSHllecBb.so-AUV3&payer_email=dchuvelle%40hotmail.com&txn_id=4Y96353408960771A&case_creation_date=07%3A39%3A03+Feb+28%2C+2017+PST&receiver_email=bijoux.secretsdelouise%40gmail.com&buyer_additional_information=objet+nn+re%E7u&payer_id=5Z52KPB7UJGRJ&receiver_id=JJYAPL2AS7KWA&reason_code=non_receipt&custom=119%3B55%3B26.67%3B5.00%3B5.33&charset=windows-1252&notify_version=3.8&ipn_track_id=3560dede2ea17
+2017-02-28 16:42:32 : - Contenu POST :
+2017-02-28 16:42:32 : - Array
+(
+    [txn_type] => new_case
+    [payment_date] => 10:21:38 Jan 19, 2017 PST
+    [case_id] => PP-005-597-281-323
+    [receipt_id] => 4760-5460-9891-8828
+    [case_type] => complaint
+    [business] => bijoux.secretsdelouise@gmail.com
+    [verify_sign] => As7YjUf-EtwWTklniO1RIaVMU-GLANfUvvlQOsFPSHllecBb.so-AUV3
+    [payer_email] => dchuvelle@hotmail.com
+    [txn_id] => 4Y96353408960771A
+    [case_creation_date] => 07:39:03 Feb 28, 2017 PST
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [buyer_additional_information] => objet nn reçu
+    [payer_id] => 5Z52KPB7UJGRJ
+    [receiver_id] => JJYAPL2AS7KWA
+    [reason_code] => non_receipt
+    [custom] => 119;55;26.67;5.00;5.33
+    [charset] => windows-1252
+    [notify_version] => 3.8
+    [ipn_track_id] => 3560dede2ea17
+)
+
+2017-02-28 16:42:32 : - Validation HTTP : OK
+2017-02-28 16:42:32 : -> HTTP/1.1 200 OK
+
+2017-02-28 16:42:32 : -> Date: Tue, 28 Feb 2017 15:42:30 GMT
+
+2017-02-28 16:42:32 : -> Server: Apache
+
+2017-02-28 16:42:32 : -> X-Frame-Options: SAMEORIGIN
+
+2017-02-28 16:42:32 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=5QeTBI6Om-w8Yk-btHK-WDIzBTs6Qc3aCVTGAPRiXALWQjZ7fc7ydDNrecE0ubwbtvIACV9Z4g1CQ7eJeZAiHBCtbevNA8jLcT6l2CvtcLlfTZnX6qIYEfJk_BaqPfQ7FMpxBHvyY8QsU5yF2NzyMRu7dT5DPV19s_lt88sPUAkLrHqmgE0Rc_TFm7JpGZqMu5t1a4_dYfW0fLQgE_AqKnnSwVIabkzoc1MUYKd4xAd2XS77pYcHlFkC6wJAMFdMsDq0Ke_lXTL-gqYe4BOL1ntfMtDl21q-I8cVwULEHW6-c8OieV1PtJh2hlgzsjQjAIWNdPL6BO62zenbBHLyDq7WEbx4ipGyzIyj-dIqSFw4VmOiuPaBXaaNnsHC2AVefb5gM_Ab0_POy2VwK0Mb9WKkxhedgiEq9uqRqKYMWJOU3_HH3wyCsu-w8qi; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-02-28 16:42:32 : -> Set-Cookie: cookie_check=yes; expires=Fri, 26-Feb-2027 15:42:31 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-02-28 16:42:32 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-02-28 16:42:32 : -> Set-Cookie: navlns=0.0; expires=Thu, 28-Feb-2019 15:42:31 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-02-28 16:42:32 : -> Vary: Accept-Encoding
+
+2017-02-28 16:42:32 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-02-28 16:42:32 : -> Pragma: no-cache
+
+2017-02-28 16:42:32 : -> Strict-Transport-Security: max-age=14400
+
+2017-02-28 16:42:32 : -> Connection: close
+
+2017-02-28 16:42:32 : -> Content-Type: text/html; charset=UTF-8
+
+2017-02-28 16:42:32 : -> 
+
+2017-02-28 16:42:32 : -> VERIFIED
+2017-02-28 16:42:32 : - Transaction : OK 
+2017-02-28 16:42:32 : - Paiement statut : NOK 
+2017-02-28 16:42:32 : ----------- FIN TRAITEMENT ----------- 
+2017-02-28 16:42:32 : - Commande annulee
+2017-03-21 12:13:01 : - Debut traitement.
+2017-03-21 12:13:01 : - 127.0.0.1
+2017-03-21 12:13:01 : - Req : cmd=_notify-validate&mc_gross=-37.00&protection_eligibility=Ineligible&payer_id=5Z52KPB7UJGRJ&address_street=7+rue+jules+barbey+d%27aurevilly&payment_date=04%3A12%3A46+Mar+21%2C+2017+PDT&payment_status=Reversed&charset=windows-1252&address_zip=91280&first_name=CATHERINE&mc_fee=0.00&address_country_code=FR&address_name=CATHERINE+HUVELLE&notify_version=3.8&reason_code=buyer_complaint&custom=119%3B55%3B26.67%3B5.00%3B5.33&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=SAINT+PIERRE+DU+PERRAY&verify_sign=AVfSQ5PLCwiNa3zy.rOy.Na-EbloAFV8tXdVXcKgrWVfoxzlWwMnjXBc&payer_email=dchuvelle%40hotmail.com&parent_txn_id=4Y96353408960771A&txn_id=22U297811U542105N&payment_type=instant&last_name=HUVELLE&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&shipping_discount=0.00&receiver_id=JJYAPL2AS7KWA&insurance_amount=0.00&item_name=Commande+No.119+%22les+secrets+de+Louise%22&discount=0.00&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=4760-5460-9891-8828&handling_amount=0.00&shipping_method=Default&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=acc14ef5e8d72
+2017-03-21 12:13:01 : - Contenu POST :
+2017-03-21 12:13:01 : - Array
+(
+    [mc_gross] => -37.00
+    [protection_eligibility] => Ineligible
+    [payer_id] => 5Z52KPB7UJGRJ
+    [address_street] => 7 rue jules barbey d'aurevilly
+    [payment_date] => 04:12:46 Mar 21, 2017 PDT
+    [payment_status] => Reversed
+    [charset] => windows-1252
+    [address_zip] => 91280
+    [first_name] => CATHERINE
+    [mc_fee] => 0.00
+    [address_country_code] => FR
+    [address_name] => CATHERINE HUVELLE
+    [notify_version] => 3.8
+    [reason_code] => buyer_complaint
+    [custom] => 119;55;26.67;5.00;5.33
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => SAINT PIERRE DU PERRAY
+    [verify_sign] => AVfSQ5PLCwiNa3zy.rOy.Na-EbloAFV8tXdVXcKgrWVfoxzlWwMnjXBc
+    [payer_email] => dchuvelle@hotmail.com
+    [parent_txn_id] => 4Y96353408960771A
+    [txn_id] => 22U297811U542105N
+    [payment_type] => instant
+    [last_name] => HUVELLE
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [shipping_discount] => 0.00
+    [receiver_id] => JJYAPL2AS7KWA
+    [insurance_amount] => 0.00
+    [item_name] => Commande No.119 "les secrets de Louise"
+    [discount] => 0.00
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 4760-5460-9891-8828
+    [handling_amount] => 0.00
+    [shipping_method] => Default
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => acc14ef5e8d72
+)
+
+2017-03-21 12:13:01 : - Validation HTTP : OK
+2017-03-21 12:13:02 : -> HTTP/1.1 200 OK
+
+2017-03-21 12:13:02 : -> Date: Tue, 21 Mar 2017 11:13:00 GMT
+
+2017-03-21 12:13:02 : -> Server: Apache
+
+2017-03-21 12:13:02 : -> X-Frame-Options: SAMEORIGIN
+
+2017-03-21 12:13:02 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=zYnYvUh11wofFjyLkmba0HpuV1oc705AeNeXgFsuztNWzSyH_y6kjvHbSnZY2HvpKLP9gpojVSA34A52X6OXUAbqjNzoVLS3CHAriQ7EGK1YHcJqGS3wppjjPL8NhWqN7QhtYu_7nU69sqo4IrIMk3UFdd0949zdzjZGflu2ki9ZiKbFDEYs_1fkChoimrC_ZodishjdLzOyxJ28X1Ag7JMaqqyM5PCz9RxNxyuaLHIBcJ6CIW9Xk-OJuvQqd3Xa5gYg5Ud4-X9jw4DGf7mOJrtH6tNhz51nBwdYGF60fRStyrpQweqb1qaOsIQu-wGk_V197yk6UKa7-_TXV2tp_gJ3UqAll9mwNMndEcgdttQceo4kOvubE_rU5s-ftJTUb8uoXJ8pqvZ52YEox-N3pYhZQrEEG8Q0ZNULWSz-_tUMD31nEHCvUC7eYP0; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-03-21 12:13:02 : -> Set-Cookie: cookie_check=yes; expires=Fri, 19-Mar-2027 11:13:01 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-03-21 12:13:02 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-03-21 12:13:02 : -> Set-Cookie: navlns=0.0; expires=Thu, 21-Mar-2019 11:13:01 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-03-21 12:13:02 : -> Vary: Accept-Encoding
+
+2017-03-21 12:13:02 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-03-21 12:13:02 : -> Pragma: no-cache
+
+2017-03-21 12:13:02 : -> Strict-Transport-Security: max-age=14400
+
+2017-03-21 12:13:02 : -> Connection: close
+
+2017-03-21 12:13:02 : -> Content-Type: text/html; charset=UTF-8
+
+2017-03-21 12:13:02 : -> 
+
+2017-03-21 12:13:02 : -> VERIFIED
+2017-03-21 12:13:02 : - Transaction : OK 
+2017-03-21 12:13:02 : - Paiement statut : NOK 
+2017-03-21 12:13:02 : ----------- FIN TRAITEMENT ----------- 
+2017-03-21 12:13:02 : - Commande annulee

@@ -1,0 +1,86 @@
+2017-04-05 15:24:08 : - Debut traitement.
+2017-04-05 15:24:08 : - 127.0.0.1
+2017-04-05 15:24:08 : - Req : cmd=_notify-validate&mc_gross=53.00&protection_eligibility=Ineligible&address_status=confirmed&payer_id=CNMQ9CTTPVHC4&tax=8.00&address_street=1219+chemin+des+br%FBl%E9s&payment_date=06%3A23%3A43+Apr+05%2C+2017+PDT&payment_status=Completed&charset=windows-1252&address_zip=45570&first_name=Fanny&mc_fee=2.05&address_country_code=FR&address_name=Fanny+White&notify_version=3.8&custom=121%3B56%3B40.00%3B5.00%3B8.00&payer_status=unverified&business=bijoux.secretsdelouise%40gmail.com&address_country=France&address_city=Ouzouer+sur+loire&quantity=1&verify_sign=A-l7Ht3gCcGUz87UP0AOBYyGo3TWA8o3lRW3bGXCVI2-lbSm31SQkoqB&payer_email=white.fanny%40yahoo.fr&txn_id=2V2713207X731500E&payment_type=instant&last_name=White&address_state=&receiver_email=bijoux.secretsdelouise%40gmail.com&payment_fee=&receiver_id=JJYAPL2AS7KWA&txn_type=web_accept&item_name=Commande+No.121+%22les+secrets+de+Louise%22&mc_currency=EUR&item_number=&residence_country=FR&receipt_id=2749-9186-3355-0301&transaction_subject=&payment_gross=&shipping=5.00&ipn_track_id=e38e8b65ceffb
+2017-04-05 15:24:08 : - Contenu POST :
+2017-04-05 15:24:08 : - Array
+(
+    [mc_gross] => 53.00
+    [protection_eligibility] => Ineligible
+    [address_status] => confirmed
+    [payer_id] => CNMQ9CTTPVHC4
+    [tax] => 8.00
+    [address_street] => 1219 chemin des brûlés
+    [payment_date] => 06:23:43 Apr 05, 2017 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 45570
+    [first_name] => Fanny
+    [mc_fee] => 2.05
+    [address_country_code] => FR
+    [address_name] => Fanny White
+    [notify_version] => 3.8
+    [custom] => 121;56;40.00;5.00;8.00
+    [payer_status] => unverified
+    [business] => bijoux.secretsdelouise@gmail.com
+    [address_country] => France
+    [address_city] => Ouzouer sur loire
+    [quantity] => 1
+    [verify_sign] => A-l7Ht3gCcGUz87UP0AOBYyGo3TWA8o3lRW3bGXCVI2-lbSm31SQkoqB
+    [payer_email] => white.fanny@yahoo.fr
+    [txn_id] => 2V2713207X731500E
+    [payment_type] => instant
+    [last_name] => White
+    [address_state] => 
+    [receiver_email] => bijoux.secretsdelouise@gmail.com
+    [payment_fee] => 
+    [receiver_id] => JJYAPL2AS7KWA
+    [txn_type] => web_accept
+    [item_name] => Commande No.121 "les secrets de Louise"
+    [mc_currency] => EUR
+    [item_number] => 
+    [residence_country] => FR
+    [receipt_id] => 2749-9186-3355-0301
+    [transaction_subject] => 
+    [payment_gross] => 
+    [shipping] => 5.00
+    [ipn_track_id] => e38e8b65ceffb
+)
+
+2017-04-05 15:24:08 : - Validation HTTP : OK
+2017-04-05 15:24:09 : -> HTTP/1.1 200 OK
+
+2017-04-05 15:24:09 : -> Date: Wed, 05 Apr 2017 13:24:07 GMT
+
+2017-04-05 15:24:09 : -> Server: Apache
+
+2017-04-05 15:24:09 : -> X-Frame-Options: SAMEORIGIN
+
+2017-04-05 15:24:09 : -> Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=c707pfZvoVocadcr6iduS03Pqx2TJiCQoROz133e2mjfbFztexM64AZf56_uByWfW_Sz4BpxFsLqEgPiM7szxmVROWn2Ljkri1fDMJCNXK0GvGK-RNxz81Pa7xpIdxLD4oSEP25AKchN0cZKvxtvpVO-_Zje_SoCWS5_H_I7ZJM3IjS1vvYzPZM7uyI1fOdwsxl7wl2F098dfysduAEX6epgyu2i80gJ2V1mLs1Kuh5DeQDE0y4cYf3zjGALpEV95YXKaR5HwS9h7-zFhcsIts5dTgRUO9ZdLNyaP_MqqugytisTRKbhm6e9ne8RaOqAmyFQXLgRUBa8GVFmS8wN_M3AkFk7k52KYhKF2tcib3UlDm0kgjnfJtxCSx5rmntshDEwtt_HaxsChAngRb0BgZTCaWZq1Q1uMVsWRWC5BpvY6ebFKZVYm-Zvzta; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-04-05 15:24:09 : -> Set-Cookie: cookie_check=yes; expires=Sat, 03-Apr-2027 13:24:07 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-04-05 15:24:09 : -> Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-04-05 15:24:09 : -> Set-Cookie: navlns=0.0; expires=Fri, 05-Apr-2019 13:24:07 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+
+2017-04-05 15:24:09 : -> Vary: Accept-Encoding
+
+2017-04-05 15:24:09 : -> Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+
+2017-04-05 15:24:09 : -> Pragma: no-cache
+
+2017-04-05 15:24:09 : -> Strict-Transport-Security: max-age=14400
+
+2017-04-05 15:24:09 : -> Connection: close
+
+2017-04-05 15:24:09 : -> Content-Type: text/html; charset=UTF-8
+
+2017-04-05 15:24:09 : -> 
+
+2017-04-05 15:24:09 : -> VERIFIED
+2017-04-05 15:24:09 : - Transaction : OK 
+2017-04-05 15:24:09 : - Paiement statut : OK 
+2017-04-05 15:24:09 : - Transaction ID : OK 
+2017-04-05 15:24:09 : - Compte PayPal : OK 
+2017-04-05 15:24:09 : ----------- FIN TRAITEMENT ----------- 
+2017-04-05 15:24:09 : - Confirmation de commande
