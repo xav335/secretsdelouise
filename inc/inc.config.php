@@ -46,12 +46,12 @@
 	define( "SEUIL_FDL_GRATOS", 41.666 );	// Frais de port gratuits au delà de 50€ TTC
 	
 	define( "MAIL_TEST", 			"" );				// Si vide alors les mails partent vers les bons destinataires!!!
-	define( "MAIL_CUSTOMER", 		"contact@lessecretsdelouise.com" );
+	define( "MAIL_CUSTOMER", 		"xavier.gonzalez@laposte.net" );
 	define( "MAIL_NAME_CUSTOMER", 	"LesSecretsDeLouise" );
 	define( "URL_SITE_DEFAULT", 	"http://www.lessecretsdelouise.com/" );
 	define( "FACEBOOK_LINK", 		"https://www.facebook.com/lessecretsdelouise" );
 	
 	// Mail d'envoi
-	define( "MAIL_CONTACT", "contact@lessecretsdelouise.com" );
-	define( "MAIL_BCC", 	"xav335@hotmail.com,fjavi.gonzalez@gmail.com,jav_gonz@yahoo.com" );
+	define( "MAIL_CONTACT", "xavier.gonzalez@laposte.net" );
+	define( "MAIL_BCC", 	"xav335@hotmail.com,jav_gonz@yahoo.com" );
 ?>

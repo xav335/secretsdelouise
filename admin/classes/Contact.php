@@ -236,9 +236,9 @@ class Contact extends StorageManager
 				FROM contact;";
             echo $sql;
             
-            $result = mysqli_query($this->mysqli, $sql) or die(mysql_error());
+            $result = mysqli_query($this->mysqli, $sql);
             if (! $result) {
-                throw new Exception($sql);
+                throw new Exception("eroror: ". $sql);
             }
             $this->commit();
             return $result;
